@@ -49,7 +49,7 @@ uncertainties
 webbpsf
 git+https://github.com/astropy/regions.git
 git+https://github.com/radio-astro-tools/radio-beam.git
-git+https://github.com/spacetelescope/jdaviz.git@625acca8562249c2f4d9041c566c1820a4d480b2#egg
+jdaviz
 git+https://github.com/spacetelescope/jwst@0.17.0#egg
 git+https://github.com/spacetelescope/jwst_gtvt.git
 git+https://github.com/spacetelescope/mirage#egg
