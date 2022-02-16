@@ -6,6 +6,9 @@ jobs:
   build-linux:
     runs-on: ubuntu-latest
     container: goughmj/jupyter_ci_container:latest
+    defaults:
+      run:
+        shell: bash -l {0}
     strategy:
       max-parallel: 5
 
