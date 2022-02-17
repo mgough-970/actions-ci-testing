@@ -33,7 +33,7 @@ jobs:
         pip install nbconvert
     - name: Execute notebooks
       run: |
-        jupyter nbconvert --to notebook --execute notebooks/**.ipynb
+        find notebooks/ -name "*.ipynb" | xargs -I book jupyter nbconvert --to notebook --execute book
     - name: Test with pytest
       run: |
         pytest --nbval
