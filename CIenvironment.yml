@@ -36,6 +36,7 @@ pandas
 photutils
 poppy
 pysiaf
+pyregion
 pysynphot
 pyyaml
 scikit-image
