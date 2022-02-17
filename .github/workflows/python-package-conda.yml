@@ -1,15 +1,15 @@
 name: Python Package using Conda
 
-on: [push]
-
+on:
+  push:
+    branches:
+    - main
+    paths:
+      - 'notebooks/**.ipynb'
 
 jobs:
   build-linux:
     runs-on: ubuntu-latest
-#    container: goughmj/jupyter_ci_container:latest
-#    defaults:
-#      run:
-#        shell: bash -l {0}
     strategy:
       max-parallel: 5
 
@@ -30,6 +30,10 @@ jobs:
         pip install -r CIenvironment.yml
         pip install pytest
         pip install nbval
+        pip install nbconvert
+    - name: Execute notebooks
+      run: |
+        jupyter nbconvert --to notebook --execute 
     - name: Test with pytest
       run: |
         pytest --nbval
