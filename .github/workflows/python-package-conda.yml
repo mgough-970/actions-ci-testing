@@ -33,7 +33,7 @@ jobs:
         pip install nbconvert
     - name: Execute notebooks
       run: |
-        jupyter nbconvert --to notebook --execute 
+        jupyter nbconvert --to notebook --execute notebooks/**.ipynb
     - name: Test with pytest
       run: |
         pytest --nbval
