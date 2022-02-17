@@ -20,11 +20,16 @@ jobs:
       with:
         python-version: 3.8.12
         cache: 'pip'
+    - name: Add conda to system path
+      run: |
+        # $CONDA is an environment variable pointing to the root of the miniconda directory
+        echo $CONDA/bin >> $GITHUB_PATH
     - name: Install dependencies
       run: |
-        pip install pytest
-        pip install nbval
+        #conda env update --file CIenvironment.yml --name base
         pip install -r CIenvironment.yml
-    - name: Test notebooks with pytest nbval
+    - name: Test with pytest
       run: |
+        conda install pytest
+        pip install nbval
         pytest --nbval
