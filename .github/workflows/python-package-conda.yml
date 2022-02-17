@@ -28,8 +28,8 @@ jobs:
       run: |
         #conda env update --file CIenvironment.yml --name base
         pip install -r CIenvironment.yml
+        pip install pytest
+        pip install nbval
     - name: Test with pytest
       run: |
-        conda install pytest
-        pip install nbval
         pytest --nbval
