@@ -4,8 +4,8 @@ on:
   push:
     branches:
     - main
-    paths:
-      - 'notebooks/**.ipynb'
+#    paths:
+#      - 'notebooks/**.ipynb'
 
 jobs:
   build-linux:
