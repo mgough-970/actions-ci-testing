@@ -36,6 +36,7 @@ pandas
 photutils
 poppy
 pysiaf
+pyregion
 pysynphot
 pyyaml
 scikit-image
@@ -47,9 +48,9 @@ specutils
 termcolor
 uncertainties
 webbpsf
-git+https://github.com/astropy/regions.git
-git+https://github.com/radio-astro-tools/radio-beam.git
+regions
+radio-beam
 jdaviz
-git+https://github.com/spacetelescope/jwst@0.17.0#egg
-git+https://github.com/spacetelescope/jwst_gtvt.git
-git+https://github.com/spacetelescope/mirage#egg
+jwst
+jwst_gtvt
+mirage
