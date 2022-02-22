@@ -1,4 +1,4 @@
-name: deploy-book
+name: Build and deploy notebooks
 
 #  Only run this when the master branch changes
 on:
