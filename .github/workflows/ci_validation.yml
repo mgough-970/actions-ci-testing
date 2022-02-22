@@ -1,11 +1,11 @@
-name: Python Package using Conda
+name: ci_validation 
 
 on:
   push:
     branches:
     - main
-#    paths:
-#      - 'notebooks/**.ipynb'
+    paths:
+      - 'notebooks/**.ipynb'
 
 jobs:
   build-linux:
