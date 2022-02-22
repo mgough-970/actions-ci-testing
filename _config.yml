@@ -5,8 +5,8 @@
 
 #######################################################################################
 # Book settings
-title                       : STScI JDAT Notebooks  # The title of the book. Will be placed in the left navbar.
-author                      : Captain Jupyter  # The author of the book
+title                       : STScI JDAT Notebooks Test  # The title of the book. Will be placed in the left navbar.
+author                      : STScI  # The author of the book
 copyright                   : "2022"  # Copyright year to be placed in the footer
 logo                        : Jspectra.svg  # A path to the book logo
 
@@ -26,7 +26,7 @@ bibtex_bibfiles:
 
 # Information about where the book exists on the web
 repository:
-  url: https://github.com/therealzoidberg/pyinthehub  # Online location of your book
+  url: https://github.com/therealzoidberg/actions-ci-teesting  # Online location of your book
   path_to_book: notebooks  # Optional path to your book, relative to the repository root
   branch: main  # Which branch of the repository should be used when creating links (optional)
 
