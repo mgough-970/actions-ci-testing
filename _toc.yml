@@ -4,22 +4,6 @@
 format: jb-book
 root: intro
 parts:
-    - caption: NIRISS WFSS Spectra
-      chapters:
-    #- file: markdown
-          - file: notebooks/NIRISS_WFSS_postpipeline/00. Optimal extraction.ipynb
-          - file: notebooks/NIRISS_WFSS_postpipeline/01. Combine and normalize 1D spectra.ipynb
-          - file: notebooks/NIRISS_WFSS_postpipeline/02. Cross correlation template.ipynb
-          - file: notebooks/NIRISS_WFSS_postpipeline/03. Spatially resolved emission line map.ipynb
-    - caption: MOS Spectroscopy
-      chapters:
-          - file: notebooks/mos-spectroscopy/MOSspec_sv06_revised.ipynb
-    - caption: MRS Mstar Analysis
-      chapters:
-          - file: notebooks/MRS_Mstar_analysis/JWST_Mstar_dataAnalysis_usecase.ipynb
-    - caption: Example Notebook
-      chapters:
-          - file: notebooks/example_notebook/example_notebook.ipynb
     - caption: IFU Continuum Fit
       chapters:
           - file: notebooks/IFU_cube_continuum_fit/notebooks.ipynb
@@ -27,14 +11,6 @@ parts:
           - file: notebooks/IFU_cube_continuum_fit/_build/html/_sources/notebooks.ipynb
           - file: notebooks/IFU_cube_continuum_fit/_build/jupyter_execute/notebooks.ipynb
           - file: notebooks/IFU_cube_continuum_fit/_build/jupyter_execute/NGC4151_FeII_ContinuumFit.ipynb
-    - caption: PSF Matched Photometry
-      chapters:
-          - file: notebooks/NIRCam_PSF-matched_photometry/NIRCam_PSF_matched_multiband_photometry.ipynb
-    - caption: MIRI IFU in the LMC
-      chapters:
-          - file: notebooks/MIRI_IFU_YSOs_in_the_LMC/isha_nayak_ysos_in_the_lmc.ipynb
-          - file: notebooks/optimal_extraction/Spectral Extraction-static.ipynb
-          - file: notebooks/ifu_optimal/ifu_optimal.ipynb
             #- file: notebooks/background_estimation_imaging/Imaging Sky Background Estimation.ipynb
 
             #- file: notebooks/soss-transit-spectroscopy/HAT-P-1b-PART3-data-analysis.ipynb
