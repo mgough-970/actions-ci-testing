@@ -1,13 +1,7 @@
-name: Nightly Build
-
+name: Deploy Nightly
 on:
   schedule:
-    # run every day at 3am UTC
-    - cron: '0 3 * * *'
-        branches:
-    - main
-    paths:
-      - 'notebooks/**.ipynb'
+    - cron: '0 3 * * *' # run at 2 AM UTC
       
   pull_request:
     # We also want this workflow triggered if the 'Extra CI' label is added
@@ -21,9 +15,9 @@ on:
     # regressions on the release branches, and it's also important to run
     # this on pre-release and release tags.
     branches:
-    - 'v*'
-    tags:
-    - '*'
+      - main
+    paths:
+      - 'notebooks/**.ipynb'
 
 env:
   ARCH_ON_CI: "normal"
