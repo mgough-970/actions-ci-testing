@@ -6,7 +6,8 @@ on:
     - main
     paths:
       - 'notebooks/**.ipynb'
-
+env: 
+  WEBBPSF_PATH: $HOME/data/webbpsf-data
 jobs:
   build-linux:
     runs-on: ubuntu-latest
