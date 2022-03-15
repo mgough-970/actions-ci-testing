@@ -41,13 +41,13 @@ jobs:
         pip install nbval
         PATH="${PATH}:${HOME}/.local/bin"
         
-    - name: nbval validation step
-      run: |
-        python -m pytest --nbval --durations 10
-        
-        #- name: Build book TOC file 
-        #run: |
-        #jupyter-book toc from-project ./notebooks
+    #- name: nbval validation step
+    #  run: |
+    #    python -m pytest --nbval --durations 10
+    #    
+    #    #- name: Build book TOC file 
+    #    #run: |
+    #    #jupyter-book toc from-project ./notebooks
     - name: Build book HTML 
       run: |
         jupyter-book build .
