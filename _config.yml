@@ -26,6 +26,7 @@ bibtex_bibfiles:
   
 launch_buttons:
   thebe                  : true
+  colab_url: "https://colab.research.google.com"
 # Information about where the book exists on the web
 repository:
   url: https://github.com/therealzoidberg/pyinthehub  # Online location of your book
