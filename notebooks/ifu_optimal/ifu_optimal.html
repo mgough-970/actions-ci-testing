@@ -551,15 +551,415 @@ demonstrate a number of regular extraction techniques, including subset extracti
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Filename: /home/runner/.astropy/cache/download/url/edf217f740cafc32b47d3470859a08cd/contents
+No.    Name      Ver    Type      Cards   Dimensions   Format
+  0  PRIMARY       1 PrimaryHDU     295   ()      
+  1  SCI           1 ImageHDU        64   (33, 39, 2059)   float32   
+  2  ERR           1 ImageHDU        12   (33, 39, 2059)   float32   
+  3  DQ            1 ImageHDU        12   (33, 39, 2059)   int32 (rescales to uint32)   
+  4  WMAP          1 ImageHDU        10   (33, 39, 2059)   float32   
+  5  ASDF          1 BinTableHDU     11   1R x 1C   [10315B]   
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WCS Keywords
+
+Number of WCS axes: 3
+CTYPE : &#39;RA---TAN&#39;  &#39;DEC--TAN&#39;  &#39;WAVE&#39;  
+CRVAL : 156.1778928912249  -45.68697658856264  9.665214562483711e-07  
+CRPIX : 17.0  20.0  1.0  
+PC1_1 PC1_2 PC1_3  : -0.8098302221786426  -0.586664308822422  0.0  
+PC2_1 PC2_2 PC2_3  : -0.586664308822422  0.8098302221786426  0.0  
+PC3_1 PC3_2 PC3_3  : 0.0  0.0  1.0  
+CDELT : 2.77777781916989e-05  2.77777781916989e-05  2.3499999952036797e-10  
+NAXIS : 33  39  2059
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0.96652146 0.96675646 0.96699146 ... 1.44968146 1.44991646 1.45015146]
+</pre></div>
+</div>
+</div>
+</div>
+<p><em>Developer Note:</em> Can we fix or suppress this AsdfWarning?</p>
+<p><em>Developer Note:</em>  Is there a way to read in with only Spectrum1D to perform all of our cube operations, not using fits.open()?</p>
+</div>
+<div class="section" id="visualize-science-data-with-cubeviz">
+<h2>Visualize Science Data with Cubeviz<a class="headerlink" href="#visualize-science-data-with-cubeviz" title="Permalink to this headline">¶</a></h2>
+<p><em>Developer Note:</em> Cubeviz incompatible with jupyter_client 6.1.6.  Use jupyter_client 5.3.5 instead.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cubeviz</span> <span class="o">=</span> <span class="n">CubeViz</span><span class="p">()</span>
+<span class="n">cubeviz</span><span class="o">.</span><span class="n">app</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<script type="application/vnd.jupyter.widget-view+json">
+{"version_major": 2, "version_minor": 0, "model_id": "ea432ffa21114f4f868a8b6fbd06d2f8"}
+</script></div>
+</div>
+<div class="section" id="ui-instructions">
+<h3>UI Instructions:<a class="headerlink" href="#ui-instructions" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Load science datacube into Cubeviz using the next code cell below</p></li>
+<li><p>Go to the Hammer-and-Screwdriver icon: Gear icon: Layer in the leftmost image viewer</p></li>
+<li><p>In that tab, change the Linear stretch to 90 percentile to see the faint QSO target at (x,y) ~ (17, 21)</p></li>
+<li><p>Scrubbing through the cube also helps to locate the source</p></li>
+<li><p>Select a circular subset region centered on the source.</p></li>
+<li><p>Note that the region is pixelated and doesn’t include fractional pixels</p></li>
+<li><p>Change the collapse method to “Sum” in spectrum viewer: Gear icon : Viewer</p></li>
+<li><p>–This “Sum” method yields our subset extraction</p></li>
+<li><p>Change the vertical zoom to see the spectral features in the Subset spectrum</p></li>
+</ul>
+<p><em>Developer Notes</em>:</p>
+<p>(1) Image viewer contrast settings change when you click on the side bar to expand/contract jupyter scroll window</p>
+<p>(2) Spectrum viewer: Viewer cube collapse method should default to Sum (not Maximum)</p>
+<p>(3) Spectrum viewer y scale returns to autoscale when the region is moved, and y-zoom has to be adjusted again</p>
+<p>(4) Region selection appears away from cursor after opening hammer-and-screwdriver to change cube viewer contrast</p>
+</div>
+</div>
+<div class="section" id="load-cube-into-cubeviz">
+<h2>Load Cube into Cubeviz<a class="headerlink" href="#load-cube-into-cubeviz" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Data from local directory</span>
+<span class="c1"># cubeviz.app.load_data(filename)</span>
+
+<span class="c1"># Data from url:</span>
+<span class="n">url</span> <span class="o">=</span> <span class="n">filename</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">download_file</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+<span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>  <span class="c1"># Sleep to avoid glue-jupyter timing issue</span>
+<span class="n">cubeviz</span><span class="o">.</span><span class="n">app</span><span class="o">.</span><span class="n">load_data</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:py.warnings:/usr/share/miniconda/lib/python3.9/site-packages/specutils/spectra/spectrum1d.py:202: UserWarning: Input WCS indicates that the spectral axis is not last. Reshaping arrays to put spectral axis last.
+  warnings.warn(&quot;Input WCS indicates that the spectral axis is not&quot;
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2022-03-15 07:04:35,154 - stpipe - WARNING - /usr/share/miniconda/lib/python3.9/site-packages/specutils/spectra/spectrum1d.py:202: UserWarning: Input WCS indicates that the spectral axis is not last. Reshaping arrays to put spectral axis last.
+  warnings.warn(&quot;Input WCS indicates that the spectral axis is not&quot;
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:stpipe:/usr/share/miniconda/lib/python3.9/site-packages/specutils/spectra/spectrum1d.py:202: UserWarning: Input WCS indicates that the spectral axis is not last. Reshaping arrays to put spectral axis last.
+  warnings.warn(&quot;Input WCS indicates that the spectral axis is not&quot;
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:py.warnings:/usr/share/miniconda/lib/python3.9/site-packages/specutils/spectra/spectrum1d.py:202: UserWarning: Input WCS indicates that the spectral axis is not last. Reshaping arrays to put spectral axis last.
+  warnings.warn(&quot;Input WCS indicates that the spectral axis is not&quot;
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2022-03-15 07:04:35,169 - stpipe - WARNING - /usr/share/miniconda/lib/python3.9/site-packages/specutils/spectra/spectrum1d.py:202: UserWarning: Input WCS indicates that the spectral axis is not last. Reshaping arrays to put spectral axis last.
+  warnings.warn(&quot;Input WCS indicates that the spectral axis is not&quot;
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:stpipe:/usr/share/miniconda/lib/python3.9/site-packages/specutils/spectra/spectrum1d.py:202: UserWarning: Input WCS indicates that the spectral axis is not last. Reshaping arrays to put spectral axis last.
+  warnings.warn(&quot;Input WCS indicates that the spectral axis is not&quot;
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:py.warnings:/usr/share/miniconda/lib/python3.9/site-packages/specutils/spectra/spectrum1d.py:202: UserWarning: Input WCS indicates that the spectral axis is not last. Reshaping arrays to put spectral axis last.
+  warnings.warn(&quot;Input WCS indicates that the spectral axis is not&quot;
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2022-03-15 07:04:35,177 - stpipe - WARNING - /usr/share/miniconda/lib/python3.9/site-packages/specutils/spectra/spectrum1d.py:202: UserWarning: Input WCS indicates that the spectral axis is not last. Reshaping arrays to put spectral axis last.
+  warnings.warn(&quot;Input WCS indicates that the spectral axis is not&quot;
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:stpipe:/usr/share/miniconda/lib/python3.9/site-packages/specutils/spectra/spectrum1d.py:202: UserWarning: Input WCS indicates that the spectral axis is not last. Reshaping arrays to put spectral axis last.
+  warnings.warn(&quot;Input WCS indicates that the spectral axis is not&quot;
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:py.warnings:/usr/share/miniconda/lib/python3.9/site-packages/specutils/spectra/spectrum1d.py:202: UserWarning: Input WCS indicates that the spectral axis is not last. Reshaping arrays to put spectral axis last.
+  warnings.warn(&quot;Input WCS indicates that the spectral axis is not&quot;
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2022-03-15 07:04:35,183 - stpipe - WARNING - /usr/share/miniconda/lib/python3.9/site-packages/specutils/spectra/spectrum1d.py:202: UserWarning: Input WCS indicates that the spectral axis is not last. Reshaping arrays to put spectral axis last.
+  warnings.warn(&quot;Input WCS indicates that the spectral axis is not&quot;
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:stpipe:/usr/share/miniconda/lib/python3.9/site-packages/specutils/spectra/spectrum1d.py:202: UserWarning: Input WCS indicates that the spectral axis is not last. Reshaping arrays to put spectral axis last.
+  warnings.warn(&quot;Input WCS indicates that the spectral axis is not&quot;
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:root:Input WCS must have exactly one axis with spectral units, found 0
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2022-03-15 07:04:35,432 - stpipe - WARNING - Input WCS must have exactly one axis with spectral units, found 0
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:stpipe:Input WCS must have exactly one axis with spectral units, found 0
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:root:Missing BUNIT, using count as data unit
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2022-03-15 07:04:35,439 - stpipe - WARNING - Missing BUNIT, using count as data unit
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:stpipe:Missing BUNIT, using count as data unit
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:root:Input WCS must have exactly one axis with spectral units, found 0
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2022-03-15 07:04:35,446 - stpipe - WARNING - Input WCS must have exactly one axis with spectral units, found 0
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:stpipe:Input WCS must have exactly one axis with spectral units, found 0
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:root:Missing BUNIT, using count as data unit
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2022-03-15 07:04:35,451 - stpipe - WARNING - Missing BUNIT, using count as data unit
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:stpipe:Missing BUNIT, using count as data unit
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:root:Input WCS must have exactly one axis with spectral units, found 0
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2022-03-15 07:04:35,454 - stpipe - WARNING - Input WCS must have exactly one axis with spectral units, found 0
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:stpipe:Input WCS must have exactly one axis with spectral units, found 0
+</pre></div>
+</div>
+</div>
+</div>
+<p><em>Developer Note:</em> Spectral cube does not yet recognize JWST NIRSpec IFU datacubes, giving the above warning
+for each FITS extension.</p>
+</div>
+<div class="section" id="export-region-from-cubeviz">
+<h2>Export Region from Cubeviz<a class="headerlink" href="#export-region-from-cubeviz" title="Permalink to this headline">¶</a></h2>
+<p>Export the region defined by the user in Cubeviz as an astropy CirclePixel Region, which has units of pixels.</p>
+<p><em>Developer Note:</em> cubeviz.app.get_subsets_from_viewer method doesn’t work if there are more than 2 datasets selected in the spectrum viewer:</p>
+<p>#region1 = cubeviz.app.get_subsets_from_viewer(‘spectrum-viewer’)</p>
+<p>#print(region1[‘Subset1’])</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cubeviz_data</span> <span class="o">=</span> <span class="n">cubeviz</span><span class="o">.</span><span class="n">app</span><span class="o">.</span><span class="n">data_collection</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="k">try</span><span class="p">:</span>
+    <span class="n">region1</span> <span class="o">=</span> <span class="n">cubeviz_data</span><span class="o">.</span><span class="n">get_selection_definition</span><span class="p">(</span><span class="nb">format</span><span class="o">=</span><span class="s1">&#39;astropy-regions&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">region1</span><span class="p">)</span>
+    <span class="n">region1_exists</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;There are no regions selected in the cube viewer.&quot;</span><span class="p">)</span>
+    <span class="n">region1_exists</span> <span class="o">=</span> <span class="kc">False</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>There are no regions selected in the cube viewer.
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="extract-subset-spectrum-in-cubeviz-spectrum-viewer">
+<h2>Extract Subset Spectrum in Cubeviz Spectrum Viewer<a class="headerlink" href="#extract-subset-spectrum-in-cubeviz-spectrum-viewer" title="Permalink to this headline">¶</a></h2>
+<p>Retrieve the collapsed spectrum (Subset1) of the user-defined region from the Spectrum Viewer as a Spectrum1D object.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">try</span><span class="p">:</span>
+    <span class="n">spectrum_subset1</span> <span class="o">=</span> <span class="n">cubeviz</span><span class="o">.</span><span class="n">app</span><span class="o">.</span><span class="n">get_data_from_viewer</span><span class="p">(</span><span class="s1">&#39;spectrum-viewer&#39;</span><span class="p">)[</span><span class="s1">&#39;Subset 1&#39;</span><span class="p">]</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">spectrum_subset1</span><span class="p">)</span>
+<span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;There are no subsets selected in the spectrum viewer.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>There are no subsets selected in the spectrum viewer.
+</pre></div>
+</div>
+</div>
+</div>
+<p><em>Developer Note:</em> Can we suppress or fix this glue/core warning?</p>
+</div>
+<div class="section" id="extract-spectrum-by-sum-over-spaxels">
+<h2>Extract Spectrum by Sum Over Spaxels<a class="headerlink" href="#extract-spectrum-by-sum-over-spaxels" title="Permalink to this headline">¶</a></h2>
+<p>Perform a simple numpy sum over all spaxels in the cube as a rudimentary extraction method. Also sum over wavelength to collapse the cube.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Sum over wavelength</span>
+<span class="n">cube_sum</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">data_win</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+
+<span class="c1"># Plots</span>
+<span class="n">f</span><span class="p">,</span> <span class="p">(</span><span class="n">ax1</span><span class="p">,</span> <span class="n">ax2</span><span class="p">)</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span> 
+<span class="n">ax1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">wavelength</span><span class="p">,</span> <span class="n">fnu_sum</span><span class="p">)</span> 
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="mf">0.95</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Spaxel sums&quot;</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Wavelength (um)&quot;</span><span class="p">)</span>  
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;SCA491 Flux Density&quot;</span><span class="p">)</span>
+
+<span class="n">ax2</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">cube_sum</span><span class="p">,</span> <span class="n">norm</span><span class="o">=</span><span class="n">LogNorm</span><span class="p">())</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Slice sums&quot;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/ifu_optimal_25_0.png" src="../../_images/ifu_optimal_25_0.png" />
+</div>
+</div>
+</div>
+<div class="section" id="extract-spectrum-in-constant-radius-circular-aperture-cylinder">
+<h2>Extract Spectrum in Constant Radius Circular Aperture (Cylinder)<a class="headerlink" href="#extract-spectrum-in-constant-radius-circular-aperture-cylinder" title="Permalink to this headline">¶</a></h2>
+<p>This method is appropriate for an extended source.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># IFU pixel scale</span>
+<span class="n">pixelscale</span> <span class="o">=</span> <span class="mf">0.1</span>  <span class="c1"># arcsec/pixel</span>
+
+<span class="c1"># CircularAperture uses xy pixels</span>
+<span class="n">center_xy</span> <span class="o">=</span> <span class="p">[</span><span class="mf">17.1</span><span class="p">,</span> <span class="mf">20.</span><span class="p">]</span>
+<span class="n">r_pix</span> <span class="o">=</span> <span class="mf">5.92</span>
+<span class="k">if</span> <span class="n">region1_exists</span><span class="p">:</span>
+    <span class="n">center_xy</span> <span class="o">=</span> <span class="p">[</span><span class="n">region1</span><span class="o">.</span><span class="n">center</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">region1</span><span class="o">.</span><span class="n">center</span><span class="o">.</span><span class="n">y</span><span class="p">]</span>   
+    <span class="n">r_pix</span> <span class="o">=</span> <span class="n">region1</span><span class="o">.</span><span class="n">radius</span>
+
+<span class="n">aperture</span> <span class="o">=</span> <span class="n">CircularAperture</span><span class="p">(</span><span class="n">center_xy</span><span class="p">,</span> <span class="n">r</span><span class="o">=</span><span class="n">r_pix</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">aperture</span><span class="p">)</span>
+
+<span class="n">cylinder_sum</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">slice2d</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>
+    <span class="n">phot_table</span> <span class="o">=</span> <span class="n">aperture_photometry</span><span class="p">(</span><span class="n">slice2d</span><span class="p">,</span> <span class="n">aperture</span><span class="p">,</span> <span class="n">wcs</span><span class="o">=</span><span class="n">w</span><span class="o">.</span><span class="n">celestial</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s1">&#39;exact&#39;</span><span class="p">)</span>
+    <span class="n">phot_table</span> <span class="o">=</span> <span class="n">aperture_photometry</span><span class="p">(</span><span class="n">slice2d</span><span class="p">,</span> <span class="n">aperture</span><span class="p">)</span>
+    <span class="n">cylinder_sum</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">phot_table</span><span class="p">[</span><span class="s1">&#39;aperture_sum&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Aperture: CircularAperture
+positions: [17.1, 20. ]
+r: 5.92
+</pre></div>
+</div>
+</div>
+</div>
+<p><em>Developer Note:</em>  Is there a way to retrieve the coordinates (RA, Dec) of the Subset1 region, for use in a SkyCircularAperture?</p>
+</div>
+<div class="section" id="extract-spectrum-in-linearly-expanding-circular-aperture-cone">
+<h2>Extract Spectrum in Linearly Expanding Circular Aperture (Cone)<a class="headerlink" href="#extract-spectrum-in-linearly-expanding-circular-aperture-cone" title="Permalink to this headline">¶</a></h2>
+<p>This method is appropriate for a point source PSF with width proportional to wavelength</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Reference wavelength for expanding aperture</span>
+<span class="n">lambda0</span> <span class="o">=</span> <span class="n">wavelength</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Reference wavelength:&#39;</span><span class="p">,</span> <span class="n">lambda0</span><span class="p">)</span>
+
+<span class="n">cone_sum</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">idx</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
+<span class="k">for</span> <span class="p">(</span><span class="n">slice2d</span><span class="p">,</span> <span class="n">wave</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">wavelength</span><span class="p">):</span>
+    <span class="n">idx</span> <span class="o">=</span> <span class="n">idx</span> <span class="o">+</span> <span class="mi">1</span>
+    <span class="n">r_cone</span> <span class="o">=</span> <span class="n">r_pix</span> <span class="o">*</span> <span class="n">wave</span> <span class="o">/</span> <span class="n">lambda0</span>
+    <span class="n">aperture_cone</span> <span class="o">=</span> <span class="n">CircularAperture</span><span class="p">(</span><span class="n">center_xy</span><span class="p">,</span> <span class="n">r</span><span class="o">=</span><span class="n">r_cone</span><span class="p">)</span>
+    <span class="n">phot_table</span> <span class="o">=</span> <span class="n">aperture_photometry</span><span class="p">(</span><span class="n">slice2d</span><span class="p">,</span> <span class="n">aperture_cone</span><span class="p">,</span> <span class="n">wcs</span><span class="o">=</span><span class="n">w</span><span class="o">.</span><span class="n">celestial</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s1">&#39;exact&#39;</span><span class="p">)</span>
+    <span class="n">cone_sum</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">phot_table</span><span class="p">[</span><span class="s1">&#39;aperture_sum&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Reference wavelength: 0.9665214562483713
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="plot-and-compare-non-optimal-spectral-extractions">
+<h2>Plot and Compare Non-optimal Spectral Extractions<a class="headerlink" href="#plot-and-compare-non-optimal-spectral-extractions" title="Permalink to this headline">¶</a></h2>
+<p>Compare spectra extracted in cylinder, cone, Cubeviz subset.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f</span><span class="p">,</span> <span class="p">(</span><span class="n">ax1</span><span class="p">)</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span> 
+
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Non-optimal spectral extractions&quot;</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Observed Wavelength (microns)&quot;</span><span class="p">)</span>  
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;Flux Density&quot;</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="mf">0.95</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mf">0.6</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">wavelength</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">cylinder_sum</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Cylinder&quot;</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;b&#39;</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">wavelength</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">cone_sum</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Cone&quot;</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;darkorange&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+<span class="k">try</span><span class="p">:</span>
+    <span class="n">ax1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">wavelength</span><span class="p">,</span> <span class="n">spectrum_subset1</span><span class="o">.</span><span class="n">flux</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Subset1&quot;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.4</span><span class="p">)</span>
+<span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;There is no Cubeviz Subset1 spectrum to plot.&quot;</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>There is no Cubeviz Subset1 spectrum to plot.
+</pre></div>
+</div>
+<img alt="../../_images/ifu_optimal_32_1.png" src="../../_images/ifu_optimal_32_1.png" />
+</div>
+</div>
+<p>Comparison of the (non-optimal) cylindrical, conical, and CubeViz subset spectral extractions.
+The conical extraction captures slightly more flux but is noisier than the other spectra at long wavelengths.
+Red-shifted Broad H-beta and narrow [O III] lines  are visible in the quasar spectra.</p>
+</div>
+<div class="section" id="webbpsf-model-psf-for-optimal-extraction">
+<h2>WebbPSF  Model PSF for Optimal Extraction<a class="headerlink" href="#webbpsf-model-psf-for-optimal-extraction" title="Permalink to this headline">¶</a></h2>
+<p>Generate PSF model cube using WebbPSF for NIRSpec IFU, or read in precomputed PSF model cube.</p>
+<p>Caution! The WebbPSF model takes about 10 hr to run.  Uncomment the following cell to do so. Otherwise, read in the precomputed WebbPSF model, which covers the full F100LP/G140H wavelength range (blue and red). For other filter/grating combinations, uncomment and run the cell below using the wavelengths from the science data set.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">#WebbPSF imports</span>
+<span class="sd">%pylab inline</span>
+<span class="sd">import webbpsf</span>
+
+<span class="sd">#WebbPSF commands used to create PSF model cube</span>
+<span class="sd">ns.image_mask = &quot;IFU&quot;  # Sets to 3x3 arcsec square mask</span>
+<span class="sd">ns = webbpsf.NIRSpec()</span>
+<span class="sd">wavelengths = wavelength*1.0E-6</span>
+<span class="sd">psfcube = ns.calc_datacube(wavelengths, fov_pixels=30, oversample=4,  add_distortion=True)</span>
+<span class="sd">psfcube.writeto(&quot;Webbpsf_ifucube.fits&quot;)</span>
+<span class="sd">&#39;&#39;&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;\n#WebbPSF imports\n%pylab inline\nimport webbpsf\n\n#WebbPSF commands used to create PSF model cube\nns.image_mask = &quot;IFU&quot;  # Sets to 3x3 arcsec square mask\nns = webbpsf.NIRSpec()\nwavelengths = wavelength*1.0E-6\npsfcube = ns.calc_datacube(wavelengths, fov_pixels=30, oversample=4,  add_distortion=True)\npsfcube.writeto(&quot;Webbpsf_ifucube.fits&quot;)\n&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">BoxPath</span> <span class="o">=</span> <span class="s2">&quot;https://data.science.stsci.edu/redirect/JWST/jwst-data_analysis_tools/IFU_optimal_extraction/&quot;</span>
+<span class="n">psf_filename</span> <span class="o">=</span> <span class="n">BoxPath</span><span class="o">+</span><span class="s2">&quot;Webbpsf_ifucube.fits&quot;</span>
+
+<span class="c1"># Load with astropy.fits.open</span>
+<span class="k">with</span> <span class="n">fits</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">psf_filename</span><span class="p">,</span> <span class="n">memmap</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span> <span class="k">as</span> <span class="n">hdulist</span><span class="p">:</span>
+    <span class="n">psf_model</span> <span class="o">=</span> <span class="n">hdulist</span><span class="p">[</span><span class="s1">&#39;DET_SAMP&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">data</span>
+    <span class="n">psf_hdr</span> <span class="o">=</span> <span class="n">hdulist</span><span class="p">[</span><span class="s1">&#39;DET_SAMP&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">header</span>
+    <span class="n">hdulist</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>    
+<span class="nb">print</span><span class="p">(</span><span class="n">psf_model</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+
+<span class="c1"># Sum over wavelength</span>
+<span class="n">psf_model_sum</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">psf_model</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+
+<span class="c1"># Sum over spaxels</span>
+<span class="n">psf_model_fnusum</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">psf_model</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
-<span class="nn">Input In [3],</span> in <span class="ni">&lt;cell line: 7&gt;</span><span class="nt">()</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">filename</span> <span class="o">=</span> <span class="n">BoxPath</span> <span class="o">+</span> <span class="s2">&quot;NRS00001-faintQSO-F100LP-G140H-01_1_491_SE_2020-08-25T12h15m00_s3d.fits&quot;</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="c1"># Open and inspect the file and WCS</span>
-<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="c1"># Load with astropy.fits.open</span>
-<span class="ne">----&gt; </span><span class="mi">7</span> <span class="k">with</span> <span class="n">fits</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">memmap</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span> <span class="k">as</span> <span class="n">hdulist</span><span class="p">:</span>
-<span class="g g-Whitespace">      </span><span class="mi">8</span>     <span class="n">sci</span> <span class="o">=</span> <span class="n">hdulist</span><span class="p">[</span><span class="s1">&#39;SCI&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">data</span>
-<span class="g g-Whitespace">      </span><span class="mi">9</span>     <span class="n">err</span> <span class="o">=</span> <span class="n">hdulist</span><span class="p">[</span><span class="s1">&#39;ERR&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">data</span>
+<span class="nn">Input In [13],</span> in <span class="ni">&lt;cell line: 5&gt;</span><span class="nt">()</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">psf_filename</span> <span class="o">=</span> <span class="n">BoxPath</span><span class="o">+</span><span class="s2">&quot;Webbpsf_ifucube.fits&quot;</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="c1"># Load with astropy.fits.open</span>
+<span class="ne">----&gt; </span><span class="mi">5</span> <span class="k">with</span> <span class="n">fits</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">psf_filename</span><span class="p">,</span> <span class="n">memmap</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span> <span class="k">as</span> <span class="n">hdulist</span><span class="p">:</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span>     <span class="n">psf_model</span> <span class="o">=</span> <span class="n">hdulist</span><span class="p">[</span><span class="s1">&#39;DET_SAMP&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">data</span>
+<span class="g g-Whitespace">      </span><span class="mi">7</span>     <span class="n">psf_hdr</span> <span class="o">=</span> <span class="n">hdulist</span><span class="p">[</span><span class="s1">&#39;DET_SAMP&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">header</span>
 
 <span class="nn">File /usr/share/miniconda/lib/python3.9/site-packages/astropy/io/fits/hdu/hdulist.py:176,</span> in <span class="ni">fitsopen</span><span class="nt">(name, mode, memmap, save_backup, cache, lazy_load_hdus, ignore_missing_simple, **kwargs)</span>
 <span class="g g-Whitespace">    </span><span class="mi">173</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">name</span><span class="p">:</span>
@@ -676,244 +1076,6 @@ demonstrate a number of regular extraction techniques, including subset extracti
 <span class="g g-Whitespace">   </span><span class="mi">1101</span>         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_sslobj</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="nb">len</span><span class="p">)</span>
 
 <span class="ne">KeyboardInterrupt</span>: 
-</pre></div>
-</div>
-</div>
-</div>
-<p><em>Developer Note:</em> Can we fix or suppress this AsdfWarning?</p>
-<p><em>Developer Note:</em>  Is there a way to read in with only Spectrum1D to perform all of our cube operations, not using fits.open()?</p>
-</div>
-<div class="section" id="visualize-science-data-with-cubeviz">
-<h2>Visualize Science Data with Cubeviz<a class="headerlink" href="#visualize-science-data-with-cubeviz" title="Permalink to this headline">¶</a></h2>
-<p><em>Developer Note:</em> Cubeviz incompatible with jupyter_client 6.1.6.  Use jupyter_client 5.3.5 instead.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cubeviz</span> <span class="o">=</span> <span class="n">CubeViz</span><span class="p">()</span>
-<span class="n">cubeviz</span><span class="o">.</span><span class="n">app</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="section" id="ui-instructions">
-<h3>UI Instructions:<a class="headerlink" href="#ui-instructions" title="Permalink to this headline">¶</a></h3>
-<ul class="simple">
-<li><p>Load science datacube into Cubeviz using the next code cell below</p></li>
-<li><p>Go to the Hammer-and-Screwdriver icon: Gear icon: Layer in the leftmost image viewer</p></li>
-<li><p>In that tab, change the Linear stretch to 90 percentile to see the faint QSO target at (x,y) ~ (17, 21)</p></li>
-<li><p>Scrubbing through the cube also helps to locate the source</p></li>
-<li><p>Select a circular subset region centered on the source.</p></li>
-<li><p>Note that the region is pixelated and doesn’t include fractional pixels</p></li>
-<li><p>Change the collapse method to “Sum” in spectrum viewer: Gear icon : Viewer</p></li>
-<li><p>–This “Sum” method yields our subset extraction</p></li>
-<li><p>Change the vertical zoom to see the spectral features in the Subset spectrum</p></li>
-</ul>
-<p><em>Developer Notes</em>:</p>
-<p>(1) Image viewer contrast settings change when you click on the side bar to expand/contract jupyter scroll window</p>
-<p>(2) Spectrum viewer: Viewer cube collapse method should default to Sum (not Maximum)</p>
-<p>(3) Spectrum viewer y scale returns to autoscale when the region is moved, and y-zoom has to be adjusted again</p>
-<p>(4) Region selection appears away from cursor after opening hammer-and-screwdriver to change cube viewer contrast</p>
-</div>
-</div>
-<div class="section" id="load-cube-into-cubeviz">
-<h2>Load Cube into Cubeviz<a class="headerlink" href="#load-cube-into-cubeviz" title="Permalink to this headline">¶</a></h2>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Data from local directory</span>
-<span class="c1"># cubeviz.app.load_data(filename)</span>
-
-<span class="c1"># Data from url:</span>
-<span class="n">url</span> <span class="o">=</span> <span class="n">filename</span>
-<span class="n">df</span> <span class="o">=</span> <span class="n">download_file</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
-<span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>  <span class="c1"># Sleep to avoid glue-jupyter timing issue</span>
-<span class="n">cubeviz</span><span class="o">.</span><span class="n">app</span><span class="o">.</span><span class="n">load_data</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p><em>Developer Note:</em> Spectral cube does not yet recognize JWST NIRSpec IFU datacubes, giving the above warning
-for each FITS extension.</p>
-</div>
-<div class="section" id="export-region-from-cubeviz">
-<h2>Export Region from Cubeviz<a class="headerlink" href="#export-region-from-cubeviz" title="Permalink to this headline">¶</a></h2>
-<p>Export the region defined by the user in Cubeviz as an astropy CirclePixel Region, which has units of pixels.</p>
-<p><em>Developer Note:</em> cubeviz.app.get_subsets_from_viewer method doesn’t work if there are more than 2 datasets selected in the spectrum viewer:</p>
-<p>#region1 = cubeviz.app.get_subsets_from_viewer(‘spectrum-viewer’)</p>
-<p>#print(region1[‘Subset1’])</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cubeviz_data</span> <span class="o">=</span> <span class="n">cubeviz</span><span class="o">.</span><span class="n">app</span><span class="o">.</span><span class="n">data_collection</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-<span class="k">try</span><span class="p">:</span>
-    <span class="n">region1</span> <span class="o">=</span> <span class="n">cubeviz_data</span><span class="o">.</span><span class="n">get_selection_definition</span><span class="p">(</span><span class="nb">format</span><span class="o">=</span><span class="s1">&#39;astropy-regions&#39;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">region1</span><span class="p">)</span>
-    <span class="n">region1_exists</span> <span class="o">=</span> <span class="kc">True</span>
-<span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;There are no regions selected in the cube viewer.&quot;</span><span class="p">)</span>
-    <span class="n">region1_exists</span> <span class="o">=</span> <span class="kc">False</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="section" id="extract-subset-spectrum-in-cubeviz-spectrum-viewer">
-<h2>Extract Subset Spectrum in Cubeviz Spectrum Viewer<a class="headerlink" href="#extract-subset-spectrum-in-cubeviz-spectrum-viewer" title="Permalink to this headline">¶</a></h2>
-<p>Retrieve the collapsed spectrum (Subset1) of the user-defined region from the Spectrum Viewer as a Spectrum1D object.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">try</span><span class="p">:</span>
-    <span class="n">spectrum_subset1</span> <span class="o">=</span> <span class="n">cubeviz</span><span class="o">.</span><span class="n">app</span><span class="o">.</span><span class="n">get_data_from_viewer</span><span class="p">(</span><span class="s1">&#39;spectrum-viewer&#39;</span><span class="p">)[</span><span class="s1">&#39;Subset 1&#39;</span><span class="p">]</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">spectrum_subset1</span><span class="p">)</span>
-<span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;There are no subsets selected in the spectrum viewer.&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p><em>Developer Note:</em> Can we suppress or fix this glue/core warning?</p>
-</div>
-<div class="section" id="extract-spectrum-by-sum-over-spaxels">
-<h2>Extract Spectrum by Sum Over Spaxels<a class="headerlink" href="#extract-spectrum-by-sum-over-spaxels" title="Permalink to this headline">¶</a></h2>
-<p>Perform a simple numpy sum over all spaxels in the cube as a rudimentary extraction method. Also sum over wavelength to collapse the cube.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Sum over wavelength</span>
-<span class="n">cube_sum</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">data_win</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
-
-<span class="c1"># Plots</span>
-<span class="n">f</span><span class="p">,</span> <span class="p">(</span><span class="n">ax1</span><span class="p">,</span> <span class="n">ax2</span><span class="p">)</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span> 
-<span class="n">ax1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">wavelength</span><span class="p">,</span> <span class="n">fnu_sum</span><span class="p">)</span> 
-<span class="n">ax1</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="mf">0.95</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">)</span>
-<span class="n">ax1</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Spaxel sums&quot;</span><span class="p">)</span>
-<span class="n">ax1</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Wavelength (um)&quot;</span><span class="p">)</span>  
-<span class="n">ax1</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;SCA491 Flux Density&quot;</span><span class="p">)</span>
-
-<span class="n">ax2</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">cube_sum</span><span class="p">,</span> <span class="n">norm</span><span class="o">=</span><span class="n">LogNorm</span><span class="p">())</span>
-<span class="n">ax2</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Slice sums&quot;</span><span class="p">)</span>
-
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="section" id="extract-spectrum-in-constant-radius-circular-aperture-cylinder">
-<h2>Extract Spectrum in Constant Radius Circular Aperture (Cylinder)<a class="headerlink" href="#extract-spectrum-in-constant-radius-circular-aperture-cylinder" title="Permalink to this headline">¶</a></h2>
-<p>This method is appropriate for an extended source.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># IFU pixel scale</span>
-<span class="n">pixelscale</span> <span class="o">=</span> <span class="mf">0.1</span>  <span class="c1"># arcsec/pixel</span>
-
-<span class="c1"># CircularAperture uses xy pixels</span>
-<span class="n">center_xy</span> <span class="o">=</span> <span class="p">[</span><span class="mf">17.1</span><span class="p">,</span> <span class="mf">20.</span><span class="p">]</span>
-<span class="n">r_pix</span> <span class="o">=</span> <span class="mf">5.92</span>
-<span class="k">if</span> <span class="n">region1_exists</span><span class="p">:</span>
-    <span class="n">center_xy</span> <span class="o">=</span> <span class="p">[</span><span class="n">region1</span><span class="o">.</span><span class="n">center</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">region1</span><span class="o">.</span><span class="n">center</span><span class="o">.</span><span class="n">y</span><span class="p">]</span>   
-    <span class="n">r_pix</span> <span class="o">=</span> <span class="n">region1</span><span class="o">.</span><span class="n">radius</span>
-
-<span class="n">aperture</span> <span class="o">=</span> <span class="n">CircularAperture</span><span class="p">(</span><span class="n">center_xy</span><span class="p">,</span> <span class="n">r</span><span class="o">=</span><span class="n">r_pix</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">aperture</span><span class="p">)</span>
-
-<span class="n">cylinder_sum</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="k">for</span> <span class="n">slice2d</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>
-    <span class="n">phot_table</span> <span class="o">=</span> <span class="n">aperture_photometry</span><span class="p">(</span><span class="n">slice2d</span><span class="p">,</span> <span class="n">aperture</span><span class="p">,</span> <span class="n">wcs</span><span class="o">=</span><span class="n">w</span><span class="o">.</span><span class="n">celestial</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s1">&#39;exact&#39;</span><span class="p">)</span>
-    <span class="n">phot_table</span> <span class="o">=</span> <span class="n">aperture_photometry</span><span class="p">(</span><span class="n">slice2d</span><span class="p">,</span> <span class="n">aperture</span><span class="p">)</span>
-    <span class="n">cylinder_sum</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">phot_table</span><span class="p">[</span><span class="s1">&#39;aperture_sum&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p><em>Developer Note:</em>  Is there a way to retrieve the coordinates (RA, Dec) of the Subset1 region, for use in a SkyCircularAperture?</p>
-</div>
-<div class="section" id="extract-spectrum-in-linearly-expanding-circular-aperture-cone">
-<h2>Extract Spectrum in Linearly Expanding Circular Aperture (Cone)<a class="headerlink" href="#extract-spectrum-in-linearly-expanding-circular-aperture-cone" title="Permalink to this headline">¶</a></h2>
-<p>This method is appropriate for a point source PSF with width proportional to wavelength</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Reference wavelength for expanding aperture</span>
-<span class="n">lambda0</span> <span class="o">=</span> <span class="n">wavelength</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Reference wavelength:&#39;</span><span class="p">,</span> <span class="n">lambda0</span><span class="p">)</span>
-
-<span class="n">cone_sum</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="n">idx</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
-<span class="k">for</span> <span class="p">(</span><span class="n">slice2d</span><span class="p">,</span> <span class="n">wave</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">wavelength</span><span class="p">):</span>
-    <span class="n">idx</span> <span class="o">=</span> <span class="n">idx</span> <span class="o">+</span> <span class="mi">1</span>
-    <span class="n">r_cone</span> <span class="o">=</span> <span class="n">r_pix</span> <span class="o">*</span> <span class="n">wave</span> <span class="o">/</span> <span class="n">lambda0</span>
-    <span class="n">aperture_cone</span> <span class="o">=</span> <span class="n">CircularAperture</span><span class="p">(</span><span class="n">center_xy</span><span class="p">,</span> <span class="n">r</span><span class="o">=</span><span class="n">r_cone</span><span class="p">)</span>
-    <span class="n">phot_table</span> <span class="o">=</span> <span class="n">aperture_photometry</span><span class="p">(</span><span class="n">slice2d</span><span class="p">,</span> <span class="n">aperture_cone</span><span class="p">,</span> <span class="n">wcs</span><span class="o">=</span><span class="n">w</span><span class="o">.</span><span class="n">celestial</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s1">&#39;exact&#39;</span><span class="p">)</span>
-    <span class="n">cone_sum</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">phot_table</span><span class="p">[</span><span class="s1">&#39;aperture_sum&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="section" id="plot-and-compare-non-optimal-spectral-extractions">
-<h2>Plot and Compare Non-optimal Spectral Extractions<a class="headerlink" href="#plot-and-compare-non-optimal-spectral-extractions" title="Permalink to this headline">¶</a></h2>
-<p>Compare spectra extracted in cylinder, cone, Cubeviz subset.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f</span><span class="p">,</span> <span class="p">(</span><span class="n">ax1</span><span class="p">)</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span> 
-
-<span class="n">ax1</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Non-optimal spectral extractions&quot;</span><span class="p">)</span>
-<span class="n">ax1</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Observed Wavelength (microns)&quot;</span><span class="p">)</span>  
-<span class="n">ax1</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;Flux Density&quot;</span><span class="p">)</span>
-<span class="n">ax1</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="mf">0.95</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">)</span>
-<span class="n">ax1</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mf">0.6</span><span class="p">)</span>
-<span class="n">ax1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">wavelength</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">cylinder_sum</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Cylinder&quot;</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;b&#39;</span><span class="p">)</span>
-<span class="n">ax1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">wavelength</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">cone_sum</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Cone&quot;</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;darkorange&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
-<span class="k">try</span><span class="p">:</span>
-    <span class="n">ax1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">wavelength</span><span class="p">,</span> <span class="n">spectrum_subset1</span><span class="o">.</span><span class="n">flux</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Subset1&quot;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.4</span><span class="p">)</span>
-<span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;There is no Cubeviz Subset1 spectrum to plot.&quot;</span><span class="p">)</span>
-<span class="n">ax1</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
-
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>Comparison of the (non-optimal) cylindrical, conical, and CubeViz subset spectral extractions.
-The conical extraction captures slightly more flux but is noisier than the other spectra at long wavelengths.
-Red-shifted Broad H-beta and narrow [O III] lines  are visible in the quasar spectra.</p>
-</div>
-<div class="section" id="webbpsf-model-psf-for-optimal-extraction">
-<h2>WebbPSF  Model PSF for Optimal Extraction<a class="headerlink" href="#webbpsf-model-psf-for-optimal-extraction" title="Permalink to this headline">¶</a></h2>
-<p>Generate PSF model cube using WebbPSF for NIRSpec IFU, or read in precomputed PSF model cube.</p>
-<p>Caution! The WebbPSF model takes about 10 hr to run.  Uncomment the following cell to do so. Otherwise, read in the precomputed WebbPSF model, which covers the full F100LP/G140H wavelength range (blue and red). For other filter/grating combinations, uncomment and run the cell below using the wavelengths from the science data set.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&#39;&#39;&#39;</span>
-<span class="sd">#WebbPSF imports</span>
-<span class="sd">%pylab inline</span>
-<span class="sd">import webbpsf</span>
-
-<span class="sd">#WebbPSF commands used to create PSF model cube</span>
-<span class="sd">ns.image_mask = &quot;IFU&quot;  # Sets to 3x3 arcsec square mask</span>
-<span class="sd">ns = webbpsf.NIRSpec()</span>
-<span class="sd">wavelengths = wavelength*1.0E-6</span>
-<span class="sd">psfcube = ns.calc_datacube(wavelengths, fov_pixels=30, oversample=4,  add_distortion=True)</span>
-<span class="sd">psfcube.writeto(&quot;Webbpsf_ifucube.fits&quot;)</span>
-<span class="sd">&#39;&#39;&#39;</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">BoxPath</span> <span class="o">=</span> <span class="s2">&quot;https://data.science.stsci.edu/redirect/JWST/jwst-data_analysis_tools/IFU_optimal_extraction/&quot;</span>
-<span class="n">psf_filename</span> <span class="o">=</span> <span class="n">BoxPath</span><span class="o">+</span><span class="s2">&quot;Webbpsf_ifucube.fits&quot;</span>
-
-<span class="c1"># Load with astropy.fits.open</span>
-<span class="k">with</span> <span class="n">fits</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">psf_filename</span><span class="p">,</span> <span class="n">memmap</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span> <span class="k">as</span> <span class="n">hdulist</span><span class="p">:</span>
-    <span class="n">psf_model</span> <span class="o">=</span> <span class="n">hdulist</span><span class="p">[</span><span class="s1">&#39;DET_SAMP&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">data</span>
-    <span class="n">psf_hdr</span> <span class="o">=</span> <span class="n">hdulist</span><span class="p">[</span><span class="s1">&#39;DET_SAMP&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">header</span>
-    <span class="n">hdulist</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>    
-<span class="nb">print</span><span class="p">(</span><span class="n">psf_model</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
-
-<span class="c1"># Sum over wavelength</span>
-<span class="n">psf_model_sum</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">psf_model</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
-
-<span class="c1"># Sum over spaxels</span>
-<span class="n">psf_model_fnusum</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">psf_model</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
