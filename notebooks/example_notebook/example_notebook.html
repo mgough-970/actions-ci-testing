@@ -56,7 +56,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="IFU Data Modeling" href="../IFU_cube_continuum_fit/NGC4151_FeII_ContinuumFit.html" />
-    <link rel="prev" title="Welcome JDAT Notebooks" href="../../intro.html" />
+    <link rel="prev" title="MIRI MRS Spectroscopy of a Late M Star 1 - Running the Pipeline" href="../MRS_Mstar_analysis/JWST_Mstar_dataAnalysis_runpipeline.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -97,6 +97,18 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toctree-l1">
   <a class="reference internal" href="../../intro.html">
    Welcome JDAT Notebooks
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  MRS Mstar Analysis
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../MRS_Mstar_analysis/JWST_Mstar_dataAnalysis_runpipeline.html">
+   MIRI MRS Spectroscopy of a Late M Star  1 - Running the Pipeline
   </a>
  </li>
 </ul>
@@ -225,6 +237,9 @@ const thebe_selector_output = ".output, .cell_output"
         
         
         
+        <button type="button" class="btn btn-secondary topbarbtn"
+            onclick="initThebeSBT()" title="Launch Thebe" data-toggle="tooltip" data-placement="left"><i
+                class="fas fa-play"></i><span style="margin-left: .4em;">Live Code</span></button>
         
     </div>
 </div>
@@ -420,7 +435,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html"><div><i>Table masked=True length=1</i>
-<table id="table140061105322976" class="table-striped table-bordered table-condensed">
+<table id="table140623935548000" class="table-striped table-bordered table-condensed">
 <thead><tr><th>obsID</th><th>obs_collection</th><th>dataproduct_type</th><th>obs_id</th><th>description</th><th>type</th><th>dataURI</th><th>productType</th><th>productGroupDescription</th><th>productSubGroupDescription</th><th>productDocumentationURL</th><th>project</th><th>prvversion</th><th>proposal_id</th><th>productFilename</th><th>size</th><th>parent_obsid</th><th>dataRights</th><th>calib_level</th></tr></thead>
 <thead><tr><th>str6</th><th>str6</th><th>str10</th><th>str36</th><th>str59</th><th>str1</th><th>str110</th><th>str7</th><th>str28</th><th>str8</th><th>str1</th><th>str6</th><th>str1</th><th>str7</th><th>str44</th><th>int64</th><th>str6</th><th>str6</th><th>int64</th></tr></thead>
 <tr><td>549936</td><td>Kepler</td><td>timeseries</td><td>kplr008957091_lc_Q000000000011111111</td><td>Target Pixel Long Cadence (TPL) - Q14</td><td>C</td><td>mast:KEPLER/url/missions/kepler/target_pixel_files/0089/008957091/kplr008957091-2012277125453_lpd-targ.fits.gz</td><td>SCIENCE</td><td>Minimum Recommended Products</td><td>LPD-TARG</td><td>--</td><td>Kepler</td><td>--</td><td>GO30032</td><td>kplr008957091-2012277125453_lpd-targ.fits.gz</td><td>4365449</td><td>549936</td><td>PUBLIC</td><td>2</td></tr>
@@ -441,7 +456,7 @@ const thebe_selector_output = ".output, .cell_output"
 </pre></div>
 </div>
 <div class="output text_html"><div><i>Table length=1</i>
-<table id="table140061105345344" class="table-striped table-bordered table-condensed">
+<table id="table140623935548240" class="table-striped table-bordered table-condensed">
 <thead><tr><th>Local Path</th><th>Status</th><th>Message</th><th>URL</th></tr></thead>
 <thead><tr><th>str103</th><th>str8</th><th>object</th><th>object</th></tr></thead>
 <tr><td>./mastDownload/Kepler/kplr008957091_lc_Q000000000011111111/kplr008957091-2012277125453_lpd-targ.fits.gz</td><td>COMPLETE</td><td>None</td><td>None</td></tr>
@@ -503,8 +518,8 @@ const thebe_selector_output = ".output, .cell_output"
     {
         requestKernel: true,
         binderOptions: {
-            repo: "binder-examples/jupyter-stacks-datascience",
-            ref: "master",
+            repo: "therealzoidberg/pyinthehub",
+            ref: "main",
         },
         codeMirrorConfig: {
             theme: "abcdef",
@@ -524,11 +539,11 @@ const thebe_selector_output = ".output, .cell_output"
             
                 <!-- Previous / next buttons -->
 <div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="../../intro.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="../MRS_Mstar_analysis/JWST_Mstar_dataAnalysis_runpipeline.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Welcome JDAT Notebooks</p>
+            <p class="prev-next-title">MIRI MRS Spectroscopy of a Late M Star  1 - Running the Pipeline</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="../IFU_cube_continuum_fit/NGC4151_FeII_ContinuumFit.html" title="next page">
