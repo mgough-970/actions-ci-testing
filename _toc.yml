@@ -17,7 +17,6 @@ parts:
     - caption: MRS Mstar Analysis
       chapters:
           - file: notebooks/MRS_Mstar_analysis/JWST_Mstar_dataAnalysis_usecase.ipynb
-          - file: notebooks/MRS_Mstar_analysis/JWST_Mstar_dataAnalysis_runpipeline.ipynb
     - caption: Example Notebook
       chapters:
           - file: notebooks/example_notebook/example_notebook.ipynb
