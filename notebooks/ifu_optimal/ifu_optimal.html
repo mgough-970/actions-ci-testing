@@ -28,6 +28,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/main.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
@@ -52,10 +53,10 @@ const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="prev" title="IFU Data Modeling" href="../IFU_cube_continuum_fit/NGC4151_FeII_ContinuumFit.html" />
+    <link rel="prev" title="NIRSpec MOS Optimal Spectral Extraction" href="../optimal_extraction/Spectral%20Extraction-static.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -101,13 +102,40 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
-  MRS Mstar Analysis
+  NIRISS WFSS Spectra
  </span>
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../MRS_Mstar_analysis/JWST_Mstar_dataAnalysis_runpipeline.html">
-   MIRI MRS Spectroscopy of a Late M Star  1 - Running the Pipeline
+  <a class="reference internal" href="../NIRISS_WFSS_postpipeline/00.%20Optimal%20extraction.html">
+   Part 0: Optimal Extraction of NIRISS WFSS Spectrum
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../NIRISS_WFSS_postpipeline/01.%20Combine%20and%20normalize%201D%20spectra.html">
+   Part 1: Combine One-Dimensional NIRISS WFSS Spectra
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../NIRISS_WFSS_postpipeline/02.%20Cross%20correlation%20template.html">
+   Part 2: Cross Correlation to Determine Redshift of NIRISS WFSS Spectra
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../NIRISS_WFSS_postpipeline/03.%20Spatially%20resolved%20emission%20line%20map.html">
+   Part 3: Spatially Resolved Emission Line Map of NIRISS WFSS Spectra
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  MOS Spectroscopy
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../mos-spectroscopy/MOSspec_sv06_revised.html">
+   MOS Spectroscopy of Typical Extragalactic Field
   </a>
  </li>
 </ul>
@@ -131,7 +159,19 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../IFU_cube_continuum_fit/NGC4151_FeII_ContinuumFit.html">
-   IFU Data Modeling
+   IFU Data Modeling NGC 4151 Notebook #1  - Isolating Line Emission
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  PSF Matched Photometry
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../NIRCam_PSF-matched_photometry/NIRCam_PSF_matched_multiband_photometry.html">
+   NIRCam PSF-matched multiband photometry
   </a>
  </li>
 </ul>
@@ -141,6 +181,16 @@ const thebe_selector_output = ".output, .cell_output"
  </span>
 </p>
 <ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../MIRI_IFU_YSOs_in_the_LMC/isha_nayak_ysos_in_the_lmc.html">
+   JWST Data Analysis
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../optimal_extraction/Spectral%20Extraction-static.html">
+   NIRSpec MOS Optimal Spectral Extraction
+  </a>
+ </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
    Baseline: NIRSpec IFU Optimal Point Source Extraction
@@ -579,7 +629,197 @@ CDELT : 2.77777781916989e-05  2.77777781916989e-05  2.3499999952036797e-10
 NAXIS : 33  39  2059
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0.96652146 0.96675646 0.96699146 ... 1.44968146 1.44991646 1.45015146]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/usr/share/miniconda/lib/python3.9/site-packages/asdf/entry_points.py:46: AsdfWarning: asdf.extensions plugin from package asdf-astropy==0.2.0 failed to load:
+
+ContextualVersionConflict: (jsonschema 3.2.0 (/usr/share/miniconda/lib/python3.9/site-packages), Requirement.parse(&#39;jsonschema&gt;=4.0.1&#39;), {&#39;asdf&#39;})
+  warnings.warn(
+/usr/share/miniconda/lib/python3.9/site-packages/asdf/entry_points.py:46: AsdfWarning: asdf.extensions plugin from package gwcs==0.18.1 failed to load:
+
+ContextualVersionConflict: (jsonschema 3.2.0 (/usr/share/miniconda/lib/python3.9/site-packages), Requirement.parse(&#39;jsonschema&gt;=4.0.1&#39;), {&#39;asdf&#39;})
+  warnings.warn(
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/usr/share/miniconda/lib/python3.9/site-packages/asdf/entry_points.py:46: AsdfWarning: asdf.extensions plugin from package jwst==1.4.3 failed to load:
+
+ContextualVersionConflict: (jsonschema 3.2.0 (/usr/share/miniconda/lib/python3.9/site-packages), Requirement.parse(&#39;jsonschema&gt;=4.0.1&#39;), {&#39;asdf&#39;})
+  warnings.warn(
+/usr/share/miniconda/lib/python3.9/site-packages/asdf/entry_points.py:46: AsdfWarning: asdf_extensions plugin from package jwst==1.4.3 failed to load:
+
+ContextualVersionConflict: (jsonschema 3.2.0 (/usr/share/miniconda/lib/python3.9/site-packages), Requirement.parse(&#39;jsonschema&gt;=4.0.1&#39;), {&#39;asdf&#39;})
+  warnings.warn(
+/usr/share/miniconda/lib/python3.9/site-packages/asdf/entry_points.py:46: AsdfWarning: asdf_extensions plugin from package specutils==1.7.0 failed to load:
+
+ContextualVersionConflict: (jsonschema 3.2.0 (/usr/share/miniconda/lib/python3.9/site-packages), Requirement.parse(&#39;jsonschema&gt;=4.0.1&#39;), {&#39;asdf&#39;})
+  warnings.warn(
+/usr/share/miniconda/lib/python3.9/site-packages/asdf/entry_points.py:46: AsdfWarning: asdf_extensions plugin from package stpipe==0.3.1 failed to load:
+
+ContextualVersionConflict: (jsonschema 3.2.0 (/usr/share/miniconda/lib/python3.9/site-packages), Requirement.parse(&#39;jsonschema&gt;=4.0.1&#39;), {&#39;asdf&#39;})
+  warnings.warn(
+/usr/share/miniconda/lib/python3.9/site-packages/asdf/entry_points.py:46: AsdfWarning: asdf_extensions plugin from package asdf==2.11.0 failed to load:
+
+VersionConflict: (jsonschema 3.2.0 (/usr/share/miniconda/lib/python3.9/site-packages), Requirement.parse(&#39;jsonschema&gt;=4.0.1&#39;))
+  warnings.warn(
+/usr/share/miniconda/lib/python3.9/site-packages/asdf/entry_points.py:46: AsdfWarning: asdf.resource_mappings plugin from package asdf-astropy==0.2.0 failed to load:
+
+ContextualVersionConflict: (jsonschema 3.2.0 (/usr/share/miniconda/lib/python3.9/site-packages), Requirement.parse(&#39;jsonschema&gt;=4.0.1&#39;), {&#39;asdf&#39;})
+  warnings.warn(
+/usr/share/miniconda/lib/python3.9/site-packages/asdf/entry_points.py:46: AsdfWarning: asdf.resource_mappings plugin from package asdf-coordinates-schemas==0.1.0 failed to load:
+
+ContextualVersionConflict: (jsonschema 3.2.0 (/usr/share/miniconda/lib/python3.9/site-packages), Requirement.parse(&#39;jsonschema&gt;=4.0.1&#39;), {&#39;asdf&#39;})
+  warnings.warn(
+/usr/share/miniconda/lib/python3.9/site-packages/asdf/entry_points.py:46: AsdfWarning: asdf.resource_mappings plugin from package asdf-wcs-schemas==0.1.1 failed to load:
+
+ContextualVersionConflict: (jsonschema 3.2.0 (/usr/share/miniconda/lib/python3.9/site-packages), Requirement.parse(&#39;jsonschema&gt;=4.0.1&#39;), {&#39;asdf&#39;})
+  warnings.warn(
+/usr/share/miniconda/lib/python3.9/site-packages/asdf/entry_points.py:46: AsdfWarning: asdf.resource_mappings plugin from package jwst==1.4.3 failed to load:
+
+ContextualVersionConflict: (jsonschema 3.2.0 (/usr/share/miniconda/lib/python3.9/site-packages), Requirement.parse(&#39;jsonschema&gt;=4.0.1&#39;), {&#39;asdf&#39;})
+  warnings.warn(
+/usr/share/miniconda/lib/python3.9/site-packages/asdf/entry_points.py:46: AsdfWarning: asdf.resource_mappings plugin from package asdf==2.11.0 failed to load:
+
+VersionConflict: (jsonschema 3.2.0 (/usr/share/miniconda/lib/python3.9/site-packages), Requirement.parse(&#39;jsonschema&gt;=4.0.1&#39;))
+  warnings.warn(
+</pre></div>
+</div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="nn">Input In [3],</span> in <span class="ni">&lt;cell line: 16&gt;</span><span class="nt">()</span>
+<span class="g g-Whitespace">     </span><span class="mi">13</span>     <span class="nb">print</span><span class="p">(</span><span class="n">w</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">15</span> <span class="c1"># Load with Spectrum1D    </span>
+<span class="ne">---&gt; </span><span class="mi">16</span> <span class="n">spec1d</span> <span class="o">=</span> <span class="n">Spectrum1D</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">18</span> <span class="c1"># Wavelengths</span>
+<span class="g g-Whitespace">     </span><span class="mi">19</span> <span class="n">wavelength</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">spec1d</span><span class="o">.</span><span class="n">spectral_axis</span><span class="o">.</span><span class="n">value</span><span class="p">)</span>
+
+<span class="nn">File /usr/share/miniconda/lib/python3.9/site-packages/astropy/nddata/mixins/ndio.py:59,</span> in <span class="ni">NDDataRead.__call__</span><span class="nt">(self, *args, **kwargs)</span>
+<span class="g g-Whitespace">     </span><span class="mi">58</span> <span class="k">def</span> <span class="fm">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<span class="ne">---&gt; </span><span class="mi">59</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">registry</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_cls</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+<span class="nn">File /usr/share/miniconda/lib/python3.9/site-packages/astropy/io/registry/core.py:199,</span> in <span class="ni">UnifiedInputRegistry.read</span><span class="nt">(self, cls, format, cache, *args, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">195</span>     <span class="nb">format</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_valid_format</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">196</span>         <span class="s1">&#39;read&#39;</span><span class="p">,</span> <span class="bp">cls</span><span class="p">,</span> <span class="n">path</span><span class="p">,</span> <span class="n">fileobj</span><span class="p">,</span> <span class="n">args</span><span class="p">,</span> <span class="n">kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">198</span> <span class="n">reader</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_reader</span><span class="p">(</span><span class="nb">format</span><span class="p">,</span> <span class="bp">cls</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">199</span> <span class="n">data</span> <span class="o">=</span> <span class="n">reader</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">201</span> <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="bp">cls</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">202</span>     <span class="c1"># User has read with a subclass where only the parent class is</span>
+<span class="g g-Whitespace">    </span><span class="mi">203</span>     <span class="c1"># registered.  This returns the parent class, so try coercing</span>
+<span class="g g-Whitespace">    </span><span class="mi">204</span>     <span class="c1"># to desired subclass.</span>
+<span class="g g-Whitespace">    </span><span class="mi">205</span>     <span class="k">try</span><span class="p">:</span>
+
+<span class="nn">File /usr/share/miniconda/lib/python3.9/site-packages/specutils/io/default_loaders/jwst_reader.py:531,</span> in <span class="ni">jwst_s3d_single_loader</span><span class="nt">(filename, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">513</span> <span class="nd">@data_loader</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">514</span>     <span class="s2">&quot;JWST s3d&quot;</span><span class="p">,</span> <span class="n">identifier</span><span class="o">=</span><span class="n">identify_jwst_s3d_fits</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">Spectrum1D</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">515</span>     <span class="n">extensions</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;fits&#39;</span><span class="p">],</span> <span class="n">priority</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">516</span> <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">517</span> <span class="k">def</span> <span class="nf">jwst_s3d_single_loader</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">518</span>     <span class="sd">&quot;&quot;&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">519</span><span class="sd">     Loader for JWST s3d 3D rectified spectral data in FITS format.</span>
+<span class="g g-Whitespace">    </span><span class="mi">520</span><span class="sd"> </span>
+<span class="sd">   (...)</span>
+<span class="g g-Whitespace">    </span><span class="mi">529</span><span class="sd">         The spectrum contained in the file.</span>
+<span class="g g-Whitespace">    </span><span class="mi">530</span><span class="sd">     &quot;&quot;&quot;</span>
+<span class="ne">--&gt; </span><span class="mi">531</span>     <span class="n">spectrum_list</span> <span class="o">=</span> <span class="n">_jwst_s3d_loader</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">532</span>     <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">spectrum_list</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">533</span>         <span class="k">return</span> <span class="n">spectrum_list</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+<span class="nn">File /usr/share/miniconda/lib/python3.9/site-packages/specutils/io/default_loaders/jwst_reader.py:558,</span> in <span class="ni">_jwst_s3d_loader</span><span class="nt">(filename, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">555</span> <span class="n">spectra</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="g g-Whitespace">    </span><span class="mi">557</span> <span class="c1"># Get a list of GWCS objects from the slits</span>
+<span class="ne">--&gt; </span><span class="mi">558</span> <span class="k">with</span> <span class="n">asdf</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span> <span class="k">as</span> <span class="n">af</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">559</span>     <span class="n">wcslist</span> <span class="o">=</span> <span class="p">[</span><span class="n">af</span><span class="o">.</span><span class="n">tree</span><span class="p">[</span><span class="s2">&quot;meta&quot;</span><span class="p">][</span><span class="s2">&quot;wcs&quot;</span><span class="p">]]</span>
+<span class="g g-Whitespace">    </span><span class="mi">561</span> <span class="k">with</span> <span class="n">fits</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">memmap</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span> <span class="k">as</span> <span class="n">hdulist</span><span class="p">:</span>
+
+<span class="nn">File /usr/share/miniconda/lib/python3.9/site-packages/asdf/asdf.py:1762,</span> in <span class="ni">open_asdf</span><span class="nt">(fd, uri, mode, validate_checksums, extensions, ignore_version_mismatch, ignore_unrecognized_tag, _force_raw_types, copy_arrays, lazy_load, custom_schema, strict_extension_check, ignore_missing_extensions, _compat, **kwargs)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1751</span>     <span class="n">readonly</span> <span class="o">=</span> <span class="n">mode</span> <span class="o">==</span> <span class="s2">&quot;r&quot;</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">copy_arrays</span>
+<span class="g g-Whitespace">   </span><span class="mi">1753</span> <span class="n">instance</span> <span class="o">=</span> <span class="n">AsdfFile</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1754</span>     <span class="n">ignore_version_mismatch</span><span class="o">=</span><span class="n">ignore_version_mismatch</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1755</span>     <span class="n">ignore_unrecognized_tag</span><span class="o">=</span><span class="n">ignore_unrecognized_tag</span><span class="p">,</span>
+   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1759</span>     <span class="n">_readonly</span><span class="o">=</span><span class="n">readonly</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1760</span> <span class="p">)</span>
+<span class="ne">-&gt; </span><span class="mi">1762</span> <span class="k">return</span> <span class="n">AsdfFile</span><span class="o">.</span><span class="n">_open_impl</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1763</span>     <span class="n">instance</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1764</span>     <span class="n">fd</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1765</span>     <span class="n">uri</span><span class="o">=</span><span class="n">uri</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1766</span>     <span class="n">mode</span><span class="o">=</span><span class="n">mode</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1767</span>     <span class="n">validate_checksums</span><span class="o">=</span><span class="n">validate_checksums</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1768</span>     <span class="n">extensions</span><span class="o">=</span><span class="n">extensions</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1769</span>     <span class="n">_force_raw_types</span><span class="o">=</span><span class="n">_force_raw_types</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1770</span>     <span class="n">strict_extension_check</span><span class="o">=</span><span class="n">strict_extension_check</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1771</span>     <span class="n">ignore_missing_extensions</span><span class="o">=</span><span class="n">ignore_missing_extensions</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1772</span>     <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1773</span> <span class="p">)</span>
+
+<span class="nn">File /usr/share/miniconda/lib/python3.9/site-packages/asdf/asdf.py:920,</span> in <span class="ni">AsdfFile._open_impl</span><span class="nt">(cls, self, fd, uri, mode, validate_checksums, extensions, _get_yaml_content, _force_raw_types, strict_extension_check, ignore_missing_extensions, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">914</span> <span class="k">try</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">915</span>     <span class="c1"># TODO: this feels a bit circular, try to clean up. Also</span>
+<span class="g g-Whitespace">    </span><span class="mi">916</span>     <span class="c1"># this introduces another dependency on astropy which may</span>
+<span class="g g-Whitespace">    </span><span class="mi">917</span>     <span class="c1"># not be desireable.</span>
+<span class="g g-Whitespace">    </span><span class="mi">918</span>     <span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">fits_embed</span>
+<span class="ne">--&gt; </span><span class="mi">920</span>     <span class="k">return</span> <span class="n">fits_embed</span><span class="o">.</span><span class="n">AsdfInFits</span><span class="o">.</span><span class="n">_open_impl</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">921</span>         <span class="n">generic_file</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">922</span>         <span class="n">uri</span><span class="o">=</span><span class="n">uri</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">923</span>         <span class="n">validate_checksums</span><span class="o">=</span><span class="n">validate_checksums</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">924</span>         <span class="n">extensions</span><span class="o">=</span><span class="n">extensions</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">925</span>         <span class="n">ignore_version_mismatch</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_ignore_version_mismatch</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">926</span>         <span class="n">strict_extension_check</span><span class="o">=</span><span class="n">strict_extension_check</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">927</span>         <span class="n">ignore_missing_extensions</span><span class="o">=</span><span class="n">ignore_missing_extensions</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">928</span>         <span class="n">ignore_unrecognized_tag</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_ignore_unrecognized_tag</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">929</span>         <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">930</span>     <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">931</span> <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">932</span>     <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">933</span>         <span class="s2">&quot;Input object does not appear to be an ASDF file or a FITS with &quot;</span> <span class="o">+</span> <span class="s2">&quot;ASDF extension&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">934</span>     <span class="p">)</span> <span class="kn">from</span> <span class="bp">None</span>
+
+<span class="nn">File /usr/share/miniconda/lib/python3.9/site-packages/asdf/fits_embed.py:283,</span> in <span class="ni">AsdfInFits._open_impl</span><span class="nt">(cls, fd, uri, validate_checksums, extensions, ignore_version_mismatch, ignore_unrecognized_tag, strict_extension_check, ignore_missing_extensions, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">280</span> <span class="n">generic_file</span> <span class="o">=</span> <span class="n">generic_io</span><span class="o">.</span><span class="n">get_file</span><span class="p">(</span><span class="n">io</span><span class="o">.</span><span class="n">BytesIO</span><span class="p">(</span><span class="n">asdf_extension</span><span class="o">.</span><span class="n">data</span><span class="p">),</span> <span class="n">mode</span><span class="o">=</span><span class="s2">&quot;r&quot;</span><span class="p">,</span> <span class="n">uri</span><span class="o">=</span><span class="n">uri</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">282</span> <span class="k">try</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">283</span>     <span class="k">return</span> <span class="bp">cls</span><span class="o">.</span><span class="n">_open_asdf</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">284</span>         <span class="bp">self</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">285</span>         <span class="n">generic_file</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">286</span>         <span class="n">validate_checksums</span><span class="o">=</span><span class="n">validate_checksums</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">287</span>         <span class="n">extensions</span><span class="o">=</span><span class="n">extensions</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">288</span>         <span class="n">strict_extension_check</span><span class="o">=</span><span class="n">strict_extension_check</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">289</span>         <span class="n">ignore_missing_extensions</span><span class="o">=</span><span class="n">ignore_missing_extensions</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">290</span>         <span class="o">**</span><span class="n">kwargs</span>
+<span class="g g-Whitespace">    </span><span class="mi">291</span>     <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">292</span> <span class="k">except</span> <span class="ne">RuntimeError</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">293</span>     <span class="bp">self</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+
+<span class="nn">File /usr/share/miniconda/lib/python3.9/site-packages/asdf/asdf.py:875,</span> in <span class="ni">AsdfFile._open_asdf</span><span class="nt">(cls, self, fd, validate_checksums, extensions, _get_yaml_content, _force_raw_types, strict_extension_check, ignore_missing_extensions, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">872</span> <span class="n">tree</span> <span class="o">=</span> <span class="n">reference</span><span class="o">.</span><span class="n">find_references</span><span class="p">(</span><span class="n">tree</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">874</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">version</span> <span class="o">&lt;=</span> <span class="n">versioning</span><span class="o">.</span><span class="n">FILL_DEFAULTS_MAX_VERSION</span> <span class="ow">and</span> <span class="n">get_config</span><span class="p">()</span><span class="o">.</span><span class="n">legacy_fill_schema_defaults</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">875</span>     <span class="n">schema</span><span class="o">.</span><span class="n">fill_defaults</span><span class="p">(</span><span class="n">tree</span><span class="p">,</span> <span class="bp">self</span><span class="p">,</span> <span class="n">reading</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">877</span> <span class="k">if</span> <span class="n">get_config</span><span class="p">()</span><span class="o">.</span><span class="n">validate_on_read</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">878</span>     <span class="k">try</span><span class="p">:</span>
+
+<span class="nn">File /usr/share/miniconda/lib/python3.9/site-packages/asdf/schema.py:691,</span> in <span class="ni">fill_defaults</span><span class="nt">(instance, ctx, reading)</span>
+<span class="g g-Whitespace">    </span><span class="mi">675</span> <span class="k">def</span> <span class="nf">fill_defaults</span><span class="p">(</span><span class="n">instance</span><span class="p">,</span> <span class="n">ctx</span><span class="p">,</span> <span class="n">reading</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">676</span>     <span class="sd">&quot;&quot;&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">677</span><span class="sd">     For any default values in the schema, add them to the tree if they</span>
+<span class="g g-Whitespace">    </span><span class="mi">678</span><span class="sd">     don&#39;t exist.</span>
+<span class="sd">   (...)</span>
+<span class="g g-Whitespace">    </span><span class="mi">689</span><span class="sd">         written).</span>
+<span class="g g-Whitespace">    </span><span class="mi">690</span><span class="sd">     &quot;&quot;&quot;</span>
+<span class="ne">--&gt; </span><span class="mi">691</span>     <span class="n">validate</span><span class="p">(</span><span class="n">instance</span><span class="p">,</span> <span class="n">ctx</span><span class="p">,</span> <span class="n">validators</span><span class="o">=</span><span class="n">FILL_DEFAULTS</span><span class="p">,</span> <span class="n">reading</span><span class="o">=</span><span class="n">reading</span><span class="p">)</span>
+
+<span class="nn">File /usr/share/miniconda/lib/python3.9/site-packages/asdf/schema.py:661,</span> in <span class="ni">validate</span><span class="nt">(instance, ctx, schema, validators, reading, *args, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">657</span>     <span class="kn">from</span> <span class="nn">.asdf</span> <span class="kn">import</span> <span class="n">AsdfFile</span>
+<span class="g g-Whitespace">    </span><span class="mi">659</span>     <span class="n">ctx</span> <span class="o">=</span> <span class="n">AsdfFile</span><span class="p">()</span>
+<span class="ne">--&gt; </span><span class="mi">661</span> <span class="n">validator</span> <span class="o">=</span> <span class="n">get_validator</span><span class="p">(</span><span class="n">schema</span><span class="p">,</span> <span class="n">ctx</span><span class="p">,</span> <span class="n">validators</span><span class="p">,</span> <span class="n">ctx</span><span class="o">.</span><span class="n">resolver</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">662</span> <span class="n">validator</span><span class="o">.</span><span class="n">validate</span><span class="p">(</span><span class="n">instance</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">664</span> <span class="n">additional_validators</span> <span class="o">=</span> <span class="p">[</span><span class="n">_validate_large_literals</span><span class="p">]</span>
+
+<span class="nn">File /usr/share/miniconda/lib/python3.9/site-packages/asdf/schema.py:575,</span> in <span class="ni">get_validator</span><span class="nt">(schema, ctx, validators, url_mapping, _visit_repeat_nodes, _serialization_context, *args, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">569</span> <span class="c1"># We don&#39;t just call validators.validate() directly here, because</span>
+<span class="g g-Whitespace">    </span><span class="mi">570</span> <span class="c1"># that validates the schema itself, wasting a lot of time (at the</span>
+<span class="g g-Whitespace">    </span><span class="mi">571</span> <span class="c1"># time of this writing, it was half of the runtime of the unit</span>
+<span class="g g-Whitespace">    </span><span class="mi">572</span> <span class="c1"># test suite!!!).  Instead, we assume that the schemas are valid</span>
+<span class="g g-Whitespace">    </span><span class="mi">573</span> <span class="c1"># through the running of the unit tests, not at run time.</span>
+<span class="g g-Whitespace">    </span><span class="mi">574</span> <span class="bp">cls</span> <span class="o">=</span> <span class="n">_create_validator</span><span class="p">(</span><span class="n">validators</span><span class="o">=</span><span class="n">validators</span><span class="p">,</span> <span class="n">visit_repeat_nodes</span><span class="o">=</span><span class="n">_visit_repeat_nodes</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">575</span> <span class="k">return</span> <span class="bp">cls</span><span class="p">(</span><span class="n">schema</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="n">ctx</span><span class="o">=</span><span class="n">ctx</span><span class="p">,</span> <span class="n">serialization_context</span><span class="o">=</span><span class="n">_serialization_context</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+<span class="ne">TypeError</span>: __init__() got an unexpected keyword argument &#39;resolver&#39;
 </pre></div>
 </div>
 </div>
@@ -597,10 +837,6 @@ NAXIS : 33  39  2059
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">
-{"version_major": 2, "version_minor": 0, "model_id": "e2dc181fc2ef4838ad0d0d2539f34868"}
-</script></div>
 </div>
 <div class="section" id="ui-instructions">
 <h3>UI Instructions:<a class="headerlink" href="#ui-instructions" title="Permalink to this headline">¶</a></h3>
@@ -637,101 +873,6 @@ NAXIS : 33  39  2059
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:py.warnings:/usr/share/miniconda/lib/python3.9/site-packages/specutils/spectra/spectrum1d.py:202: UserWarning: Input WCS indicates that the spectral axis is not last. Reshaping arrays to put spectral axis last.
-  warnings.warn(&quot;Input WCS indicates that the spectral axis is not&quot;
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2022-03-15 07:14:56,910 - stpipe - WARNING - /usr/share/miniconda/lib/python3.9/site-packages/specutils/spectra/spectrum1d.py:202: UserWarning: Input WCS indicates that the spectral axis is not last. Reshaping arrays to put spectral axis last.
-  warnings.warn(&quot;Input WCS indicates that the spectral axis is not&quot;
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:stpipe:/usr/share/miniconda/lib/python3.9/site-packages/specutils/spectra/spectrum1d.py:202: UserWarning: Input WCS indicates that the spectral axis is not last. Reshaping arrays to put spectral axis last.
-  warnings.warn(&quot;Input WCS indicates that the spectral axis is not&quot;
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:py.warnings:/usr/share/miniconda/lib/python3.9/site-packages/specutils/spectra/spectrum1d.py:202: UserWarning: Input WCS indicates that the spectral axis is not last. Reshaping arrays to put spectral axis last.
-  warnings.warn(&quot;Input WCS indicates that the spectral axis is not&quot;
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2022-03-15 07:14:56,926 - stpipe - WARNING - /usr/share/miniconda/lib/python3.9/site-packages/specutils/spectra/spectrum1d.py:202: UserWarning: Input WCS indicates that the spectral axis is not last. Reshaping arrays to put spectral axis last.
-  warnings.warn(&quot;Input WCS indicates that the spectral axis is not&quot;
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:stpipe:/usr/share/miniconda/lib/python3.9/site-packages/specutils/spectra/spectrum1d.py:202: UserWarning: Input WCS indicates that the spectral axis is not last. Reshaping arrays to put spectral axis last.
-  warnings.warn(&quot;Input WCS indicates that the spectral axis is not&quot;
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:py.warnings:/usr/share/miniconda/lib/python3.9/site-packages/specutils/spectra/spectrum1d.py:202: UserWarning: Input WCS indicates that the spectral axis is not last. Reshaping arrays to put spectral axis last.
-  warnings.warn(&quot;Input WCS indicates that the spectral axis is not&quot;
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2022-03-15 07:14:56,937 - stpipe - WARNING - /usr/share/miniconda/lib/python3.9/site-packages/specutils/spectra/spectrum1d.py:202: UserWarning: Input WCS indicates that the spectral axis is not last. Reshaping arrays to put spectral axis last.
-  warnings.warn(&quot;Input WCS indicates that the spectral axis is not&quot;
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:stpipe:/usr/share/miniconda/lib/python3.9/site-packages/specutils/spectra/spectrum1d.py:202: UserWarning: Input WCS indicates that the spectral axis is not last. Reshaping arrays to put spectral axis last.
-  warnings.warn(&quot;Input WCS indicates that the spectral axis is not&quot;
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:py.warnings:/usr/share/miniconda/lib/python3.9/site-packages/specutils/spectra/spectrum1d.py:202: UserWarning: Input WCS indicates that the spectral axis is not last. Reshaping arrays to put spectral axis last.
-  warnings.warn(&quot;Input WCS indicates that the spectral axis is not&quot;
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2022-03-15 07:14:56,944 - stpipe - WARNING - /usr/share/miniconda/lib/python3.9/site-packages/specutils/spectra/spectrum1d.py:202: UserWarning: Input WCS indicates that the spectral axis is not last. Reshaping arrays to put spectral axis last.
-  warnings.warn(&quot;Input WCS indicates that the spectral axis is not&quot;
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:stpipe:/usr/share/miniconda/lib/python3.9/site-packages/specutils/spectra/spectrum1d.py:202: UserWarning: Input WCS indicates that the spectral axis is not last. Reshaping arrays to put spectral axis last.
-  warnings.warn(&quot;Input WCS indicates that the spectral axis is not&quot;
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:root:Input WCS must have exactly one axis with spectral units, found 0
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2022-03-15 07:14:57,307 - stpipe - WARNING - Input WCS must have exactly one axis with spectral units, found 0
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:stpipe:Input WCS must have exactly one axis with spectral units, found 0
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:root:Missing BUNIT, using count as data unit
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2022-03-15 07:14:57,315 - stpipe - WARNING - Missing BUNIT, using count as data unit
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:stpipe:Missing BUNIT, using count as data unit
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:root:Input WCS must have exactly one axis with spectral units, found 0
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2022-03-15 07:14:57,321 - stpipe - WARNING - Input WCS must have exactly one axis with spectral units, found 0
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:stpipe:Input WCS must have exactly one axis with spectral units, found 0
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:root:Missing BUNIT, using count as data unit
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2022-03-15 07:14:57,324 - stpipe - WARNING - Missing BUNIT, using count as data unit
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:stpipe:Missing BUNIT, using count as data unit
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:root:Input WCS must have exactly one axis with spectral units, found 0
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2022-03-15 07:14:57,328 - stpipe - WARNING - Input WCS must have exactly one axis with spectral units, found 0
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:stpipe:Input WCS must have exactly one axis with spectral units, found 0
-</pre></div>
-</div>
-</div>
 </div>
 <p><em>Developer Note:</em> Spectral cube does not yet recognize JWST NIRSpec IFU datacubes, giving the above warning
 for each FITS extension.</p>
@@ -755,11 +896,6 @@ for each FITS extension.</p>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>There are no regions selected in the cube viewer.
-</pre></div>
-</div>
-</div>
 </div>
 </div>
 <div class="section" id="extract-subset-spectrum-in-cubeviz-spectrum-viewer">
@@ -772,11 +908,6 @@ for each FITS extension.</p>
     <span class="nb">print</span><span class="p">(</span><span class="n">spectrum_subset1</span><span class="p">)</span>
 <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;There are no subsets selected in the spectrum viewer.&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>There are no subsets selected in the spectrum viewer.
 </pre></div>
 </div>
 </div>
@@ -806,9 +937,6 @@ for each FITS extension.</p>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<img alt="../../_images/ifu_optimal_25_0.png" src="../../_images/ifu_optimal_25_0.png" />
-</div>
 </div>
 </div>
 <div class="section" id="extract-spectrum-in-constant-radius-circular-aperture-cylinder">
@@ -837,13 +965,6 @@ for each FITS extension.</p>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Aperture: CircularAperture
-positions: [17.1, 20. ]
-r: 5.92
-</pre></div>
-</div>
-</div>
 </div>
 <p><em>Developer Note:</em>  Is there a way to retrieve the coordinates (RA, Dec) of the Subset1 region, for use in a SkyCircularAperture?</p>
 </div>
@@ -864,11 +985,6 @@ r: 5.92
     <span class="n">aperture_cone</span> <span class="o">=</span> <span class="n">CircularAperture</span><span class="p">(</span><span class="n">center_xy</span><span class="p">,</span> <span class="n">r</span><span class="o">=</span><span class="n">r_cone</span><span class="p">)</span>
     <span class="n">phot_table</span> <span class="o">=</span> <span class="n">aperture_photometry</span><span class="p">(</span><span class="n">slice2d</span><span class="p">,</span> <span class="n">aperture_cone</span><span class="p">,</span> <span class="n">wcs</span><span class="o">=</span><span class="n">w</span><span class="o">.</span><span class="n">celestial</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s1">&#39;exact&#39;</span><span class="p">)</span>
     <span class="n">cone_sum</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">phot_table</span><span class="p">[</span><span class="s1">&#39;aperture_sum&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Reference wavelength: 0.9665214562483713
 </pre></div>
 </div>
 </div>
@@ -898,12 +1014,6 @@ r: 5.92
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>There is no Cubeviz Subset1 spectrum to plot.
-</pre></div>
-</div>
-<img alt="../../_images/ifu_optimal_32_1.png" src="../../_images/ifu_optimal_32_1.png" />
-</div>
 </div>
 <p>Comparison of the (non-optimal) cylindrical, conical, and CubeViz subset spectral extractions.
 The conical extraction captures slightly more flux but is noisier than the other spectra at long wavelengths.
@@ -930,11 +1040,6 @@ Red-shifted Broad H-beta and narrow [O III] lines  are visible in the quasar spe
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;\n#WebbPSF imports\n%pylab inline\nimport webbpsf\n\n#WebbPSF commands used to create PSF model cube\nns.image_mask = &quot;IFU&quot;  # Sets to 3x3 arcsec square mask\nns = webbpsf.NIRSpec()\nwavelengths = wavelength*1.0E-6\npsfcube = ns.calc_datacube(wavelengths, fov_pixels=30, oversample=4,  add_distortion=True)\npsfcube.writeto(&quot;Webbpsf_ifucube.fits&quot;)\n&#39;
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -953,134 +1058,6 @@ Red-shifted Broad H-beta and narrow [O III] lines  are visible in the quasar spe
 
 <span class="c1"># Sum over spaxels</span>
 <span class="n">psf_model_fnusum</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">psf_model</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
-<span class="nn">Input In [13],</span> in <span class="ni">&lt;cell line: 5&gt;</span><span class="nt">()</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">psf_filename</span> <span class="o">=</span> <span class="n">BoxPath</span><span class="o">+</span><span class="s2">&quot;Webbpsf_ifucube.fits&quot;</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="c1"># Load with astropy.fits.open</span>
-<span class="ne">----&gt; </span><span class="mi">5</span> <span class="k">with</span> <span class="n">fits</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">psf_filename</span><span class="p">,</span> <span class="n">memmap</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span> <span class="k">as</span> <span class="n">hdulist</span><span class="p">:</span>
-<span class="g g-Whitespace">      </span><span class="mi">6</span>     <span class="n">psf_model</span> <span class="o">=</span> <span class="n">hdulist</span><span class="p">[</span><span class="s1">&#39;DET_SAMP&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">data</span>
-<span class="g g-Whitespace">      </span><span class="mi">7</span>     <span class="n">psf_hdr</span> <span class="o">=</span> <span class="n">hdulist</span><span class="p">[</span><span class="s1">&#39;DET_SAMP&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">header</span>
-
-<span class="nn">File /usr/share/miniconda/lib/python3.9/site-packages/astropy/io/fits/hdu/hdulist.py:176,</span> in <span class="ni">fitsopen</span><span class="nt">(name, mode, memmap, save_backup, cache, lazy_load_hdus, ignore_missing_simple, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">173</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">name</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">174</span>     <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Empty filename: </span><span class="si">{</span><span class="n">name</span><span class="si">!r}</span><span class="s1">&#39;</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">176</span> <span class="k">return</span> <span class="n">HDUList</span><span class="o">.</span><span class="n">fromfile</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">mode</span><span class="p">,</span> <span class="n">memmap</span><span class="p">,</span> <span class="n">save_backup</span><span class="p">,</span> <span class="n">cache</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">177</span>                         <span class="n">lazy_load_hdus</span><span class="p">,</span> <span class="n">ignore_missing_simple</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-
-<span class="nn">File /usr/share/miniconda/lib/python3.9/site-packages/astropy/io/fits/hdu/hdulist.py:411,</span> in <span class="ni">HDUList.fromfile</span><span class="nt">(cls, fileobj, mode, memmap, save_backup, cache, lazy_load_hdus, ignore_missing_simple, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">399</span> <span class="nd">@classmethod</span>
-<span class="g g-Whitespace">    </span><span class="mi">400</span> <span class="k">def</span> <span class="nf">fromfile</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">fileobj</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">memmap</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">401</span>              <span class="n">save_backup</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">cache</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">lazy_load_hdus</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">402</span>              <span class="n">ignore_missing_simple</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-<span class="g g-Whitespace">    </span><span class="mi">403</span>     <span class="sd">&quot;&quot;&quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">404</span><span class="sd">     Creates an `HDUList` instance from a file-like object.</span>
-<span class="g g-Whitespace">    </span><span class="mi">405</span><span class="sd"> </span>
-<span class="sd">   (...)</span>
-<span class="g g-Whitespace">    </span><span class="mi">408</span><span class="sd">     documentation for details of the parameters accepted by this method).</span>
-<span class="g g-Whitespace">    </span><span class="mi">409</span><span class="sd">     &quot;&quot;&quot;</span>
-<span class="ne">--&gt; </span><span class="mi">411</span>     <span class="k">return</span> <span class="bp">cls</span><span class="o">.</span><span class="n">_readfrom</span><span class="p">(</span><span class="n">fileobj</span><span class="o">=</span><span class="n">fileobj</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="n">mode</span><span class="p">,</span> <span class="n">memmap</span><span class="o">=</span><span class="n">memmap</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">412</span>                          <span class="n">save_backup</span><span class="o">=</span><span class="n">save_backup</span><span class="p">,</span> <span class="n">cache</span><span class="o">=</span><span class="n">cache</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">413</span>                          <span class="n">ignore_missing_simple</span><span class="o">=</span><span class="n">ignore_missing_simple</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">414</span>                          <span class="n">lazy_load_hdus</span><span class="o">=</span><span class="n">lazy_load_hdus</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-
-<span class="nn">File /usr/share/miniconda/lib/python3.9/site-packages/astropy/io/fits/hdu/hdulist.py:1071,</span> in <span class="ni">HDUList._readfrom</span><span class="nt">(cls, fileobj, data, mode, memmap, cache, lazy_load_hdus, ignore_missing_simple, **kwargs)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1068</span> <span class="k">if</span> <span class="n">fileobj</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1069</span>     <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">fileobj</span><span class="p">,</span> <span class="n">_File</span><span class="p">):</span>
-<span class="g g-Whitespace">   </span><span class="mi">1070</span>         <span class="c1"># instantiate a FITS file object (ffo)</span>
-<span class="ne">-&gt; </span><span class="mi">1071</span>         <span class="n">fileobj</span> <span class="o">=</span> <span class="n">_File</span><span class="p">(</span><span class="n">fileobj</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="n">mode</span><span class="p">,</span> <span class="n">memmap</span><span class="o">=</span><span class="n">memmap</span><span class="p">,</span> <span class="n">cache</span><span class="o">=</span><span class="n">cache</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1072</span>     <span class="c1"># The Astropy mode is determined by the _File initializer if the</span>
-<span class="g g-Whitespace">   </span><span class="mi">1073</span>     <span class="c1"># supplied mode was None</span>
-<span class="g g-Whitespace">   </span><span class="mi">1074</span>     <span class="n">mode</span> <span class="o">=</span> <span class="n">fileobj</span><span class="o">.</span><span class="n">mode</span>
-
-<span class="nn">File /usr/share/miniconda/lib/python3.9/site-packages/astropy/utils/decorators.py:546,</span> in <span class="ni">deprecated_renamed_argument.&lt;locals&gt;.decorator.&lt;locals&gt;.wrapper</span><span class="nt">(*args, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">543</span>             <span class="n">msg</span> <span class="o">+=</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">        Use </span><span class="si">{</span><span class="n">alternative</span><span class="si">}</span><span class="s1"> instead.&#39;</span>
-<span class="g g-Whitespace">    </span><span class="mi">544</span>         <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="n">msg</span><span class="p">,</span> <span class="n">warning_type</span><span class="p">,</span> <span class="n">stacklevel</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">546</span> <span class="k">return</span> <span class="n">function</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-
-<span class="nn">File /usr/share/miniconda/lib/python3.9/site-packages/astropy/io/fits/file.py:156,</span> in <span class="ni">_File.__init__</span><span class="nt">(self, fileobj, mode, memmap, overwrite, cache)</span>
-<span class="g g-Whitespace">    </span><span class="mi">153</span> <span class="c1"># Handle raw URLs</span>
-<span class="g g-Whitespace">    </span><span class="mi">154</span> <span class="k">if</span> <span class="p">(</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">fileobj</span><span class="p">,</span> <span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="nb">bytes</span><span class="p">))</span> <span class="ow">and</span>
-<span class="g g-Whitespace">    </span><span class="mi">155</span>         <span class="n">mode</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">(</span><span class="s1">&#39;ostream&#39;</span><span class="p">,</span> <span class="s1">&#39;append&#39;</span><span class="p">,</span> <span class="s1">&#39;update&#39;</span><span class="p">)</span> <span class="ow">and</span> <span class="n">_is_url</span><span class="p">(</span><span class="n">fileobj</span><span class="p">)):</span>
-<span class="ne">--&gt; </span><span class="mi">156</span>     <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">download_file</span><span class="p">(</span><span class="n">fileobj</span><span class="p">,</span> <span class="n">cache</span><span class="o">=</span><span class="n">cache</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">157</span> <span class="c1"># Handle responses from URL requests that have already been opened</span>
-<span class="g g-Whitespace">    </span><span class="mi">158</span> <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">fileobj</span><span class="p">,</span> <span class="n">http</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">HTTPResponse</span><span class="p">):</span>
-
-<span class="nn">File /usr/share/miniconda/lib/python3.9/site-packages/astropy/utils/data.py:1364,</span> in <span class="ni">download_file</span><span class="nt">(remote_url, cache, show_progress, timeout, sources, pkgname, http_headers, ssl_context, allow_insecure)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1362</span> <span class="k">for</span> <span class="n">source_url</span> <span class="ow">in</span> <span class="n">sources</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1363</span>     <span class="k">try</span><span class="p">:</span>
-<span class="ne">-&gt; </span><span class="mi">1364</span>         <span class="n">f_name</span> <span class="o">=</span> <span class="n">_download_file_from_source</span><span class="p">(</span>
-<span class="g g-Whitespace">   </span><span class="mi">1365</span>                 <span class="n">source_url</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1366</span>                 <span class="n">timeout</span><span class="o">=</span><span class="n">timeout</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1367</span>                 <span class="n">show_progress</span><span class="o">=</span><span class="n">show_progress</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1368</span>                 <span class="n">cache</span><span class="o">=</span><span class="n">cache</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1369</span>                 <span class="n">remote_url</span><span class="o">=</span><span class="n">remote_url</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1370</span>                 <span class="n">pkgname</span><span class="o">=</span><span class="n">pkgname</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1371</span>                 <span class="n">http_headers</span><span class="o">=</span><span class="n">http_headers</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1372</span>                 <span class="n">ssl_context</span><span class="o">=</span><span class="n">ssl_context</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1373</span>                 <span class="n">allow_insecure</span><span class="o">=</span><span class="n">allow_insecure</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1374</span>         <span class="c1"># Success!</span>
-<span class="g g-Whitespace">   </span><span class="mi">1375</span>         <span class="k">break</span>
-
-<span class="nn">File /usr/share/miniconda/lib/python3.9/site-packages/astropy/utils/data.py:1202,</span> in <span class="ni">_download_file_from_source</span><span class="nt">(source_url, show_progress, timeout, remote_url, cache, pkgname, http_headers, ftp_tls, ssl_context, allow_insecure)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1200</span> <span class="n">bytes_read</span> <span class="o">+=</span> <span class="nb">len</span><span class="p">(</span><span class="n">block</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1201</span> <span class="n">p</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">bytes_read</span><span class="p">)</span>
-<span class="ne">-&gt; </span><span class="mi">1202</span> <span class="n">block</span> <span class="o">=</span> <span class="n">remote</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">conf</span><span class="o">.</span><span class="n">download_block_size</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1203</span> <span class="k">if</span> <span class="n">size</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">bytes_read</span> <span class="o">&gt;</span> <span class="n">size</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1204</span>     <span class="k">raise</span> <span class="n">urllib</span><span class="o">.</span><span class="n">error</span><span class="o">.</span><span class="n">URLError</span><span class="p">(</span>
-<span class="g g-Whitespace">   </span><span class="mi">1205</span>         <span class="sa">f</span><span class="s2">&quot;File was supposed to be </span><span class="si">{</span><span class="n">size</span><span class="si">}</span><span class="s2"> bytes but &quot;</span>
-<span class="g g-Whitespace">   </span><span class="mi">1206</span>         <span class="sa">f</span><span class="s2">&quot;server provides more, at least </span><span class="si">{</span><span class="n">bytes_read</span><span class="si">}</span><span class="s2"> &quot;</span>
-<span class="g g-Whitespace">   </span><span class="mi">1207</span>         <span class="sa">f</span><span class="s2">&quot;bytes. Download failed.&quot;</span><span class="p">)</span>
-
-<span class="nn">File /usr/share/miniconda/lib/python3.9/http/client.py:462,</span> in <span class="ni">HTTPResponse.read</span><span class="nt">(self, amt)</span>
-<span class="g g-Whitespace">    </span><span class="mi">459</span> <span class="k">if</span> <span class="n">amt</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">460</span>     <span class="c1"># Amount is given, implement using readinto</span>
-<span class="g g-Whitespace">    </span><span class="mi">461</span>     <span class="n">b</span> <span class="o">=</span> <span class="nb">bytearray</span><span class="p">(</span><span class="n">amt</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">462</span>     <span class="n">n</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">readinto</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">463</span>     <span class="k">return</span> <span class="nb">memoryview</span><span class="p">(</span><span class="n">b</span><span class="p">)[:</span><span class="n">n</span><span class="p">]</span><span class="o">.</span><span class="n">tobytes</span><span class="p">()</span>
-<span class="g g-Whitespace">    </span><span class="mi">464</span> <span class="k">else</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">465</span>     <span class="c1"># Amount is not given (unbounded read) so we must check self.length</span>
-<span class="g g-Whitespace">    </span><span class="mi">466</span>     <span class="c1"># and self.chunked</span>
-
-<span class="nn">File /usr/share/miniconda/lib/python3.9/http/client.py:506,</span> in <span class="ni">HTTPResponse.readinto</span><span class="nt">(self, b)</span>
-<span class="g g-Whitespace">    </span><span class="mi">501</span>         <span class="n">b</span> <span class="o">=</span> <span class="nb">memoryview</span><span class="p">(</span><span class="n">b</span><span class="p">)[</span><span class="mi">0</span><span class="p">:</span><span class="bp">self</span><span class="o">.</span><span class="n">length</span><span class="p">]</span>
-<span class="g g-Whitespace">    </span><span class="mi">503</span> <span class="c1"># we do not use _safe_read() here because this may be a .will_close</span>
-<span class="g g-Whitespace">    </span><span class="mi">504</span> <span class="c1"># connection, and the user is reading more bytes than will be provided</span>
-<span class="g g-Whitespace">    </span><span class="mi">505</span> <span class="c1"># (for example, reading in 1k chunks)</span>
-<span class="ne">--&gt; </span><span class="mi">506</span> <span class="n">n</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">fp</span><span class="o">.</span><span class="n">readinto</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">507</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">n</span> <span class="ow">and</span> <span class="n">b</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">508</span>     <span class="c1"># Ideally, we would raise IncompleteRead if the content-length</span>
-<span class="g g-Whitespace">    </span><span class="mi">509</span>     <span class="c1"># wasn&#39;t satisfied, but it might break compatibility.</span>
-<span class="g g-Whitespace">    </span><span class="mi">510</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_close_conn</span><span class="p">()</span>
-
-<span class="nn">File /usr/share/miniconda/lib/python3.9/socket.py:704,</span> in <span class="ni">SocketIO.readinto</span><span class="nt">(self, b)</span>
-<span class="g g-Whitespace">    </span><span class="mi">702</span> <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">703</span>     <span class="k">try</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">704</span>         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_sock</span><span class="o">.</span><span class="n">recv_into</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">705</span>     <span class="k">except</span> <span class="n">timeout</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">706</span>         <span class="bp">self</span><span class="o">.</span><span class="n">_timeout_occurred</span> <span class="o">=</span> <span class="kc">True</span>
-
-<span class="nn">File /usr/share/miniconda/lib/python3.9/ssl.py:1241,</span> in <span class="ni">SSLSocket.recv_into</span><span class="nt">(self, buffer, nbytes, flags)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1237</span>     <span class="k">if</span> <span class="n">flags</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1238</span>         <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
-<span class="g g-Whitespace">   </span><span class="mi">1239</span>           <span class="s2">&quot;non-zero flags not allowed in calls to recv_into() on </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span>
-<span class="g g-Whitespace">   </span><span class="mi">1240</span>           <span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="p">)</span>
-<span class="ne">-&gt; </span><span class="mi">1241</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">nbytes</span><span class="p">,</span> <span class="n">buffer</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1242</span> <span class="k">else</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1243</span>     <span class="k">return</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">recv_into</span><span class="p">(</span><span class="n">buffer</span><span class="p">,</span> <span class="n">nbytes</span><span class="p">,</span> <span class="n">flags</span><span class="p">)</span>
-
-<span class="nn">File /usr/share/miniconda/lib/python3.9/ssl.py:1099,</span> in <span class="ni">SSLSocket.read</span><span class="nt">(self, len, buffer)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1097</span> <span class="k">try</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1098</span>     <span class="k">if</span> <span class="n">buffer</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-<span class="ne">-&gt; </span><span class="mi">1099</span>         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_sslobj</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="nb">len</span><span class="p">,</span> <span class="n">buffer</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1100</span>     <span class="k">else</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1101</span>         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_sslobj</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="nb">len</span><span class="p">)</span>
-
-<span class="ne">KeyboardInterrupt</span>: 
 </pre></div>
 </div>
 </div>
@@ -1339,11 +1316,11 @@ Difference of PSF star from science data shows they are well matched, with a sca
             
                 <!-- Previous / next buttons -->
 <div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="../IFU_cube_continuum_fit/NGC4151_FeII_ContinuumFit.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="../optimal_extraction/Spectral%20Extraction-static.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">IFU Data Modeling</p>
+            <p class="prev-next-title">NIRSpec MOS Optimal Spectral Extraction</p>
         </div>
     </a>
 </div>
