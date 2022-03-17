@@ -29,14 +29,14 @@ Input [0;32mIn [5][0m, in [0;36m<cell line: 2>[0;34m()[0m
 [0;32m----> 2[0m cal [38;5;241m=[39m [43mdatamodels[49m[38;5;241;43m.[39;49m[43mopen[49m[43m([49m[43mcalfile[49m[43m)[49m
 [1;32m      3[0m s2d [38;5;241m=[39m datamodels[38;5;241m.[39mopen(s2dfile)
 
-File [0;32m/usr/share/miniconda/lib/python3.9/site-packages/jwst/datamodels/util.py:211[0m, in [0;36mopen[0;34m(init, memmap, **kwargs)[0m
-[1;32m    208[0m     log[38;5;241m.[39mdebug([38;5;124mf[39m[38;5;124m'[39m[38;5;124mOpening as [39m[38;5;132;01m{[39;00mnew_class[38;5;132;01m}[39;00m[38;5;124m'[39m)
-[1;32m    210[0m [38;5;66;03m# Actually open the model[39;00m
-[0;32m--> 211[0m model [38;5;241m=[39m [43mnew_class[49m[43m([49m[43minit[49m[43m,[49m[43m [49m[38;5;241;43m*[39;49m[38;5;241;43m*[39;49m[43mkwargs[49m[43m)[49m
-[1;32m    213[0m [38;5;66;03m# Close the hdulist if we opened it[39;00m
-[1;32m    214[0m [38;5;28;01mif[39;00m file_to_close [38;5;129;01mis[39;00m [38;5;129;01mnot[39;00m [38;5;28;01mNone[39;00m:
-[1;32m    215[0m     [38;5;66;03m# TODO: We need a better solution than messing with DataModel[39;00m
-[1;32m    216[0m     [38;5;66;03m# internals.[39;00m
+File [0;32m/usr/share/miniconda/lib/python3.9/site-packages/jwst/datamodels/util.py:217[0m, in [0;36mopen[0;34m(init, guess, memmap, **kwargs)[0m
+[1;32m    214[0m     log[38;5;241m.[39mdebug([38;5;124mf[39m[38;5;124m'[39m[38;5;124mOpening as [39m[38;5;132;01m{[39;00mnew_class[38;5;132;01m}[39;00m[38;5;124m'[39m)
+[1;32m    216[0m [38;5;66;03m# Actually open the model[39;00m
+[0;32m--> 217[0m model [38;5;241m=[39m [43mnew_class[49m[43m([49m[43minit[49m[43m,[49m[43m [49m[38;5;241;43m*[39;49m[38;5;241;43m*[39;49m[43mkwargs[49m[43m)[49m
+[1;32m    219[0m [38;5;66;03m# Close the hdulist if we opened it[39;00m
+[1;32m    220[0m [38;5;28;01mif[39;00m file_to_close [38;5;129;01mis[39;00m [38;5;129;01mnot[39;00m [38;5;28;01mNone[39;00m:
+[1;32m    221[0m     [38;5;66;03m# TODO: We need a better solution than messing with DataModel[39;00m
+[1;32m    222[0m     [38;5;66;03m# internals.[39;00m
 
 File [0;32m/usr/share/miniconda/lib/python3.9/site-packages/stdatamodels/model_base.py:174[0m, in [0;36mDataModel.__init__[0;34m(self, init, schema, memmap, pass_invalid_values, strict_validation, validate_on_assignment, cast_fits_arrays, validate_arrays, ignore_missing_extensions, **kwargs)[0m
 [1;32m    171[0m         schema [38;5;241m=[39m _DEFAULT_SCHEMA

@@ -63,6 +63,14 @@ const thebe_selector_output = ".output, .cell_output"
 
     <!-- Google Analytics -->
     
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-D46G4HKJY3"></script>
+<script>
+                    window.dataLayer = window.dataLayer || [];
+                    function gtag(){ dataLayer.push(arguments); }
+                    gtag('js', new Date());
+                    gtag('config', 'G-D46G4HKJY3');
+                </script>
+
   </head>
   <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
     
@@ -253,11 +261,11 @@ const thebe_selector_output = ".output, .cell_output"
         aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
     <div class="dropdown-buttons sourcebuttons">
         <a class="repository-button"
-            href="https://github.com/therealzoidberg/actions-ci-testing"><button type="button" class="btn btn-secondary topbarbtn"
+            href="https://github.com/therealzoidberg/actions-ci-testing/"><button type="button" class="btn btn-secondary topbarbtn"
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/therealzoidberg/actions-ci-testing/issues/new?title=Issue%20on%20page%20%2Fnotebooks/ifu_optimal/ifu_optimal.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/therealzoidberg/actions-ci-testing//issues/new?title=Issue%20on%20page%20%2Fnotebooks/ifu_optimal/ifu_optimal.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -285,11 +293,6 @@ const thebe_selector_output = ".output, .cell_output"
                     alt="Interact on binder">Binder</button></a>
         
         
-        
-        <a class="colab-button" href="https://colab.research.google.com/github/therealzoidberg/actions-ci-testing/blob/main/notebooks/notebooks/ifu_optimal/ifu_optimal.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
-                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
-                    src="../../_static/images/logo_colab.png"
-                    alt="Interact on Colab">Colab</button></a>
         
         <button type="button" class="btn btn-secondary topbarbtn"
             onclick="initThebeSBT()" title="Launch Thebe" data-toggle="tooltip" data-placement="left"><i
@@ -637,17 +640,17 @@ ContextualVersionConflict: (jsonschema 3.2.0 (/usr/share/miniconda/lib/python3.9
 
 ContextualVersionConflict: (jsonschema 3.2.0 (/usr/share/miniconda/lib/python3.9/site-packages), Requirement.parse(&#39;jsonschema&gt;=4.0.1&#39;), {&#39;asdf&#39;})
   warnings.warn(
+/usr/share/miniconda/lib/python3.9/site-packages/asdf/entry_points.py:46: AsdfWarning: asdf.extensions plugin from package jwst==1.4.4 failed to load:
+
+ContextualVersionConflict: (jsonschema 3.2.0 (/usr/share/miniconda/lib/python3.9/site-packages), Requirement.parse(&#39;jsonschema&gt;=4.0.1&#39;), {&#39;asdf&#39;})
+  warnings.warn(
+/usr/share/miniconda/lib/python3.9/site-packages/asdf/entry_points.py:46: AsdfWarning: asdf_extensions plugin from package jwst==1.4.4 failed to load:
+
+ContextualVersionConflict: (jsonschema 3.2.0 (/usr/share/miniconda/lib/python3.9/site-packages), Requirement.parse(&#39;jsonschema&gt;=4.0.1&#39;), {&#39;asdf&#39;})
+  warnings.warn(
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/usr/share/miniconda/lib/python3.9/site-packages/asdf/entry_points.py:46: AsdfWarning: asdf.extensions plugin from package jwst==1.4.3 failed to load:
-
-ContextualVersionConflict: (jsonschema 3.2.0 (/usr/share/miniconda/lib/python3.9/site-packages), Requirement.parse(&#39;jsonschema&gt;=4.0.1&#39;), {&#39;asdf&#39;})
-  warnings.warn(
-/usr/share/miniconda/lib/python3.9/site-packages/asdf/entry_points.py:46: AsdfWarning: asdf_extensions plugin from package jwst==1.4.3 failed to load:
-
-ContextualVersionConflict: (jsonschema 3.2.0 (/usr/share/miniconda/lib/python3.9/site-packages), Requirement.parse(&#39;jsonschema&gt;=4.0.1&#39;), {&#39;asdf&#39;})
-  warnings.warn(
-/usr/share/miniconda/lib/python3.9/site-packages/asdf/entry_points.py:46: AsdfWarning: asdf_extensions plugin from package specutils==1.7.0 failed to load:
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/usr/share/miniconda/lib/python3.9/site-packages/asdf/entry_points.py:46: AsdfWarning: asdf_extensions plugin from package specutils==1.7.0 failed to load:
 
 ContextualVersionConflict: (jsonschema 3.2.0 (/usr/share/miniconda/lib/python3.9/site-packages), Requirement.parse(&#39;jsonschema&gt;=4.0.1&#39;), {&#39;asdf&#39;})
   warnings.warn(
@@ -671,7 +674,7 @@ ContextualVersionConflict: (jsonschema 3.2.0 (/usr/share/miniconda/lib/python3.9
 
 ContextualVersionConflict: (jsonschema 3.2.0 (/usr/share/miniconda/lib/python3.9/site-packages), Requirement.parse(&#39;jsonschema&gt;=4.0.1&#39;), {&#39;asdf&#39;})
   warnings.warn(
-/usr/share/miniconda/lib/python3.9/site-packages/asdf/entry_points.py:46: AsdfWarning: asdf.resource_mappings plugin from package jwst==1.4.3 failed to load:
+/usr/share/miniconda/lib/python3.9/site-packages/asdf/entry_points.py:46: AsdfWarning: asdf.resource_mappings plugin from package jwst==1.4.4 failed to load:
 
 ContextualVersionConflict: (jsonschema 3.2.0 (/usr/share/miniconda/lib/python3.9/site-packages), Requirement.parse(&#39;jsonschema&gt;=4.0.1&#39;), {&#39;asdf&#39;})
   warnings.warn(
@@ -1330,7 +1333,7 @@ Difference of PSF star from science data shows they are well matched, with a sca
     <footer class="footer">
   <p>
     
-      By Captain Jupyter<br/>
+      By STScI<br/>
     
         &copy; Copyright 2022.<br/>
       <div class="extra_footer">

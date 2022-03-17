@@ -62,6 +62,14 @@ const thebe_selector_output = ".output, .cell_output"
 
     <!-- Google Analytics -->
     
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-D46G4HKJY3"></script>
+<script>
+                    window.dataLayer = window.dataLayer || [];
+                    function gtag(){ dataLayer.push(arguments); }
+                    gtag('js', new Date());
+                    gtag('config', 'G-D46G4HKJY3');
+                </script>
+
   </head>
   <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
     
@@ -252,11 +260,11 @@ const thebe_selector_output = ".output, .cell_output"
         aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
     <div class="dropdown-buttons sourcebuttons">
         <a class="repository-button"
-            href="https://github.com/therealzoidberg/actions-ci-testing"><button type="button" class="btn btn-secondary topbarbtn"
+            href="https://github.com/therealzoidberg/actions-ci-testing/"><button type="button" class="btn btn-secondary topbarbtn"
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/therealzoidberg/actions-ci-testing/issues/new?title=Issue%20on%20page%20%2Fnotebooks/NIRSpec_MAST_Query/NIRSpec_MAST_Query.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/therealzoidberg/actions-ci-testing//issues/new?title=Issue%20on%20page%20%2Fnotebooks/NIRSpec_MAST_Query/NIRSpec_MAST_Query.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -284,11 +292,6 @@ const thebe_selector_output = ".output, .cell_output"
                     alt="Interact on binder">Binder</button></a>
         
         
-        
-        <a class="colab-button" href="https://colab.research.google.com/github/therealzoidberg/actions-ci-testing/blob/main/notebooks/notebooks/NIRSpec_MAST_Query/NIRSpec_MAST_Query.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
-                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
-                    src="../../_static/images/logo_colab.png"
-                    alt="Interact on Colab">Colab</button></a>
         
         <button type="button" class="btn btn-secondary topbarbtn"
             onclick="initThebeSBT()" title="Launch Thebe" data-toggle="tooltip" data-placement="left"><i
@@ -638,8 +641,11 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>NRS_LAMP
-NRS_DARK
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>NRS_DARK
 NRS_IMAGE
+NRS_IFU
 </pre></div>
 </div>
 </div>
@@ -782,11 +788,11 @@ NRS_IMAGE
           target 1 in the input catalog.
 dataproduct_type calib_level obs_collection ... intentType  obsid    objID  
 ---------------- ----------- -------------- ... ---------- -------- --------
-        spectrum          -1           JWST ...    SCIENCE 23798347 64394514
-        spectrum          -1           JWST ...    SCIENCE 23798346 64394513
-        spectrum          -1           JWST ...    SCIENCE 23798345 64394512
-        spectrum          -1           JWST ...    SCIENCE 23798326 64394493
-        spectrum          -1           JWST ...    SCIENCE 23798325 64394492
+        spectrum          -1           JWST ...    SCIENCE 23798180 64394347
+        spectrum          -1           JWST ...    SCIENCE 23798181 64394348
+        spectrum          -1           JWST ...    SCIENCE 23798182 64394349
+        spectrum          -1           JWST ...    SCIENCE 23798201 64394368
+        spectrum          -1           JWST ...    SCIENCE 23798202 64394369
 
 The observation table below contains potential duplicate observations for 
           target 2 in the input catalog.
@@ -819,7 +825,7 @@ dataproduct_type calib_level obs_collection obs_id ... intentType obsid objID
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>It may be helpful to check these proposal IDs in APT to compare proposal details: [1180, 1286, 1212, 1210, 1207, 1287]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>It may be helpful to check these proposal IDs in APT to compare proposal details: [1180, 1207, 1210, 1212, 1286, 1287]
 </pre></div>
 </div>
 </div>
@@ -837,7 +843,7 @@ dataproduct_type calib_level obs_collection obs_id ... intentType obsid objID
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Product group IDs: [&#39;23798347&#39;, &#39;23798346&#39;, &#39;23798345&#39;, &#39;23798326&#39;, &#39;23798325&#39;, &#39;23798324&#39;, &#39;23798251&#39;, &#39;23798250&#39;, &#39;23798249&#39;, &#39;23798230&#39;]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Product group IDs: [&#39;23798180&#39;, &#39;23798181&#39;, &#39;23798182&#39;, &#39;23798201&#39;, &#39;23798202&#39;, &#39;23798203&#39;, &#39;23798228&#39;, &#39;23798229&#39;, &#39;23798230&#39;, &#39;23798249&#39;]
 </pre></div>
 </div>
 </div>
@@ -908,7 +914,7 @@ dataproduct_type calib_level obs_collection obs_id ... intentType obsid objID
     <footer class="footer">
   <p>
     
-      By Captain Jupyter<br/>
+      By STScI<br/>
     
         &copy; Copyright 2022.<br/>
       <div class="extra_footer">
