@@ -732,67 +732,15 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading images
 </pre></div>
 </div>
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
-<span class="nn">Input In [3],</span> in <span class="ni">&lt;cell line: 16&gt;</span><span class="nt">()</span>
-<span class="g g-Whitespace">     </span><span class="mi">20</span> <span class="n">boxlink_images_lev3</span> <span class="o">=</span> <span class="s1">&#39;https://data.science.stsci.edu/redirect/JWST/jwst-data_analysis_tools/stellar_photometry/images_level3.tar.gz&#39;</span>
-<span class="g g-Whitespace">     </span><span class="mi">21</span> <span class="n">boxfile_images_lev3</span> <span class="o">=</span> <span class="s1">&#39;./images_level3.tar.gz&#39;</span>
-<span class="ne">---&gt; </span><span class="mi">22</span> <span class="n">urllib</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">urlretrieve</span><span class="p">(</span><span class="n">boxlink_images_lev3</span><span class="p">,</span> <span class="n">boxfile_images_lev3</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">24</span> <span class="n">tar</span> <span class="o">=</span> <span class="n">tarfile</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">boxfile_images_lev3</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">25</span> <span class="n">tar</span><span class="o">.</span><span class="n">extractall</span><span class="p">()</span>
-
-<span class="nn">File /usr/share/miniconda/lib/python3.9/urllib/request.py:268,</span> in <span class="ni">urlretrieve</span><span class="nt">(url, filename, reporthook, data)</span>
-<span class="g g-Whitespace">    </span><span class="mi">265</span>     <span class="n">reporthook</span><span class="p">(</span><span class="n">blocknum</span><span class="p">,</span> <span class="n">bs</span><span class="p">,</span> <span class="n">size</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">267</span> <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">268</span>     <span class="n">block</span> <span class="o">=</span> <span class="n">fp</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">bs</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">269</span>     <span class="k">if</span> <span class="ow">not</span> <span class="n">block</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">270</span>         <span class="k">break</span>
-
-<span class="nn">File /usr/share/miniconda/lib/python3.9/http/client.py:462,</span> in <span class="ni">HTTPResponse.read</span><span class="nt">(self, amt)</span>
-<span class="g g-Whitespace">    </span><span class="mi">459</span> <span class="k">if</span> <span class="n">amt</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">460</span>     <span class="c1"># Amount is given, implement using readinto</span>
-<span class="g g-Whitespace">    </span><span class="mi">461</span>     <span class="n">b</span> <span class="o">=</span> <span class="nb">bytearray</span><span class="p">(</span><span class="n">amt</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">462</span>     <span class="n">n</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">readinto</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">463</span>     <span class="k">return</span> <span class="nb">memoryview</span><span class="p">(</span><span class="n">b</span><span class="p">)[:</span><span class="n">n</span><span class="p">]</span><span class="o">.</span><span class="n">tobytes</span><span class="p">()</span>
-<span class="g g-Whitespace">    </span><span class="mi">464</span> <span class="k">else</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">465</span>     <span class="c1"># Amount is not given (unbounded read) so we must check self.length</span>
-<span class="g g-Whitespace">    </span><span class="mi">466</span>     <span class="c1"># and self.chunked</span>
-
-<span class="nn">File /usr/share/miniconda/lib/python3.9/http/client.py:506,</span> in <span class="ni">HTTPResponse.readinto</span><span class="nt">(self, b)</span>
-<span class="g g-Whitespace">    </span><span class="mi">501</span>         <span class="n">b</span> <span class="o">=</span> <span class="nb">memoryview</span><span class="p">(</span><span class="n">b</span><span class="p">)[</span><span class="mi">0</span><span class="p">:</span><span class="bp">self</span><span class="o">.</span><span class="n">length</span><span class="p">]</span>
-<span class="g g-Whitespace">    </span><span class="mi">503</span> <span class="c1"># we do not use _safe_read() here because this may be a .will_close</span>
-<span class="g g-Whitespace">    </span><span class="mi">504</span> <span class="c1"># connection, and the user is reading more bytes than will be provided</span>
-<span class="g g-Whitespace">    </span><span class="mi">505</span> <span class="c1"># (for example, reading in 1k chunks)</span>
-<span class="ne">--&gt; </span><span class="mi">506</span> <span class="n">n</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">fp</span><span class="o">.</span><span class="n">readinto</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">507</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">n</span> <span class="ow">and</span> <span class="n">b</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">508</span>     <span class="c1"># Ideally, we would raise IncompleteRead if the content-length</span>
-<span class="g g-Whitespace">    </span><span class="mi">509</span>     <span class="c1"># wasn&#39;t satisfied, but it might break compatibility.</span>
-<span class="g g-Whitespace">    </span><span class="mi">510</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_close_conn</span><span class="p">()</span>
-
-<span class="nn">File /usr/share/miniconda/lib/python3.9/socket.py:704,</span> in <span class="ni">SocketIO.readinto</span><span class="nt">(self, b)</span>
-<span class="g g-Whitespace">    </span><span class="mi">702</span> <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">703</span>     <span class="k">try</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">704</span>         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_sock</span><span class="o">.</span><span class="n">recv_into</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">705</span>     <span class="k">except</span> <span class="n">timeout</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">706</span>         <span class="bp">self</span><span class="o">.</span><span class="n">_timeout_occurred</span> <span class="o">=</span> <span class="kc">True</span>
-
-<span class="nn">File /usr/share/miniconda/lib/python3.9/ssl.py:1241,</span> in <span class="ni">SSLSocket.recv_into</span><span class="nt">(self, buffer, nbytes, flags)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1237</span>     <span class="k">if</span> <span class="n">flags</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1238</span>         <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
-<span class="g g-Whitespace">   </span><span class="mi">1239</span>           <span class="s2">&quot;non-zero flags not allowed in calls to recv_into() on </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span>
-<span class="g g-Whitespace">   </span><span class="mi">1240</span>           <span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="p">)</span>
-<span class="ne">-&gt; </span><span class="mi">1241</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">nbytes</span><span class="p">,</span> <span class="n">buffer</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1242</span> <span class="k">else</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1243</span>     <span class="k">return</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">recv_into</span><span class="p">(</span><span class="n">buffer</span><span class="p">,</span> <span class="n">nbytes</span><span class="p">,</span> <span class="n">flags</span><span class="p">)</span>
-
-<span class="nn">File /usr/share/miniconda/lib/python3.9/ssl.py:1099,</span> in <span class="ni">SSLSocket.read</span><span class="nt">(self, len, buffer)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1097</span> <span class="k">try</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1098</span>     <span class="k">if</span> <span class="n">buffer</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-<span class="ne">-&gt; </span><span class="mi">1099</span>         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_sslobj</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="nb">len</span><span class="p">,</span> <span class="n">buffer</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1100</span>     <span class="k">else</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1101</span>         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_sslobj</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="nb">len</span><span class="p">)</span>
-
-<span class="ne">KeyboardInterrupt</span>: 
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Available Detectors for SW channel: [&#39;NRCB1&#39;]
+Available Detectors for LW channel: [&#39;NRCB5&#39;]
+Available SW Filters: [&#39;F070W&#39;, &#39;F115W&#39;, &#39;F200W&#39;]
+Available LW Filters: [&#39;F277W&#39;, &#39;F356W&#39;, &#39;F444W&#39;]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_2392/207740193.py:48: DeprecationWarning: `np.float` is a deprecated alias for the builtin `float`. To silence this warning, use `float` by itself. Doing this will not modify any behavior and is safe. If you specifically wanted the numpy scalar type, use `np.float64` here.
+Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+  wv = np.float(f[1:3])
 </pre></div>
 </div>
 </div>
@@ -859,6 +807,12 @@ const thebe_selector_output = ".output, .cell_output"
 <span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Font family [&#39;helvetica&#39;] not found. Falling back to DejaVu Sans.
+</pre></div>
+</div>
+<img alt="../../_images/NIRCam_Aperture_Photometry_Example_11_1.png" src="../../_images/NIRCam_Aperture_Photometry_Example_11_1.png" />
 </div>
 </div>
 </div>
@@ -960,6 +914,29 @@ const thebe_selector_output = ".output, .cell_output"
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Finding sources on image 1, filter F115W, detector NRCB1:
+
+Conversion factor from MJy/sr to DN/S for filter F115W: 3.821892261505127
+FWHM for the filter F115W: 1.298 px
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Number of sources found in the image: 11036
+-------------------------------------
+
+Finding sources on image 1, filter F200W, detector NRCB1:
+
+Conversion factor from MJy/sr to DN/S for filter F200W: 2.564082860946655
+FWHM for the filter F200W: 2.141 px
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Number of sources found in the image: 12016
+-------------------------------------
+
+Elapsed Time for finding stars: 4.64042670799995
+</pre></div>
+</div>
+</div>
 </div>
 </div>
 <div class="section" id="id1">
@@ -1046,6 +1023,30 @@ const thebe_selector_output = ".output, .cell_output"
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Performing aperture photometry for filter F115W; radius r = 3.5 px
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_2392/211919994.py:23: DeprecationWarning: `np.str` is a deprecated alias for the builtin `str`. To silence this warning, use `str` by itself. Doing this will not modify any behavior and is safe. If you specifically wanted the numpy scalar type, use `np.str_` here.
+Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+  rr = np.str(rad)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Time Elapsed: 2.0272412879999138
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Performing aperture photometry for filter F200W; radius r = 4.0 px
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_2392/211919994.py:23: DeprecationWarning: `np.str` is a deprecated alias for the builtin `str`. To silence this warning, use `str` by itself. Doing this will not modify any behavior and is safe. If you specifically wanted the numpy scalar type, use `np.str_` here.
+Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+  rr = np.str(rad)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Time Elapsed: 2.0987041449999424
+</pre></div>
+</div>
+</div>
 </div>
 </div>
 <div class="section" id="table-with-magnitudes-and-positions">
@@ -1084,6 +1085,116 @@ const thebe_selector_output = ".output, .cell_output"
                                                         <span class="n">dict_aper</span><span class="p">[</span><span class="n">det</span><span class="p">][</span><span class="n">filt</span><span class="p">][</span><span class="s1">&#39;aperture phot table&#39;</span><span class="p">][</span><span class="s1">&#39;aper_sum_bkgsub_&#39;</span> <span class="o">+</span> <span class="n">radius</span> <span class="o">+</span> <span class="s1">&#39;px&#39;</span><span class="p">][</span><span class="n">mask</span><span class="p">])</span>
 
             <span class="n">dict_aper</span><span class="p">[</span><span class="n">det</span><span class="p">][</span><span class="n">filt</span><span class="p">][</span><span class="s1">&#39;final aperture phot table&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">table_phot</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_2392/1283306049.py:7: DeprecationWarning: `np.str` is a deprecated alias for the builtin `str`. To silence this warning, use `str` by itself. Doing this will not modify any behavior and is safe. If you specifically wanted the numpy scalar type, use `np.str_` here.
+Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+  radius = np.str(radii[j])
+/usr/share/miniconda/lib/python3.9/site-packages/asdf/entry_points.py:46: AsdfWarning: asdf.extensions plugin from package asdf-astropy==0.2.0 failed to load:
+
+ContextualVersionConflict: (jsonschema 3.2.0 (/usr/share/miniconda/lib/python3.9/site-packages), Requirement.parse(&#39;jsonschema&gt;=4.0.1&#39;), {&#39;asdf&#39;})
+  warnings.warn(
+/usr/share/miniconda/lib/python3.9/site-packages/asdf/entry_points.py:46: AsdfWarning: asdf.extensions plugin from package gwcs==0.18.1 failed to load:
+
+ContextualVersionConflict: (jsonschema 3.2.0 (/usr/share/miniconda/lib/python3.9/site-packages), Requirement.parse(&#39;jsonschema&gt;=4.0.1&#39;), {&#39;asdf&#39;})
+  warnings.warn(
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/usr/share/miniconda/lib/python3.9/site-packages/asdf/entry_points.py:46: AsdfWarning: asdf.extensions plugin from package jwst==1.4.5 failed to load:
+
+ContextualVersionConflict: (jsonschema 3.2.0 (/usr/share/miniconda/lib/python3.9/site-packages), Requirement.parse(&#39;jsonschema&gt;=4.0.1&#39;), {&#39;asdf&#39;})
+  warnings.warn(
+/usr/share/miniconda/lib/python3.9/site-packages/asdf/entry_points.py:46: AsdfWarning: asdf_extensions plugin from package jwst==1.4.5 failed to load:
+
+ContextualVersionConflict: (jsonschema 3.2.0 (/usr/share/miniconda/lib/python3.9/site-packages), Requirement.parse(&#39;jsonschema&gt;=4.0.1&#39;), {&#39;asdf&#39;})
+  warnings.warn(
+/usr/share/miniconda/lib/python3.9/site-packages/asdf/entry_points.py:46: AsdfWarning: asdf_extensions plugin from package specutils==1.7.0 failed to load:
+
+ContextualVersionConflict: (jsonschema 3.2.0 (/usr/share/miniconda/lib/python3.9/site-packages), Requirement.parse(&#39;jsonschema&gt;=4.0.1&#39;), {&#39;asdf&#39;})
+  warnings.warn(
+/usr/share/miniconda/lib/python3.9/site-packages/asdf/entry_points.py:46: AsdfWarning: asdf_extensions plugin from package stpipe==0.3.1 failed to load:
+
+ContextualVersionConflict: (jsonschema 3.2.0 (/usr/share/miniconda/lib/python3.9/site-packages), Requirement.parse(&#39;jsonschema&gt;=4.0.1&#39;), {&#39;asdf&#39;})
+  warnings.warn(
+/usr/share/miniconda/lib/python3.9/site-packages/asdf/entry_points.py:46: AsdfWarning: asdf_extensions plugin from package asdf==2.11.0 failed to load:
+
+VersionConflict: (jsonschema 3.2.0 (/usr/share/miniconda/lib/python3.9/site-packages), Requirement.parse(&#39;jsonschema&gt;=4.0.1&#39;))
+  warnings.warn(
+/usr/share/miniconda/lib/python3.9/site-packages/asdf/entry_points.py:46: AsdfWarning: asdf.resource_mappings plugin from package asdf-astropy==0.2.0 failed to load:
+
+ContextualVersionConflict: (jsonschema 3.2.0 (/usr/share/miniconda/lib/python3.9/site-packages), Requirement.parse(&#39;jsonschema&gt;=4.0.1&#39;), {&#39;asdf&#39;})
+  warnings.warn(
+/usr/share/miniconda/lib/python3.9/site-packages/asdf/entry_points.py:46: AsdfWarning: asdf.resource_mappings plugin from package asdf-coordinates-schemas==0.1.0 failed to load:
+
+ContextualVersionConflict: (jsonschema 3.2.0 (/usr/share/miniconda/lib/python3.9/site-packages), Requirement.parse(&#39;jsonschema&gt;=4.0.1&#39;), {&#39;asdf&#39;})
+  warnings.warn(
+/usr/share/miniconda/lib/python3.9/site-packages/asdf/entry_points.py:46: AsdfWarning: asdf.resource_mappings plugin from package asdf-wcs-schemas==0.1.1 failed to load:
+
+ContextualVersionConflict: (jsonschema 3.2.0 (/usr/share/miniconda/lib/python3.9/site-packages), Requirement.parse(&#39;jsonschema&gt;=4.0.1&#39;), {&#39;asdf&#39;})
+  warnings.warn(
+/usr/share/miniconda/lib/python3.9/site-packages/asdf/entry_points.py:46: AsdfWarning: asdf.resource_mappings plugin from package jwst==1.4.5 failed to load:
+
+ContextualVersionConflict: (jsonschema 3.2.0 (/usr/share/miniconda/lib/python3.9/site-packages), Requirement.parse(&#39;jsonschema&gt;=4.0.1&#39;), {&#39;asdf&#39;})
+  warnings.warn(
+/usr/share/miniconda/lib/python3.9/site-packages/asdf/entry_points.py:46: AsdfWarning: asdf.resource_mappings plugin from package asdf==2.11.0 failed to load:
+
+VersionConflict: (jsonschema 3.2.0 (/usr/share/miniconda/lib/python3.9/site-packages), Requirement.parse(&#39;jsonschema&gt;=4.0.1&#39;))
+  warnings.warn(
+</pre></div>
+</div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">FileNotFoundError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="nn">Input In [12],</span> in <span class="ni">&lt;cell line: 3&gt;</span><span class="nt">()</span>
+<span class="g g-Whitespace">      </span><span class="mi">9</span> <span class="n">image</span> <span class="o">=</span> <span class="n">fits</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">dict_images</span><span class="p">[</span><span class="n">det</span><span class="p">][</span><span class="n">filt</span><span class="p">][</span><span class="s1">&#39;images&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span>
+<span class="g g-Whitespace">     </span><span class="mi">10</span> <span class="n">data</span> <span class="o">=</span> <span class="n">image</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">data</span>
+<span class="ne">---&gt; </span><span class="mi">12</span> <span class="n">image_model</span> <span class="o">=</span> <span class="n">ImageModel</span><span class="p">(</span><span class="n">dict_images</span><span class="p">[</span><span class="n">det</span><span class="p">][</span><span class="n">filt</span><span class="p">][</span><span class="s1">&#39;images&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span>
+<span class="g g-Whitespace">     </span><span class="mi">14</span> <span class="n">mask</span> <span class="o">=</span> <span class="p">((</span><span class="n">dict_aper</span><span class="p">[</span><span class="n">det</span><span class="p">][</span><span class="n">filt</span><span class="p">][</span><span class="s1">&#39;sources found&#39;</span><span class="p">][</span><span class="s1">&#39;xcentroid&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="o">&amp;</span>
+<span class="g g-Whitespace">     </span><span class="mi">15</span>         <span class="p">(</span><span class="n">dict_aper</span><span class="p">[</span><span class="n">det</span><span class="p">][</span><span class="n">filt</span><span class="p">][</span><span class="s1">&#39;sources found&#39;</span><span class="p">][</span><span class="s1">&#39;xcentroid&#39;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">data</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> <span class="o">&amp;</span>
+<span class="g g-Whitespace">     </span><span class="mi">16</span>         <span class="p">(</span><span class="n">dict_aper</span><span class="p">[</span><span class="n">det</span><span class="p">][</span><span class="n">filt</span><span class="p">][</span><span class="s1">&#39;sources found&#39;</span><span class="p">][</span><span class="s1">&#39;ycentroid&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="o">&amp;</span>
+<span class="g g-Whitespace">     </span><span class="mi">17</span>         <span class="p">(</span><span class="n">dict_aper</span><span class="p">[</span><span class="n">det</span><span class="p">][</span><span class="n">filt</span><span class="p">][</span><span class="s1">&#39;sources found&#39;</span><span class="p">][</span><span class="s1">&#39;ycentroid&#39;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">data</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="o">&amp;</span>
+<span class="g g-Whitespace">     </span><span class="mi">18</span>         <span class="p">(</span><span class="n">dict_aper</span><span class="p">[</span><span class="n">det</span><span class="p">][</span><span class="n">filt</span><span class="p">][</span><span class="s1">&#39;aperture phot table&#39;</span><span class="p">][</span><span class="s1">&#39;aper_sum_bkgsub_&#39;</span> <span class="o">+</span> <span class="n">radius</span> <span class="o">+</span> <span class="s1">&#39;px&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">))</span>
+<span class="g g-Whitespace">     </span><span class="mi">20</span> <span class="n">table_phot</span> <span class="o">=</span> <span class="n">Table</span><span class="p">()</span>
+
+<span class="nn">File /usr/share/miniconda/lib/python3.9/site-packages/stdatamodels/model_base.py:174,</span> in <span class="ni">DataModel.__init__</span><span class="nt">(self, init, schema, memmap, pass_invalid_values, strict_validation, validate_on_assignment, cast_fits_arrays, validate_arrays, ignore_missing_extensions, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">171</span>         <span class="n">schema</span> <span class="o">=</span> <span class="n">_DEFAULT_SCHEMA</span>
+<span class="g g-Whitespace">    </span><span class="mi">172</span>     <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">173</span>         <span class="c1"># Create an AsdfFile so we can use its resolver for loading schemas</span>
+<span class="ne">--&gt; </span><span class="mi">174</span>         <span class="n">schema</span> <span class="o">=</span> <span class="n">asdf_schema</span><span class="o">.</span><span class="n">load_schema</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">schema_url</span><span class="p">,</span> <span class="n">resolve_references</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">176</span> <span class="bp">self</span><span class="o">.</span><span class="n">_schema</span> <span class="o">=</span> <span class="n">mschema</span><span class="o">.</span><span class="n">merge_property_trees</span><span class="p">(</span><span class="n">schema</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">178</span> <span class="c1"># Provide the object as context to other classes and functions</span>
+
+<span class="nn">File /usr/share/miniconda/lib/python3.9/site-packages/asdf/schema.py:435,</span> in <span class="ni">load_schema</span><span class="nt">(url, resolver, resolve_references, resolve_local_refs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">430</span>     <span class="n">resolver</span> <span class="o">=</span> <span class="n">extension</span><span class="o">.</span><span class="n">get_default_resolver</span><span class="p">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">432</span> <span class="c1"># We want to cache the work that went into constructing the schema, but returning</span>
+<span class="g g-Whitespace">    </span><span class="mi">433</span> <span class="c1"># the same object is treacherous, because users who mutate the result will not</span>
+<span class="g g-Whitespace">    </span><span class="mi">434</span> <span class="c1"># expect that they&#39;re changing the schema everywhere.</span>
+<span class="ne">--&gt; </span><span class="mi">435</span> <span class="k">return</span> <span class="n">copy</span><span class="o">.</span><span class="n">deepcopy</span><span class="p">(</span><span class="n">_load_schema_cached</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">resolver</span><span class="p">,</span> <span class="n">resolve_references</span><span class="p">,</span> <span class="n">resolve_local_refs</span><span class="p">))</span>
+
+<span class="nn">File /usr/share/miniconda/lib/python3.9/site-packages/asdf/schema.py:482,</span> in <span class="ni">_load_schema_cached</span><span class="nt">(url, resolver, resolve_references, resolve_local_refs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">479</span> <span class="nd">@lru_cache</span><span class="p">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">480</span> <span class="k">def</span> <span class="nf">_load_schema_cached</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">resolver</span><span class="p">,</span> <span class="n">resolve_references</span><span class="p">,</span> <span class="n">resolve_local_refs</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">481</span>     <span class="n">loader</span> <span class="o">=</span> <span class="n">_make_schema_loader</span><span class="p">(</span><span class="n">resolver</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">482</span>     <span class="n">schema</span><span class="p">,</span> <span class="n">url</span> <span class="o">=</span> <span class="n">loader</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">484</span>     <span class="k">if</span> <span class="n">resolve_references</span> <span class="ow">or</span> <span class="n">resolve_local_refs</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">486</span>         <span class="k">def</span> <span class="nf">resolve_refs</span><span class="p">(</span><span class="n">node</span><span class="p">,</span> <span class="n">json_id</span><span class="p">):</span>
+
+<span class="nn">File /usr/share/miniconda/lib/python3.9/site-packages/asdf/schema.py:359,</span> in <span class="ni">_make_schema_loader.&lt;locals&gt;.load_schema</span><span class="nt">(url)</span>
+<span class="g g-Whitespace">    </span><span class="mi">355</span>     <span class="k">return</span> <span class="n">result</span><span class="p">,</span> <span class="n">url</span>
+<span class="g g-Whitespace">    </span><span class="mi">357</span> <span class="c1"># If not, this must be a URL (or missing).  Fall back to fetching</span>
+<span class="g g-Whitespace">    </span><span class="mi">358</span> <span class="c1"># the schema the old way:</span>
+<span class="ne">--&gt; </span><span class="mi">359</span> <span class="k">return</span> <span class="n">_load_schema</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+
+<span class="nn">File /usr/share/miniconda/lib/python3.9/site-packages/asdf/schema.py:323,</span> in <span class="ni">_load_schema</span><span class="nt">(url)</span>
+<span class="g g-Whitespace">    </span><span class="mi">320</span> <span class="nd">@lru_cache</span><span class="p">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">321</span> <span class="k">def</span> <span class="nf">_load_schema</span><span class="p">(</span><span class="n">url</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">322</span>     <span class="k">if</span> <span class="n">url</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;http://&quot;</span><span class="p">)</span> <span class="ow">or</span> <span class="n">url</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;https://&quot;</span><span class="p">)</span> <span class="ow">or</span> <span class="n">url</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;asdf://&quot;</span><span class="p">):</span>
+<span class="ne">--&gt; </span><span class="mi">323</span>         <span class="k">raise</span> <span class="ne">FileNotFoundError</span><span class="p">(</span><span class="s2">&quot;Unable to fetch schema from non-file URL: &quot;</span> <span class="o">+</span> <span class="n">url</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">325</span>     <span class="k">with</span> <span class="n">generic_io</span><span class="o">.</span><span class="n">get_file</span><span class="p">(</span><span class="n">url</span><span class="p">)</span> <span class="k">as</span> <span class="n">fd</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">326</span>         <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span> <span class="ow">and</span> <span class="n">url</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s2">&quot;json&quot;</span><span class="p">):</span>
+
+<span class="ne">FileNotFoundError</span>: Unable to fetch schema from non-file URL: http://stsci.edu/schemas/jwst_datamodel/image.schema
 </pre></div>
 </div>
 </div>
