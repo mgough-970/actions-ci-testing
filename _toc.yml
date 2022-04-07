@@ -43,13 +43,13 @@ parts:
           - file: notebooks/composite_model_fitting/specfit_demo_3.ipynb
           - file: notebooks/niriss_ami_binary/1_niriss_ami_binary.ipynb
           - file: notebooks/niriss_ami_binary/2_niriss_ami_binary.ipynb
-          -file: notebooks/aperture_photometry/NIRCam_Aperture_Photometry_Example.ipynb
-          -file: notebooks/NIRSpec_MAST_Query/NIRSpec_MAST_Query.ipynb
-          -file: notebooks/MIRI_LRS_spectral_extraction/miri_lrs_spectral_extraction.ipynb
-          -file: notebooks/transit_spectroscopy_notebook/Exoplanet_Transmission_Spectra_JWST.ipynb
-          -file: notebooks/NIRCam_photometry/NIRCam multiband photometry.ipynb
-          -file: notebooks/optimal_extraction_dynamic/Spectral Extraction.ipynb
-          -file: notebooks/preimaging/preimaging_02_calwebb.ipynb
-          -file: notebooks/preimaging/preimaging_01_mirage.ipynb
-          -file: notebooks/preimaging/preimaging_03_association.ipynb
+          - file: notebooks/aperture_photometry/NIRCam_Aperture_Photometry_Example.ipynb
+          - file: notebooks/NIRSpec_MAST_Query/NIRSpec_MAST_Query.ipynb
+          - file: notebooks/MIRI_LRS_spectral_extraction/miri_lrs_spectral_extraction.ipynb
+          - file: notebooks/transit_spectroscopy_notebook/Exoplanet_Transmission_Spectra_JWST.ipynb
+          - file: notebooks/NIRCam_photometry/NIRCam multiband photometry.ipynb
+          - file: notebooks/optimal_extraction_dynamic/Spectral Extraction.ipynb
+          - file: notebooks/preimaging/preimaging_02_calwebb.ipynb
+          - file: notebooks/preimaging/preimaging_01_mirage.ipynb
+          - file: notebooks/preimaging/preimaging_03_association.ipynb
 
