@@ -22,14 +22,14 @@ parts:
           - file: notebooks/preimaging/preimaging_01_mirage.ipynb
           - file: notebooks/preimaging/preimaging_02_calwebb.ipynb
           - file: notebooks/preimaging/preimaging_03_association.ipynb
-    - caption: Excluded Notebooks  Composite model fitting
+      chapters: Excluded Notebooks  Composite model fitting
           - file: notebooks/composite_model_fitting/specfit_demo_3.ipynb
-    - caption: Excluded Notebooks  SOSS  Transient
+      chapters: Excluded Notebooks  SOSS  Transient
           - file: notebooks/soss-transit-spectroscopy/HAT-P-1b-PART3-data-analysis.ipynb
-    - caption: Excluded Notebooks  NIRISS AMI Binary
+      chapters: Excluded Notebooks  NIRISS AMI Binary
           - file: notebooks/niriss_ami_binary/1_niriss_ami_binary.ipynb
           - file: notebooks/niriss_ami_binary/2_niriss_ami_binary.ipynb
-    - caption: Excluded Notebooks Redshift Crosscorr
+      chapters: Excluded Notebooks Redshift Crosscorr
           - file: notebooks/redshift_crosscorr/redshift_with_crosscorr.ipynb
-    - caption: Excluded Notebooks - Optimal Extraction Dynamic
+      chapters: Excluded Notebooks - Optimal Extraction Dynamic
           - file: notebooks/optimal_extraction_dynamic/Spectral Extraction.ipynb
