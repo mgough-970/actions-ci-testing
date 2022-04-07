@@ -56,6 +56,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Extracting an Exoplanet Transmission Spectrum from NIRSpec BOTS Time Series Observations" href="../transit_spectroscopy_notebook/Exoplanet_Transmission_Spectra_JWST.html" />
+    <link rel="prev" title="MAST Query Tutorial for NIRSpec Users" href="../NIRSpec_MAST_Query/NIRSpec_MAST_Query.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -187,7 +189,7 @@ const thebe_selector_output = ".output, .cell_output"
   MIRI IFU in the LMC
  </span>
 </p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../MIRI_IFU_YSOs_in_the_LMC/isha_nayak_ysos_in_the_lmc.html">
    JWST Data Analysis
@@ -201,6 +203,86 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toctree-l1">
   <a class="reference internal" href="../ifu_optimal/ifu_optimal.html">
    Baseline: NIRSpec IFU Optimal Point Source Extraction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../background_estimation_imaging/Imaging%20Sky%20Background%20Estimation.html">
+   Imaging Sky Background Estimation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../soss-transit-spectroscopy/HAT-P-1b-PART3-data-analysis.html">
+   Analyzing the JWST Pipeline products of HAT-P-1b observations with NIRISS/SOSS
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../specviz_notebookGUI_interaction/specviz_notebook_gui_interaction_redshift.html">
+   Specviz notebook/GUI interaction on NIRISS WFSS 1D spectra
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../asdf_example/asdf_example.html">
+   Example of Converting a FITS File to ASDF
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../composite_model_fitting/specfit_demo_3.html">
+   Draft: Advanced Composite spectral model fitting
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../niriss_ami_binary/1_niriss_ami_binary.html">
+   NIRISS AMI simulation of binary point source AB Dor and calibrator HD37093
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../niriss_ami_binary/2_niriss_ami_binary.html">
+   NIRISS AMI calibration of binary point source AB Dor and calibrator HD37093
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../aperture_photometry/NIRCam_Aperture_Photometry_Example.html">
+   Draft Aperture Photometry
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../NIRSpec_MAST_Query/NIRSpec_MAST_Query.html">
+   MAST Query Tutorial for NIRSpec Users
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   MIRI LRS Optimal  Spectral Extraction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../transit_spectroscopy_notebook/Exoplanet_Transmission_Spectra_JWST.html">
+   Extracting an Exoplanet Transmission Spectrum from NIRSpec BOTS Time Series Observations
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../NIRCam_photometry/NIRCam%20multiband%20photometry.html">
+   NIRCam Multiband Photometry
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../optimal_extraction_dynamic/Spectral%20Extraction.html">
+   NIRSpec MOS Optimal Spectral Extraction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../preimaging/preimaging_02_calwebb.html">
+   Excuting the JWST pipeline on the  JWST astrometric calibration field in the LMC (part 1)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../preimaging/preimaging_01_mirage.html">
+   NIRSpec Pre-Imaging with NIRCam
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../preimaging/preimaging_03_association.html">
+   Creating simulated images of the JWST astrometric calibration field in the LMC
   </a>
  </li>
 </ul>
@@ -517,7 +599,7 @@ const thebe_selector_output = ".output, .cell_output"
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="miri-lrs-optimal-spectral-extraction">
 <h1>MIRI LRS Optimal  Spectral Extraction<a class="headerlink" href="#miri-lrs-optimal-spectral-extraction" title="Permalink to this headline">¶</a></h1>
-<p><strong>Use case:</strong> Extract spectra with different locations, extraction apertures, and techniques.<br>
+<p><strong>Use case:</strong> Extract  spectra with different locations, extraction apertures, and techniques.<br>
 <strong>Data:</strong> Simulated MIRI LRS spectrum.<br>
 <strong>Tools:</strong> jwst, gwcs, matplotlib, astropy.<br>
 <strong>Cross-intrument:</strong> NIRSpec, MIRI.<br>
@@ -798,13 +880,11 @@ ContextualVersionConflict: (jsonschema 3.2.0 (/usr/share/miniconda/lib/python3.9
 
 ContextualVersionConflict: (jsonschema 3.2.0 (/usr/share/miniconda/lib/python3.9/site-packages), Requirement.parse(&#39;jsonschema&gt;=4.0.1&#39;), {&#39;asdf&#39;})
   warnings.warn(
-/usr/share/miniconda/lib/python3.9/site-packages/asdf/entry_points.py:46: AsdfWarning: asdf.extensions plugin from package jwst==1.4.5 failed to load:
+/usr/share/miniconda/lib/python3.9/site-packages/asdf/entry_points.py:46: AsdfWarning: asdf.extensions plugin from package jwst==1.4.6 failed to load:
 
 ContextualVersionConflict: (jsonschema 3.2.0 (/usr/share/miniconda/lib/python3.9/site-packages), Requirement.parse(&#39;jsonschema&gt;=4.0.1&#39;), {&#39;asdf&#39;})
   warnings.warn(
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/usr/share/miniconda/lib/python3.9/site-packages/asdf/entry_points.py:46: AsdfWarning: asdf_extensions plugin from package jwst==1.4.5 failed to load:
+/usr/share/miniconda/lib/python3.9/site-packages/asdf/entry_points.py:46: AsdfWarning: asdf_extensions plugin from package jwst==1.4.6 failed to load:
 
 ContextualVersionConflict: (jsonschema 3.2.0 (/usr/share/miniconda/lib/python3.9/site-packages), Requirement.parse(&#39;jsonschema&gt;=4.0.1&#39;), {&#39;asdf&#39;})
   warnings.warn(
@@ -812,7 +892,7 @@ ContextualVersionConflict: (jsonschema 3.2.0 (/usr/share/miniconda/lib/python3.9
 
 ContextualVersionConflict: (jsonschema 3.2.0 (/usr/share/miniconda/lib/python3.9/site-packages), Requirement.parse(&#39;jsonschema&gt;=4.0.1&#39;), {&#39;asdf&#39;})
   warnings.warn(
-/usr/share/miniconda/lib/python3.9/site-packages/asdf/entry_points.py:46: AsdfWarning: asdf_extensions plugin from package stpipe==0.3.1 failed to load:
+/usr/share/miniconda/lib/python3.9/site-packages/asdf/entry_points.py:46: AsdfWarning: asdf_extensions plugin from package stpipe==0.3.2 failed to load:
 
 ContextualVersionConflict: (jsonschema 3.2.0 (/usr/share/miniconda/lib/python3.9/site-packages), Requirement.parse(&#39;jsonschema&gt;=4.0.1&#39;), {&#39;asdf&#39;})
   warnings.warn(
@@ -828,11 +908,13 @@ ContextualVersionConflict: (jsonschema 3.2.0 (/usr/share/miniconda/lib/python3.9
 
 ContextualVersionConflict: (jsonschema 3.2.0 (/usr/share/miniconda/lib/python3.9/site-packages), Requirement.parse(&#39;jsonschema&gt;=4.0.1&#39;), {&#39;asdf&#39;})
   warnings.warn(
-/usr/share/miniconda/lib/python3.9/site-packages/asdf/entry_points.py:46: AsdfWarning: asdf.resource_mappings plugin from package asdf-wcs-schemas==0.1.1 failed to load:
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/usr/share/miniconda/lib/python3.9/site-packages/asdf/entry_points.py:46: AsdfWarning: asdf.resource_mappings plugin from package asdf-wcs-schemas==0.1.1 failed to load:
 
 ContextualVersionConflict: (jsonschema 3.2.0 (/usr/share/miniconda/lib/python3.9/site-packages), Requirement.parse(&#39;jsonschema&gt;=4.0.1&#39;), {&#39;asdf&#39;})
   warnings.warn(
-/usr/share/miniconda/lib/python3.9/site-packages/asdf/entry_points.py:46: AsdfWarning: asdf.resource_mappings plugin from package jwst==1.4.5 failed to load:
+/usr/share/miniconda/lib/python3.9/site-packages/asdf/entry_points.py:46: AsdfWarning: asdf.resource_mappings plugin from package jwst==1.4.6 failed to load:
 
 ContextualVersionConflict: (jsonschema 3.2.0 (/usr/share/miniconda/lib/python3.9/site-packages), Requirement.parse(&#39;jsonschema&gt;=4.0.1&#39;), {&#39;asdf&#39;})
   warnings.warn(
@@ -1263,7 +1345,21 @@ VersionConflict: (jsonschema 3.2.0 (/usr/share/miniconda/lib/python3.9/site-pack
               
             
                 <!-- Previous / next buttons -->
-<div class='prev-next-area'>
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="../NIRSpec_MAST_Query/NIRSpec_MAST_Query.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">MAST Query Tutorial for NIRSpec Users</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="../transit_spectroscopy_notebook/Exoplanet_Transmission_Spectra_JWST.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Extracting an Exoplanet Transmission Spectrum from NIRSpec BOTS Time Series Observations</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
 </div>
             
         </div>

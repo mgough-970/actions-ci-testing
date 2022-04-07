@@ -17,48 +17,32 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-fig, ax = plt.subplots(2, 3, sharex=True, sharey=True, figsize=(9.5, 6))
-# For RA,Dec axes instead of pixels, add: , subplot_kw={'projection': imwcs})
+import os
 
-# Color image
-ax[0, 0].imshow(rgb, origin='lower')
-ax[0, 0].set_title('Color Image')
+import numpy as np
 
-# Data
-norm = simple_norm(data, 'sqrt', percent=99.)
-ax[0, 1].imshow(data, origin='lower', cmap='Greys_r', norm=norm)
-ax[0, 1].set_title('Detection Image F200W')
+from astropy.convolution import Gaussian2DKernel
+from astropy.io import fits
+from astropy.stats import gaussian_fwhm_to_sigma
+from astropy.table import QTable
+import astropy.units as u
+from astropy.visualization import make_lupton_rgb, SqrtStretch, ImageNormalize, simple_norm
+import astropy.wcs as wcs
 
-# Segmentation map
-cmap = segm_deblend.make_cmap(random_state=12345)
-ax[0, 2].imshow(segm_deblend, origin='lower', cmap=cmap, interpolation='nearest')
-ax[0, 2].set_title('Detections (Segmentation Image)')
-
-# Weight
-ax[1, 0].imshow(weight, origin='lower', cmap='Greys_r', vmin=0)
-ax[1, 0].set_title('Weight Image F200W')
-
-# RMS
-ax[1, 1].imshow(bkg.background_rms, origin='lower', norm=None)
-ax[1, 1].set_title('Background RMS')
-
-# Total error including Poisson noise
-norm = simple_norm(error, 'sqrt', percent=99.)
-ax[1, 2].imshow(error, origin='lower', norm=norm)
-ax[1, 2].set_title('RMS + Poisson noise')
-
-fig.tight_layout()
+import photutils
+print('photutils', photutils.__version__)
+from photutils import Background2D, MedianBackground, detect_sources, deblend_sources, source_properties
+from photutils.utils import calc_total_error
 ------------------
 
 [0;31m---------------------------------------------------------------------------[0m
-[0;31mTypeError[0m                                 Traceback (most recent call last)
-Input [0;32mIn [9][0m, in [0;36m<cell line: 14>[0;34m()[0m
-[1;32m     11[0m ax[[38;5;241m0[39m, [38;5;241m1[39m][38;5;241m.[39mset_title([38;5;124m'[39m[38;5;124mDetection Image F200W[39m[38;5;124m'[39m)
-[1;32m     13[0m [38;5;66;03m# Segmentation map[39;00m
-[0;32m---> 14[0m cmap [38;5;241m=[39m [43msegm_deblend[49m[38;5;241;43m.[39;49m[43mmake_cmap[49m[43m([49m[43mrandom_state[49m[38;5;241;43m=[39;49m[38;5;241;43m12345[39;49m[43m)[49m
-[1;32m     15[0m ax[[38;5;241m0[39m, [38;5;241m2[39m][38;5;241m.[39mimshow(segm_deblend, origin[38;5;241m=[39m[38;5;124m'[39m[38;5;124mlower[39m[38;5;124m'[39m, cmap[38;5;241m=[39mcmap, interpolation[38;5;241m=[39m[38;5;124m'[39m[38;5;124mnearest[39m[38;5;124m'[39m)
-[1;32m     16[0m ax[[38;5;241m0[39m, [38;5;241m2[39m][38;5;241m.[39mset_title([38;5;124m'[39m[38;5;124mDetections (Segmentation Image)[39m[38;5;124m'[39m)
+[0;31mImportError[0m                               Traceback (most recent call last)
+Input [0;32mIn [1][0m, in [0;36m<cell line: 15>[0;34m()[0m
+[1;32m     13[0m [38;5;28;01mimport[39;00m [38;5;21;01mphotutils[39;00m
+[1;32m     14[0m [38;5;28mprint[39m([38;5;124m'[39m[38;5;124mphotutils[39m[38;5;124m'[39m, photutils[38;5;241m.[39m__version__)
+[0;32m---> 15[0m [38;5;28;01mfrom[39;00m [38;5;21;01mphotutils[39;00m [38;5;28;01mimport[39;00m Background2D, MedianBackground, detect_sources, deblend_sources, source_properties
+[1;32m     16[0m [38;5;28;01mfrom[39;00m [38;5;21;01mphotutils[39;00m[38;5;21;01m.[39;00m[38;5;21;01mutils[39;00m [38;5;28;01mimport[39;00m calc_total_error
 
-[0;31mTypeError[0m: make_cmap() got an unexpected keyword argument 'random_state'
-TypeError: make_cmap() got an unexpected keyword argument 'random_state'
+[0;31mImportError[0m: cannot import name 'source_properties' from 'photutils' (/usr/share/miniconda/lib/python3.9/site-packages/photutils/__init__.py)
+ImportError: cannot import name 'source_properties' from 'photutils' (/usr/share/miniconda/lib/python3.9/site-packages/photutils/__init__.py)
 

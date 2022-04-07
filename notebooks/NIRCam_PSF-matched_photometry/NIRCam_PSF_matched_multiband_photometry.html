@@ -205,6 +205,86 @@ const thebe_selector_output = ".output, .cell_output"
    Baseline: NIRSpec IFU Optimal Point Source Extraction
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../background_estimation_imaging/Imaging%20Sky%20Background%20Estimation.html">
+   Imaging Sky Background Estimation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../soss-transit-spectroscopy/HAT-P-1b-PART3-data-analysis.html">
+   Analyzing the JWST Pipeline products of HAT-P-1b observations with NIRISS/SOSS
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../specviz_notebookGUI_interaction/specviz_notebook_gui_interaction_redshift.html">
+   Specviz notebook/GUI interaction on NIRISS WFSS 1D spectra
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../asdf_example/asdf_example.html">
+   Example of Converting a FITS File to ASDF
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../composite_model_fitting/specfit_demo_3.html">
+   Draft: Advanced Composite spectral model fitting
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../niriss_ami_binary/1_niriss_ami_binary.html">
+   NIRISS AMI simulation of binary point source AB Dor and calibrator HD37093
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../niriss_ami_binary/2_niriss_ami_binary.html">
+   NIRISS AMI calibration of binary point source AB Dor and calibrator HD37093
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../aperture_photometry/NIRCam_Aperture_Photometry_Example.html">
+   Draft Aperture Photometry
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../NIRSpec_MAST_Query/NIRSpec_MAST_Query.html">
+   MAST Query Tutorial for NIRSpec Users
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../MIRI_LRS_spectral_extraction/miri_lrs_spectral_extraction.html">
+   MIRI LRS Optimal  Spectral Extraction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../transit_spectroscopy_notebook/Exoplanet_Transmission_Spectra_JWST.html">
+   Extracting an Exoplanet Transmission Spectrum from NIRSpec BOTS Time Series Observations
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../NIRCam_photometry/NIRCam%20multiband%20photometry.html">
+   NIRCam Multiband Photometry
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../optimal_extraction_dynamic/Spectral%20Extraction.html">
+   NIRSpec MOS Optimal Spectral Extraction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../preimaging/preimaging_02_calwebb.html">
+   Excuting the JWST pipeline on the  JWST astrometric calibration field in the LMC (part 1)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../preimaging/preimaging_01_mirage.html">
+   NIRSpec Pre-Imaging with NIRCam
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../preimaging/preimaging_03_association.html">
+   Creating simulated images of the JWST astrometric calibration field in the LMC
+  </a>
+ </li>
 </ul>
 
     </div>
@@ -683,7 +763,7 @@ const thebe_selector_output = ".output, .cell_output"
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="nircam-psf-matched-multiband-photometry">
 <h1>NIRCam PSF-matched multiband photometry<a class="headerlink" href="#nircam-psf-matched-multiband-photometry" title="Permalink to this headline">¶</a></h1>
-<p><strong>Use case:</strong> Measure galaxy photometry in an extragalactic “blank” field. Related to <a class="reference external" href="https://jwst-docs.stsci.edu/near-infrared-camera/nircam-example-science-programs/nircam-deep-field-imaging-with-miri-imaging-parallels">JDox Science Use Case #22</a>.<br>
+<p><strong>Use case:</strong> Measure  galaxy photometry in an extragalactic “blank” field. Related to <a class="reference external" href="https://jwst-docs.stsci.edu/near-infrared-camera/nircam-example-science-programs/nircam-deep-field-imaging-with-miri-imaging-parallels">JDox Science Use Case #22</a>.<br>
 <strong>Data:</strong> JWST simulated NIRCam images from <a class="reference external" href="http://fenrir.as.arizona.edu/jwstmock/">JADES JWST GTO extragalactic blank field</a>.<br>
 (Williams et al. 2018) <a class="reference external" href="https://ui.adsabs.harvard.edu/abs/2018ApJS..236...33W">https://ui.adsabs.harvard.edu/abs/2018ApJS..236…33W</a>.<br>
 <strong>Tools:</strong>  photutils, matplotlib.<br>
@@ -767,6 +847,20 @@ but flux <em>uncertainties</em> cannot be automatically converted to magnitude u
 <span class="kn">from</span> <span class="nn">photutils.psf.matching</span> <span class="kn">import</span> <span class="n">resize_psf</span>
 <span class="kn">from</span> <span class="nn">photutils</span> <span class="kn">import</span> <span class="n">CosineBellWindow</span><span class="p">,</span> <span class="n">create_matching_kernel</span>
 <span class="kn">from</span> <span class="nn">astropy.convolution</span> <span class="kn">import</span> <span class="n">convolve</span><span class="p">,</span> <span class="n">convolve_fft</span> <span class="c1"># , Gaussian2DKernel, Tophat2DKernel</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ImportError</span><span class="g g-Whitespace">                               </span>Traceback (most recent call last)
+<span class="nn">Input In [2],</span> in <span class="ni">&lt;cell line: 19&gt;</span><span class="nt">()</span>
+<span class="g g-Whitespace">     </span><span class="mi">17</span> <span class="kn">import</span> <span class="nn">photutils</span>
+<span class="g g-Whitespace">     </span><span class="mi">18</span> <span class="c1"># print(&#39;photutils&#39;, photutils.__version__)</span>
+<span class="ne">---&gt; </span><span class="mi">19</span> <span class="kn">from</span> <span class="nn">photutils</span> <span class="kn">import</span> <span class="n">Background2D</span><span class="p">,</span> <span class="n">MedianBackground</span><span class="p">,</span> <span class="n">detect_sources</span><span class="p">,</span> <span class="n">deblend_sources</span><span class="p">,</span> <span class="n">source_properties</span>
+<span class="g g-Whitespace">     </span><span class="mi">20</span> <span class="kn">from</span> <span class="nn">photutils.utils</span> <span class="kn">import</span> <span class="n">calc_total_error</span>
+<span class="g g-Whitespace">     </span><span class="mi">22</span> <span class="kn">from</span> <span class="nn">photutils.psf.matching</span> <span class="kn">import</span> <span class="n">resize_psf</span>
+
+<span class="ne">ImportError</span>: cannot import name &#39;source_properties&#39; from &#39;photutils&#39; (/usr/share/miniconda/lib/python3.9/site-packages/photutils/__init__.py)
 </pre></div>
 </div>
 </div>
@@ -882,11 +976,6 @@ but flux <em>uncertainties</em> cannot be automatically converted to magnitude u
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1000 x 1000 pixels = 30&quot; x 30&quot; (0.03&quot; / pixel)
-</pre></div>
-</div>
-</div>
 </div>
 </div>
 <div class="section" id="create-color-images-optional">
@@ -941,12 +1030,6 @@ As a workaround, I tried but was unable to turn off yticklabels in the right plo
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Interactive zoom / pan controls both images simultaneously&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Interactive zoom / pan controls both images simultaneously
-</pre></div>
-</div>
-<img alt="../../_images/NIRCam_PSF_matched_multiband_photometry_20_1.png" src="../../_images/NIRCam_PSF_matched_multiband_photometry_20_1.png" />
 </div>
 </div>
 </div>
@@ -1035,21 +1118,6 @@ As a workaround, I tried but was unable to turn off yticklabels in the right plo
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>F200W   zeropoint = 27.9973 mag(AB)
-https://data.science.stsci.edu/redirect/JWST/jwst-data_analysis_tools/nircam_photometry/jades_jwst_nircam_goods_s_crop_F200W.fits
-https://data.science.stsci.edu/redirect/JWST/jwst-data_analysis_tools/nircam_photometry/jades_jwst_nircam_goods_s_crop_F200W_wht.fits
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING: AstropyDeprecationWarning: &quot;filter_kernel&quot; was deprecated in version 1.2 and will be removed in a future version. Use argument &quot;kernel&quot; instead. [warnings]
-WARNING: AstropyDeprecationWarning: &quot;filter_kernel&quot; was deprecated in version 1.2 and will be removed in a future version. Use argument &quot;kernel&quot; instead. [warnings]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Cataloged 323 objects, deblended from 301 detections with 5 pixels above 2-sigma threshold
-Background median 6.25759e-06, RMS 0.00187681, threshold median 0.00375987
-</pre></div>
-</div>
-</div>
 </div>
 </div>
 <div class="section" id="measure-photometry-and-more-in-detection-image">
@@ -1060,16 +1128,6 @@ Background median 6.25759e-06, RMS 0.00187681, threshold median 0.00375987
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># exposure_time = hdu[0].header.get(&#39;EXPTIME&#39;)  # seconds</span>
 <span class="n">exposure_time</span> <span class="o">=</span> <span class="mi">49500</span>  <span class="c1"># seconds; Adding by hand because it&#39;s missing from the image header</span>
 <span class="n">detection_catalog</span><span class="o">.</span><span class="n">measure_source_properties</span><span class="p">(</span><span class="n">exposure_time</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING: AstropyDeprecationWarning: The source_properties function is deprecated and may be removed in a future version.
-        Use `~photutils.segmentation.SourceCatalog` instead. [warnings]
-WARNING: AstropyDeprecationWarning: The SourceProperties class is deprecated and may be removed in a future version.
-        Use `~photutils.segmentation.SourceCatalog` instead. [photutils.segmentation.properties]
-WARNING: AstropyDeprecationWarning: The LegacySourceCatalog class is deprecated and may be removed in a future version.
-        Use `~photutils.segmentation.SourceCatalog` instead. [photutils.segmentation.properties]
 </pre></div>
 </div>
 </div>
@@ -1135,12 +1193,6 @@ WARNING: AstropyDeprecationWarning: The LegacySourceCatalog class is deprecated 
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Interactive zoom / pan controls all images simultaneously&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Interactive zoom / pan controls all images simultaneously
-</pre></div>
-</div>
-<img alt="../../_images/NIRCam_PSF_matched_multiband_photometry_29_1.png" src="../../_images/NIRCam_PSF_matched_multiband_photometry_29_1.png" />
 </div>
 </div>
 </div>
@@ -1252,226 +1304,6 @@ They need to be the same, so we go with u.ABmag
     <span class="n">mag</span><span class="p">,</span> <span class="n">magerr</span> <span class="o">=</span> <span class="n">fluxes2mags</span><span class="p">(</span><span class="n">flux</span><span class="p">,</span> <span class="n">fluxerr</span><span class="p">)</span>
     <span class="n">source_table</span><span class="p">[</span><span class="n">filt</span><span class="o">+</span><span class="s1">&#39;_mag&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">mag</span>
     <span class="n">source_table</span><span class="p">[</span><span class="n">filt</span><span class="o">+</span><span class="s1">&#39;_magerr&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">magerr</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>F090W   zeropoint = 27.4525 mag(AB)
-https://data.science.stsci.edu/redirect/JWST/jwst-data_analysis_tools/nircam_photometry/jades_jwst_nircam_goods_s_crop_F090W.fits
-https://data.science.stsci.edu/redirect/JWST/jwst-data_analysis_tools/nircam_photometry/jades_jwst_nircam_goods_s_crop_F090W_wht.fits
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING: AstropyDeprecationWarning: The source_properties function is deprecated and may be removed in a future version.
-        Use `~photutils.segmentation.SourceCatalog` instead. [warnings]
-WARNING: AstropyDeprecationWarning: The SourceProperties class is deprecated and may be removed in a future version.
-        Use `~photutils.segmentation.SourceCatalog` instead. [photutils.segmentation.properties]
-WARNING: AstropyDeprecationWarning: The LegacySourceCatalog class is deprecated and may be removed in a future version.
-        Use `~photutils.segmentation.SourceCatalog` instead. [photutils.segmentation.properties]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/usr/share/miniconda/lib/python3.9/site-packages/astropy/units/function/logarithmic.py:46: RuntimeWarning: invalid value encountered in log10
-  return dex.to(self._function_unit, np.log10(x))
-/usr/share/miniconda/lib/python3.9/site-packages/astropy/units/quantity.py:613: RuntimeWarning: invalid value encountered in log10
-  result = super().__array_ufunc__(function, method, *arrays, **kwargs)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>F115W   zeropoint = 27.5681 mag(AB)
-https://data.science.stsci.edu/redirect/JWST/jwst-data_analysis_tools/nircam_photometry/jades_jwst_nircam_goods_s_crop_F115W.fits
-https://data.science.stsci.edu/redirect/JWST/jwst-data_analysis_tools/nircam_photometry/jades_jwst_nircam_goods_s_crop_F115W_wht.fits
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING: AstropyDeprecationWarning: The source_properties function is deprecated and may be removed in a future version.
-        Use `~photutils.segmentation.SourceCatalog` instead. [warnings]
-WARNING: AstropyDeprecationWarning: The SourceProperties class is deprecated and may be removed in a future version.
-        Use `~photutils.segmentation.SourceCatalog` instead. [photutils.segmentation.properties]
-WARNING: AstropyDeprecationWarning: The LegacySourceCatalog class is deprecated and may be removed in a future version.
-        Use `~photutils.segmentation.SourceCatalog` instead. [photutils.segmentation.properties]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>F150W   zeropoint = 27.814 mag(AB)
-https://data.science.stsci.edu/redirect/JWST/jwst-data_analysis_tools/nircam_photometry/jades_jwst_nircam_goods_s_crop_F150W.fits
-https://data.science.stsci.edu/redirect/JWST/jwst-data_analysis_tools/nircam_photometry/jades_jwst_nircam_goods_s_crop_F150W_wht.fits
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING: AstropyDeprecationWarning: The source_properties function is deprecated and may be removed in a future version.
-        Use `~photutils.segmentation.SourceCatalog` instead. [warnings]
-WARNING: AstropyDeprecationWarning: The SourceProperties class is deprecated and may be removed in a future version.
-        Use `~photutils.segmentation.SourceCatalog` instead. [photutils.segmentation.properties]
-WARNING: AstropyDeprecationWarning: The LegacySourceCatalog class is deprecated and may be removed in a future version.
-        Use `~photutils.segmentation.SourceCatalog` instead. [photutils.segmentation.properties]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>F200W   zeropoint = 27.9973 mag(AB)
-https://data.science.stsci.edu/redirect/JWST/jwst-data_analysis_tools/nircam_photometry/jades_jwst_nircam_goods_s_crop_F200W.fits
-https://data.science.stsci.edu/redirect/JWST/jwst-data_analysis_tools/nircam_photometry/jades_jwst_nircam_goods_s_crop_F200W_wht.fits
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING: AstropyDeprecationWarning: The source_properties function is deprecated and may be removed in a future version.
-        Use `~photutils.segmentation.SourceCatalog` instead. [warnings]
-WARNING: AstropyDeprecationWarning: The SourceProperties class is deprecated and may be removed in a future version.
-        Use `~photutils.segmentation.SourceCatalog` instead. [photutils.segmentation.properties]
-WARNING: AstropyDeprecationWarning: The LegacySourceCatalog class is deprecated and may be removed in a future version.
-        Use `~photutils.segmentation.SourceCatalog` instead. [photutils.segmentation.properties]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>F277W   zeropoint = 27.8803 mag(AB)
-https://data.science.stsci.edu/redirect/JWST/jwst-data_analysis_tools/nircam_photometry/jades_jwst_nircam_goods_s_crop_F277W.fits
-https://data.science.stsci.edu/redirect/JWST/jwst-data_analysis_tools/nircam_photometry/jades_jwst_nircam_goods_s_crop_F277W_wht.fits
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING: AstropyDeprecationWarning: The source_properties function is deprecated and may be removed in a future version.
-        Use `~photutils.segmentation.SourceCatalog` instead. [warnings]
-WARNING: AstropyDeprecationWarning: The SourceProperties class is deprecated and may be removed in a future version.
-        Use `~photutils.segmentation.SourceCatalog` instead. [photutils.segmentation.properties]
-WARNING: AstropyDeprecationWarning: The LegacySourceCatalog class is deprecated and may be removed in a future version.
-        Use `~photutils.segmentation.SourceCatalog` instead. [photutils.segmentation.properties]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>F335M   zeropoint = 27.0579 mag(AB)
-https://data.science.stsci.edu/redirect/JWST/jwst-data_analysis_tools/nircam_photometry/jades_jwst_nircam_goods_s_crop_F335M.fits
-https://data.science.stsci.edu/redirect/JWST/jwst-data_analysis_tools/nircam_photometry/jades_jwst_nircam_goods_s_crop_F335M_wht.fits
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING: AstropyDeprecationWarning: The source_properties function is deprecated and may be removed in a future version.
-        Use `~photutils.segmentation.SourceCatalog` instead. [warnings]
-WARNING: AstropyDeprecationWarning: The SourceProperties class is deprecated and may be removed in a future version.
-        Use `~photutils.segmentation.SourceCatalog` instead. [photutils.segmentation.properties]
-WARNING: AstropyDeprecationWarning: The LegacySourceCatalog class is deprecated and may be removed in a future version.
-        Use `~photutils.segmentation.SourceCatalog` instead. [photutils.segmentation.properties]
-</pre></div>
-</div>
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
-<span class="nn">Input In [19],</span> in <span class="ni">&lt;cell line: 2&gt;</span><span class="nt">()</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># filters = &#39;F090W F200W F444W&#39;.split()  # quicker for testing</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="k">for</span> <span class="n">filt</span> <span class="ow">in</span> <span class="n">filters</span><span class="p">:</span>
-<span class="ne">----&gt; </span><span class="mi">3</span>     <span class="n">filter_catalog</span> <span class="o">=</span> <span class="n">Photutils_Catalog</span><span class="p">(</span><span class="n">filt</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span>     <span class="n">filter_catalog</span><span class="o">.</span><span class="n">measure_background_map</span><span class="p">()</span>
-<span class="g g-Whitespace">      </span><span class="mi">6</span>     <span class="c1"># Measure photometry in this filter for objects detected in detected image</span>
-<span class="g g-Whitespace">      </span><span class="mi">7</span>     <span class="c1"># segmentation map will define isophotal apertures</span>
-
-<span class="nn">Input In [11],</span> in <span class="ni">Photutils_Catalog.__init__</span><span class="nt">(self, filt, image_file, verbose)</span>
-<span class="g g-Whitespace">      </span><span class="mi">9</span> <span class="bp">self</span><span class="o">.</span><span class="n">zeropoint</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">hdu</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">header</span><span class="p">[</span><span class="s1">&#39;ABMAG&#39;</span><span class="p">]</span> <span class="o">*</span> <span class="n">u</span><span class="o">.</span><span class="n">ABmag</span>
-<span class="g g-Whitespace">     </span><span class="mi">10</span> <span class="bp">self</span><span class="o">.</span><span class="n">weight_file</span> <span class="o">=</span> <span class="n">weight_files</span><span class="p">[</span><span class="n">filt</span><span class="p">]</span>
-<span class="ne">---&gt; </span><span class="mi">11</span> <span class="bp">self</span><span class="o">.</span><span class="n">weight</span> <span class="o">=</span> <span class="n">fits</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">weight_files</span><span class="p">[</span><span class="n">filt</span><span class="p">])[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">data</span>
-<span class="g g-Whitespace">     </span><span class="mi">12</span> <span class="k">if</span> <span class="n">verbose</span><span class="p">:</span>
-<span class="g g-Whitespace">     </span><span class="mi">13</span>     <span class="nb">print</span><span class="p">(</span><span class="n">filt</span><span class="p">,</span> <span class="s1">&#39;  zeropoint =&#39;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">zeropoint</span><span class="p">)</span>
-
-<span class="nn">File /usr/share/miniconda/lib/python3.9/site-packages/astropy/io/fits/hdu/hdulist.py:176,</span> in <span class="ni">fitsopen</span><span class="nt">(name, mode, memmap, save_backup, cache, lazy_load_hdus, ignore_missing_simple, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">173</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">name</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">174</span>     <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Empty filename: </span><span class="si">{</span><span class="n">name</span><span class="si">!r}</span><span class="s1">&#39;</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">176</span> <span class="k">return</span> <span class="n">HDUList</span><span class="o">.</span><span class="n">fromfile</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">mode</span><span class="p">,</span> <span class="n">memmap</span><span class="p">,</span> <span class="n">save_backup</span><span class="p">,</span> <span class="n">cache</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">177</span>                         <span class="n">lazy_load_hdus</span><span class="p">,</span> <span class="n">ignore_missing_simple</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-
-<span class="nn">File /usr/share/miniconda/lib/python3.9/site-packages/astropy/io/fits/hdu/hdulist.py:411,</span> in <span class="ni">HDUList.fromfile</span><span class="nt">(cls, fileobj, mode, memmap, save_backup, cache, lazy_load_hdus, ignore_missing_simple, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">399</span> <span class="nd">@classmethod</span>
-<span class="g g-Whitespace">    </span><span class="mi">400</span> <span class="k">def</span> <span class="nf">fromfile</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">fileobj</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">memmap</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">401</span>              <span class="n">save_backup</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">cache</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">lazy_load_hdus</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">402</span>              <span class="n">ignore_missing_simple</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-<span class="g g-Whitespace">    </span><span class="mi">403</span>     <span class="sd">&quot;&quot;&quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">404</span><span class="sd">     Creates an `HDUList` instance from a file-like object.</span>
-<span class="g g-Whitespace">    </span><span class="mi">405</span><span class="sd"> </span>
-<span class="sd">   (...)</span>
-<span class="g g-Whitespace">    </span><span class="mi">408</span><span class="sd">     documentation for details of the parameters accepted by this method).</span>
-<span class="g g-Whitespace">    </span><span class="mi">409</span><span class="sd">     &quot;&quot;&quot;</span>
-<span class="ne">--&gt; </span><span class="mi">411</span>     <span class="k">return</span> <span class="bp">cls</span><span class="o">.</span><span class="n">_readfrom</span><span class="p">(</span><span class="n">fileobj</span><span class="o">=</span><span class="n">fileobj</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="n">mode</span><span class="p">,</span> <span class="n">memmap</span><span class="o">=</span><span class="n">memmap</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">412</span>                          <span class="n">save_backup</span><span class="o">=</span><span class="n">save_backup</span><span class="p">,</span> <span class="n">cache</span><span class="o">=</span><span class="n">cache</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">413</span>                          <span class="n">ignore_missing_simple</span><span class="o">=</span><span class="n">ignore_missing_simple</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">414</span>                          <span class="n">lazy_load_hdus</span><span class="o">=</span><span class="n">lazy_load_hdus</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-
-<span class="nn">File /usr/share/miniconda/lib/python3.9/site-packages/astropy/io/fits/hdu/hdulist.py:1071,</span> in <span class="ni">HDUList._readfrom</span><span class="nt">(cls, fileobj, data, mode, memmap, cache, lazy_load_hdus, ignore_missing_simple, **kwargs)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1068</span> <span class="k">if</span> <span class="n">fileobj</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1069</span>     <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">fileobj</span><span class="p">,</span> <span class="n">_File</span><span class="p">):</span>
-<span class="g g-Whitespace">   </span><span class="mi">1070</span>         <span class="c1"># instantiate a FITS file object (ffo)</span>
-<span class="ne">-&gt; </span><span class="mi">1071</span>         <span class="n">fileobj</span> <span class="o">=</span> <span class="n">_File</span><span class="p">(</span><span class="n">fileobj</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="n">mode</span><span class="p">,</span> <span class="n">memmap</span><span class="o">=</span><span class="n">memmap</span><span class="p">,</span> <span class="n">cache</span><span class="o">=</span><span class="n">cache</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1072</span>     <span class="c1"># The Astropy mode is determined by the _File initializer if the</span>
-<span class="g g-Whitespace">   </span><span class="mi">1073</span>     <span class="c1"># supplied mode was None</span>
-<span class="g g-Whitespace">   </span><span class="mi">1074</span>     <span class="n">mode</span> <span class="o">=</span> <span class="n">fileobj</span><span class="o">.</span><span class="n">mode</span>
-
-<span class="nn">File /usr/share/miniconda/lib/python3.9/site-packages/astropy/utils/decorators.py:546,</span> in <span class="ni">deprecated_renamed_argument.&lt;locals&gt;.decorator.&lt;locals&gt;.wrapper</span><span class="nt">(*args, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">543</span>             <span class="n">msg</span> <span class="o">+=</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">        Use </span><span class="si">{</span><span class="n">alternative</span><span class="si">}</span><span class="s1"> instead.&#39;</span>
-<span class="g g-Whitespace">    </span><span class="mi">544</span>         <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="n">msg</span><span class="p">,</span> <span class="n">warning_type</span><span class="p">,</span> <span class="n">stacklevel</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">546</span> <span class="k">return</span> <span class="n">function</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-
-<span class="nn">File /usr/share/miniconda/lib/python3.9/site-packages/astropy/io/fits/file.py:156,</span> in <span class="ni">_File.__init__</span><span class="nt">(self, fileobj, mode, memmap, overwrite, cache)</span>
-<span class="g g-Whitespace">    </span><span class="mi">153</span> <span class="c1"># Handle raw URLs</span>
-<span class="g g-Whitespace">    </span><span class="mi">154</span> <span class="k">if</span> <span class="p">(</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">fileobj</span><span class="p">,</span> <span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="nb">bytes</span><span class="p">))</span> <span class="ow">and</span>
-<span class="g g-Whitespace">    </span><span class="mi">155</span>         <span class="n">mode</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">(</span><span class="s1">&#39;ostream&#39;</span><span class="p">,</span> <span class="s1">&#39;append&#39;</span><span class="p">,</span> <span class="s1">&#39;update&#39;</span><span class="p">)</span> <span class="ow">and</span> <span class="n">_is_url</span><span class="p">(</span><span class="n">fileobj</span><span class="p">)):</span>
-<span class="ne">--&gt; </span><span class="mi">156</span>     <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">download_file</span><span class="p">(</span><span class="n">fileobj</span><span class="p">,</span> <span class="n">cache</span><span class="o">=</span><span class="n">cache</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">157</span> <span class="c1"># Handle responses from URL requests that have already been opened</span>
-<span class="g g-Whitespace">    </span><span class="mi">158</span> <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">fileobj</span><span class="p">,</span> <span class="n">http</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">HTTPResponse</span><span class="p">):</span>
-
-<span class="nn">File /usr/share/miniconda/lib/python3.9/site-packages/astropy/utils/data.py:1364,</span> in <span class="ni">download_file</span><span class="nt">(remote_url, cache, show_progress, timeout, sources, pkgname, http_headers, ssl_context, allow_insecure)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1362</span> <span class="k">for</span> <span class="n">source_url</span> <span class="ow">in</span> <span class="n">sources</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1363</span>     <span class="k">try</span><span class="p">:</span>
-<span class="ne">-&gt; </span><span class="mi">1364</span>         <span class="n">f_name</span> <span class="o">=</span> <span class="n">_download_file_from_source</span><span class="p">(</span>
-<span class="g g-Whitespace">   </span><span class="mi">1365</span>                 <span class="n">source_url</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1366</span>                 <span class="n">timeout</span><span class="o">=</span><span class="n">timeout</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1367</span>                 <span class="n">show_progress</span><span class="o">=</span><span class="n">show_progress</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1368</span>                 <span class="n">cache</span><span class="o">=</span><span class="n">cache</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1369</span>                 <span class="n">remote_url</span><span class="o">=</span><span class="n">remote_url</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1370</span>                 <span class="n">pkgname</span><span class="o">=</span><span class="n">pkgname</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1371</span>                 <span class="n">http_headers</span><span class="o">=</span><span class="n">http_headers</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1372</span>                 <span class="n">ssl_context</span><span class="o">=</span><span class="n">ssl_context</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1373</span>                 <span class="n">allow_insecure</span><span class="o">=</span><span class="n">allow_insecure</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1374</span>         <span class="c1"># Success!</span>
-<span class="g g-Whitespace">   </span><span class="mi">1375</span>         <span class="k">break</span>
-
-<span class="nn">File /usr/share/miniconda/lib/python3.9/site-packages/astropy/utils/data.py:1202,</span> in <span class="ni">_download_file_from_source</span><span class="nt">(source_url, show_progress, timeout, remote_url, cache, pkgname, http_headers, ftp_tls, ssl_context, allow_insecure)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1200</span> <span class="n">bytes_read</span> <span class="o">+=</span> <span class="nb">len</span><span class="p">(</span><span class="n">block</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1201</span> <span class="n">p</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">bytes_read</span><span class="p">)</span>
-<span class="ne">-&gt; </span><span class="mi">1202</span> <span class="n">block</span> <span class="o">=</span> <span class="n">remote</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">conf</span><span class="o">.</span><span class="n">download_block_size</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1203</span> <span class="k">if</span> <span class="n">size</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">bytes_read</span> <span class="o">&gt;</span> <span class="n">size</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1204</span>     <span class="k">raise</span> <span class="n">urllib</span><span class="o">.</span><span class="n">error</span><span class="o">.</span><span class="n">URLError</span><span class="p">(</span>
-<span class="g g-Whitespace">   </span><span class="mi">1205</span>         <span class="sa">f</span><span class="s2">&quot;File was supposed to be </span><span class="si">{</span><span class="n">size</span><span class="si">}</span><span class="s2"> bytes but &quot;</span>
-<span class="g g-Whitespace">   </span><span class="mi">1206</span>         <span class="sa">f</span><span class="s2">&quot;server provides more, at least </span><span class="si">{</span><span class="n">bytes_read</span><span class="si">}</span><span class="s2"> &quot;</span>
-<span class="g g-Whitespace">   </span><span class="mi">1207</span>         <span class="sa">f</span><span class="s2">&quot;bytes. Download failed.&quot;</span><span class="p">)</span>
-
-<span class="nn">File /usr/share/miniconda/lib/python3.9/http/client.py:462,</span> in <span class="ni">HTTPResponse.read</span><span class="nt">(self, amt)</span>
-<span class="g g-Whitespace">    </span><span class="mi">459</span> <span class="k">if</span> <span class="n">amt</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">460</span>     <span class="c1"># Amount is given, implement using readinto</span>
-<span class="g g-Whitespace">    </span><span class="mi">461</span>     <span class="n">b</span> <span class="o">=</span> <span class="nb">bytearray</span><span class="p">(</span><span class="n">amt</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">462</span>     <span class="n">n</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">readinto</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">463</span>     <span class="k">return</span> <span class="nb">memoryview</span><span class="p">(</span><span class="n">b</span><span class="p">)[:</span><span class="n">n</span><span class="p">]</span><span class="o">.</span><span class="n">tobytes</span><span class="p">()</span>
-<span class="g g-Whitespace">    </span><span class="mi">464</span> <span class="k">else</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">465</span>     <span class="c1"># Amount is not given (unbounded read) so we must check self.length</span>
-<span class="g g-Whitespace">    </span><span class="mi">466</span>     <span class="c1"># and self.chunked</span>
-
-<span class="nn">File /usr/share/miniconda/lib/python3.9/http/client.py:506,</span> in <span class="ni">HTTPResponse.readinto</span><span class="nt">(self, b)</span>
-<span class="g g-Whitespace">    </span><span class="mi">501</span>         <span class="n">b</span> <span class="o">=</span> <span class="nb">memoryview</span><span class="p">(</span><span class="n">b</span><span class="p">)[</span><span class="mi">0</span><span class="p">:</span><span class="bp">self</span><span class="o">.</span><span class="n">length</span><span class="p">]</span>
-<span class="g g-Whitespace">    </span><span class="mi">503</span> <span class="c1"># we do not use _safe_read() here because this may be a .will_close</span>
-<span class="g g-Whitespace">    </span><span class="mi">504</span> <span class="c1"># connection, and the user is reading more bytes than will be provided</span>
-<span class="g g-Whitespace">    </span><span class="mi">505</span> <span class="c1"># (for example, reading in 1k chunks)</span>
-<span class="ne">--&gt; </span><span class="mi">506</span> <span class="n">n</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">fp</span><span class="o">.</span><span class="n">readinto</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">507</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">n</span> <span class="ow">and</span> <span class="n">b</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">508</span>     <span class="c1"># Ideally, we would raise IncompleteRead if the content-length</span>
-<span class="g g-Whitespace">    </span><span class="mi">509</span>     <span class="c1"># wasn&#39;t satisfied, but it might break compatibility.</span>
-<span class="g g-Whitespace">    </span><span class="mi">510</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_close_conn</span><span class="p">()</span>
-
-<span class="nn">File /usr/share/miniconda/lib/python3.9/socket.py:704,</span> in <span class="ni">SocketIO.readinto</span><span class="nt">(self, b)</span>
-<span class="g g-Whitespace">    </span><span class="mi">702</span> <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">703</span>     <span class="k">try</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">704</span>         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_sock</span><span class="o">.</span><span class="n">recv_into</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">705</span>     <span class="k">except</span> <span class="n">timeout</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">706</span>         <span class="bp">self</span><span class="o">.</span><span class="n">_timeout_occurred</span> <span class="o">=</span> <span class="kc">True</span>
-
-<span class="nn">File /usr/share/miniconda/lib/python3.9/ssl.py:1241,</span> in <span class="ni">SSLSocket.recv_into</span><span class="nt">(self, buffer, nbytes, flags)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1237</span>     <span class="k">if</span> <span class="n">flags</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1238</span>         <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
-<span class="g g-Whitespace">   </span><span class="mi">1239</span>           <span class="s2">&quot;non-zero flags not allowed in calls to recv_into() on </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span>
-<span class="g g-Whitespace">   </span><span class="mi">1240</span>           <span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="p">)</span>
-<span class="ne">-&gt; </span><span class="mi">1241</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">nbytes</span><span class="p">,</span> <span class="n">buffer</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1242</span> <span class="k">else</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1243</span>     <span class="k">return</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">recv_into</span><span class="p">(</span><span class="n">buffer</span><span class="p">,</span> <span class="n">nbytes</span><span class="p">,</span> <span class="n">flags</span><span class="p">)</span>
-
-<span class="nn">File /usr/share/miniconda/lib/python3.9/ssl.py:1099,</span> in <span class="ni">SSLSocket.read</span><span class="nt">(self, len, buffer)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1097</span> <span class="k">try</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1098</span>     <span class="k">if</span> <span class="n">buffer</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-<span class="ne">-&gt; </span><span class="mi">1099</span>         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_sslobj</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="nb">len</span><span class="p">,</span> <span class="n">buffer</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1100</span>     <span class="k">else</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1101</span>         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_sslobj</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="nb">len</span><span class="p">)</span>
-
-<span class="ne">KeyboardInterrupt</span>: 
 </pre></div>
 </div>
 </div>

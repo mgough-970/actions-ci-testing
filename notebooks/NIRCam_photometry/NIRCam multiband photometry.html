@@ -56,6 +56,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="NIRSpec MOS Optimal Spectral Extraction" href="../optimal_extraction_dynamic/Spectral%20Extraction.html" />
+    <link rel="prev" title="Extracting an Exoplanet Transmission Spectrum from NIRSpec BOTS Time Series Observations" href="../transit_spectroscopy_notebook/Exoplanet_Transmission_Spectra_JWST.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -187,7 +189,7 @@ const thebe_selector_output = ".output, .cell_output"
   MIRI IFU in the LMC
  </span>
 </p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../MIRI_IFU_YSOs_in_the_LMC/isha_nayak_ysos_in_the_lmc.html">
    JWST Data Analysis
@@ -201,6 +203,86 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toctree-l1">
   <a class="reference internal" href="../ifu_optimal/ifu_optimal.html">
    Baseline: NIRSpec IFU Optimal Point Source Extraction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../background_estimation_imaging/Imaging%20Sky%20Background%20Estimation.html">
+   Imaging Sky Background Estimation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../soss-transit-spectroscopy/HAT-P-1b-PART3-data-analysis.html">
+   Analyzing the JWST Pipeline products of HAT-P-1b observations with NIRISS/SOSS
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../specviz_notebookGUI_interaction/specviz_notebook_gui_interaction_redshift.html">
+   Specviz notebook/GUI interaction on NIRISS WFSS 1D spectra
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../asdf_example/asdf_example.html">
+   Example of Converting a FITS File to ASDF
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../composite_model_fitting/specfit_demo_3.html">
+   Draft: Advanced Composite spectral model fitting
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../niriss_ami_binary/1_niriss_ami_binary.html">
+   NIRISS AMI simulation of binary point source AB Dor and calibrator HD37093
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../niriss_ami_binary/2_niriss_ami_binary.html">
+   NIRISS AMI calibration of binary point source AB Dor and calibrator HD37093
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../aperture_photometry/NIRCam_Aperture_Photometry_Example.html">
+   Draft Aperture Photometry
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../NIRSpec_MAST_Query/NIRSpec_MAST_Query.html">
+   MAST Query Tutorial for NIRSpec Users
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../MIRI_LRS_spectral_extraction/miri_lrs_spectral_extraction.html">
+   MIRI LRS Optimal  Spectral Extraction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../transit_spectroscopy_notebook/Exoplanet_Transmission_Spectra_JWST.html">
+   Extracting an Exoplanet Transmission Spectrum from NIRSpec BOTS Time Series Observations
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   NIRCam Multiband Photometry
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../optimal_extraction_dynamic/Spectral%20Extraction.html">
+   NIRSpec MOS Optimal Spectral Extraction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../preimaging/preimaging_02_calwebb.html">
+   Excuting the JWST pipeline on the  JWST astrometric calibration field in the LMC (part 1)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../preimaging/preimaging_01_mirage.html">
+   NIRSpec Pre-Imaging with NIRCam
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../preimaging/preimaging_03_association.html">
+   Creating simulated images of the JWST astrometric calibration field in the LMC
   </a>
  </li>
 </ul>
@@ -633,7 +715,7 @@ const thebe_selector_output = ".output, .cell_output"
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="nircam-multiband-photometry">
 <h1>NIRCam Multiband Photometry<a class="headerlink" href="#nircam-multiband-photometry" title="Permalink to this headline">¶</a></h1>
-<p><strong>Use case:</strong> Measure galaxy photometry in a field. Related to <a class="reference external" href="https://jwst-docs.stsci.edu/near-infrared-camera/nircam-example-science-programs/nircam-deep-field-imaging-with-miri-imaging-parallels">JDox Science Use Case #22</a>.<br>
+<p><strong>Use case:</strong> Measure galaxy photometry in a field. Related to  <a class="reference external" href="https://jwst-docs.stsci.edu/near-infrared-camera/nircam-example-science-programs/nircam-deep-field-imaging-with-miri-imaging-parallels">JDox Science Use Case #22</a>.<br>
 <strong>Data:</strong> WST simulated NIRCam images from <a class="reference external" href="http://fenrir.as.arizona.edu/jwstmock/">JADES JWST GTO extragalactic blank field</a>.<br>
 (Williams et al. 2018) <a class="reference external" href="https://ui.adsabs.harvard.edu/abs/2018ApJS..236...33W">https://ui.adsabs.harvard.edu/abs/2018ApJS..236…33W</a>.<br>
 <strong>Tools:</strong>  photutils, matplotlib, scipy, scikit.<br>
@@ -684,7 +766,18 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>photutils 1.3.0
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>photutils 1.4.0
+</pre></div>
+</div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ImportError</span><span class="g g-Whitespace">                               </span>Traceback (most recent call last)
+<span class="nn">Input In [1],</span> in <span class="ni">&lt;cell line: 15&gt;</span><span class="nt">()</span>
+<span class="g g-Whitespace">     </span><span class="mi">13</span> <span class="kn">import</span> <span class="nn">photutils</span>
+<span class="g g-Whitespace">     </span><span class="mi">14</span> <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;photutils&#39;</span><span class="p">,</span> <span class="n">photutils</span><span class="o">.</span><span class="n">__version__</span><span class="p">)</span>
+<span class="ne">---&gt; </span><span class="mi">15</span> <span class="kn">from</span> <span class="nn">photutils</span> <span class="kn">import</span> <span class="n">Background2D</span><span class="p">,</span> <span class="n">MedianBackground</span><span class="p">,</span> <span class="n">detect_sources</span><span class="p">,</span> <span class="n">deblend_sources</span><span class="p">,</span> <span class="n">source_properties</span>
+<span class="g g-Whitespace">     </span><span class="mi">16</span> <span class="kn">from</span> <span class="nn">photutils.utils</span> <span class="kn">import</span> <span class="n">calc_total_error</span>
+
+<span class="ne">ImportError</span>: cannot import name &#39;source_properties&#39; from &#39;photutils&#39; (/usr/share/miniconda/lib/python3.9/site-packages/photutils/__init__.py)
 </pre></div>
 </div>
 </div>
@@ -773,11 +866,6 @@ const thebe_selector_output = ".output, .cell_output"
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1000 x 1000 pixels = 30&quot; x 30&quot; (0.03&quot; / pixel)
-</pre></div>
-</div>
-</div>
 </div>
 </div>
 <div class="section" id="create-color-image-optional">
@@ -800,9 +888,6 @@ const thebe_selector_output = ".output, .cell_output"
 <span class="n">plt</span><span class="o">.</span><span class="n">subplots_adjust</span><span class="p">(</span><span class="n">left</span><span class="o">=</span><span class="mf">0.15</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../../_images/NIRCam multiband photometry_14_0.png" src="../../_images/NIRCam multiband photometry_14_0.png" />
 </div>
 </div>
 </div>
@@ -833,12 +918,6 @@ const thebe_selector_output = ".output, .cell_output"
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING: AstropyDeprecationWarning: &quot;filter_kernel&quot; was deprecated in version 1.2 and will be removed in a future version. Use argument &quot;kernel&quot; instead. [warnings]
-WARNING: AstropyDeprecationWarning: &quot;filter_kernel&quot; was deprecated in version 1.2 and will be removed in a future version. Use argument &quot;kernel&quot; instead. [warnings]
-</pre></div>
-</div>
-</div>
 </div>
 </div>
 <div class="section" id="measure-photometry-and-more-in-detection-image">
@@ -850,16 +929,6 @@ WARNING: AstropyDeprecationWarning: &quot;filter_kernel&quot; was deprecated in 
 <span class="c1"># Input weight should be exposure map. Fudging for now.</span>
 <span class="n">error</span> <span class="o">=</span> <span class="n">calc_total_error</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">bkg</span><span class="o">.</span><span class="n">background_rms</span><span class="p">,</span> <span class="n">weight</span><span class="o">/</span><span class="mi">500</span><span class="p">)</span>
 <span class="n">cat</span> <span class="o">=</span> <span class="n">source_properties</span><span class="p">(</span><span class="n">data</span><span class="o">-</span><span class="n">bkg</span><span class="o">.</span><span class="n">background</span><span class="p">,</span> <span class="n">segm_deblend</span><span class="p">,</span> <span class="n">wcs</span><span class="o">=</span><span class="n">imwcs</span><span class="p">,</span> <span class="n">background</span><span class="o">=</span><span class="n">bkg</span><span class="o">.</span><span class="n">background</span><span class="p">,</span> <span class="n">error</span><span class="o">=</span><span class="n">error</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING: AstropyDeprecationWarning: The source_properties function is deprecated and may be removed in a future version.
-        Use `~photutils.segmentation.SourceCatalog` instead. [warnings]
-WARNING: AstropyDeprecationWarning: The SourceProperties class is deprecated and may be removed in a future version.
-        Use `~photutils.segmentation.SourceCatalog` instead. [photutils.segmentation.properties]
-WARNING: AstropyDeprecationWarning: The LegacySourceCatalog class is deprecated and may be removed in a future version.
-        Use `~photutils.segmentation.SourceCatalog` instead. [photutils.segmentation.properties]
 </pre></div>
 </div>
 </div>
@@ -902,21 +971,6 @@ WARNING: AstropyDeprecationWarning: The LegacySourceCatalog class is deprecated 
 <span class="n">fig</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="nn">Input In [9],</span> in <span class="ni">&lt;cell line: 14&gt;</span><span class="nt">()</span>
-<span class="g g-Whitespace">     </span><span class="mi">11</span> <span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Detection Image F200W&#39;</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">13</span> <span class="c1"># Segmentation map</span>
-<span class="ne">---&gt; </span><span class="mi">14</span> <span class="n">cmap</span> <span class="o">=</span> <span class="n">segm_deblend</span><span class="o">.</span><span class="n">make_cmap</span><span class="p">(</span><span class="n">random_state</span><span class="o">=</span><span class="mi">12345</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">15</span> <span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">segm_deblend</span><span class="p">,</span> <span class="n">origin</span><span class="o">=</span><span class="s1">&#39;lower&#39;</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">cmap</span><span class="p">,</span> <span class="n">interpolation</span><span class="o">=</span><span class="s1">&#39;nearest&#39;</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">16</span> <span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Detections (Segmentation Image)&#39;</span><span class="p">)</span>
-
-<span class="ne">TypeError</span>: make_cmap() got an unexpected keyword argument &#39;random_state&#39;
-</pre></div>
-</div>
-<img alt="../../_images/NIRCam multiband photometry_20_1.png" src="../../_images/NIRCam multiband photometry_20_1.png" />
 </div>
 </div>
 </div>
@@ -1358,7 +1412,21 @@ WARNING: AstropyDeprecationWarning: The LegacySourceCatalog class is deprecated 
               
             
                 <!-- Previous / next buttons -->
-<div class='prev-next-area'>
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="../transit_spectroscopy_notebook/Exoplanet_Transmission_Spectra_JWST.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Extracting an Exoplanet Transmission Spectrum from NIRSpec BOTS Time Series Observations</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="../optimal_extraction_dynamic/Spectral%20Extraction.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">NIRSpec MOS Optimal Spectral Extraction</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
 </div>
             
         </div>
