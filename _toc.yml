@@ -2,18 +2,13 @@
 # Learn more at https://jupyterbook.org/customize/toc.html
 format: jb-book
 root: intro
-chapters: Excluded Notebooks Preimaging
--file: notebooks/preimaging/preimaging_01_mirage.ipynb
--file: notebooks/preimaging/preimaging_02_calwebb.ipynb
--file: notebooks/preimaging/preimaging_03_association.ipynb
-chapters: Excluded Notebooks  Composite model fitting
--file: notebooks/composite_model_fitting/specfit_demo_3.ipynb
-chapters: Excluded Notebooks  SOSS  Transient
--file: notebooks/soss-transit-spectroscopy/HAT-P-1b-PART3-data-analysis.ipynb
-chapters: Excluded Notebooks  NIRISS AMI Binary
--file: notebooks/niriss_ami_binary/1_niriss_ami_binary.ipynb
--file: notebooks/niriss_ami_binary/2_niriss_ami_binary.ipynb
-chapters: Excluded Notebooks Redshift Crosscorr
--file: notebooks/redshift_crosscorr/redshift_with_crosscorr.ipynb
-chapters: Excluded Notebooks - Optimal Extraction Dynamic
--file: notebooks/optimal_extraction_dynamic/Spectral Extraction.ipynb
+chapters:
+- file: notebooks/preimaging/preimaging_01_mirage.ipynb
+- file: notebooks/preimaging/preimaging_02_calwebb.ipynb
+- file: notebooks/preimaging/preimaging_03_association.ipynb
+- file: notebooks/composite_model_fitting/specfit_demo_3.ipynb
+- file: notebooks/soss-transit-spectroscopy/HAT-P-1b-PART3-data-analysis.ipynb
+- file: notebooks/niriss_ami_binary/1_niriss_ami_binary.ipynb
+- file: notebooks/niriss_ami_binary/2_niriss_ami_binary.ipynb
+- file: notebooks/redshift_crosscorr/redshift_with_crosscorr.ipynb
+- file: notebooks/optimal_extraction_dynamic/Spectral Extraction.ipynb
