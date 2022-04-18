@@ -1,0 +1,1277 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>IFU Data Modeling NGC 4151 Notebook #1 - Isolating Line Emission &#8212; STScI JDAT Notebooks</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/main.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="NIRCam PSF-matched multiband photometry" href="../NIRCam_PSF-matched_photometry/NIRCam_PSF_matched_multiband_photometry.html" />
+    <link rel="prev" title="Draft: Notebook title" href="../example_notebook/example_notebook.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-D46G4HKJY3"></script>
+<script>
+                    window.dataLayer = window.dataLayer || [];
+                    function gtag(){ dataLayer.push(arguments); }
+                    gtag('js', new Date());
+                    gtag('config', 'G-D46G4HKJY3');
+                </script>
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../_static/Jspectra.svg" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">STScI JDAT Notebooks</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../intro.html">
+   Welcome JDAT Notebooks
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  NIRISS WFSS Spectra
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../NIRISS_WFSS_postpipeline/00.%20Optimal%20extraction.html">
+   Part 0: Optimal Extraction of NIRISS WFSS Spectrum
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../NIRISS_WFSS_postpipeline/01.%20Combine%20and%20normalize%201D%20spectra.html">
+   Part 1: Combine One-Dimensional NIRISS WFSS Spectra
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../NIRISS_WFSS_postpipeline/02.%20Cross%20correlation%20template.html">
+   Part 2: Cross Correlation to Determine Redshift of NIRISS WFSS Spectra
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../NIRISS_WFSS_postpipeline/03.%20Spatially%20resolved%20emission%20line%20map.html">
+   Part 3: Spatially Resolved Emission Line Map of NIRISS WFSS Spectra
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  MOS Spectroscopy
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../mos-spectroscopy/MOSspec_sv06_revised.html">
+   MOS Spectroscopy of Typical Extragalactic Field
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Example Notebook
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../example_notebook/example_notebook.html">
+   Draft: Notebook title
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  IFU Continuum Fit
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   IFU Data Modeling NGC 4151 Notebook #1  - Isolating Line Emission
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  PSF Matched Photometry
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../NIRCam_PSF-matched_photometry/NIRCam_PSF_matched_multiband_photometry.html">
+   NIRCam PSF-matched multiband photometry
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  MIRI IFU in the LMC
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../MIRI_IFU_YSOs_in_the_LMC/isha_nayak_ysos_in_the_lmc.html">
+   JWST Data Analysis
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Preimaging
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../preimaging/preimaging_02_calwebb.html">
+   Excuting the JWST pipeline on the  JWST astrometric calibration field in the LMC (part 1)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../preimaging/preimaging_01_mirage.html">
+   NIRSpec Pre-Imaging with NIRCam
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../preimaging/preimaging_03_association.html">
+   Creating simulated images of the JWST astrometric calibration field in the LMC
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Optimal Extraction
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../optimal_extraction/Spectral%20Extraction-static.html">
+   NIRSpec MOS Optimal Spectral Extraction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../optimal_extraction_dynamic/Spectral%20Extraction.html">
+   NIRSpec MOS Optimal Spectral Extraction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ifu_optimal/ifu_optimal.html">
+   Baseline: NIRSpec IFU Optimal Point Source Extraction
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Background Estimation
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../background_estimation_imaging/Imaging%20Sky%20Background%20Estimation.html">
+   Imaging Sky Background Estimation
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  SOSS Transient Spectroscopy
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../soss-transit-spectroscopy/HAT-P-1b-PART3-data-analysis.html">
+   Analyzing the JWST Pipeline products of HAT-P-1b observations with NIRISS/SOSS
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  PSF Photometry
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../psf_photometry/NIRCam_PSF_Photometry_Example.html">
+   NIRCam PSF Photometry Notebook
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Specviz Interaction
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../specviz_notebookGUI_interaction/specviz_notebook_gui_interaction_redshift.html">
+   Specviz notebook/GUI interaction on NIRISS WFSS 1D spectra
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  ASDF Example
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../asdf_example/asdf_example.html">
+   Example of Converting a FITS File to ASDF
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Composite Model Fitting
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../composite_model_fitting/specfit_demo_3.html">
+   Draft: Advanced Composite spectral model fitting
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  NIRISS AMI Binary
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../niriss_ami_binary/1_niriss_ami_binary.html">
+   NIRISS AMI simulation of binary point source AB Dor and calibrator HD37093
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../niriss_ami_binary/2_niriss_ami_binary.html">
+   NIRISS AMI calibration of binary point source AB Dor and calibrator HD37093
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Aperture Photometry
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../aperture_photometry/NIRCam_Aperture_Photometry_Example.html">
+   Draft Aperture Photometry
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  NIRSpec MAST Query
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../NIRSpec_MAST_Query/NIRSpec_MAST_Query.html">
+   MAST Query Tutorial for NIRSpec Users
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  MIRI LRS Extraction
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../MIRI_LRS_spectral_extraction/miri_lrs_spectral_extraction.html">
+   MIRI LRS Optimal  Spectral Extraction
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Transient Spectroscopy
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../transit_spectroscopy_notebook/Exoplanet_Transmission_Spectra_JWST.html">
+   Extracting an Exoplanet Transmission Spectrum from NIRSpec BOTS Time Series Observations
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  NIRCam Photometry
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../NIRCam_photometry/NIRCam%20multiband%20photometry.html">
+   NIRCam Multiband Photometry
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/notebooks/IFU_cube_continuum_fit/NGC4151_FeII_ContinuumFit.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/therealzoidberg/actions-ci-testing/"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/therealzoidberg/actions-ci-testing//issues/new?title=Issue%20on%20page%20%2Fnotebooks/IFU_cube_continuum_fit/NGC4151_FeII_ContinuumFit.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/therealzoidberg/actions-ci-testing/main?urlpath=tree/notebooks/notebooks/IFU_cube_continuum_fit/NGC4151_FeII_ContinuumFit.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        <button type="button" class="btn btn-secondary topbarbtn"
+            onclick="initThebeSBT()" title="Launch Thebe" data-toggle="tooltip" data-placement="left"><i
+                class="fas fa-play"></i><span style="margin-left: .4em;">Live Code</span></button>
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#introduction">
+   Introduction
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#imports">
+   Imports
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>IFU Data Modeling NGC 4151 Notebook #1  - Isolating Line Emission</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#introduction">
+   Introduction
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#imports">
+   Imports
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="ifu-data-modeling-ngc-4151-notebook-1-isolating-line-emission">
+<h1>IFU Data Modeling NGC 4151 Notebook #1  - Isolating Line Emission<a class="headerlink" href="#ifu-data-modeling-ngc-4151-notebook-1-isolating-line-emission" title="Permalink to this headline">¶</a></h1>
+<p><strong>Use case:</strong> continuum and emission-line modeling of AGN; 1.47-1.87um.<br>
+<strong>Data:</strong> <a class="reference external" href="https://www.gemini.edu/instrumentation/current-instruments/nifs">NIFS</a> on Gemini; NGC 4151.<br>
+<strong>Tools:</strong>  specutils, jdaviz/cubeviz, astropy, matplotlib, bottleneck.<br>
+<strong>Cross-intrument:</strong> NIRSpec; potentially MIRI <br>
+<strong>Documentation:</strong> This notebook is part of a STScI’s larger <a class="reference external" href="https://jwst-docs.stsci.edu/jwst-post-pipeline-data-analysis">post-pipeline Data Analysis Tools Ecosystem</a>.<br></p>
+<div class="section" id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+<p>This notebook uses an example 3-D IFU Datacube of the Active Galactic Nucleii NGC 4151 <a class="reference external" href="https://ui.adsabs.harvard.edu/abs/2009MNRAS.394.1148S/abstract">Storchi-Bergmann et al. 2009,  MNRAS, V 394, pp. 1148-1166</a>.  This is a ground-based AO-fed H-band dataset (1.47-1.87um) from the Near-Infrared Integral Field Spectrograph (NIFS) instrument at the Gemini Observatory.  NIFS is a very similar image slicing IFU to JWST NIRSpec.</p>
+<p>This notebook performs some simple spectral investigations.  The notebook utilizes <a class="reference external" href="https://github.com/spacetelescope/jdaviz">jdaviz/cubviz</a> to inspect the dataset and extract 1-D spectra.  The continuum is fit in a region near to the 1.644um [Fe II] emission from the AGN outflow and subtracted.  The centrally compact atomic Hydrogen Brackett 12 feature, which is nearby in wavelength and contaminates the [Fe II] outflow emission, is also fit and removed.  The data sub-cubes of the continuum model and the isolated and continuum subtracted [Fe II] emission are then saved.  These saved data sets will ultimately serve as starting points for the future notebooks in this set.</p>
+<p><strong>Note:</strong> This notebook is designed to analyze the 1.6440 [Fe II] emission but the wavelengths can be altered to fit and remove continuum around any emission line of interest.</p>
+</div>
+<div class="section" id="imports">
+<h2>Imports<a class="headerlink" href="#imports" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>time for timing</p></li>
+<li><p>numpy for array processing and math</p></li>
+<li><p>matplotlib.pyplot for plotting images and spectra</p></li>
+<li><p><a class="reference external" href="http://astropy.io">astropy.io</a> for reading and writing FITS cubes and images</p></li>
+<li><p>astropy.modeling for modeling spectral curves</p></li>
+<li><p>astropy.utils.data for accessing the data</p></li>
+<li><p>specutils.fitting for spectral data fitting</p></li>
+<li><p>specutils Spectrum1D for modeling emission lines</p></li>
+<li><p>jdaviz.app to use cubeviz in the notebook</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># load important packages</span>
+<span class="kn">import</span> <span class="nn">time</span>
+<span class="kn">from</span> <span class="nn">copy</span> <span class="kn">import</span> <span class="n">copy</span>
+
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="kn">import</span> <span class="nn">astropy</span>
+<span class="kn">from</span> <span class="nn">astropy.io</span> <span class="kn">import</span> <span class="n">fits</span><span class="p">,</span> <span class="n">ascii</span>
+<span class="kn">from</span> <span class="nn">astropy</span> <span class="kn">import</span> <span class="n">units</span> <span class="k">as</span> <span class="n">u</span>
+<span class="kn">from</span> <span class="nn">astropy.modeling</span> <span class="kn">import</span> <span class="n">models</span>
+<span class="kn">from</span> <span class="nn">astropy.utils.data</span> <span class="kn">import</span> <span class="n">download_file</span>
+<span class="kn">from</span> <span class="nn">specutils.fitting</span> <span class="kn">import</span> <span class="n">fit_lines</span>
+<span class="kn">from</span> <span class="nn">specutils</span> <span class="kn">import</span> <span class="n">Spectrum1D</span>
+
+<span class="kn">from</span> <span class="nn">jdaviz.app</span> <span class="kn">import</span> <span class="n">Application</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># load and configure matplotlib</span>
+<span class="o">%</span><span class="k">matplotlib</span> inline
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s1">&#39;figure.max_open_warning&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">})</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#This cell access the datacube file, defines the wavelength grid from header information and then plots a simple</span>
+<span class="c1"># 1-D collapsed spectrum of the IFU data.</span>
+
+<span class="c1"># Read in a 3-D IFU datacube of interest, and header.</span>
+<span class="n">cube_file</span> <span class="o">=</span> <span class="s1">&#39;https://data.science.stsci.edu/redirect/JWST/jwst-data_analysis_tools/IFU_cube_continuum_fit/NGC4151_Hband.fits&#39;</span>
+<span class="n">fn</span> <span class="o">=</span> <span class="n">download_file</span><span class="p">(</span><span class="s1">&#39;https://data.science.stsci.edu/redirect/JWST/jwst-data_analysis_tools/IFU_cube_continuum_fit/NGC4151_Hband.fits&#39;</span><span class="p">,</span> <span class="n">cache</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">cube</span> <span class="o">=</span> <span class="n">fits</span><span class="o">.</span><span class="n">getdata</span><span class="p">(</span><span class="n">cube_file</span><span class="p">)</span>
+<span class="n">header_cube</span> <span class="o">=</span> <span class="n">fits</span><span class="o">.</span><span class="n">getheader</span><span class="p">(</span><span class="n">cube_file</span><span class="p">)</span>
+
+<span class="c1">#grab data information and wavelength definitions.</span>
+<span class="n">nz</span><span class="p">,</span> <span class="n">ny</span><span class="p">,</span> <span class="n">nx</span> <span class="o">=</span> <span class="n">cube</span><span class="o">.</span><span class="n">shape</span>
+<span class="n">crdelt3</span> <span class="o">=</span> <span class="n">header_cube</span><span class="p">[</span><span class="s1">&#39;CDELT3&#39;</span><span class="p">]</span>
+<span class="n">crval3</span> <span class="o">=</span> <span class="n">header_cube</span><span class="p">[</span><span class="s1">&#39;CRVAL3&#39;</span><span class="p">]</span>
+
+<span class="c1">#define the wavelength grid (microns) from the header (Angstroms)</span>
+<span class="c1"># and the AGN redshift and the emission line of interest.</span>
+<span class="n">wave</span> <span class="o">=</span><span class="p">((</span><span class="n">crdelt3</span> <span class="o">*</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">nz</span><span class="p">,</span><span class="mi">1</span><span class="p">)))</span> <span class="o">+</span> <span class="n">crval3</span><span class="p">)</span><span class="o">/</span><span class="mf">10000.0</span>
+<span class="n">redshift</span> <span class="o">=</span> <span class="mf">0.00332</span>
+<span class="n">emission_line</span> <span class="o">=</span> <span class="mf">1.64400</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">redshift</span><span class="p">)</span>
+<span class="n">emission_line_index</span> <span class="o">=</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">wave</span><span class="o">-</span><span class="n">emission_line</span><span class="p">))</span><span class="o">.</span><span class="n">argmin</span><span class="p">()</span>
+
+<span class="c1"># make a simple summed 1d spectrum of the full cube</span>
+<span class="n">flux1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">cube</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>
+
+<span class="c1"># plot the full 1-D spectrum.</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">wave</span><span class="p">,</span> <span class="n">flux1</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/NGC4151_FeII_ContinuumFit_4_0.png" src="../../_images/NGC4151_FeII_ContinuumFit_4_0.png" />
+</div>
+</div>
+<p>We see that the spectral edges of the summed 1D are ‘ratty’.  The 1D spectral array goes beyond the nominal useable data range of the instrument.  We’ll ignore the poor spectral regions and focus on the AGN flux.</p>
+<p>The [Fe II] feature that we are interested in is the bright, strong emission just shortward of 1.65um.  The contaminating H I Br 12 emission is just blueward of the [Fe II].</p>
+<p>We can use this plot window to read wavelength values of interest to define our analysis spectral ranges (see wavelength/flux grid data to the lower right of the plot window).</p>
+<p>Special Note - in this particular dataset, a portion of the spectrum on the red side of the [FeII] emission
+provides a clean measure of the continuum.  The blue-ward side of the [Fe II]
+and HI Brackett 12 emission has other emission and absorption features that make clear continuum ID very
+difficult.  As a result, it is more accurate to do a simple linear fit to the red side of the spectrum rather than
+a more expanded spectral region that encompasses the emission..</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#This cell defines the wavelength regions of interest: around the emission line, and the location</span>
+<span class="c1">#where you want to fit and remove the continuum very accurately.  Make a plot that shows the regions.</span>
+
+<span class="c1"># Here we select a region that includes the emission line</span>
+<span class="c1"># wavelength plus a small range of continuum around it.  </span>
+<span class="c1"># Determine these limits by investigating the flux in the above plot.  Read</span>
+<span class="c1"># the wavelength values off of the plot information at the lower right.</span>
+
+<span class="n">wave_emission_limit1</span> <span class="o">=</span> <span class="mf">1.630</span>
+<span class="n">wave_emission_limit2</span> <span class="o">=</span> <span class="mf">1.665</span>
+
+<span class="c1"># Here we define a spectral range where we will use the</span>
+<span class="c1"># flux to generate a continuum model.  The flux shape in this</span>
+<span class="c1"># AGN is quite linear around the redward emission, so we will use only a </span>
+<span class="c1"># short segment of the spectrum on the red side of the emission </span>
+<span class="c1"># feature.</span>
+<span class="c1"># We again determine these values by investigating the wavelengths in the</span>
+<span class="c1"># above plot window.</span>
+
+<span class="n">continuum_limit1</span> <span class="o">=</span> <span class="mf">1.656</span>
+<span class="n">continuum_limit2</span> <span class="o">=</span> <span class="mf">1.673</span>
+  
+<span class="c1">#Define the wavelength region around the emission - indices</span>
+<span class="n">wavemin</span> <span class="o">=</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">wave</span><span class="o">-</span><span class="n">wave_emission_limit1</span><span class="p">))</span><span class="o">.</span><span class="n">argmin</span><span class="p">()</span>
+<span class="n">wavemax</span> <span class="o">=</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">wave</span><span class="o">-</span><span class="n">wave_emission_limit2</span><span class="p">))</span><span class="o">.</span><span class="n">argmin</span><span class="p">()</span>
+
+<span class="c1"># Define the wavelength region used to fit the continuum flux level  - indices.</span>
+<span class="n">continuummin</span> <span class="o">=</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">wave</span><span class="o">-</span><span class="n">continuum_limit1</span><span class="p">))</span><span class="o">.</span><span class="n">argmin</span><span class="p">()</span>
+<span class="n">continuummax</span> <span class="o">=</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">wave</span><span class="o">-</span><span class="n">continuum_limit2</span><span class="p">))</span><span class="o">.</span><span class="n">argmin</span><span class="p">()</span>
+
+<span class="c1">#show the region used for the emission line and continuum fit.  Alter the wavelengths </span>
+<span class="c1"># above if this doesn&#39;t look good.  </span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">wave</span><span class="p">,</span> <span class="n">flux1</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">wave</span><span class="p">[</span><span class="n">wavemin</span><span class="p">:</span><span class="n">wavemax</span><span class="p">],</span> <span class="n">flux1</span><span class="p">[</span><span class="n">wavemin</span><span class="p">:</span><span class="n">wavemax</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">wave</span><span class="p">[</span><span class="n">continuummin</span><span class="p">:</span><span class="n">continuummax</span><span class="p">],</span> <span class="n">flux1</span><span class="p">[</span><span class="n">continuummin</span><span class="p">:</span><span class="n">continuummax</span><span class="p">],</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/NGC4151_FeII_ContinuumFit_6_0.png" src="../../_images/NGC4151_FeII_ContinuumFit_6_0.png" />
+</div>
+</div>
+<p>For this particular dataset, this continuum region looks very good.
+if you have a more structured continuum you can define additional
+regions and append them into a larger set of wave / flux arrays to
+derive a more accurate fit in the below poly-fit analysis.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Use cubeviz to look at the data in the cube.  Here, we configure and bring up the app.</span>
+<span class="n">app</span> <span class="o">=</span> <span class="n">Application</span><span class="p">(</span><span class="n">configuration</span><span class="o">=</span><span class="s1">&#39;cubeviz&#39;</span><span class="p">)</span>
+<span class="n">app</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<script type="application/vnd.jupyter.widget-view+json">
+{"version_major": 2, "version_minor": 0, "model_id": "333e818b9ea640e28be92efa194e0ed5"}
+</script></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Here, we load the data into the cubeviz app.</span>
+<span class="n">app</span><span class="o">.</span><span class="n">load_data</span><span class="p">(</span><span class="n">fn</span><span class="p">)</span>
+ 
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:root:Missing BUNIT, using count as data unit
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/usr/share/miniconda/lib/python3.9/site-packages/specutils/spectra/spectrum1d.py:202: UserWarning: Input WCS indicates that the spectral axis is not last. Reshaping arrays to put spectral axis last.
+  warnings.warn(&quot;Input WCS indicates that the spectral axis is not&quot;
+/usr/share/miniconda/lib/python3.9/site-packages/specutils/spectra/spectrum1d.py:202: UserWarning: Input WCS indicates that the spectral axis is not last. Reshaping arrays to put spectral axis last.
+  warnings.warn(&quot;Input WCS indicates that the spectral axis is not&quot;
+/usr/share/miniconda/lib/python3.9/site-packages/specutils/spectra/spectrum1d.py:202: UserWarning: Input WCS indicates that the spectral axis is not last. Reshaping arrays to put spectral axis last.
+  warnings.warn(&quot;Input WCS indicates that the spectral axis is not&quot;
+/usr/share/miniconda/lib/python3.9/site-packages/specutils/spectra/spectrum1d.py:202: UserWarning: Input WCS indicates that the spectral axis is not last. Reshaping arrays to put spectral axis last.
+  warnings.warn(&quot;Input WCS indicates that the spectral axis is not&quot;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Set the left cubeviz panel to view our cube by linking the dataset to the visualization.  This is done in the cube visualization panel that is to the upper left; it is an expandible menu that shows up as lines at the left display view.  When you click the gear icon in this expanded menu, the dataset should show up as a weird name next to a blank checkbox.  Check the box.</p>
+<p>In the same way, select the datacube in the spectral viewer at the bottom of the cubeviz pane.
+Use the expandible menu gear icon and select the loaded datacube.  This is the summed 1-D spectrum from the full spatial field of the data cube.</p>
+<p>In the datacube viewing panel, you can also select the ‘layer’ tab in the gear (data) icon and change
+display scaling.  Decreasing the maximum display value by 10x brings out the low level extended emission
+in this dataset.  In this cube, data from slice ~1060 to ~1090 shows the extended [Fe II] emission.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># show the 1-D spectrum by grabbing the cubeviz spectral viewer app within the notebook.</span>
+<span class="c1"># If the 1-D spectrum hasn&#39;t been selected in the cubeviz window, automatically collapse</span>
+<span class="c1"># and plot the loaded data cube.</span>
+
+<span class="n">spectrum_viewer</span> <span class="o">=</span> <span class="n">app</span><span class="o">.</span><span class="n">get_viewer</span><span class="p">(</span><span class="s1">&#39;spectrum-viewer&#39;</span><span class="p">)</span>
+<span class="k">if</span> <span class="ow">not</span> <span class="n">spectrum_viewer</span><span class="o">.</span><span class="n">data</span><span class="p">():</span>
+    <span class="n">app</span><span class="o">.</span><span class="n">add_data_to_viewer</span><span class="p">(</span><span class="s1">&#39;spectrum-viewer&#39;</span><span class="p">,</span><span class="n">app</span><span class="o">.</span><span class="n">data_collection</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">label</span><span class="p">)</span>
+<span class="c1">#    spectrum_viewer.add_data(app.data_collection[0].label)</span>
+                             
+<span class="n">spectrum_viewer</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<script type="application/vnd.jupyter.widget-view+json">
+{"version_major": 2, "version_minor": 0, "model_id": "663d9b392a054a348c1d55dac83418dc"}
+</script></div>
+</div>
+<p>Use the flux viewer in cubeviz to extract a spectrum located at the central AGN position.
+It should show in the above spectral viewer, too.</p>
+<p>To do this, use the expandable menu at the left of the flux viewer window and select the ‘define circular region of interest’ icon.  Make a circular region at the central position of the bright AGN flux, which is at approximately the cube center position.</p>
+<p>(If the notebook is being run non-interactively, this cell will automatically make a dataset that mimics the AGN specrum).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Grab the layer spectrum that corresponds to the central AGN position as an array in the notebook, then plot it.</span>
+<span class="c1"># If there is no subset in cubeviz, make one to plot.</span>
+
+<span class="n">spec_agn</span> <span class="o">=</span> <span class="n">app</span><span class="o">.</span><span class="n">get_data_from_viewer</span><span class="p">(</span><span class="s1">&#39;spectrum-viewer&#39;</span><span class="p">,</span> <span class="s1">&#39;Subset 1&#39;</span><span class="p">)</span>
+<span class="n">spec_agn</span>
+
+<span class="k">if</span> <span class="ow">not</span> <span class="n">spec_agn</span><span class="p">:</span>
+    <span class="n">flux_agn</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">cube</span><span class="p">[:,(</span><span class="n">ny</span><span class="o">//</span><span class="mi">2</span><span class="p">)</span><span class="o">-</span><span class="mi">3</span><span class="p">:(</span><span class="n">ny</span><span class="o">//</span><span class="mi">2</span><span class="p">)</span><span class="o">+</span><span class="mi">3</span><span class="p">,(</span><span class="n">nx</span><span class="o">//</span><span class="mi">2</span><span class="p">)</span><span class="o">-</span><span class="mi">3</span><span class="p">:(</span><span class="n">nx</span><span class="o">//</span><span class="mi">2</span><span class="p">)</span><span class="o">+</span><span class="mi">3</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>
+    <span class="n">spec_agn</span> <span class="o">=</span> <span class="n">Spectrum1D</span><span class="p">(</span><span class="n">flux</span><span class="o">=</span><span class="n">flux_agn</span><span class="o">*</span><span class="n">u</span><span class="o">.</span><span class="n">Unit</span><span class="p">(</span><span class="s1">&#39;count&#39;</span><span class="p">),</span> <span class="n">spectral_axis</span><span class="o">=</span><span class="n">wave</span><span class="o">*</span><span class="n">u</span><span class="o">.</span><span class="n">micron</span><span class="p">)</span> 
+    
+<span class="c1"># plot the 1-D spectrum of this smaller sub-region.</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">wave</span><span class="p">[</span><span class="n">wavemin</span><span class="p">:</span><span class="n">wavemax</span><span class="p">],</span> <span class="n">spec_agn</span><span class="o">.</span><span class="n">flux</span><span class="p">[</span><span class="n">wavemin</span><span class="p">:</span><span class="n">wavemax</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/NGC4151_FeII_ContinuumFit_13_0.png" src="../../_images/NGC4151_FeII_ContinuumFit_13_0.png" />
+</div>
+</div>
+<p>Now, use the flux viewer and again use the ‘define circular region of interest’ icon to make spectra at two positions associated with the outflow emission in [Fe II].</p>
+<p>The redshifted outflow is at approximate x position = 12, y position = 36.  This will be ‘Subset 2’ and will show up in green in the display.</p>
+<p>The blueshifted outflow is at approximately x position = 50, y position = 28 in pixel index units.  This will be ‘Subset 3’ and will show up in blue in the display.</p>
+<p>(If the notebook is being run non-interactively, automatically make two datasets that mimic the AGN outflow red/blueshifted spectra).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#grab the redshifted and blueshifted outflow spectra from the spectral viewer window.</span>
+
+<span class="n">spec_feii_red</span> <span class="o">=</span> <span class="n">app</span><span class="o">.</span><span class="n">get_data_from_viewer</span><span class="p">(</span><span class="s1">&#39;spectrum-viewer&#39;</span><span class="p">,</span> <span class="s1">&#39;Subset 2&#39;</span><span class="p">)</span>
+<span class="n">spec_feii_red</span>
+
+<span class="k">if</span> <span class="ow">not</span> <span class="n">spec_feii_red</span><span class="p">:</span>
+    <span class="n">flux_feii_red</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">cube</span><span class="p">[:,(</span><span class="mi">36</span><span class="p">)</span><span class="o">-</span><span class="mi">3</span><span class="p">:(</span><span class="mi">36</span><span class="p">)</span><span class="o">+</span><span class="mi">3</span><span class="p">,(</span><span class="mi">12</span><span class="p">)</span><span class="o">-</span><span class="mi">3</span><span class="p">:(</span><span class="mi">12</span><span class="p">)</span><span class="o">+</span><span class="mi">3</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>
+    <span class="n">spec_feii_red</span> <span class="o">=</span> <span class="n">Spectrum1D</span><span class="p">(</span><span class="n">flux</span><span class="o">=</span><span class="n">flux_feii_red</span><span class="o">*</span><span class="n">u</span><span class="o">.</span><span class="n">Unit</span><span class="p">(</span><span class="s1">&#39;count&#39;</span><span class="p">),</span> <span class="n">spectral_axis</span><span class="o">=</span><span class="n">wave</span><span class="o">*</span><span class="n">u</span><span class="o">.</span><span class="n">micron</span><span class="p">)</span> 
+
+<span class="n">spec_feii_blue</span> <span class="o">=</span> <span class="n">app</span><span class="o">.</span><span class="n">get_data_from_viewer</span><span class="p">(</span><span class="s1">&#39;spectrum-viewer&#39;</span><span class="p">,</span> <span class="s1">&#39;Subset 3&#39;</span><span class="p">)</span>
+<span class="n">spec_feii_blue</span>
+
+<span class="k">if</span> <span class="ow">not</span> <span class="n">spec_feii_blue</span><span class="p">:</span>
+    <span class="n">flux_feii_blue</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">cube</span><span class="p">[:,(</span><span class="mi">28</span><span class="p">)</span><span class="o">-</span><span class="mi">3</span><span class="p">:(</span><span class="mi">28</span><span class="p">)</span><span class="o">+</span><span class="mi">3</span><span class="p">,(</span><span class="mi">50</span><span class="p">)</span><span class="o">-</span><span class="mi">3</span><span class="p">:(</span><span class="mi">50</span><span class="p">)</span><span class="o">+</span><span class="mi">3</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>
+    <span class="n">spec_feii_blue</span> <span class="o">=</span> <span class="n">Spectrum1D</span><span class="p">(</span><span class="n">flux</span><span class="o">=</span><span class="n">flux_feii_blue</span><span class="o">*</span><span class="n">u</span><span class="o">.</span><span class="n">Unit</span><span class="p">(</span><span class="s1">&#39;count&#39;</span><span class="p">),</span> <span class="n">spectral_axis</span><span class="o">=</span><span class="n">wave</span><span class="o">*</span><span class="n">u</span><span class="o">.</span><span class="n">micron</span><span class="p">)</span> 
+
+<span class="c1">#plot a zoomed view of the spectra grabbed from cubeviz</span>
+
+<span class="c1"># plot the 1-D redshifted outflow spectrum.</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">wave</span><span class="p">[</span><span class="n">wavemin</span><span class="p">:</span><span class="n">wavemax</span><span class="p">],</span> <span class="n">spec_feii_blue</span><span class="o">.</span><span class="n">flux</span><span class="p">[</span><span class="n">wavemin</span><span class="p">:</span><span class="n">wavemax</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="c1"># plot the 1-D spectrum blueshifted outflow spectrum.</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">wave</span><span class="p">[</span><span class="n">wavemin</span><span class="p">:</span><span class="n">wavemax</span><span class="p">],</span> <span class="n">spec_feii_red</span><span class="o">.</span><span class="n">flux</span><span class="p">[</span><span class="n">wavemin</span><span class="p">:</span><span class="n">wavemax</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/NGC4151_FeII_ContinuumFit_15_0.png" src="../../_images/NGC4151_FeII_ContinuumFit_15_0.png" />
+<img alt="../../_images/NGC4151_FeII_ContinuumFit_15_1.png" src="../../_images/NGC4151_FeII_ContinuumFit_15_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#demonstration of a linear fit to the continuum flux level</span>
+<span class="c1"># this method uses simple functions in numpy to fit the continuum. </span>
+
+<span class="n">cont_fit</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">polyfit</span><span class="p">(</span><span class="n">wave</span><span class="p">[</span><span class="n">continuummin</span><span class="p">:</span><span class="n">continuummax</span><span class="p">],</span> <span class="n">flux1</span><span class="p">[</span><span class="n">continuummin</span><span class="p">:</span><span class="n">continuummax</span><span class="p">],</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">fitval</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">poly1d</span><span class="p">(</span><span class="n">cont_fit</span><span class="p">)</span>
+<span class="n">continuum</span> <span class="o">=</span> <span class="n">fitval</span><span class="p">(</span><span class="n">wave</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">wave</span><span class="p">,</span> <span class="n">flux1</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">wave</span><span class="p">[</span><span class="n">continuummin</span><span class="p">:</span><span class="n">continuummax</span><span class="p">],</span> <span class="n">flux1</span><span class="p">[</span><span class="n">continuummin</span><span class="p">:</span><span class="n">continuummax</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">wave</span><span class="p">,</span> <span class="n">continuum</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/NGC4151_FeII_ContinuumFit_16_0.png" src="../../_images/NGC4151_FeII_ContinuumFit_16_0.png" />
+<img alt="../../_images/NGC4151_FeII_ContinuumFit_16_1.png" src="../../_images/NGC4151_FeII_ContinuumFit_16_1.png" />
+<img alt="../../_images/NGC4151_FeII_ContinuumFit_16_2.png" src="../../_images/NGC4151_FeII_ContinuumFit_16_2.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># That looks pretty good.</span>
+
+<span class="c1"># This cell continues a demonstration of a linear fit to the continuum flux level.</span>
+<span class="c1"># This method uses the specutils and modeling packages available</span>
+<span class="c1"># in astropy.  It does the same thing as the prior cell, but in an astropy </span>
+<span class="c1"># spectral format.</span>
+
+<span class="c1"># Here we use the polynomial routine to do a linear fit - this is so it&#39;s easy</span>
+<span class="c1"># to update the fit order, if necessary.</span>
+
+<span class="n">full_spectrum</span><span class="o">=</span><span class="n">Spectrum1D</span><span class="p">(</span>
+    <span class="n">flux</span><span class="o">=</span><span class="n">flux1</span><span class="o">*</span> <span class="n">u</span><span class="o">.</span><span class="n">Unit</span><span class="p">(</span><span class="s1">&#39;count&#39;</span><span class="p">),</span> <span class="n">spectral_axis</span><span class="o">=</span><span class="n">wave</span><span class="o">*</span> <span class="n">u</span><span class="o">.</span><span class="n">micron</span><span class="p">)</span>
+
+<span class="c1"># Make Spectrum1D specutils version of data for the continuum segment.</span>
+<span class="n">spectrum</span> <span class="o">=</span> <span class="n">Spectrum1D</span><span class="p">(</span>
+    <span class="n">flux</span><span class="o">=</span><span class="n">flux1</span><span class="p">[</span><span class="n">continuummin</span><span class="p">:</span><span class="n">continuummax</span><span class="p">]</span><span class="o">*</span><span class="n">u</span><span class="o">.</span><span class="n">Unit</span><span class="p">(</span><span class="s1">&#39;count&#39;</span><span class="p">),</span>
+    <span class="n">spectral_axis</span><span class="o">=</span><span class="n">wave</span><span class="p">[</span><span class="n">continuummin</span><span class="p">:</span><span class="n">continuummax</span><span class="p">]</span><span class="o">*</span><span class="n">u</span><span class="o">.</span><span class="n">micron</span><span class="p">)</span>
+
+<span class="c1"># Make an empty model with no initial guess of the coefficients</span>
+<span class="c1"># If guessing make sure to only pass values (no units)</span>
+<span class="n">m</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">Polynomial1D</span><span class="p">(</span><span class="n">degree</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> <span class="c1"># You can place a guess by setting c0 and c1</span>
+<span class="c1"># Fit model and save fitted model containing the fitted params</span>
+<span class="n">fitted_model</span> <span class="o">=</span> <span class="n">fit_lines</span><span class="p">(</span><span class="n">spectrum</span><span class="p">,</span> <span class="n">m</span><span class="p">)</span>
+<span class="c1"># Just to showcase how to access the fitted params</span>
+<span class="n">cont_fit</span> <span class="o">=</span> <span class="p">[</span><span class="n">fitted_model</span><span class="o">.</span><span class="n">c1</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">fitted_model</span><span class="o">.</span><span class="n">c0</span><span class="o">.</span><span class="n">value</span><span class="p">]</span>
+
+<span class="c1"># notice I dont have to use cont_fit to get my continuum</span>
+<span class="c1"># I just call the model with my spectral values</span>
+<span class="n">continuum</span> <span class="o">=</span> <span class="n">fitted_model</span><span class="p">(</span><span class="n">full_spectrum</span><span class="o">.</span><span class="n">spectral_axis</span><span class="p">)</span>
+
+<span class="c1">#plot the results - identical to above numpy code - looks good.</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">wave</span><span class="p">,</span> <span class="n">flux1</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">wave</span><span class="p">,</span> <span class="n">continuum</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING: Model is linear in parameters; consider using linear fitting methods. [astropy.modeling.fitting]
+WARNING:astropy:Model is linear in parameters; consider using linear fitting methods.
+</pre></div>
+</div>
+<img alt="../../_images/NGC4151_FeII_ContinuumFit_17_1.png" src="../../_images/NGC4151_FeII_ContinuumFit_17_1.png" />
+<img alt="../../_images/NGC4151_FeII_ContinuumFit_17_2.png" src="../../_images/NGC4151_FeII_ContinuumFit_17_2.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># This cell makes a data sub-cube around the emission feature that has the continuum flux </span>
+<span class="c1"># level subtracted off. then make another datacube that is only the continuum flux, to serve</span>
+<span class="c1"># as a PSF model to correct out the bright, central HI features.</span>
+
+<span class="c1"># Here I&#39;m using the numpy functions for continuum fitting and subtraction.</span>
+
+<span class="c1"># This is done in nested for loops, looping over the spatial axes in the cube.</span>
+
+<span class="n">start_time</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+
+<span class="n">cont_sub_cube</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">([</span><span class="n">nz</span><span class="p">,</span><span class="n">ny</span><span class="p">,</span><span class="n">nx</span><span class="p">])</span>
+<span class="n">cont_psf_cube</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">([</span><span class="n">nz</span><span class="p">,</span><span class="n">ny</span><span class="p">,</span><span class="n">nx</span><span class="p">])</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">nx</span><span class="o">-</span><span class="mi">2</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">ny</span><span class="o">-</span><span class="mi">2</span><span class="p">):</span>
+        <span class="n">flux1</span> <span class="o">=</span> <span class="n">cube</span><span class="p">[:,</span><span class="n">j</span><span class="p">,</span><span class="n">i</span><span class="p">]</span>      
+        <span class="n">cont_fit</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">polyfit</span><span class="p">(</span><span class="n">wave</span><span class="p">[</span><span class="n">continuummin</span><span class="p">:</span><span class="n">continuummax</span><span class="p">],</span> <span class="n">flux1</span><span class="p">[</span><span class="n">continuummin</span><span class="p">:</span><span class="n">continuummax</span><span class="p">],</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="n">fitval</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">poly1d</span><span class="p">(</span><span class="n">cont_fit</span><span class="p">)</span>
+        <span class="n">continuum</span> <span class="o">=</span> <span class="n">fitval</span><span class="p">(</span><span class="n">wave</span><span class="p">)</span>        
+        <span class="n">cont_sub_cube</span><span class="p">[:,</span><span class="n">j</span><span class="p">,</span><span class="n">i</span><span class="p">]</span><span class="o">=</span> <span class="n">flux1</span> <span class="o">-</span> <span class="n">continuum</span>
+        <span class="n">cont_psf_cube</span><span class="p">[:,</span><span class="n">j</span><span class="p">,</span><span class="n">i</span><span class="p">]</span><span class="o">=</span> <span class="n">continuum</span> 
+
+<span class="k">del</span> <span class="n">header_cube</span><span class="p">[</span><span class="s1">&#39;MODE&#39;</span><span class="p">]</span>
+
+<span class="n">fits</span><span class="o">.</span><span class="n">writeto</span><span class="p">(</span><span class="s1">&#39;NGC4151_Hband_ContinuumSubtract.fits&#39;</span><span class="p">,</span> <span class="n">cont_sub_cube</span><span class="p">,</span> <span class="n">header_cube</span><span class="p">,</span> <span class="n">overwrite</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">fits</span><span class="o">.</span><span class="n">writeto</span><span class="p">(</span><span class="s1">&#39;NGC4151_Hband_ContinuumPSF.fits&#39;</span><span class="p">,</span> <span class="n">cont_psf_cube</span><span class="p">,</span> <span class="n">header_cube</span><span class="p">,</span> <span class="n">overwrite</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Continuum subtracted cube saved. PSF continuum cube saved.&#39;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Time count&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;--- </span><span class="si">%s</span><span class="s2"> seconds ---&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span> <span class="o">-</span> <span class="n">start_time</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Continuum subtracted cube saved. PSF continuum cube saved.
+Time count
+--- 1.2177128791809082 seconds ---
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># This cell does the same thing as the prior cell, but uses specutils models polyfit instead of numpy </span>
+<span class="c1"># to do the continuum fitting.  This uses the poly fit options instead of line fitting so that you can </span>
+<span class="c1"># change the polynomial order for the continuum fitting, if necessary.</span>
+
+<span class="c1"># This is done in nested for loops, looping over the RA, Dec axes in the cube.</span>
+
+<span class="c1"># This does the same thing but is slow compared to the prior cell...</span>
+
+<span class="n">start_time</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+
+<span class="n">cont_sub_cube_specutils</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">([</span><span class="n">nz</span><span class="p">,</span><span class="n">ny</span><span class="p">,</span><span class="n">nx</span><span class="p">])</span>
+<span class="n">cont_psf_cube_specutils</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">([</span><span class="n">nz</span><span class="p">,</span><span class="n">ny</span><span class="p">,</span><span class="n">nx</span><span class="p">])</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">nx</span><span class="o">-</span><span class="mi">2</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">ny</span><span class="o">-</span><span class="mi">2</span><span class="p">):</span>
+        <span class="n">flux1</span> <span class="o">=</span> <span class="n">Spectrum1D</span><span class="p">(</span><span class="n">flux</span> <span class="o">=</span> <span class="n">cube</span><span class="p">[:,</span><span class="n">j</span><span class="p">,</span><span class="n">i</span><span class="p">]</span><span class="o">*</span><span class="n">u</span><span class="o">.</span><span class="n">Unit</span><span class="p">(</span><span class="s1">&#39;count&#39;</span><span class="p">),</span> <span class="n">spectral_axis</span><span class="o">=</span><span class="n">wave</span><span class="o">*</span><span class="n">u</span><span class="o">.</span><span class="n">micron</span><span class="p">)</span>
+        <span class="n">m</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">Polynomial1D</span><span class="p">(</span><span class="n">degree</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+        <span class="n">fitted_model</span> <span class="o">=</span> <span class="n">fit_lines</span><span class="p">(</span><span class="n">flux1</span><span class="p">[</span><span class="n">continuummin</span><span class="p">:</span><span class="n">continuummax</span><span class="p">],</span> <span class="n">m</span><span class="p">)</span>
+        <span class="n">cont_fit</span> <span class="o">=</span> <span class="p">[</span><span class="n">fitted_model</span><span class="o">.</span><span class="n">c1</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">fitted_model</span><span class="o">.</span><span class="n">c0</span><span class="o">.</span><span class="n">value</span><span class="p">]</span>
+        <span class="n">continuum</span> <span class="o">=</span> <span class="n">fitted_model</span><span class="p">(</span><span class="n">flux1</span><span class="o">.</span><span class="n">spectral_axis</span><span class="p">)</span>
+        <span class="n">cont_sub_cube_specutils</span><span class="p">[:,</span><span class="n">j</span><span class="p">,</span><span class="n">i</span><span class="p">]</span><span class="o">=</span> <span class="n">flux1</span><span class="o">.</span><span class="n">flux</span> <span class="o">-</span> <span class="n">continuum</span>
+        <span class="n">cont_psf_cube_specutils</span><span class="p">[:,</span><span class="n">j</span><span class="p">,</span><span class="n">i</span><span class="p">]</span><span class="o">=</span> <span class="n">continuum</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Done&#39;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Time count&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;--- </span><span class="si">%s</span><span class="s2"> seconds ---&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span> <span class="o">-</span> <span class="n">start_time</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING: Model is linear in parameters; consider using linear fitting methods. [astropy.modeling.fitting]
+WARNING:astropy:Model is linear in parameters; consider using linear fitting methods.
+</pre></div>
+</div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="nn">Input In [13],</span> in <span class="ni">&lt;cell line: 14&gt;</span><span class="nt">()</span>
+<span class="g g-Whitespace">     </span><span class="mi">16</span> <span class="n">flux1</span> <span class="o">=</span> <span class="n">Spectrum1D</span><span class="p">(</span><span class="n">flux</span> <span class="o">=</span> <span class="n">cube</span><span class="p">[:,</span><span class="n">j</span><span class="p">,</span><span class="n">i</span><span class="p">]</span><span class="o">*</span><span class="n">u</span><span class="o">.</span><span class="n">Unit</span><span class="p">(</span><span class="s1">&#39;count&#39;</span><span class="p">),</span> <span class="n">spectral_axis</span><span class="o">=</span><span class="n">wave</span><span class="o">*</span><span class="n">u</span><span class="o">.</span><span class="n">micron</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">17</span> <span class="n">m</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">Polynomial1D</span><span class="p">(</span><span class="n">degree</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="ne">---&gt; </span><span class="mi">18</span> <span class="n">fitted_model</span> <span class="o">=</span> <span class="n">fit_lines</span><span class="p">(</span><span class="n">flux1</span><span class="p">[</span><span class="n">continuummin</span><span class="p">:</span><span class="n">continuummax</span><span class="p">],</span> <span class="n">m</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">19</span> <span class="n">cont_fit</span> <span class="o">=</span> <span class="p">[</span><span class="n">fitted_model</span><span class="o">.</span><span class="n">c1</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">fitted_model</span><span class="o">.</span><span class="n">c0</span><span class="o">.</span><span class="n">value</span><span class="p">]</span>
+<span class="g g-Whitespace">     </span><span class="mi">20</span> <span class="n">continuum</span> <span class="o">=</span> <span class="n">fitted_model</span><span class="p">(</span><span class="n">flux1</span><span class="o">.</span><span class="n">spectral_axis</span><span class="p">)</span>
+
+<span class="nn">File /usr/share/miniconda/lib/python3.9/site-packages/specutils/fitting/fitmodels.py:346,</span> in <span class="ni">fit_lines</span><span class="nt">(spectrum, model, fitter, exclude_regions, weights, window, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">339</span> <span class="c1">#</span>
+<span class="g g-Whitespace">    </span><span class="mi">340</span> <span class="c1"># Check to see if the model has units. If it does not</span>
+<span class="g g-Whitespace">    </span><span class="mi">341</span> <span class="c1"># have units then we are going to ignore them.</span>
+<span class="g g-Whitespace">    </span><span class="mi">342</span> <span class="c1">#</span>
+<span class="g g-Whitespace">    </span><span class="mi">344</span> <span class="n">ignore_units</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">model_guess</span><span class="p">,</span> <span class="n">model_guess</span><span class="o">.</span><span class="n">param_names</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span><span class="o">.</span><span class="n">unit</span> <span class="ow">is</span> <span class="kc">None</span>
+<span class="ne">--&gt; </span><span class="mi">346</span> <span class="n">fit_model</span> <span class="o">=</span> <span class="n">_fit_lines</span><span class="p">(</span><span class="n">spectrum</span><span class="p">,</span> <span class="n">model_guess</span><span class="p">,</span> <span class="n">fitter</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">347</span>                        <span class="n">exclude_regions</span><span class="p">,</span> <span class="n">weights</span><span class="p">,</span> <span class="n">model_window</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">348</span>                        <span class="n">ignore_units</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">349</span> <span class="k">if</span> <span class="n">model_guess</span><span class="o">.</span><span class="n">name</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">350</span>     <span class="n">fit_model</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">model_guess</span><span class="o">.</span><span class="n">name</span>
+
+<span class="nn">File /usr/share/miniconda/lib/python3.9/site-packages/specutils/fitting/fitmodels.py:487,</span> in <span class="ni">_fit_lines</span><span class="nt">(spectrum, model, fitter, exclude_regions, weights, window, ignore_units, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">484</span>     <span class="k">if</span> <span class="n">weights</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">485</span>         <span class="n">weights</span> <span class="o">=</span> <span class="n">weights</span><span class="p">[</span><span class="n">nmask</span><span class="p">]</span>
+<span class="ne">--&gt; </span><span class="mi">487</span> <span class="n">fit_model</span> <span class="o">=</span> <span class="n">fitter</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">dispersion</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">488</span>                    <span class="n">flux</span><span class="p">,</span> <span class="n">weights</span><span class="o">=</span><span class="n">weights</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">490</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">model</span><span class="o">.</span><span class="n">_supports_unit_fitting</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">491</span>     <span class="n">fit_model</span> <span class="o">=</span> <span class="n">QuantityModel</span><span class="p">(</span><span class="n">fit_model</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">492</span>                               <span class="n">spectrum</span><span class="o">.</span><span class="n">spectral_axis</span><span class="o">.</span><span class="n">unit</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">493</span>                               <span class="n">spectrum</span><span class="o">.</span><span class="n">flux</span><span class="o">.</span><span class="n">unit</span><span class="p">)</span>
+
+<span class="nn">File /usr/share/miniconda/lib/python3.9/site-packages/astropy/modeling/fitting.py:248,</span> in <span class="ni">fitter_unit_support.&lt;locals&gt;.wrapper</span><span class="nt">(self, model, x, y, z, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">246</span> <span class="c1"># We run the fitting</span>
+<span class="g g-Whitespace">    </span><span class="mi">247</span> <span class="k">if</span> <span class="n">z</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">248</span>     <span class="n">model_new</span> <span class="o">=</span> <span class="n">func</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">xdata</span><span class="p">,</span> <span class="n">ydata</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">249</span> <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">250</span>     <span class="n">model_new</span> <span class="o">=</span> <span class="n">func</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">xdata</span><span class="p">,</span> <span class="n">ydata</span><span class="p">,</span> <span class="n">zdata</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+<span class="nn">File /usr/share/miniconda/lib/python3.9/site-packages/astropy/modeling/fitting.py:1159,</span> in <span class="ni">LevMarLSQFitter.__call__</span><span class="nt">(self, model, x, y, z, weights, maxiter, acc, epsilon, estimate_jacobian)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1157</span>     <span class="n">dfunc</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_wrap_deriv</span>
+<span class="g g-Whitespace">   </span><span class="mi">1158</span> <span class="n">init_values</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">_model_to_fit_params</span><span class="p">(</span><span class="n">model_copy</span><span class="p">)</span>
+<span class="ne">-&gt; </span><span class="mi">1159</span> <span class="n">fitparams</span><span class="p">,</span> <span class="n">cov_x</span><span class="p">,</span> <span class="n">dinfo</span><span class="p">,</span> <span class="n">mess</span><span class="p">,</span> <span class="n">ierr</span> <span class="o">=</span> <span class="n">optimize</span><span class="o">.</span><span class="n">leastsq</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1160</span>     <span class="bp">self</span><span class="o">.</span><span class="n">objective_function</span><span class="p">,</span> <span class="n">init_values</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="n">farg</span><span class="p">,</span> <span class="n">Dfun</span><span class="o">=</span><span class="n">dfunc</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1161</span>     <span class="n">col_deriv</span><span class="o">=</span><span class="n">model_copy</span><span class="o">.</span><span class="n">col_fit_deriv</span><span class="p">,</span> <span class="n">maxfev</span><span class="o">=</span><span class="n">maxiter</span><span class="p">,</span> <span class="n">epsfcn</span><span class="o">=</span><span class="n">epsilon</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1162</span>     <span class="n">xtol</span><span class="o">=</span><span class="n">acc</span><span class="p">,</span> <span class="n">full_output</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1163</span> <span class="n">_fitter_to_model_params</span><span class="p">(</span><span class="n">model_copy</span><span class="p">,</span> <span class="n">fitparams</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1164</span> <span class="bp">self</span><span class="o">.</span><span class="n">fit_info</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">dinfo</span><span class="p">)</span>
+
+<span class="nn">File /usr/share/miniconda/lib/python3.9/site-packages/scipy/optimize/_minpack_py.py:432,</span> in <span class="ni">leastsq</span><span class="nt">(func, x0, args, Dfun, full_output, col_deriv, ftol, xtol, gtol, maxfev, epsfcn, factor, diag)</span>
+<span class="g g-Whitespace">    </span><span class="mi">430</span>     <span class="k">if</span> <span class="n">maxfev</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">431</span>         <span class="n">maxfev</span> <span class="o">=</span> <span class="mi">100</span> <span class="o">*</span> <span class="p">(</span><span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">432</span>     <span class="n">retval</span> <span class="o">=</span> <span class="n">_minpack</span><span class="o">.</span><span class="n">_lmder</span><span class="p">(</span><span class="n">func</span><span class="p">,</span> <span class="n">Dfun</span><span class="p">,</span> <span class="n">x0</span><span class="p">,</span> <span class="n">args</span><span class="p">,</span> <span class="n">full_output</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">433</span>                              <span class="n">col_deriv</span><span class="p">,</span> <span class="n">ftol</span><span class="p">,</span> <span class="n">xtol</span><span class="p">,</span> <span class="n">gtol</span><span class="p">,</span> <span class="n">maxfev</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">434</span>                              <span class="n">factor</span><span class="p">,</span> <span class="n">diag</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">436</span> <span class="n">errors</span> <span class="o">=</span> <span class="p">{</span><span class="mi">0</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;Improper input parameters.&quot;</span><span class="p">,</span> <span class="ne">TypeError</span><span class="p">],</span>
+<span class="g g-Whitespace">    </span><span class="mi">437</span>           <span class="mi">1</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;Both actual and predicted relative reductions &quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">438</span>               <span class="s2">&quot;in the sum of squares</span><span class="se">\n</span><span class="s2">  are at most </span><span class="si">%f</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">ftol</span><span class="p">,</span> <span class="kc">None</span><span class="p">],</span>
+   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">457</span>               <span class="s2">&quot;columns of</span><span class="se">\n</span><span class="s2">  the Jacobian to machine &quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">458</span>               <span class="s2">&quot;precision.&quot;</span> <span class="o">%</span> <span class="n">gtol</span><span class="p">,</span> <span class="ne">ValueError</span><span class="p">]}</span>
+<span class="g g-Whitespace">    </span><span class="mi">460</span> <span class="c1"># The FORTRAN return value (possible return values are &gt;= 0 and &lt;= 8)</span>
+
+<span class="nn">File /usr/share/miniconda/lib/python3.9/site-packages/astropy/modeling/fitting.py:1237,</span> in <span class="ni">LevMarLSQFitter._wrap_deriv</span><span class="nt">(params, model, weights, x, y, z)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1234</span> <span class="k">if</span> <span class="n">z</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1235</span>     <span class="k">try</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1236</span>         <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">np</span><span class="o">.</span><span class="n">ravel</span><span class="p">(</span><span class="n">_</span><span class="p">)</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">weights</span><span class="p">)</span> <span class="o">*</span>
+<span class="ne">-&gt; </span><span class="mi">1237</span>                          <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">fit_deriv</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="o">*</span><span class="n">params</span><span class="p">))])</span>
+<span class="g g-Whitespace">   </span><span class="mi">1238</span>     <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1239</span>         <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">np</span><span class="o">.</span><span class="n">ravel</span><span class="p">(</span><span class="n">_</span><span class="p">)</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">weights</span><span class="p">)</span> <span class="o">*</span>
+<span class="g g-Whitespace">   </span><span class="mi">1240</span>                          <span class="n">np</span><span class="o">.</span><span class="n">moveaxis</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1241</span>                              <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">fit_deriv</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="o">*</span><span class="n">params</span><span class="p">)),</span>
+<span class="g g-Whitespace">   </span><span class="mi">1242</span>                              <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">)])</span><span class="o">.</span><span class="n">transpose</span><span class="p">()</span>
+
+<span class="nn">File /usr/share/miniconda/lib/python3.9/site-packages/astropy/modeling/polynomial.py:941,</span> in <span class="ni">Polynomial1D.fit_deriv</span><span class="nt">(self, x, *params)</span>
+<span class="g g-Whitespace">    </span><span class="mi">924</span> <span class="k">def</span> <span class="nf">fit_deriv</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="o">*</span><span class="n">params</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">925</span>     <span class="sd">&quot;&quot;&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">926</span><span class="sd">     Computes the Vandermonde matrix.</span>
+<span class="g g-Whitespace">    </span><span class="mi">927</span><span class="sd"> </span>
+<span class="sd">   (...)</span>
+<span class="g g-Whitespace">    </span><span class="mi">938</span><span class="sd">         The Vandermonde matrix</span>
+<span class="g g-Whitespace">    </span><span class="mi">939</span><span class="sd">     &quot;&quot;&quot;</span>
+<span class="ne">--&gt; </span><span class="mi">941</span>     <span class="n">v</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">((</span><span class="bp">self</span><span class="o">.</span><span class="n">degree</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,)</span> <span class="o">+</span> <span class="n">x</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">942</span>     <span class="n">v</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="g g-Whitespace">    </span><span class="mi">943</span>     <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">degree</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+
+<span class="ne">KeyboardInterrupt</span>: 
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Now, let&#39;s take a look at the emission line in the continuum by plotting some of the results</span>
+<span class="c1"># of the subtracted cube.</span>
+<span class="n">flux1</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">cont_sub_cube</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>
+
+<span class="c1"># plot the 1-D spectrum of the full continuum subtracted cube</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">wave</span><span class="p">[</span><span class="n">wavemin</span><span class="p">:</span><span class="n">wavemax</span><span class="p">],</span> <span class="n">flux1</span><span class="p">[</span><span class="n">wavemin</span><span class="p">:</span><span class="n">wavemax</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="c1"># plot the 1-D spectrum of a single spaxel.</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="mi">7</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">wave</span><span class="p">[</span><span class="n">wavemin</span><span class="p">:</span><span class="n">wavemax</span><span class="p">],</span> <span class="n">cont_sub_cube</span><span class="p">[</span><span class="n">wavemin</span><span class="p">:</span><span class="n">wavemax</span><span class="p">,</span><span class="mi">30</span><span class="p">,</span><span class="mi">30</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># This cell builds the spectrum at the central location into the format</span>
+<span class="c1"># needed for use with specutils.  It then investigates an initial fit to the</span>
+<span class="c1"># Br 12 emission feature, which is a pesky contaminant nearby in wavelength</span>
+<span class="c1"># to our target [Fe II] emission.  The Br 12 is centrally compact and arises from</span>
+<span class="c1"># only from the nucleus of the AGN, not from the outflow.  Make a plot of the fit</span>
+<span class="c1"># results.</span>
+
+<span class="c1">#zoom in wavelength into the region of interest, create subcube and subwave arrays.</span>
+<span class="n">flux</span> <span class="o">=</span> <span class="p">(</span><span class="n">cont_sub_cube</span><span class="p">[</span><span class="n">wavemin</span><span class="p">:</span><span class="n">wavemax</span><span class="p">,</span><span class="mi">30</span><span class="p">,</span><span class="mi">30</span><span class="p">])</span>
+<span class="n">minwave</span> <span class="o">=</span> <span class="n">wave</span><span class="p">[</span><span class="n">wavemin</span><span class="p">:</span><span class="n">wavemax</span><span class="p">]</span>
+
+<span class="c1"># put the flux spectrum into the spec utils expected format.</span>
+<span class="n">spectrum</span> <span class="o">=</span> <span class="n">Spectrum1D</span><span class="p">(</span><span class="n">flux</span><span class="o">=</span><span class="p">(</span><span class="n">flux</span><span class="p">)</span><span class="o">*</span><span class="n">u</span><span class="o">.</span><span class="n">Unit</span><span class="p">(</span><span class="s1">&#39;count&#39;</span><span class="p">),</span> <span class="n">spectral_axis</span><span class="o">=</span><span class="n">minwave</span><span class="o">*</span><span class="n">u</span><span class="o">.</span><span class="n">micron</span><span class="p">)</span>
+
+<span class="c1">#define the fit the line for the Brackett emission (position was found by hand @ pix 1023):</span>
+<span class="c1"># the central emission is best fit by two gaussian components: one @ br12, one @ [Fe II].</span>
+<span class="c1"># Here we fit a third component too: the [Fe II] outflow emission.</span>
+<span class="n">l1</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">Gaussian1D</span><span class="p">(</span><span class="n">amplitude</span> <span class="o">=</span> <span class="p">(</span><span class="n">flux</span><span class="p">[</span><span class="mi">1023</span><span class="o">-</span><span class="n">wavemin</span><span class="p">])</span><span class="o">*</span><span class="n">u</span><span class="o">.</span><span class="n">Unit</span><span class="p">(</span><span class="s1">&#39;count&#39;</span><span class="p">),</span> <span class="n">mean</span> <span class="o">=</span> <span class="n">minwave</span><span class="p">[</span><span class="mi">1023</span><span class="o">-</span><span class="n">wavemin</span><span class="p">]</span><span class="o">*</span><span class="n">u</span><span class="o">.</span><span class="n">micron</span><span class="p">,</span> <span class="n">stddev</span> <span class="o">=</span> <span class="mf">0.0009</span><span class="o">*</span><span class="n">u</span><span class="o">.</span><span class="n">micron</span><span class="p">)</span>
+<span class="n">l2</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">Gaussian1D</span><span class="p">(</span><span class="n">amplitude</span> <span class="o">=</span> <span class="p">(</span><span class="n">flux</span><span class="p">[</span><span class="n">emission_line_index</span><span class="o">-</span><span class="n">wavemin</span><span class="p">])</span><span class="o">*</span><span class="n">u</span><span class="o">.</span><span class="n">Unit</span><span class="p">(</span><span class="s1">&#39;count&#39;</span><span class="p">),</span> <span class="n">mean</span> <span class="o">=</span> <span class="n">minwave</span><span class="p">[</span><span class="n">emission_line_index</span><span class="o">-</span><span class="n">wavemin</span><span class="p">]</span><span class="o">*</span><span class="n">u</span><span class="o">.</span><span class="n">micron</span><span class="p">,</span> <span class="n">stddev</span> <span class="o">=</span> <span class="mf">0.005</span><span class="o">*</span><span class="n">u</span><span class="o">.</span><span class="n">micron</span><span class="p">)</span>
+<span class="c1">#define and fit the line for the outflow [Fe II] emission:</span>
+<span class="n">l3</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">Gaussian1D</span><span class="p">(</span><span class="n">amplitude</span> <span class="o">=</span> <span class="p">(</span><span class="n">flux</span><span class="p">[</span><span class="n">emission_line_index</span><span class="o">-</span><span class="n">wavemin</span><span class="p">])</span><span class="o">*</span><span class="n">u</span><span class="o">.</span><span class="n">Unit</span><span class="p">(</span><span class="s1">&#39;count&#39;</span><span class="p">),</span> <span class="n">mean</span> <span class="o">=</span> <span class="n">minwave</span><span class="p">[</span><span class="n">emission_line_index</span><span class="o">-</span><span class="n">wavemin</span><span class="p">]</span><span class="o">*</span><span class="n">u</span><span class="o">.</span><span class="n">micron</span><span class="p">,</span> <span class="n">stddev</span> <span class="o">=</span> <span class="mf">0.0008</span><span class="o">*</span><span class="n">u</span><span class="o">.</span><span class="n">micron</span><span class="p">)</span>
+
+<span class="c1">#run the lfit - this tweaks the above parameters to optimize the fits of the three components.</span>
+<span class="n">lfit</span> <span class="o">=</span> <span class="n">fit_lines</span><span class="p">(</span><span class="n">spectrum</span><span class="p">,</span> <span class="n">l1</span> <span class="o">+</span> <span class="n">l2</span> <span class="o">+</span> <span class="n">l3</span><span class="p">)</span>
+<span class="c1">#make the yfit</span>
+<span class="n">y_fit</span> <span class="o">=</span> <span class="n">lfit</span><span class="p">(</span><span class="n">minwave</span><span class="o">*</span><span class="n">u</span><span class="o">.</span><span class="n">micron</span><span class="p">)</span>
+
+<span class="c1"># Build the fits from the fit_lines function into specutils format for plotting.</span>
+<span class="n">lineflux</span> <span class="o">=</span> <span class="p">(</span><span class="n">lfit</span><span class="p">[</span><span class="mi">0</span><span class="p">](</span><span class="n">minwave</span><span class="o">*</span><span class="n">u</span><span class="o">.</span><span class="n">micron</span><span class="p">))</span>
+<span class="n">linemodel</span> <span class="o">=</span> <span class="n">Spectrum1D</span><span class="p">(</span><span class="n">spectral_axis</span><span class="o">=</span><span class="n">minwave</span><span class="o">*</span><span class="n">u</span><span class="o">.</span><span class="n">micron</span><span class="p">,</span> <span class="n">flux</span><span class="o">=</span><span class="n">lineflux</span><span class="o">*</span><span class="n">u</span><span class="o">.</span><span class="n">Unit</span><span class="p">(</span><span class="s1">&#39;count&#39;</span><span class="p">))</span>
+
+<span class="n">component1</span> <span class="o">=</span> <span class="n">lfit</span><span class="p">[</span><span class="mi">0</span><span class="p">](</span><span class="n">minwave</span><span class="o">*</span><span class="n">u</span><span class="o">.</span><span class="n">micron</span><span class="p">)</span>
+<span class="n">component2</span> <span class="o">=</span> <span class="n">lfit</span><span class="p">[</span><span class="mi">1</span><span class="p">](</span><span class="n">minwave</span><span class="o">*</span><span class="n">u</span><span class="o">.</span><span class="n">micron</span><span class="p">)</span>
+<span class="n">component3</span> <span class="o">=</span> <span class="n">lfit</span><span class="p">[</span><span class="mi">2</span><span class="p">](</span><span class="n">minwave</span><span class="o">*</span><span class="n">u</span><span class="o">.</span><span class="n">micron</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="mi">8</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">minwave</span><span class="p">,</span> <span class="n">flux</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">minwave</span><span class="p">,</span> <span class="n">component1</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">minwave</span><span class="p">,</span> <span class="n">component2</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">minwave</span><span class="p">,</span> <span class="n">component3</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">minwave</span><span class="p">,</span> <span class="n">component1</span> <span class="o">+</span> <span class="n">component2</span> <span class="o">+</span> <span class="n">component3</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="c1">#we want to isolate just the [Fe II] outflow emission, so subtract off the central compact flux sources</span>
+<span class="n">central_flux_model_only</span> <span class="o">=</span> <span class="n">component1</span> <span class="o">+</span> <span class="n">component2</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Wow, that multi-component fit looks great.  Good deal.</span>
+
+<span class="c1">#now we&#39;re going to use the continuum psf cube from a prior cell </span>
+<span class="c1"># with the Brackett model created in the above cell to create a full</span>
+<span class="c1"># 3-D model of the central emission that isn&#39;t caused by the outflow [Fe II].</span>
+
+<span class="n">continuum_subcube</span> <span class="o">=</span> <span class="n">cont_psf_cube</span><span class="p">[</span><span class="n">wavemin</span><span class="p">:</span><span class="n">wavemax</span><span class="p">,:,:]</span>
+<span class="n">nz</span><span class="p">,</span> <span class="n">ny</span><span class="p">,</span> <span class="n">nx</span> <span class="o">=</span> <span class="n">continuum_subcube</span><span class="o">.</span><span class="n">shape</span>
+
+<span class="n">model_cube</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">([</span><span class="n">nz</span><span class="p">,</span><span class="n">ny</span><span class="p">,</span><span class="n">nx</span><span class="p">])</span>
+
+<span class="c1">#construct the scaled Brackett flux model</span>
+<span class="n">model_cube</span><span class="p">[</span><span class="mi">0</span><span class="p">,:,:]</span> <span class="o">=</span> <span class="n">continuum_subcube</span><span class="p">[</span><span class="mi">0</span><span class="p">,:,:]</span> <span class="o">*</span> <span class="p">(</span><span class="n">central_flux_model_only</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">/</span><span class="n">continuum_subcube</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">30</span><span class="p">])</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">nz</span><span class="o">-</span><span class="mi">2</span><span class="p">):</span>
+    <span class="n">model_cube</span><span class="p">[</span><span class="n">i</span><span class="p">,:,:]</span> <span class="o">=</span> <span class="n">continuum_subcube</span><span class="p">[</span><span class="n">i</span><span class="p">,:,:]</span> <span class="o">*</span> <span class="p">(</span><span class="n">central_flux_model_only</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">/</span> <span class="n">continuum_subcube</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">30</span><span class="p">])</span>
+<span class="n">model_cube</span><span class="p">[</span><span class="n">nz</span><span class="o">-</span><span class="mi">1</span><span class="p">,:,:]</span> <span class="o">=</span> <span class="n">continuum_subcube</span><span class="p">[</span><span class="n">nz</span><span class="o">-</span><span class="mi">1</span><span class="p">,:,:]</span> <span class="o">*</span> <span class="p">(</span><span class="n">central_flux_model_only</span><span class="p">[</span><span class="n">nz</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">/</span> <span class="n">continuum_subcube</span><span class="p">[</span><span class="n">nz</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">30</span><span class="p">,</span><span class="mi">30</span><span class="p">])</span>
+
+<span class="c1"># the full model of the AGN central emission is the continuum plus Brackett line.</span>
+<span class="n">full_model</span> <span class="o">=</span> <span class="n">continuum_subcube</span> <span class="o">+</span> <span class="n">model_cube</span>
+
+<span class="c1"># subtract the model to create the final cube where the [Fe II] emission</span>
+<span class="c1"># is isolated.</span>
+<span class="n">final_sub_cube</span> <span class="o">=</span> <span class="n">cube</span><span class="p">[</span><span class="n">wavemin</span><span class="p">:</span><span class="n">wavemax</span><span class="p">,:,:]</span> <span class="o">-</span> <span class="n">full_model</span>
+
+<span class="c1"># make an appropriate header for the output sub-cube</span>
+<span class="n">header_cube_small</span> <span class="o">=</span> <span class="n">copy</span><span class="p">(</span><span class="n">header_cube</span><span class="p">)</span>
+<span class="k">del</span> <span class="n">header_cube_small</span><span class="p">[</span><span class="s1">&#39;CRVAL3&#39;</span><span class="p">]</span>
+<span class="n">header_cube_small</span><span class="p">[</span><span class="s1">&#39;CRVAL3&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">wave</span><span class="p">[</span><span class="n">wavemin</span><span class="p">]</span> <span class="o">*</span> <span class="mf">10000.0</span>
+<span class="k">del</span> <span class="n">header_cube_small</span><span class="p">[</span><span class="s1">&#39;CRPIX3&#39;</span><span class="p">]</span>
+<span class="n">header_cube_small</span><span class="p">[</span><span class="s1">&#39;CRPIX3&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+
+<span class="c1"># Save the .fits data sub-cube that has the continuum and Br model subtracted off of the</span>
+<span class="c1"># [Fe II] emission, and the datacube that is the continuum+Br model.</span>
+<span class="n">fits</span><span class="o">.</span><span class="n">writeto</span><span class="p">(</span><span class="s1">&#39;NGC4151_Hband_FinalSubtract.fits&#39;</span><span class="p">,</span> <span class="n">final_sub_cube</span><span class="p">,</span> <span class="n">header_cube_small</span><span class="p">,</span> <span class="n">overwrite</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">fits</span><span class="o">.</span><span class="n">writeto</span><span class="p">(</span><span class="s1">&#39;NGC4151_Hband_ContinuumandBrackettModel.fits&#39;</span><span class="p">,</span> <span class="n">full_model</span><span class="p">,</span> <span class="n">header_cube_small</span><span class="p">,</span> <span class="n">overwrite</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Continuum and Brackett subtracted cube saved.  Full model cube saved.&#39;</span><span class="p">)</span>
+
+<span class="c1">#make a plot of the central spectrum, the full model and the continuum.</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="mi">9</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">minwave</span><span class="p">,</span> <span class="n">continuum_subcube</span><span class="p">[:,</span><span class="mi">30</span><span class="p">,</span><span class="mi">30</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">minwave</span><span class="p">,</span> <span class="n">cube</span><span class="p">[</span><span class="n">wavemin</span><span class="p">:</span><span class="n">wavemax</span><span class="p">,</span><span class="mi">30</span><span class="p">,</span><span class="mi">30</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">minwave</span><span class="p">,</span> <span class="n">full_model</span><span class="p">[:,</span><span class="mi">30</span><span class="p">,</span><span class="mi">30</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "therealzoidberg/actions-ci-testing",
+            ref: "main",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./notebooks/IFU_cube_continuum_fit"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="../example_notebook/example_notebook.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Draft: Notebook title</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="../NIRCam_PSF-matched_photometry/NIRCam_PSF_matched_multiband_photometry.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">NIRCam PSF-matched multiband photometry</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By STScI<br/>
+    
+        &copy; Copyright 2022.<br/>
+      <div class="extra_footer">
+        <div class="header">
+    <div class="header content">
+        <img class="logo" src="../../images/Jspectra.svg" alt="JWST Data Analysis Notebooks"/>
+        <div class="search">
+            <div class="searchbox"></div>
+            <div class="searchbutton">
+                Filter Notebooks
+            </div>
+        </div>
+    </div>
+</div>
+
+      </div>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>
