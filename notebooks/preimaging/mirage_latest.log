@@ -1,0 +1,5 @@
+2022-04-13 15:38:23,718 - mirage.yaml.yaml_generator - INFO - Running yaml_generator....
+
+2022-04-13 15:38:23,718 - mirage.yaml.yaml_generator - INFO - using APT xml file: preimaging/NRC21_pid1069_2018_rev2.xml
+
+2022-04-13 15:38:23,719 - mirage.yaml.yaml_generator - INFO - Original log file name: ./mirage_latest.log
