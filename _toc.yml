@@ -1,8 +1,8 @@
 # Table of contents
 # Learn more at https://jupyterbook.org/customize/toc.html
-
 format: jb-book
 root: intro
+<<<<<<< HEAD
 parts:
     - caption: NIRISS WFSS Spectra
       chapters:
@@ -80,3 +80,15 @@ parts:
     - caption: NIRCam Photometry
       chapters:
           - file: notebooks/NIRCam_photometry/NIRCam multiband photometry.ipynb
+=======
+chapters:
+- file: notebooks/preimaging/preimaging_01_mirage.ipynb
+- file: notebooks/preimaging/preimaging_02_calwebb.ipynb
+- file: notebooks/preimaging/preimaging_03_association.ipynb
+- file: notebooks/composite_model_fitting/specfit_demo_3.ipynb
+- file: notebooks/soss-transit-spectroscopy/HAT-P-1b-PART3-data-analysis.ipynb
+- file: notebooks/niriss_ami_binary/1_niriss_ami_binary.ipynb
+- file: notebooks/niriss_ami_binary/2_niriss_ami_binary.ipynb
+- file: notebooks/redshift_crosscorr/redshift_with_crosscorr.ipynb
+- file: notebooks/optimal_extraction_dynamic/Spectral Extraction.ipynb
+>>>>>>> a8594aa776b52825284c8ae440e879ab8c4d9f4f
