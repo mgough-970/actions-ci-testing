@@ -8,7 +8,7 @@
 title                       : STScI JDAT Notebooks  # The title of the book. Will be placed in the left navbar.
 author                      : STScI  # The author of the book
 copyright                   : "2022"  # Copyright year to be placed in the footer
-logo                        : Jspectra.svg  # A path to the book logo
+logo                        : stsci_logo2.png  # A path to the book logo
 
 # Force re-execution of notebooks on each build.
 # See https://jupyterbook.org/content/execute.html
@@ -39,7 +39,7 @@ html:
   extra_footer: |
     <div class="header">
         <div class="header content">
-            <img class="logo" src="../../images/Jspectra.svg" alt="JWST Data Analysis Notebooks"/>
+            <img class="logo" src="Jspectra.svg" alt="JWST Data Analysis Notebooks"/>
             <div class="search">
                 <div class="searchbox"></div>
                 <div class="searchbutton">
