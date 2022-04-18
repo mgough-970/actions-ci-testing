@@ -91,7 +91,7 @@ const thebe_selector_output = ".output, .cell_output"
         
       
       
-      <img src="../../_static/Jspectra.svg" class="logo" alt="logo">
+      <img src="../../_static/stsci_logo2.png" class="logo" alt="logo">
       
       
       <h1 class="site-logo" id="site-title">STScI JDAT Notebooks</h1>
@@ -105,7 +105,7 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../../intro.html">
-   Welcome JDAT Notebooks
+   James Webb Space Telescope Data Analysis Tool Notebooks
   </a>
  </li>
 </ul>
@@ -168,7 +168,7 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="current nav bd-sidenav">
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   IFU Data Modeling NGC 4151 Notebook #1  - Isolating Line Emission
+   IFU Data Modeling NGC 4151 Notebook #1 - Isolating Line Emission
   </a>
  </li>
 </ul>
@@ -515,7 +515,7 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>IFU Data Modeling NGC 4151 Notebook #1  - Isolating Line Emission</h1>
+                <h1>IFU Data Modeling NGC 4151 Notebook #1 - Isolating Line Emission</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -545,7 +545,7 @@ const thebe_selector_output = ".output, .cell_output"
               <div>
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="ifu-data-modeling-ngc-4151-notebook-1-isolating-line-emission">
-<h1>IFU Data Modeling NGC 4151 Notebook #1  - Isolating Line Emission<a class="headerlink" href="#ifu-data-modeling-ngc-4151-notebook-1-isolating-line-emission" title="Permalink to this headline">¶</a></h1>
+<h1>IFU Data Modeling NGC 4151 Notebook #1 - Isolating Line Emission<a class="headerlink" href="#ifu-data-modeling-ngc-4151-notebook-1-isolating-line-emission" title="Permalink to this headline">¶</a></h1>
 <p><strong>Use case:</strong> continuum and emission-line modeling of AGN; 1.47-1.87um.<br>
 <strong>Data:</strong> <a class="reference external" href="https://www.gemini.edu/instrumentation/current-instruments/nifs">NIFS</a> on Gemini; NGC 4151.<br>
 <strong>Tools:</strong>  specutils, jdaviz/cubeviz, astropy, matplotlib, bottleneck.<br>
@@ -706,7 +706,7 @@ derive a more accurate fit in the below poly-fit analysis.</p>
 </div>
 <div class="cell_output docutils container">
 <script type="application/vnd.jupyter.widget-view+json">
-{"version_major": 2, "version_minor": 0, "model_id": "333e818b9ea640e28be92efa194e0ed5"}
+{"version_major": 2, "version_minor": 0, "model_id": "f168cdafae064c62a37b21f7748e2eab"}
 </script></div>
 </div>
 <div class="cell docutils container">
@@ -756,7 +756,7 @@ in this dataset.  In this cube, data from slice ~1060 to ~1090 shows the extende
 </div>
 <div class="cell_output docutils container">
 <script type="application/vnd.jupyter.widget-view+json">
-{"version_major": 2, "version_minor": 0, "model_id": "663d9b392a054a348c1d55dac83418dc"}
+{"version_major": 2, "version_minor": 0, "model_id": "62aeb1469ea1466485775638abb69884"}
 </script></div>
 </div>
 <p>Use the flux viewer in cubeviz to extract a spectrum located at the central AGN position.
@@ -946,7 +946,7 @@ WARNING:astropy:Model is linear in parameters; consider using linear fitting met
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Continuum subtracted cube saved. PSF continuum cube saved.
 Time count
---- 1.2177128791809082 seconds ---
+--- 0.9264349937438965 seconds ---
 </pre></div>
 </div>
 </div>
@@ -1036,42 +1036,32 @@ WARNING:astropy:Model is linear in parameters; consider using linear fitting met
 <span class="g g-Whitespace">   </span><span class="mi">1163</span> <span class="n">_fitter_to_model_params</span><span class="p">(</span><span class="n">model_copy</span><span class="p">,</span> <span class="n">fitparams</span><span class="p">)</span>
 <span class="g g-Whitespace">   </span><span class="mi">1164</span> <span class="bp">self</span><span class="o">.</span><span class="n">fit_info</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">dinfo</span><span class="p">)</span>
 
-<span class="nn">File /usr/share/miniconda/lib/python3.9/site-packages/scipy/optimize/_minpack_py.py:432,</span> in <span class="ni">leastsq</span><span class="nt">(func, x0, args, Dfun, full_output, col_deriv, ftol, xtol, gtol, maxfev, epsfcn, factor, diag)</span>
-<span class="g g-Whitespace">    </span><span class="mi">430</span>     <span class="k">if</span> <span class="n">maxfev</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">431</span>         <span class="n">maxfev</span> <span class="o">=</span> <span class="mi">100</span> <span class="o">*</span> <span class="p">(</span><span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">432</span>     <span class="n">retval</span> <span class="o">=</span> <span class="n">_minpack</span><span class="o">.</span><span class="n">_lmder</span><span class="p">(</span><span class="n">func</span><span class="p">,</span> <span class="n">Dfun</span><span class="p">,</span> <span class="n">x0</span><span class="p">,</span> <span class="n">args</span><span class="p">,</span> <span class="n">full_output</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">433</span>                              <span class="n">col_deriv</span><span class="p">,</span> <span class="n">ftol</span><span class="p">,</span> <span class="n">xtol</span><span class="p">,</span> <span class="n">gtol</span><span class="p">,</span> <span class="n">maxfev</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">434</span>                              <span class="n">factor</span><span class="p">,</span> <span class="n">diag</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">436</span> <span class="n">errors</span> <span class="o">=</span> <span class="p">{</span><span class="mi">0</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;Improper input parameters.&quot;</span><span class="p">,</span> <span class="ne">TypeError</span><span class="p">],</span>
-<span class="g g-Whitespace">    </span><span class="mi">437</span>           <span class="mi">1</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;Both actual and predicted relative reductions &quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">438</span>               <span class="s2">&quot;in the sum of squares</span><span class="se">\n</span><span class="s2">  are at most </span><span class="si">%f</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">ftol</span><span class="p">,</span> <span class="kc">None</span><span class="p">],</span>
-   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">457</span>               <span class="s2">&quot;columns of</span><span class="se">\n</span><span class="s2">  the Jacobian to machine &quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">458</span>               <span class="s2">&quot;precision.&quot;</span> <span class="o">%</span> <span class="n">gtol</span><span class="p">,</span> <span class="ne">ValueError</span><span class="p">]}</span>
-<span class="g g-Whitespace">    </span><span class="mi">460</span> <span class="c1"># The FORTRAN return value (possible return values are &gt;= 0 and &lt;= 8)</span>
+<span class="nn">File /usr/share/miniconda/lib/python3.9/site-packages/scipy/optimize/_minpack_py.py:470,</span> in <span class="ni">leastsq</span><span class="nt">(func, x0, args, Dfun, full_output, col_deriv, ftol, xtol, gtol, maxfev, epsfcn, factor, diag)</span>
+<span class="g g-Whitespace">    </span><span class="mi">468</span> <span class="n">R</span> <span class="o">=</span> <span class="n">dot</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">perm</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">469</span> <span class="k">try</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">470</span>     <span class="n">cov_x</span> <span class="o">=</span> <span class="n">inv</span><span class="p">(</span><span class="n">dot</span><span class="p">(</span><span class="n">transpose</span><span class="p">(</span><span class="n">R</span><span class="p">),</span> <span class="n">R</span><span class="p">))</span>
+<span class="g g-Whitespace">    </span><span class="mi">471</span> <span class="k">except</span> <span class="p">(</span><span class="n">LinAlgError</span><span class="p">,</span> <span class="ne">ValueError</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">472</span>     <span class="k">pass</span>
 
-<span class="nn">File /usr/share/miniconda/lib/python3.9/site-packages/astropy/modeling/fitting.py:1237,</span> in <span class="ni">LevMarLSQFitter._wrap_deriv</span><span class="nt">(params, model, weights, x, y, z)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1234</span> <span class="k">if</span> <span class="n">z</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1235</span>     <span class="k">try</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1236</span>         <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">np</span><span class="o">.</span><span class="n">ravel</span><span class="p">(</span><span class="n">_</span><span class="p">)</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">weights</span><span class="p">)</span> <span class="o">*</span>
-<span class="ne">-&gt; </span><span class="mi">1237</span>                          <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">fit_deriv</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="o">*</span><span class="n">params</span><span class="p">))])</span>
-<span class="g g-Whitespace">   </span><span class="mi">1238</span>     <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1239</span>         <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">np</span><span class="o">.</span><span class="n">ravel</span><span class="p">(</span><span class="n">_</span><span class="p">)</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">weights</span><span class="p">)</span> <span class="o">*</span>
-<span class="g g-Whitespace">   </span><span class="mi">1240</span>                          <span class="n">np</span><span class="o">.</span><span class="n">moveaxis</span><span class="p">(</span>
-<span class="g g-Whitespace">   </span><span class="mi">1241</span>                              <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">fit_deriv</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="o">*</span><span class="n">params</span><span class="p">)),</span>
-<span class="g g-Whitespace">   </span><span class="mi">1242</span>                              <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">)])</span><span class="o">.</span><span class="n">transpose</span><span class="p">()</span>
+<span class="nn">File /usr/share/miniconda/lib/python3.9/site-packages/scipy/linalg/_basic.py:957,</span> in <span class="ni">inv</span><span class="nt">(a, overwrite_a, check_finite)</span>
+<span class="g g-Whitespace">    </span><span class="mi">955</span> <span class="n">lu</span><span class="p">,</span> <span class="n">piv</span><span class="p">,</span> <span class="n">info</span> <span class="o">=</span> <span class="n">getrf</span><span class="p">(</span><span class="n">a1</span><span class="p">,</span> <span class="n">overwrite_a</span><span class="o">=</span><span class="n">overwrite_a</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">956</span> <span class="k">if</span> <span class="n">info</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">957</span>     <span class="n">lwork</span> <span class="o">=</span> <span class="n">_compute_lwork</span><span class="p">(</span><span class="n">getri_lwork</span><span class="p">,</span> <span class="n">a1</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="g g-Whitespace">    </span><span class="mi">959</span>     <span class="c1"># XXX: the following line fixes curious SEGFAULT when</span>
+<span class="g g-Whitespace">    </span><span class="mi">960</span>     <span class="c1"># benchmarking 500x500 matrix inverse. This seems to</span>
+<span class="g g-Whitespace">    </span><span class="mi">961</span>     <span class="c1"># be a bug in LAPACK ?getri routine because if lwork is</span>
+<span class="g g-Whitespace">    </span><span class="mi">962</span>     <span class="c1"># minimal (when using lwork[0] instead of lwork[1]) then</span>
+<span class="g g-Whitespace">    </span><span class="mi">963</span>     <span class="c1"># all tests pass. Further investigation is required if</span>
+<span class="g g-Whitespace">    </span><span class="mi">964</span>     <span class="c1"># more such SEGFAULTs occur.</span>
+<span class="g g-Whitespace">    </span><span class="mi">965</span>     <span class="n">lwork</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="mf">1.01</span> <span class="o">*</span> <span class="n">lwork</span><span class="p">)</span>
 
-<span class="nn">File /usr/share/miniconda/lib/python3.9/site-packages/astropy/modeling/polynomial.py:941,</span> in <span class="ni">Polynomial1D.fit_deriv</span><span class="nt">(self, x, *params)</span>
-<span class="g g-Whitespace">    </span><span class="mi">924</span> <span class="k">def</span> <span class="nf">fit_deriv</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="o">*</span><span class="n">params</span><span class="p">):</span>
-<span class="g g-Whitespace">    </span><span class="mi">925</span>     <span class="sd">&quot;&quot;&quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">926</span><span class="sd">     Computes the Vandermonde matrix.</span>
-<span class="g g-Whitespace">    </span><span class="mi">927</span><span class="sd"> </span>
-<span class="sd">   (...)</span>
-<span class="g g-Whitespace">    </span><span class="mi">938</span><span class="sd">         The Vandermonde matrix</span>
-<span class="g g-Whitespace">    </span><span class="mi">939</span><span class="sd">     &quot;&quot;&quot;</span>
-<span class="ne">--&gt; </span><span class="mi">941</span>     <span class="n">v</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">((</span><span class="bp">self</span><span class="o">.</span><span class="n">degree</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,)</span> <span class="o">+</span> <span class="n">x</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">942</span>     <span class="n">v</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
-<span class="g g-Whitespace">    </span><span class="mi">943</span>     <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">degree</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+<span class="nn">File /usr/share/miniconda/lib/python3.9/site-packages/scipy/linalg/lapack.py:1017,</span> in <span class="ni">_compute_lwork</span><span class="nt">(routine, *args, **kwargs)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1015</span> <span class="n">dtype</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">routine</span><span class="p">,</span> <span class="s1">&#39;dtype&#39;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1016</span> <span class="n">int_dtype</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">routine</span><span class="p">,</span> <span class="s1">&#39;int_dtype&#39;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+<span class="ne">-&gt; </span><span class="mi">1017</span> <span class="n">ret</span> <span class="o">=</span> <span class="n">routine</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1018</span> <span class="k">if</span> <span class="n">ret</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1019</span>     <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Internal work array size computation failed: &quot;</span>
+<span class="g g-Whitespace">   </span><span class="mi">1020</span>                      <span class="s2">&quot;</span><span class="si">%d</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">ret</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],))</span>
 
 <span class="ne">KeyboardInterrupt</span>: 
 </pre></div>
@@ -1252,7 +1242,7 @@ WARNING:astropy:Model is linear in parameters; consider using linear fitting met
       <div class="extra_footer">
         <div class="header">
     <div class="header content">
-        <img class="logo" src="../../images/Jspectra.svg" alt="JWST Data Analysis Notebooks"/>
+        <img class="logo" src="Jspectra.svg" alt="JWST Data Analysis Notebooks"/>
         <div class="search">
             <div class="searchbox"></div>
             <div class="searchbutton">

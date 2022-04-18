@@ -93,7 +93,7 @@ const thebe_selector_output = ".output, .cell_output"
         
       
       
-      <img src="../../_static/Jspectra.svg" class="logo" alt="logo">
+      <img src="../../_static/stsci_logo2.png" class="logo" alt="logo">
       
       
       <h1 class="site-logo" id="site-title">STScI JDAT Notebooks</h1>
@@ -107,7 +107,7 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../../intro.html">
-   Welcome JDAT Notebooks
+   James Webb Space Telescope Data Analysis Tool Notebooks
   </a>
  </li>
 </ul>
@@ -170,7 +170,7 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../IFU_cube_continuum_fit/NGC4151_FeII_ContinuumFit.html">
-   IFU Data Modeling NGC 4151 Notebook #1  - Isolating Line Emission
+   IFU Data Modeling NGC 4151 Notebook #1 - Isolating Line Emission
   </a>
  </li>
 </ul>
@@ -2563,7 +2563,7 @@ DATASUM = &#39;338047765&#39;          / data unit checksum updated 2015-01-26T1
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html"><div><i>QTable length=4059</i>
-<table id="table140505881963776" class="table-striped table-bordered table-condensed">
+<table id="table139980236811952" class="table-striped table-bordered table-condensed">
 <thead><tr><th>wavelength</th><th>flux</th><th>weight</th><th>uncertainty</th></tr></thead>
 <thead><tr><th>Angstrom</th><th>1e-19 erg / (Angstrom cm2 s)</th><th></th><th>1e-19 erg / (Angstrom cm2 s)</th></tr></thead>
 <thead><tr><th>float64</th><th>float32</th><th>float32</th><th>float32</th></tr></thead>
@@ -2762,7 +2762,7 @@ DATASUM = &#39;338047765&#39;          / data unit checksum updated 2015-01-26T1
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html"><div><i>QTable length=4</i>
-<table id="table140505874891776" class="table-striped table-bordered table-condensed">
+<table id="table139979164365920" class="table-striped table-bordered table-condensed">
 <thead><tr><th>line_center</th><th>line_type</th><th>line_center_index</th></tr></thead>
 <thead><tr><th>Angstrom</th><th></th><th></th></tr></thead>
 <thead><tr><th>float64</th><th>str8</th><th>int64</th></tr></thead>
@@ -2803,7 +2803,7 @@ DATASUM = &#39;338047765&#39;          / data unit checksum updated 2015-01-26T1
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html"><div><i>QTable length=18</i>
-<table id="table140505875512864" class="table-striped table-bordered table-condensed">
+<table id="table139979164366496" class="table-striped table-bordered table-condensed">
 <thead><tr><th>line_center</th><th>line_type</th><th>line_center_index</th></tr></thead>
 <thead><tr><th>Angstrom</th><th></th><th></th></tr></thead>
 <thead><tr><th>float64</th><th>str10</th><th>int64</th></tr></thead>
@@ -3061,61 +3061,71 @@ DATASUM = &#39;338047765&#39;          / data unit checksum updated 2015-01-26T1
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
-<span class="nn">Input In [34],</span> in <span class="ni">&lt;cell line: 4&gt;</span><span class="nt">()</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">101</span><span class="p">):</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span>     <span class="n">template_file</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">{0}{1:05d}</span><span class="s2">.dat&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">templatedir</span><span class="p">,</span><span class="n">i</span><span class="p">)</span>
-<span class="ne">----&gt; </span><span class="mi">6</span>     <span class="n">template</span> <span class="o">=</span> <span class="n">ascii</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">template_file</span><span class="p">)</span>
+<span class="nn">Input In [34],</span> in <span class="ni">&lt;cell line: 11&gt;</span><span class="nt">()</span>
 <span class="g g-Whitespace">      </span><span class="mi">7</span>     <span class="n">temp1d</span> <span class="o">=</span> <span class="n">Spectrum1D</span><span class="p">(</span><span class="n">spectral_axis</span><span class="o">=</span><span class="n">template</span><span class="p">[</span><span class="s1">&#39;col1&#39;</span><span class="p">]</span><span class="o">*</span><span class="n">u</span><span class="o">.</span><span class="n">AA</span><span class="p">,</span><span class="n">flux</span><span class="o">=</span><span class="n">template</span><span class="p">[</span><span class="s1">&#39;col2&#39;</span><span class="p">]</span><span class="o">*</span><span class="n">u</span><span class="o">.</span><span class="n">erg</span><span class="o">/</span><span class="n">u</span><span class="o">.</span><span class="n">s</span><span class="o">/</span><span class="n">u</span><span class="o">.</span><span class="n">AA</span><span class="p">)</span>
 <span class="g g-Whitespace">      </span><span class="mi">8</span>     <span class="n">templatelist</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">temp1d</span><span class="p">)</span>
+<span class="ne">---&gt; </span><span class="mi">11</span> <span class="n">tm_results</span> <span class="o">=</span> <span class="n">template_comparison</span><span class="o">.</span><span class="n">template_match</span><span class="p">(</span><span class="n">observed_spectrum</span><span class="o">=</span><span class="n">spec1d</span><span class="p">,</span> <span class="n">spectral_templates</span><span class="o">=</span><span class="n">templatelist</span><span class="p">,</span> <span class="n">resample_method</span><span class="o">=</span><span class="s2">&quot;flux_conserving&quot;</span><span class="p">,</span> <span class="n">redshift</span><span class="o">=</span><span class="n">zz</span><span class="p">)</span>
 
-<span class="nn">File /usr/share/miniconda/lib/python3.9/site-packages/astropy/io/ascii/ui.py:341,</span> in <span class="ni">read</span><span class="nt">(table, guess, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">335</span>             <span class="n">new_kwargs</span><span class="p">[</span><span class="s1">&#39;guess_html&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">_probably_html</span><span class="p">(</span><span class="n">table</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">337</span> <span class="c1"># Get the table from guess in ``dat``.  If ``dat`` comes back as None</span>
-<span class="g g-Whitespace">    </span><span class="mi">338</span> <span class="c1"># then there was just one set of kwargs in the guess list so fall</span>
-<span class="g g-Whitespace">    </span><span class="mi">339</span> <span class="c1"># through below to the non-guess way so that any problems result in a</span>
-<span class="g g-Whitespace">    </span><span class="mi">340</span> <span class="c1"># more useful traceback.</span>
-<span class="ne">--&gt; </span><span class="mi">341</span> <span class="n">dat</span> <span class="o">=</span> <span class="n">_guess</span><span class="p">(</span><span class="n">table</span><span class="p">,</span> <span class="n">new_kwargs</span><span class="p">,</span> <span class="nb">format</span><span class="p">,</span> <span class="n">fast_reader</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">342</span> <span class="k">if</span> <span class="n">dat</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">343</span>     <span class="n">guess</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="nn">File /usr/share/miniconda/lib/python3.9/site-packages/specutils/analysis/template_comparison.py:222,</span> in <span class="ni">template_match</span><span class="nt">(observed_spectrum, spectral_templates, resample_method, redshift)</span>
+<span class="g g-Whitespace">    </span><span class="mi">218</span> <span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">spectrum</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">spectral_templates</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">219</span> 
+<span class="g g-Whitespace">    </span><span class="mi">220</span>     <span class="c1"># Account for redshift if provided</span>
+<span class="g g-Whitespace">    </span><span class="mi">221</span>     <span class="k">if</span> <span class="n">redshift</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">222</span>         <span class="n">results</span> <span class="o">=</span> <span class="n">template_redshift</span><span class="p">(</span><span class="n">observed_spectrum</span><span class="p">,</span> <span class="n">spectrum</span><span class="p">,</span> <span class="n">redshift</span><span class="o">=</span><span class="n">redshift</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">223</span>         <span class="n">redshifted_spectrum</span><span class="p">,</span> <span class="n">temp_redshift</span><span class="p">,</span> <span class="n">normalized_spectral_template</span><span class="p">,</span> <span class="n">chi2</span><span class="p">,</span> <span class="n">chi2_inner_list</span> <span class="o">=</span> <span class="n">results</span> <span class="c1"># noqa</span>
+<span class="g g-Whitespace">    </span><span class="mi">225</span>         <span class="n">chi2_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">chi2_inner_list</span><span class="p">)</span>
 
-<span class="nn">File /usr/share/miniconda/lib/python3.9/site-packages/astropy/io/ascii/ui.py:506,</span> in <span class="ni">_guess</span><span class="nt">(table, read_kwargs, format, fast_reader)</span>
-<span class="g g-Whitespace">    </span><span class="mi">503</span> <span class="n">reader</span> <span class="o">=</span> <span class="n">get_reader</span><span class="p">(</span><span class="o">**</span><span class="n">guess_kwargs</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">505</span> <span class="n">reader</span><span class="o">.</span><span class="n">guessing</span> <span class="o">=</span> <span class="kc">True</span>
-<span class="ne">--&gt; </span><span class="mi">506</span> <span class="n">dat</span> <span class="o">=</span> <span class="n">reader</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">table</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">507</span> <span class="n">_read_trace</span><span class="o">.</span><span class="n">append</span><span class="p">({</span><span class="s1">&#39;kwargs&#39;</span><span class="p">:</span> <span class="n">copy</span><span class="o">.</span><span class="n">deepcopy</span><span class="p">(</span><span class="n">guess_kwargs</span><span class="p">),</span>
-<span class="g g-Whitespace">    </span><span class="mi">508</span>                     <span class="s1">&#39;Reader&#39;</span><span class="p">:</span> <span class="n">reader</span><span class="o">.</span><span class="vm">__class__</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">509</span>                     <span class="s1">&#39;status&#39;</span><span class="p">:</span> <span class="s1">&#39;Success (guessing)&#39;</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">510</span>                     <span class="s1">&#39;dt&#39;</span><span class="p">:</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="p">(</span><span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span> <span class="o">-</span> <span class="n">t0</span><span class="p">)</span> <span class="o">*</span> <span class="mi">1000</span><span class="si">:</span><span class="s1">.3f</span><span class="si">}</span><span class="s1"> ms&#39;</span><span class="p">})</span>
-<span class="g g-Whitespace">    </span><span class="mi">511</span> <span class="k">return</span> <span class="n">dat</span>
+<span class="nn">File /usr/share/miniconda/lib/python3.9/site-packages/specutils/analysis/template_comparison.py:283,</span> in <span class="ni">template_redshift</span><span class="nt">(observed_spectrum, template_spectrum, redshift)</span>
+<span class="g g-Whitespace">    </span><span class="mi">275</span> <span class="k">for</span> <span class="n">rs</span> <span class="ow">in</span> <span class="n">redshift</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">276</span> 
+<span class="g g-Whitespace">    </span><span class="mi">277</span>     <span class="c1"># Create new redshifted spectrum and run it through the chi2 method</span>
+<span class="g g-Whitespace">    </span><span class="mi">278</span>     <span class="n">redshifted_spectrum</span> <span class="o">=</span> <span class="n">Spectrum1D</span><span class="p">(</span><span class="n">spectral_axis</span><span class="o">=</span><span class="n">template_spectrum</span><span class="o">.</span><span class="n">spectral_axis</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="n">rs</span><span class="p">),</span>
+<span class="g g-Whitespace">    </span><span class="mi">279</span>                                      <span class="n">flux</span><span class="o">=</span><span class="n">template_spectrum</span><span class="o">.</span><span class="n">flux</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">280</span>                                      <span class="n">uncertainty</span><span class="o">=</span><span class="n">template_spectrum</span><span class="o">.</span><span class="n">uncertainty</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">281</span>                                      <span class="n">meta</span><span class="o">=</span><span class="n">template_spectrum</span><span class="o">.</span><span class="n">meta</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">283</span>     <span class="n">normalized_spectral_template</span><span class="p">,</span> <span class="n">chi2</span> <span class="o">=</span> <span class="n">_chi_square_for_templates</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">284</span>         <span class="n">observed_spectrum</span><span class="p">,</span> <span class="n">redshifted_spectrum</span><span class="p">,</span> <span class="s2">&quot;flux_conserving&quot;</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">286</span>     <span class="n">chi2_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">chi2</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">288</span>     <span class="c1"># Set new chi2_min if suitable replacement is found</span>
 
-<span class="nn">File /usr/share/miniconda/lib/python3.9/site-packages/astropy/io/ascii/core.py:1337,</span> in <span class="ni">BaseReader.read</span><span class="nt">(self, table)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1334</span> <span class="bp">self</span><span class="o">.</span><span class="n">lines</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">inputter</span><span class="o">.</span><span class="n">get_lines</span><span class="p">(</span><span class="n">table</span><span class="p">,</span> <span class="n">newline</span><span class="o">=</span><span class="n">newline</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1336</span> <span class="c1"># Set self.data.data_lines to a slice of lines contain the data rows</span>
-<span class="ne">-&gt; </span><span class="mi">1337</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">get_data_lines</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">lines</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1339</span> <span class="c1"># Extract table meta values (e.g. keywords, comments, etc).  Updates self.meta.</span>
-<span class="g g-Whitespace">   </span><span class="mi">1340</span> <span class="bp">self</span><span class="o">.</span><span class="n">header</span><span class="o">.</span><span class="n">update_meta</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">lines</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">meta</span><span class="p">)</span>
+<span class="nn">File /usr/share/miniconda/lib/python3.9/site-packages/specutils/analysis/template_comparison.py:117,</span> in <span class="ni">_chi_square_for_templates</span><span class="nt">(observed_spectrum, template_spectrum, resample_method)</span>
+<span class="g g-Whitespace">    </span><span class="mi">115</span> <span class="k">if</span> <span class="n">_resample</span><span class="p">(</span><span class="n">resample_method</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">116</span>     <span class="n">fluxc_resample</span> <span class="o">=</span> <span class="n">_resample</span><span class="p">(</span><span class="n">resample_method</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">117</span>     <span class="n">template_obswavelength</span> <span class="o">=</span> <span class="n">fluxc_resample</span><span class="p">(</span><span class="n">template_spectrum</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">118</span>                                             <span class="n">observed_spectrum</span><span class="o">.</span><span class="n">spectral_axis</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">120</span> <span class="c1"># Convert the uncertainty to standard deviation if needed</span>
+<span class="g g-Whitespace">    </span><span class="mi">121</span> <span class="n">stddev</span> <span class="o">=</span> <span class="n">_uncertainty_to_standard_deviation</span><span class="p">(</span><span class="n">observed_spectrum</span><span class="o">.</span><span class="n">uncertainty</span><span class="p">)</span>
 
-<span class="nn">File /usr/share/miniconda/lib/python3.9/site-packages/astropy/io/ascii/core.py:800,</span> in <span class="ni">BaseData.get_data_lines</span><span class="nt">(self, lines)</span>
-<span class="g g-Whitespace">    </span><span class="mi">797</span> <span class="k">def</span> <span class="nf">get_data_lines</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">lines</span><span class="p">):</span>
-<span class="g g-Whitespace">    </span><span class="mi">798</span>     <span class="sd">&quot;&quot;&quot;READ: Set ``data_lines`` attribute to lines slice comprising table data values.</span>
-<span class="g g-Whitespace">    </span><span class="mi">799</span><span class="sd">     &quot;&quot;&quot;</span>
-<span class="ne">--&gt; </span><span class="mi">800</span>     <span class="n">data_lines</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">process_lines</span><span class="p">(</span><span class="n">lines</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">801</span>     <span class="n">start_line</span> <span class="o">=</span> <span class="n">_get_line_index</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">start_line</span><span class="p">,</span> <span class="n">data_lines</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">802</span>     <span class="n">end_line</span> <span class="o">=</span> <span class="n">_get_line_index</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">end_line</span><span class="p">,</span> <span class="n">data_lines</span><span class="p">)</span>
+<span class="nn">File /usr/share/miniconda/lib/python3.9/site-packages/specutils/manipulation/resample.py:35,</span> in <span class="ni">ResamplerBase.__call__</span><span class="nt">(self, orig_spectrum, fin_spec_axis)</span>
+<span class="g g-Whitespace">     </span><span class="mi">31</span> <span class="k">def</span> <span class="fm">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">orig_spectrum</span><span class="p">,</span> <span class="n">fin_spec_axis</span><span class="p">):</span>
+<span class="g g-Whitespace">     </span><span class="mi">32</span>     <span class="sd">&quot;&quot;&quot;</span>
+<span class="g g-Whitespace">     </span><span class="mi">33</span><span class="sd">     Return the resulting `~specutils.Spectrum1D` of the resampling.</span>
+<span class="g g-Whitespace">     </span><span class="mi">34</span><span class="sd">     &quot;&quot;&quot;</span>
+<span class="ne">---&gt; </span><span class="mi">35</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">resample1d</span><span class="p">(</span><span class="n">orig_spectrum</span><span class="p">,</span> <span class="n">fin_spec_axis</span><span class="p">)</span>
 
-<span class="nn">File /usr/share/miniconda/lib/python3.9/site-packages/astropy/io/ascii/core.py:793,</span> in <span class="ni">BaseData.process_lines</span><span class="nt">(self, lines)</span>
-<span class="g g-Whitespace">    </span><span class="mi">791</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">comment</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">792</span>     <span class="n">re_comment</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">comment</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">793</span>     <span class="k">return</span> <span class="p">[</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">nonblank_lines</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">re_comment</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="n">x</span><span class="p">)]</span>
-<span class="g g-Whitespace">    </span><span class="mi">794</span> <span class="k">else</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">795</span>     <span class="k">return</span> <span class="p">[</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">nonblank_lines</span><span class="p">]</span>
+<span class="nn">File /usr/share/miniconda/lib/python3.9/site-packages/specutils/manipulation/resample.py:191,</span> in <span class="ni">FluxConservingResampler.resample1d</span><span class="nt">(self, orig_spectrum, fin_spec_axis)</span>
+<span class="g g-Whitespace">    </span><span class="mi">188</span> <span class="n">resample_grid</span> <span class="o">=</span> <span class="n">resample_grid</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">new_shape_resample_grid</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">190</span> <span class="c1"># Calculate final flux</span>
+<span class="ne">--&gt; </span><span class="mi">191</span> <span class="n">out_flux</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">in_flux</span> <span class="o">*</span> <span class="n">resample_grid</span><span class="p">,</span> <span class="n">axis</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">192</span>     <span class="n">resample_grid</span><span class="p">,</span> <span class="n">axis</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">194</span> <span class="c1"># Calculate output uncertainty</span>
+<span class="g g-Whitespace">    </span><span class="mi">195</span> <span class="k">if</span> <span class="n">pixel_uncer</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
 
-<span class="nn">File /usr/share/miniconda/lib/python3.9/site-packages/astropy/io/ascii/core.py:793,</span> in <span class="ni">&lt;listcomp&gt;</span><span class="nt">(.0)</span>
-<span class="g g-Whitespace">    </span><span class="mi">791</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">comment</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">792</span>     <span class="n">re_comment</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">comment</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">793</span>     <span class="k">return</span> <span class="p">[</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">nonblank_lines</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">re_comment</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="n">x</span><span class="p">)]</span>
-<span class="g g-Whitespace">    </span><span class="mi">794</span> <span class="k">else</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">795</span>     <span class="k">return</span> <span class="p">[</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">nonblank_lines</span><span class="p">]</span>
+<span class="nn">File /usr/share/miniconda/lib/python3.9/site-packages/astropy/units/quantity.py:1123,</span> in <span class="ni">Quantity.__mul__</span><span class="nt">(self, other)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1120</span>     <span class="k">except</span> <span class="n">UnitsError</span><span class="p">:</span>  <span class="c1"># let other try to deal with it</span>
+<span class="g g-Whitespace">   </span><span class="mi">1121</span>         <span class="k">return</span> <span class="bp">NotImplemented</span>
+<span class="ne">-&gt; </span><span class="mi">1123</span> <span class="k">return</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__mul__</span><span class="p">(</span><span class="n">other</span><span class="p">)</span>
+
+<span class="nn">File /usr/share/miniconda/lib/python3.9/site-packages/astropy/units/quantity.py:613,</span> in <span class="ni">Quantity.__array_ufunc__</span><span class="nt">(self, function, method, *inputs, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">610</span>     <span class="n">arrays</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">converter</span><span class="p">(</span><span class="n">input_</span><span class="p">)</span> <span class="k">if</span> <span class="n">converter</span> <span class="k">else</span> <span class="n">input_</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">612</span> <span class="c1"># Call our superclass&#39;s __array_ufunc__</span>
+<span class="ne">--&gt; </span><span class="mi">613</span> <span class="n">result</span> <span class="o">=</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">__array_ufunc__</span><span class="p">(</span><span class="n">function</span><span class="p">,</span> <span class="n">method</span><span class="p">,</span> <span class="o">*</span><span class="n">arrays</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">614</span> <span class="c1"># If unit is None, a plain array is expected (e.g., comparisons), which</span>
+<span class="g g-Whitespace">    </span><span class="mi">615</span> <span class="c1"># means we&#39;re done.</span>
+<span class="g g-Whitespace">    </span><span class="mi">616</span> <span class="c1"># We&#39;re also done if the result was None (for method &#39;at&#39;) or</span>
+<span class="g g-Whitespace">    </span><span class="mi">617</span> <span class="c1"># NotImplemented, which can happen if other inputs/outputs override</span>
+<span class="g g-Whitespace">    </span><span class="mi">618</span> <span class="c1"># __array_ufunc__; hopefully, they can then deal with us.</span>
+<span class="g g-Whitespace">    </span><span class="mi">619</span> <span class="k">if</span> <span class="n">unit</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="n">result</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="n">result</span> <span class="ow">is</span> <span class="bp">NotImplemented</span><span class="p">:</span>
 
 <span class="ne">KeyboardInterrupt</span>: 
 </pre></div>
@@ -3211,7 +3221,7 @@ DATASUM = &#39;338047765&#39;          / data unit checksum updated 2015-01-26T1
       <div class="extra_footer">
         <div class="header">
     <div class="header content">
-        <img class="logo" src="../../images/Jspectra.svg" alt="JWST Data Analysis Notebooks"/>
+        <img class="logo" src="Jspectra.svg" alt="JWST Data Analysis Notebooks"/>
         <div class="search">
             <div class="searchbox"></div>
             <div class="searchbutton">

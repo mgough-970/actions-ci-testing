@@ -1,16 +1,4 @@
-# Welcome JDAT Notebooks
+# James Webb Space Telescope Data Analysis Tool Notebooks
+The jdat_notebooks repository contains notebooks illustrating workflows for post-pipeline analysis of JWST data. Some of the notebooks also illustrate generic analysis workflows that are applicable to data from other observatories as well. This repository and the notebooks are one component of STScI's larger Data Analysis Tools Ecosystem.
 
-This is a small sample book to give you a feel for how book content is
-structured.
-
-:::{note}
-Here is a note!
-:::
-
-And here is a code block:
-
-```
-e = mc^2
-```
-
-Check out the content pages bundled with this sample book to see more.
+The following table summarizes the notebooks currently available. Most links will take you to rendered versions of the notebooks, which require no special tools beyond your web browser. To download and execute the notebooks, clone this repository to your local computer. Most of the notebooks rely on packages that can be installed using pip. The version dependencies are listed in the environment.yaml and in the requirements file in each notebook folder.
