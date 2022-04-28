@@ -1,3 +1,2 @@
-astropy
-astroquery
-numpy
+astroquery==0.4.6
+numpy==1.22.3

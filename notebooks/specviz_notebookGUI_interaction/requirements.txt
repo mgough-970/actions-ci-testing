@@ -1,1 +1,5 @@
-specutils
+astropy==5.0.4
+ipython==8.2.0
+jdaviz==2.4.0
+matplotlib==3.5.1
+specutils==1.7.0
