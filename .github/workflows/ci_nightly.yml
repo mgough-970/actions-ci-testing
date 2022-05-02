@@ -2,10 +2,6 @@ name: Deploy Nightly
 on:
   schedule:
     - cron: '0 3 * * *' # run at 2 AM UTC
-    branches:
-      - main
-    paths:
-      - 'notebooks/**.ipynb'
 
 env:
   ARCH_ON_CI: "normal"
