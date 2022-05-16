@@ -14,7 +14,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
         matrix:
-            manifest: ${{ fromJson(needs.list-notebooks.outputs.matrix) }}
+            notebooks: ${{ fromJson(needs.list-notebooks.outputs.matrix) }}
     steps:
       - uses: actions/checkout@v2   
       - run: | 
