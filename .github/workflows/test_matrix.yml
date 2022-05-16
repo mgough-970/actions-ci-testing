@@ -19,4 +19,24 @@ jobs:
       - uses: actions/checkout@v2   
       - run: | 
             echo ${{ matrix.notebooks }}
-        
+      - uses: actions/checkout@v2
+      - name: Set up Python 3.8.12
+        uses: actions/setup-python@v2 ## needed for caching
+        with:
+          python-version: 3.8.12
+          cache: 'pip'
+      - name: Add conda to system path
+        run: |
+          # $CONDA is an environment variable pointing to the root of the miniconda directory
+          echo $CONDA/bin >> $GITHUB_PATH
+      - name: Install dependencies
+        run: |
+          #conda env update --file CIenvironment.yml --name base
+          pip install -r CIenvironment.yml
+          pip install pytest
+          pip install nbval
+          pip install nbconvert
+      - name: Execute notebooks
+        run: |
+          jupyter nbconvert --template classic --to html --execute ${{ matrix.notebooks }}
+
