@@ -17,8 +17,8 @@ jobs:
             notebooks: ${{ fromJson(needs.list-notebooks.outputs.matrix) }}
     steps:
       - uses: actions/checkout@v2   
-      - run: | 
-            pip install -r ${${{ matrix.notebooks }}%/*}/requirements.txt
+      #- run: | 
+      #      pip install -r ${${{ matrix.notebooks }}%/*}/requirements.txt
       - uses: actions/checkout@v2
       - name: Set up Python 3.8.12
         uses: actions/setup-python@v2 ## needed for caching
