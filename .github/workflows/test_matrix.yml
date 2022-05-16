@@ -1,4 +1,4 @@
-name: matrix2 test
+name: MatrixTest
 on: [push, pull_request]
 jobs:
   list-notebooks:
@@ -8,7 +8,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - id: set-matrix
-        run: echo "::set-output name=matrix::$(find notebooks -name "*.ipynb" | jq -R -s -c 'split("\n")[:-1]')"
+        run: echo "::set-output name=matrix::$(find notebooks -name "*.ipynb" | jq -cnR '[inputs | select(length>0)]')"
   check:
     needs: list-notebooks
     runs-on: ubuntu-latest
@@ -17,6 +17,6 @@ jobs:
             manifest: ${{ fromJson(needs.list-notebooks.outputs.matrix) }}
     steps:
       - uses: actions/checkout@v2   
-      - run: |
-        echo ${{ martix.manifest }}
+      - run: | 
+            echo ${{ martix.notebooks }}
         
