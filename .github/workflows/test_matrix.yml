@@ -1,0 +1,37 @@
+name: Build and deploy notebooks
+
+#  Only run this when the master branch changes
+on:
+  push:
+    branches:
+    - main
+    # If your git repository has the Jupyter Book within some-subfolder next to
+    # unrelated files, you can make this run only if a file within that specific
+    # folder has been modified.
+    #
+    # paths:
+    # - some-subfolder/**
+    paths:
+      - 'notebooks/**.ipynb'
+
+# This job installs dependencies, builds the book, and pushes it to `gh-pages`
+jobs:      
+  gather-notebooks:
+      runs-on: ubuntu-latest
+      outputs:
+          matrix: ${{ steps.set-matrix.outputs.matrix }}
+      steps:
+        - uses: actions/checkout@v2
+        - id: set-matrix
+          run: echo "::set-output name=matrix::$(ls notebooks/**.ipynb | jq -R -s -c 'split("\n")[:-1]')"
+  check:
+      needs: list-notebooks
+      runs-on: ubuntu-latest
+      strategy:
+          matrix: ${{ fromJson(needs.list-notebooks.outputs.matrix) }}
+      steps:
+          - uses: actions/checkout@v2
+          - run: |
+              echo ${{ martix.notebooks }}
+
+        
