@@ -18,7 +18,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2   
       - run: | 
-            echo ${{ matrix.notebooks }}
+            pip install -r ${{ matrix.notebooks }}/requirements.txt
       - uses: actions/checkout@v2
       - name: Set up Python 3.8.12
         uses: actions/setup-python@v2 ## needed for caching
