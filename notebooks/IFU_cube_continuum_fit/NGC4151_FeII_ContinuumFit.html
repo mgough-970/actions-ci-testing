@@ -573,7 +573,7 @@ const thebe_selector_output = ".output, .cell_output"
           <strong>
            Documentation:
           </strong>
-          This notebook is part of a STScI’s larger
+          This notebook is part of a STScI’s l arger
           <a class="reference external" href="https://jwst-docs.stsci.edu/jwst-post-pipeline-data-analysis">
            post-pipeline Data Analysis Tools Ecosystem
           </a>
@@ -826,7 +826,7 @@ derive a more accurate fit in the below poly-fit analysis.
            </div>
            <div class="cell_output docutils container">
             <script type="application/vnd.jupyter.widget-view+json">
-             {"version_major": 2, "version_minor": 0, "model_id": "3a195970472f45e684f7809082d80de7"}
+             {"version_major": 2, "version_minor": 0, "model_id": "9652085e327b427ebbede8464fc222c7"}
             </script>
             <img align=center height=auto width=50% src="../../jdaviz_placeholder_new.png">
             </img align=center height=auto width=50%>
@@ -891,7 +891,7 @@ in this dataset.  In this cube, data from slice ~1060 to ~1090 shows the extende
            </div>
            <div class="cell_output docutils container">
             <script type="application/vnd.jupyter.widget-view+json">
-             {"version_major": 2, "version_minor": 0, "model_id": "ee030676421745898bccf5f5422c2915"}
+             {"version_major": 2, "version_minor": 0, "model_id": "0ad40d26b2bd4792853a91ab2fe30e56"}
             </script>
             <img align=center height=auto width=50% src="../../jdaviz_placeholder_new.png">
             </img align=center height=auto width=50%>
@@ -1118,7 +1118,7 @@ WARNING:astropy:Model is linear in parameters; consider using linear fitting met
              <div class="highlight">
               <pre><span></span>Continuum subtracted cube saved. PSF continuum cube saved.
 Time count
---- 1.239917516708374 seconds ---
+--- 1.158285140991211 seconds ---
 </pre>
              </div>
             </div>
@@ -1155,113 +1155,6 @@ Time count
 
 <span class="nb">print</span><span class="p">(</span><span class="s1">'Time count'</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">"--- </span><span class="si">%s</span><span class="s2"> seconds ---"</span> <span class="o">%</span> <span class="p">(</span><span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span> <span class="o">-</span> <span class="n">start_time</span><span class="p">))</span>
-</pre>
-             </div>
-            </div>
-           </div>
-           <div class="cell_output docutils container">
-            <div class="output traceback highlight-ipythontb notranslate">
-             <div class="highlight">
-              <pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
-<span class="nn">Input In [13],</span> in <span class="ni">&lt;cell line: 14&gt;</span><span class="nt">()</span>
-<span class="g g-Whitespace">     </span><span class="mi">16</span> <span class="n">flux1</span> <span class="o">=</span> <span class="n">Spectrum1D</span><span class="p">(</span><span class="n">flux</span> <span class="o">=</span> <span class="n">cube</span><span class="p">[:,</span><span class="n">j</span><span class="p">,</span><span class="n">i</span><span class="p">]</span><span class="o">*</span><span class="n">u</span><span class="o">.</span><span class="n">Unit</span><span class="p">(</span><span class="s1">'count'</span><span class="p">),</span> <span class="n">spectral_axis</span><span class="o">=</span><span class="n">wave</span><span class="o">*</span><span class="n">u</span><span class="o">.</span><span class="n">micron</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">17</span> <span class="n">m</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">Polynomial1D</span><span class="p">(</span><span class="n">degree</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-<span class="ne">---&gt; </span><span class="mi">18</span> <span class="n">fitted_model</span> <span class="o">=</span> <span class="n">fit_lines</span><span class="p">(</span><span class="n">flux1</span><span class="p">[</span><span class="n">continuummin</span><span class="p">:</span><span class="n">continuummax</span><span class="p">],</span> <span class="n">m</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">19</span> <span class="n">cont_fit</span> <span class="o">=</span> <span class="p">[</span><span class="n">fitted_model</span><span class="o">.</span><span class="n">c1</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">fitted_model</span><span class="o">.</span><span class="n">c0</span><span class="o">.</span><span class="n">value</span><span class="p">]</span>
-<span class="g g-Whitespace">     </span><span class="mi">20</span> <span class="n">continuum</span> <span class="o">=</span> <span class="n">fitted_model</span><span class="p">(</span><span class="n">flux1</span><span class="o">.</span><span class="n">spectral_axis</span><span class="p">)</span>
-
-<span class="nn">File /usr/share/miniconda/lib/python3.9/site-packages/specutils/fitting/fitmodels.py:346,</span> in <span class="ni">fit_lines</span><span class="nt">(spectrum, model, fitter, exclude_regions, weights, window, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">339</span> <span class="c1">#</span>
-<span class="g g-Whitespace">    </span><span class="mi">340</span> <span class="c1"># Check to see if the model has units. If it does not</span>
-<span class="g g-Whitespace">    </span><span class="mi">341</span> <span class="c1"># have units then we are going to ignore them.</span>
-<span class="g g-Whitespace">    </span><span class="mi">342</span> <span class="c1">#</span>
-<span class="g g-Whitespace">    </span><span class="mi">344</span> <span class="n">ignore_units</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">model_guess</span><span class="p">,</span> <span class="n">model_guess</span><span class="o">.</span><span class="n">param_names</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span><span class="o">.</span><span class="n">unit</span> <span class="ow">is</span> <span class="kc">None</span>
-<span class="ne">--&gt; </span><span class="mi">346</span> <span class="n">fit_model</span> <span class="o">=</span> <span class="n">_fit_lines</span><span class="p">(</span><span class="n">spectrum</span><span class="p">,</span> <span class="n">model_guess</span><span class="p">,</span> <span class="n">fitter</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">347</span>                        <span class="n">exclude_regions</span><span class="p">,</span> <span class="n">weights</span><span class="p">,</span> <span class="n">model_window</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">348</span>                        <span class="n">ignore_units</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">349</span> <span class="k">if</span> <span class="n">model_guess</span><span class="o">.</span><span class="n">name</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">350</span>     <span class="n">fit_model</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">model_guess</span><span class="o">.</span><span class="n">name</span>
-
-<span class="nn">File /usr/share/miniconda/lib/python3.9/site-packages/specutils/fitting/fitmodels.py:487,</span> in <span class="ni">_fit_lines</span><span class="nt">(spectrum, model, fitter, exclude_regions, weights, window, ignore_units, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">484</span>     <span class="k">if</span> <span class="n">weights</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">485</span>         <span class="n">weights</span> <span class="o">=</span> <span class="n">weights</span><span class="p">[</span><span class="n">nmask</span><span class="p">]</span>
-<span class="ne">--&gt; </span><span class="mi">487</span> <span class="n">fit_model</span> <span class="o">=</span> <span class="n">fitter</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">dispersion</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">488</span>                    <span class="n">flux</span><span class="p">,</span> <span class="n">weights</span><span class="o">=</span><span class="n">weights</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">490</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">model</span><span class="o">.</span><span class="n">_supports_unit_fitting</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">491</span>     <span class="n">fit_model</span> <span class="o">=</span> <span class="n">QuantityModel</span><span class="p">(</span><span class="n">fit_model</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">492</span>                               <span class="n">spectrum</span><span class="o">.</span><span class="n">spectral_axis</span><span class="o">.</span><span class="n">unit</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">493</span>                               <span class="n">spectrum</span><span class="o">.</span><span class="n">flux</span><span class="o">.</span><span class="n">unit</span><span class="p">)</span>
-
-<span class="nn">File /usr/share/miniconda/lib/python3.9/site-packages/astropy/modeling/fitting.py:248,</span> in <span class="ni">fitter_unit_support.&lt;locals&gt;.wrapper</span><span class="nt">(self, model, x, y, z, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">246</span> <span class="c1"># We run the fitting</span>
-<span class="g g-Whitespace">    </span><span class="mi">247</span> <span class="k">if</span> <span class="n">z</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">248</span>     <span class="n">model_new</span> <span class="o">=</span> <span class="n">func</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">xdata</span><span class="p">,</span> <span class="n">ydata</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">249</span> <span class="k">else</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">250</span>     <span class="n">model_new</span> <span class="o">=</span> <span class="n">func</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">xdata</span><span class="p">,</span> <span class="n">ydata</span><span class="p">,</span> <span class="n">zdata</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-
-<span class="nn">File /usr/share/miniconda/lib/python3.9/site-packages/astropy/modeling/fitting.py:1175,</span> in <span class="ni">LevMarLSQFitter.__call__</span><span class="nt">(self, model, x, y, z, weights, maxiter, acc, epsilon, estimate_jacobian)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1173</span> <span class="c1"># now try to compute the true covariance matrix</span>
-<span class="g g-Whitespace">   </span><span class="mi">1174</span> <span class="k">if</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">y</span><span class="p">)</span> <span class="o">&gt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">init_values</span><span class="p">))</span> <span class="ow">and</span> <span class="n">cov_x</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-<span class="ne">-&gt; </span><span class="mi">1175</span>     <span class="n">sum_sqrs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">objective_function</span><span class="p">(</span><span class="n">fitparams</span><span class="p">,</span> <span class="o">*</span><span class="n">farg</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1176</span>     <span class="n">dof</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">y</span><span class="p">)</span> <span class="o">-</span> <span class="nb">len</span><span class="p">(</span><span class="n">init_values</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1177</span>     <span class="bp">self</span><span class="o">.</span><span class="n">fit_info</span><span class="p">[</span><span class="s1">'param_cov'</span><span class="p">]</span> <span class="o">=</span> <span class="n">cov_x</span> <span class="o">*</span> <span class="n">sum_sqrs</span> <span class="o">/</span> <span class="n">dof</span>
-
-<span class="nn">File /usr/share/miniconda/lib/python3.9/site-packages/astropy/modeling/fitting.py:1086,</span> in <span class="ni">LevMarLSQFitter.objective_function</span><span class="nt">(self, fps, *args)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1084</span> <span class="n">meas</span> <span class="o">=</span> <span class="n">args</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
-<span class="g g-Whitespace">   </span><span class="mi">1085</span> <span class="k">if</span> <span class="n">weights</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-<span class="ne">-&gt; </span><span class="mi">1086</span>     <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">ravel</span><span class="p">(</span><span class="n">model</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">[</span><span class="mi">2</span><span class="p">:</span> <span class="o">-</span><span class="mi">1</span><span class="p">])</span> <span class="o">-</span> <span class="n">meas</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1087</span> <span class="k">else</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1088</span>     <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">ravel</span><span class="p">(</span><span class="n">weights</span> <span class="o">*</span> <span class="p">(</span><span class="n">model</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">[</span><span class="mi">2</span><span class="p">:</span> <span class="o">-</span><span class="mi">1</span><span class="p">])</span> <span class="o">-</span> <span class="n">meas</span><span class="p">))</span>
-
-<span class="nn">File /usr/share/miniconda/lib/python3.9/site-packages/astropy/modeling/core.py:399,</span> in <span class="ni">__call__</span><span class="nt">(self, model_set_axis, with_bounding_box, fill_value, equivalencies, inputs_map, *inputs, **new_inputs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">392</span> <span class="n">args</span> <span class="o">=</span> <span class="p">(</span><span class="s1">'self'</span><span class="p">,)</span>
-<span class="g g-Whitespace">    </span><span class="mi">393</span> <span class="n">kwargs</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">([(</span><span class="s1">'model_set_axis'</span><span class="p">,</span> <span class="kc">None</span><span class="p">),</span>
-<span class="g g-Whitespace">    </span><span class="mi">394</span>                <span class="p">(</span><span class="s1">'with_bounding_box'</span><span class="p">,</span> <span class="kc">False</span><span class="p">),</span>
-<span class="g g-Whitespace">    </span><span class="mi">395</span>                <span class="p">(</span><span class="s1">'fill_value'</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">),</span>
-<span class="g g-Whitespace">    </span><span class="mi">396</span>                <span class="p">(</span><span class="s1">'equivalencies'</span><span class="p">,</span> <span class="kc">None</span><span class="p">),</span>
-<span class="g g-Whitespace">    </span><span class="mi">397</span>                <span class="p">(</span><span class="s1">'inputs_map'</span><span class="p">,</span> <span class="kc">None</span><span class="p">)])</span>
-<span class="ne">--&gt; </span><span class="mi">399</span> <span class="n">new_call</span> <span class="o">=</span> <span class="n">make_function_with_signature</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">400</span>     <span class="fm">__call__</span><span class="p">,</span> <span class="n">args</span><span class="p">,</span> <span class="n">kwargs</span><span class="p">,</span> <span class="n">varargs</span><span class="o">=</span><span class="s1">'inputs'</span><span class="p">,</span> <span class="n">varkwargs</span><span class="o">=</span><span class="s1">'new_inputs'</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">402</span> <span class="c1"># The following makes it look like __call__</span>
-<span class="g g-Whitespace">    </span><span class="mi">403</span> <span class="c1"># was defined in the class</span>
-<span class="g g-Whitespace">    </span><span class="mi">404</span> <span class="n">update_wrapper</span><span class="p">(</span><span class="n">new_call</span><span class="p">,</span> <span class="bp">cls</span><span class="p">)</span>
-
-<span class="nn">File /usr/share/miniconda/lib/python3.9/site-packages/astropy/modeling/core.py:378,</span> in <span class="ni">_ModelMeta._handle_special_methods.&lt;locals&gt;.__call__</span><span class="nt">(self, *inputs, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">376</span> <span class="k">def</span> <span class="fm">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">inputs</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-<span class="g g-Whitespace">    </span><span class="mi">377</span>     <span class="sd">"""Evaluate this model on the supplied inputs."""</span>
-<span class="ne">--&gt; </span><span class="mi">378</span>     <span class="k">return</span> <span class="nb">super</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__call__</span><span class="p">(</span><span class="o">*</span><span class="n">inputs</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-
-<span class="nn">File /usr/share/miniconda/lib/python3.9/site-packages/astropy/modeling/core.py:1069,</span> in <span class="ni">Model.__call__</span><span class="nt">(self, *args, **kwargs)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1064</span> <span class="sd">"""</span>
-<span class="g g-Whitespace">   </span><span class="mi">1065</span><span class="sd"> Evaluate this model using the given input(s) and the parameter values</span>
-<span class="g g-Whitespace">   </span><span class="mi">1066</span><span class="sd"> that were specified when the model was instantiated.</span>
-<span class="g g-Whitespace">   </span><span class="mi">1067</span><span class="sd"> """</span>
-<span class="g g-Whitespace">   </span><span class="mi">1068</span> <span class="c1"># Turn any keyword arguments into positional arguments.</span>
-<span class="ne">-&gt; </span><span class="mi">1069</span> <span class="n">args</span><span class="p">,</span> <span class="n">kwargs</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_renamed_inputs_as_positional</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1071</span> <span class="c1"># Read model evaluation related parameters</span>
-<span class="g g-Whitespace">   </span><span class="mi">1072</span> <span class="n">with_bbox</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s1">'with_bounding_box'</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
-
-<span class="nn">File /usr/share/miniconda/lib/python3.9/site-packages/astropy/modeling/core.py:1111,</span> in <span class="ni">Model._get_renamed_inputs_as_positional</span><span class="nt">(self, *args, **kwargs)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1108</span>     <span class="k">return</span> <span class="n">new_inputs</span><span class="p">,</span> <span class="n">kwargs</span>
-<span class="g g-Whitespace">   </span><span class="mi">1109</span> <span class="n">n_args</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">args</span><span class="p">)</span>
-<span class="ne">-&gt; </span><span class="mi">1111</span> <span class="n">new_inputs</span><span class="p">,</span> <span class="n">kwargs</span> <span class="o">=</span> <span class="n">_keyword2positional</span><span class="p">(</span><span class="n">kwargs</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1112</span> <span class="n">n_all_args</span> <span class="o">=</span> <span class="n">n_args</span> <span class="o">+</span> <span class="nb">len</span><span class="p">(</span><span class="n">new_inputs</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1114</span> <span class="k">if</span> <span class="n">n_all_args</span> <span class="o">&lt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">n_inputs</span><span class="p">:</span>
-
-<span class="nn">File /usr/share/miniconda/lib/python3.9/site-packages/astropy/modeling/core.py:1096,</span> in <span class="ni">Model._get_renamed_inputs_as_positional.&lt;locals&gt;._keyword2positional</span><span class="nt">(kwargs)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1085</span> <span class="k">def</span> <span class="nf">_keyword2positional</span><span class="p">(</span><span class="n">kwargs</span><span class="p">):</span>
-<span class="g g-Whitespace">   </span><span class="mi">1086</span>     <span class="c1"># Inputs were passed as keyword (not positional) arguments.</span>
-<span class="g g-Whitespace">   </span><span class="mi">1087</span>     <span class="c1"># Because the signature of the ``__call__`` is defined at</span>
-   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1094</span> 
-<span class="g g-Whitespace">   </span><span class="mi">1095</span>     <span class="c1"># These are the keys that are always present as keyword arguments.</span>
-<span class="ne">-&gt; </span><span class="mi">1096</span>     <span class="n">keys</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'model_set_axis'</span><span class="p">,</span> <span class="s1">'with_bounding_box'</span><span class="p">,</span> <span class="s1">'fill_value'</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1097</span>             <span class="s1">'equivalencies'</span><span class="p">,</span> <span class="s1">'inputs_map'</span><span class="p">]</span>
-<span class="g g-Whitespace">   </span><span class="mi">1099</span>     <span class="n">new_inputs</span> <span class="o">=</span> <span class="p">{}</span>
-<span class="g g-Whitespace">   </span><span class="mi">1100</span>     <span class="c1"># kwargs contain the names of the new inputs + ``keys``</span>
-
-<span class="ne">KeyboardInterrupt</span>: 
 </pre>
              </div>
             </div>
