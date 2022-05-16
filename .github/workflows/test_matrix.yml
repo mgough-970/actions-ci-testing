@@ -28,7 +28,7 @@ jobs:
       needs: gather-notebooks
       runs-on: ubuntu-latest
       strategy:
-          matrix: ${{ fromJson(needs.gather-notebooks.outputs.matrix) }}
+          matrix: ${{fromJson(needs.gather-notebooks.outputs.matrix)}}
           
       steps:
           - uses: actions/checkout@v2
