@@ -2815,7 +2815,7 @@ DATASUM = '338047765'          / data unit checksum updated 2015-01-26T12:24:13
               <i>
                QTable length=4059
               </i>
-              <table class="table-striped table-bordered table-condensed" id="table139943834210256">
+              <table class="table-striped table-bordered table-condensed" id="table140158234905664">
                <thead>
                 <tr>
                  <th>
@@ -3419,7 +3419,7 @@ DATASUM = '338047765'          / data unit checksum updated 2015-01-26T12:24:13
               <i>
                QTable length=4
               </i>
-              <table class="table-striped table-bordered table-condensed" id="table139943838974928">
+              <table class="table-striped table-bordered table-condensed" id="table140158234386000">
                <thead>
                 <tr>
                  <th>
@@ -3554,7 +3554,7 @@ DATASUM = '338047765'          / data unit checksum updated 2015-01-26T12:24:13
                <i>
                 QTable length=18
                </i>
-               <table class="table-striped table-bordered table-condensed" id="table139943836370352">
+               <table class="table-striped table-bordered table-condensed" id="table140158231286016">
                 <thead>
                  <tr>
                   <th>
@@ -4187,18 +4187,6 @@ DATASUM = '338047765'          / data unit checksum updated 2015-01-26T12:24:13
 <span class="ne">--&gt; </span><span class="mi">793</span>     <span class="k">return</span> <span class="p">[</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">nonblank_lines</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">re_comment</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="n">x</span><span class="p">)]</span>
 <span class="g g-Whitespace">    </span><span class="mi">794</span> <span class="k">else</span><span class="p">:</span>
 <span class="g g-Whitespace">    </span><span class="mi">795</span>     <span class="k">return</span> <span class="p">[</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">nonblank_lines</span><span class="p">]</span>
-
-<span class="nn">File /usr/share/miniconda/lib/python3.9/site-packages/astropy/io/ascii/core.py:790,</span> in <span class="ni">&lt;genexpr&gt;</span><span class="nt">(.0)</span>
-<span class="g g-Whitespace">    </span><span class="mi">775</span> <span class="k">def</span> <span class="nf">process_lines</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">lines</span><span class="p">):</span>
-<span class="g g-Whitespace">    </span><span class="mi">776</span>     <span class="sd">"""</span>
-<span class="g g-Whitespace">    </span><span class="mi">777</span><span class="sd">     READ: Strip out comment lines and blank lines from list of ``lines``</span>
-<span class="g g-Whitespace">    </span><span class="mi">778</span><span class="sd"> </span>
-<span class="sd">   (...)</span>
-<span class="g g-Whitespace">    </span><span class="mi">788</span><span class="sd"> </span>
-<span class="g g-Whitespace">    </span><span class="mi">789</span><span class="sd">     """</span>
-<span class="nn">--&gt; 790     nonblank_lines = (x for x</span> in <span class="ni">lines if x.strip</span><span class="nt">())</span>
-<span class="g g-Whitespace">    </span><span class="mi">791</span>     <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">comment</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">792</span>         <span class="n">re_comment</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">comment</span><span class="p">)</span>
 
 <span class="ne">KeyboardInterrupt</span>: 
 </pre>
