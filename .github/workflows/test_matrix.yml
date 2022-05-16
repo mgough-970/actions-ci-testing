@@ -1,4 +1,4 @@
-name: Build and deploy notebooks
+name: Testing Matrix
 
 #  Only run this when the master branch changes
 on:
@@ -25,10 +25,11 @@ jobs:
         - id: set-matrix
           run: echo "::set-output name=matrix::$(ls notebooks/**.ipynb | jq -R -s -c 'split("\n")[:-1]')"
   check:
-      needs: list-notebooks
+      needs: gather-notebooks
       runs-on: ubuntu-latest
       strategy:
-          matrix: ${{ fromJson(needs.list-notebooks.outputs.matrix) }}
+          matrix: ${{ fromJson(needs.gather-notebooks.outputs.matrix) }}
+          
       steps:
           - uses: actions/checkout@v2
           - run: |
