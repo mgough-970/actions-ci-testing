@@ -824,7 +824,7 @@ derive a more accurate fit in the below poly-fit analysis.
            </div>
            <div class="cell_output docutils container">
             <script type="application/vnd.jupyter.widget-view+json">
-             {"version_major": 2, "version_minor": 0, "model_id": "0ffc40fcee5642a384fa8b079c1124dc"}
+             {"version_major": 2, "version_minor": 0, "model_id": "83a2652638e54b94a2808bfb0d642d6b"}
             </script>
             <img align=center height=auto width=50% src="../../jdaviz_placeholder_new.png">
             </img align=center height=auto width=50%>
@@ -889,7 +889,7 @@ in this dataset.  In this cube, data from slice ~1060 to ~1090 shows the extende
            </div>
            <div class="cell_output docutils container">
             <script type="application/vnd.jupyter.widget-view+json">
-             {"version_major": 2, "version_minor": 0, "model_id": "72bfd8b18da94fd79653c234e8ad7c0d"}
+             {"version_major": 2, "version_minor": 0, "model_id": "4a7872d3e36d412c9905de49bf6d210b"}
             </script>
             <img align=center height=auto width=50% src="../../jdaviz_placeholder_new.png">
             </img align=center height=auto width=50%>
@@ -1116,7 +1116,7 @@ WARNING:astropy:Model is linear in parameters; consider using linear fitting met
              <div class="highlight">
               <pre><span></span>Continuum subtracted cube saved. PSF continuum cube saved.
 Time count
---- 1.2318570613861084 seconds ---
+--- 1.0032708644866943 seconds ---
 </pre>
              </div>
             </div>
@@ -1158,13 +1158,6 @@ Time count
             </div>
            </div>
            <div class="cell_output docutils container">
-            <div class="output stderr highlight-myst-ansi notranslate">
-             <div class="highlight">
-              <pre><span></span>WARNING: Model is linear in parameters; consider using linear fitting methods. [astropy.modeling.fitting]
-WARNING:astropy:Model is linear in parameters; consider using linear fitting methods.
-</pre>
-             </div>
-            </div>
             <div class="output traceback highlight-ipythontb notranslate">
              <div class="highlight">
               <pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
@@ -1196,51 +1189,119 @@ WARNING:astropy:Model is linear in parameters; consider using linear fitting met
 <span class="g g-Whitespace">     </span><span class="mi">37</span> <span class="k">if</span> <span class="n">bin_specification</span> <span class="o">==</span> <span class="s2">"edges"</span><span class="p">:</span>
 <span class="g g-Whitespace">     </span><span class="mi">38</span>     <span class="n">obj</span><span class="o">.</span><span class="n">_bin_edges</span> <span class="o">=</span> <span class="n">bin_edges</span>
 
-<span class="nn">File /usr/share/miniconda/lib/python3.9/site-packages/astropy/units/decorators.py:303,</span> in <span class="ni">QuantityInput.__call__.&lt;locals&gt;.wrapper</span><span class="nt">(*func_args, **func_kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">298</span>     <span class="n">_validate_arg_value</span><span class="p">(</span><span class="n">param</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">wrapped_function</span><span class="o">.</span><span class="vm">__name__</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">299</span>                         <span class="n">arg</span><span class="p">,</span> <span class="n">valid_targets</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">equivalencies</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">300</span>                         <span class="bp">self</span><span class="o">.</span><span class="n">strict_dimensionless</span><span class="p">)</span>
+<span class="nn">File /usr/share/miniconda/lib/python3.9/site-packages/astropy/units/decorators.py:304,</span> in <span class="ni">QuantityInput.__call__.&lt;locals&gt;.wrapper</span><span class="nt">(*func_args, **func_kwargs)</span>
 <span class="g g-Whitespace">    </span><span class="mi">302</span> <span class="c1"># Call the original function with any equivalencies in force.</span>
-<span class="ne">--&gt; </span><span class="mi">303</span> <span class="k">with</span> <span class="n">add_enabled_equivalencies</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">equivalencies</span><span class="p">):</span>
-<span class="g g-Whitespace">    </span><span class="mi">304</span>     <span class="n">return_</span> <span class="o">=</span> <span class="n">wrapped_function</span><span class="p">(</span><span class="o">*</span><span class="n">func_args</span><span class="p">,</span> <span class="o">**</span><span class="n">func_kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">303</span> <span class="k">with</span> <span class="n">add_enabled_equivalencies</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">equivalencies</span><span class="p">):</span>
+<span class="ne">--&gt; </span><span class="mi">304</span>     <span class="n">return_</span> <span class="o">=</span> <span class="n">wrapped_function</span><span class="p">(</span><span class="o">*</span><span class="n">func_args</span><span class="p">,</span> <span class="o">**</span><span class="n">func_kwargs</span><span class="p">)</span>
 <span class="g g-Whitespace">    </span><span class="mi">306</span> <span class="c1"># Return</span>
+<span class="g g-Whitespace">    </span><span class="mi">307</span> <span class="n">ra</span> <span class="o">=</span> <span class="n">wrapped_signature</span><span class="o">.</span><span class="n">return_annotation</span>
 
-<span class="nn">File /usr/share/miniconda/lib/python3.9/site-packages/astropy/units/core.py:506,</span> in <span class="ni">add_enabled_equivalencies</span><span class="nt">(equivalencies)</span>
-<span class="g g-Whitespace">    </span><span class="mi">489</span> <span class="sd">"""</span>
-<span class="g g-Whitespace">    </span><span class="mi">490</span><span class="sd"> Adds to the equivalencies enabled in the unit registry.</span>
-<span class="g g-Whitespace">    </span><span class="mi">491</span><span class="sd"> </span>
-<span class="sd">   (...)</span>
-<span class="g g-Whitespace">    </span><span class="mi">503</span><span class="sd">     `~astropy.units.equivalencies.dimensionless_angles`.</span>
-<span class="g g-Whitespace">    </span><span class="mi">504</span><span class="sd"> """</span>
-<span class="g g-Whitespace">    </span><span class="mi">505</span> <span class="c1"># get a context with a new registry, which is a copy of the current one</span>
-<span class="ne">--&gt; </span><span class="mi">506</span> <span class="n">context</span> <span class="o">=</span> <span class="n">_UnitContext</span><span class="p">(</span><span class="n">get_current_unit_registry</span><span class="p">())</span>
-<span class="g g-Whitespace">    </span><span class="mi">507</span> <span class="c1"># in this new current registry, enable the further equivalencies requested</span>
-<span class="g g-Whitespace">    </span><span class="mi">508</span> <span class="n">get_current_unit_registry</span><span class="p">()</span><span class="o">.</span><span class="n">add_enabled_equivalencies</span><span class="p">(</span><span class="n">equivalencies</span><span class="p">)</span>
+<span class="nn">File /usr/share/miniconda/lib/python3.9/site-packages/astropy/coordinates/spectral_coordinate.py:193,</span> in <span class="ni">SpectralCoord.__new__</span><span class="nt">(cls, value, unit, observer, target, radial_velocity, redshift, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">187</span> <span class="nd">@u</span><span class="o">.</span><span class="n">quantity_input</span><span class="p">(</span><span class="n">radial_velocity</span><span class="o">=</span><span class="n">u</span><span class="o">.</span><span class="n">km</span><span class="o">/</span><span class="n">u</span><span class="o">.</span><span class="n">s</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">188</span> <span class="k">def</span> <span class="fm">__new__</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">unit</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">189</span>             <span class="n">observer</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">target</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">190</span>             <span class="n">radial_velocity</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">redshift</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">191</span>             <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<span class="ne">--&gt; </span><span class="mi">193</span>     <span class="n">obj</span> <span class="o">=</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__new__</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">unit</span><span class="o">=</span><span class="n">unit</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">195</span>     <span class="c1"># There are two main modes of operation in this class. Either the</span>
+<span class="g g-Whitespace">    </span><span class="mi">196</span>     <span class="c1"># observer and target are both defined, in which case the radial</span>
+<span class="g g-Whitespace">    </span><span class="mi">197</span>     <span class="c1"># velocity and redshift are automatically computed from these, or</span>
+   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">200</span>     <span class="c1"># observer are both specified, we can't also accept a radial velocity</span>
+<span class="g g-Whitespace">    </span><span class="mi">201</span>     <span class="c1"># or redshift.</span>
+<span class="g g-Whitespace">    </span><span class="mi">202</span>     <span class="k">if</span> <span class="n">target</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">observer</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
 
-<span class="nn">File /usr/share/miniconda/lib/python3.9/site-packages/astropy/units/core.py:329,</span> in <span class="ni">_UnitContext.__init__</span><span class="nt">(self, init, equivalencies)</span>
-<span class="g g-Whitespace">    </span><span class="mi">327</span> <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">init</span><span class="o">=</span><span class="p">[],</span> <span class="n">equivalencies</span><span class="o">=</span><span class="p">[]):</span>
-<span class="g g-Whitespace">    </span><span class="mi">328</span>     <span class="n">_unit_registries</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
-<span class="ne">--&gt; </span><span class="mi">329</span>         <span class="n">_UnitRegistry</span><span class="p">(</span><span class="n">init</span><span class="o">=</span><span class="n">init</span><span class="p">,</span> <span class="n">equivalencies</span><span class="o">=</span><span class="n">equivalencies</span><span class="p">))</span>
+<span class="nn">File /usr/share/miniconda/lib/python3.9/site-packages/astropy/coordinates/spectral_quantity.py:57,</span> in <span class="ni">SpectralQuantity.__new__</span><span class="nt">(cls, value, unit, doppler_rest, doppler_convention, **kwargs)</span>
+<span class="g g-Whitespace">     </span><span class="mi">53</span> <span class="k">def</span> <span class="fm">__new__</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">unit</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+<span class="g g-Whitespace">     </span><span class="mi">54</span>             <span class="n">doppler_rest</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">doppler_convention</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+<span class="g g-Whitespace">     </span><span class="mi">55</span>             <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<span class="ne">---&gt; </span><span class="mi">57</span>     <span class="n">obj</span> <span class="o">=</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__new__</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">unit</span><span class="o">=</span><span class="n">unit</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">59</span>     <span class="c1"># If we're initializing from an existing SpectralQuantity, keep any</span>
+<span class="g g-Whitespace">     </span><span class="mi">60</span>     <span class="c1"># parameters that aren't being overridden</span>
+<span class="g g-Whitespace">     </span><span class="mi">61</span>     <span class="k">if</span> <span class="n">doppler_rest</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
 
-<span class="nn">File /usr/share/miniconda/lib/python3.9/site-packages/astropy/units/core.py:126,</span> in <span class="ni">_UnitRegistry.__init__</span><span class="nt">(self, init, equivalencies, aliases)</span>
-<span class="g g-Whitespace">    </span><span class="mi">122</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_non_prefix_units</span> <span class="o">=</span> <span class="n">init</span><span class="o">.</span><span class="n">_non_prefix_units</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
-<span class="g g-Whitespace">    </span><span class="mi">123</span>     <span class="c1"># The physical type is a dictionary containing sets as values.</span>
-<span class="g g-Whitespace">    </span><span class="mi">124</span>     <span class="c1"># All of these must be copied otherwise we could alter the old</span>
-<span class="g g-Whitespace">    </span><span class="mi">125</span>     <span class="c1"># registry.</span>
-<span class="ne">--&gt; </span><span class="mi">126</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_by_physical_type</span> <span class="o">=</span> <span class="p">{</span><span class="n">k</span><span class="p">:</span> <span class="n">v</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span>
-<span class="g g-Whitespace">    </span><span class="mi">127</span>                               <span class="n">init</span><span class="o">.</span><span class="n">_by_physical_type</span><span class="o">.</span><span class="n">items</span><span class="p">()}</span>
-<span class="g g-Whitespace">    </span><span class="mi">129</span> <span class="k">else</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">130</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_reset_units</span><span class="p">()</span>
+<span class="nn">File /usr/share/miniconda/lib/python3.9/site-packages/astropy/units/quantity.py:429,</span> in <span class="ni">Quantity.__new__</span><span class="nt">(cls, value, unit, dtype, copy, order, subok, ndmin)</span>
+<span class="g g-Whitespace">    </span><span class="mi">426</span>     <span class="k">if</span> <span class="n">dtype</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">value</span><span class="o">.</span><span class="n">dtype</span><span class="o">.</span><span class="n">kind</span> <span class="ow">in</span> <span class="s1">'iu'</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">427</span>         <span class="n">dtype</span> <span class="o">=</span> <span class="nb">float</span>
+<span class="ne">--&gt; </span><span class="mi">429</span>     <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">dtype</span><span class="p">,</span> <span class="n">copy</span><span class="o">=</span><span class="n">copy</span><span class="p">,</span> <span class="n">order</span><span class="o">=</span><span class="n">order</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">430</span>                     <span class="n">subok</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">ndmin</span><span class="o">=</span><span class="n">ndmin</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">432</span> <span class="c1"># Maybe str, or list/tuple of Quantity? If so, this may set value_unit.</span>
+<span class="g g-Whitespace">    </span><span class="mi">433</span> <span class="c1"># To ensure array remains fast, we short-circuit it.</span>
+<span class="g g-Whitespace">    </span><span class="mi">434</span> <span class="n">value_unit</span> <span class="o">=</span> <span class="kc">None</span>
 
-<span class="nn">File /usr/share/miniconda/lib/python3.9/site-packages/astropy/units/core.py:126,</span> in <span class="ni">&lt;dictcomp&gt;</span><span class="nt">(.0)</span>
-<span class="g g-Whitespace">    </span><span class="mi">122</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_non_prefix_units</span> <span class="o">=</span> <span class="n">init</span><span class="o">.</span><span class="n">_non_prefix_units</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
-<span class="g g-Whitespace">    </span><span class="mi">123</span>     <span class="c1"># The physical type is a dictionary containing sets as values.</span>
-<span class="g g-Whitespace">    </span><span class="mi">124</span>     <span class="c1"># All of these must be copied otherwise we could alter the old</span>
-<span class="g g-Whitespace">    </span><span class="mi">125</span>     <span class="c1"># registry.</span>
-<span class="ne">--&gt; </span><span class="mi">126</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_by_physical_type</span> <span class="o">=</span> <span class="p">{</span><span class="n">k</span><span class="p">:</span> <span class="n">v</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span>
-<span class="g g-Whitespace">    </span><span class="mi">127</span>                               <span class="n">init</span><span class="o">.</span><span class="n">_by_physical_type</span><span class="o">.</span><span class="n">items</span><span class="p">()}</span>
-<span class="g g-Whitespace">    </span><span class="mi">129</span> <span class="k">else</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">130</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_reset_units</span><span class="p">()</span>
+<span class="nn">File /usr/share/miniconda/lib/python3.9/site-packages/astropy/coordinates/spectral_coordinate.py:242,</span> in <span class="ni">SpectralCoord.__array_finalize__</span><span class="nt">(self, obj)</span>
+<span class="g g-Whitespace">    </span><span class="mi">241</span> <span class="k">def</span> <span class="nf">__array_finalize__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">obj</span><span class="p">):</span>
+<span class="ne">--&gt; </span><span class="mi">242</span>     <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">__array_finalize__</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">243</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_radial_velocity</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="s1">'_radial_velocity'</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">244</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_observer</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="s1">'_observer'</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+
+<span class="nn">File /usr/share/miniconda/lib/python3.9/site-packages/astropy/coordinates/spectral_quantity.py:72,</span> in <span class="ni">SpectralQuantity.__array_finalize__</span><span class="nt">(self, obj)</span>
+<span class="g g-Whitespace">     </span><span class="mi">71</span> <span class="k">def</span> <span class="nf">__array_finalize__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">obj</span><span class="p">):</span>
+<span class="ne">---&gt; </span><span class="mi">72</span>     <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">__array_finalize__</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">73</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_doppler_rest</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="s1">'_doppler_rest'</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">74</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_doppler_convention</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="s1">'_doppler_convention'</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+
+<span class="nn">File /usr/share/miniconda/lib/python3.9/site-packages/astropy/units/quantity.py:549,</span> in <span class="ni">Quantity.__array_finalize__</span><span class="nt">(self, obj)</span>
+<span class="g g-Whitespace">    </span><span class="mi">547</span>     <span class="n">unit</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="s1">'_unit'</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">548</span>     <span class="k">if</span> <span class="n">unit</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">549</span>         <span class="bp">self</span><span class="o">.</span><span class="n">_set_unit</span><span class="p">(</span><span class="n">unit</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">551</span> <span class="c1"># Copy info if the original had `info` defined.  Because of the way the</span>
+<span class="g g-Whitespace">    </span><span class="mi">552</span> <span class="c1"># DataInfo works, `'info' in obj.__dict__` is False until the</span>
+<span class="g g-Whitespace">    </span><span class="mi">553</span> <span class="c1"># `info` attribute is accessed or set.</span>
+<span class="g g-Whitespace">    </span><span class="mi">554</span> <span class="k">if</span> <span class="s1">'info'</span> <span class="ow">in</span> <span class="n">obj</span><span class="o">.</span><span class="vm">__dict__</span><span class="p">:</span>
+
+<span class="nn">File /usr/share/miniconda/lib/python3.9/site-packages/astropy/units/quantity.py:1930,</span> in <span class="ni">SpecificTypeQuantity._set_unit</span><span class="nt">(self, unit)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1929</span> <span class="k">def</span> <span class="nf">_set_unit</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">unit</span><span class="p">):</span>
+<span class="ne">-&gt; </span><span class="mi">1930</span>     <span class="k">if</span> <span class="n">unit</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="ow">not</span> <span class="n">unit</span><span class="o">.</span><span class="n">is_equivalent</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_equivalent_unit</span><span class="p">):</span>
+<span class="g g-Whitespace">   </span><span class="mi">1931</span>         <span class="k">raise</span> <span class="n">UnitTypeError</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1932</span>             <span class="s2">"</span><span class="si">{}</span><span class="s2"> instances require units equivalent to '</span><span class="si">{}</span><span class="s2">'"</span>
+<span class="g g-Whitespace">   </span><span class="mi">1933</span>             <span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="vm">__name__</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_equivalent_unit</span><span class="p">)</span> <span class="o">+</span>
+<span class="g g-Whitespace">   </span><span class="mi">1934</span>             <span class="p">(</span><span class="s2">", but no unit was given."</span> <span class="k">if</span> <span class="n">unit</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span>
+<span class="g g-Whitespace">   </span><span class="mi">1935</span>              <span class="sa">f</span><span class="s2">", so cannot set it to '</span><span class="si">{</span><span class="n">unit</span><span class="si">}</span><span class="s2">'."</span><span class="p">))</span>
+<span class="g g-Whitespace">   </span><span class="mi">1937</span>     <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">_set_unit</span><span class="p">(</span><span class="n">unit</span><span class="p">)</span>
+
+<span class="nn">File /usr/share/miniconda/lib/python3.9/site-packages/astropy/units/core.py:945,</span> in <span class="ni">UnitBase.is_equivalent</span><span class="nt">(self, other, equivalencies)</span>
+<span class="g g-Whitespace">    </span><span class="mi">942</span> <span class="n">equivalencies</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_normalize_equivalencies</span><span class="p">(</span><span class="n">equivalencies</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">944</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">):</span>
+<span class="ne">--&gt; </span><span class="mi">945</span>     <span class="k">return</span> <span class="nb">any</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">is_equivalent</span><span class="p">(</span><span class="n">u</span><span class="p">,</span> <span class="n">equivalencies</span><span class="o">=</span><span class="n">equivalencies</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">946</span>                <span class="k">for</span> <span class="n">u</span> <span class="ow">in</span> <span class="n">other</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">948</span> <span class="n">other</span> <span class="o">=</span> <span class="n">Unit</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="n">parse_strict</span><span class="o">=</span><span class="s1">'silent'</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">950</span> <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_is_equivalent</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="n">equivalencies</span><span class="p">)</span>
+
+<span class="nn">File /usr/share/miniconda/lib/python3.9/site-packages/astropy/units/core.py:945,</span> in <span class="ni">&lt;genexpr&gt;</span><span class="nt">(.0)</span>
+<span class="g g-Whitespace">    </span><span class="mi">942</span> <span class="n">equivalencies</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_normalize_equivalencies</span><span class="p">(</span><span class="n">equivalencies</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">944</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">):</span>
+<span class="ne">--&gt; </span><span class="mi">945</span>     <span class="k">return</span> <span class="nb">any</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">is_equivalent</span><span class="p">(</span><span class="n">u</span><span class="p">,</span> <span class="n">equivalencies</span><span class="o">=</span><span class="n">equivalencies</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">946</span>                <span class="k">for</span> <span class="n">u</span> <span class="ow">in</span> <span class="n">other</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">948</span> <span class="n">other</span> <span class="o">=</span> <span class="n">Unit</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="n">parse_strict</span><span class="o">=</span><span class="s1">'silent'</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">950</span> <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_is_equivalent</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="n">equivalencies</span><span class="p">)</span>
+
+<span class="nn">File /usr/share/miniconda/lib/python3.9/site-packages/astropy/units/core.py:950,</span> in <span class="ni">UnitBase.is_equivalent</span><span class="nt">(self, other, equivalencies)</span>
+<span class="g g-Whitespace">    </span><span class="mi">945</span>     <span class="k">return</span> <span class="nb">any</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">is_equivalent</span><span class="p">(</span><span class="n">u</span><span class="p">,</span> <span class="n">equivalencies</span><span class="o">=</span><span class="n">equivalencies</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">946</span>                <span class="k">for</span> <span class="n">u</span> <span class="ow">in</span> <span class="n">other</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">948</span> <span class="n">other</span> <span class="o">=</span> <span class="n">Unit</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="n">parse_strict</span><span class="o">=</span><span class="s1">'silent'</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">950</span> <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_is_equivalent</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="n">equivalencies</span><span class="p">)</span>
+
+<span class="nn">File /usr/share/miniconda/lib/python3.9/site-packages/astropy/units/core.py:961,</span> in <span class="ni">UnitBase._is_equivalent</span><span class="nt">(self, other, equivalencies)</span>
+<span class="g g-Whitespace">    </span><span class="mi">958</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="n">UnrecognizedUnit</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">959</span>     <span class="k">return</span> <span class="kc">False</span>
+<span class="ne">--&gt; </span><span class="mi">961</span> <span class="k">if</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_get_physical_type_id</span><span class="p">()</span> <span class="o">==</span>
+<span class="g g-Whitespace">    </span><span class="mi">962</span>         <span class="n">other</span><span class="o">.</span><span class="n">_get_physical_type_id</span><span class="p">()):</span>
+<span class="g g-Whitespace">    </span><span class="mi">963</span>     <span class="k">return</span> <span class="kc">True</span>
+<span class="g g-Whitespace">    </span><span class="mi">964</span> <span class="k">elif</span> <span class="nb">len</span><span class="p">(</span><span class="n">equivalencies</span><span class="p">):</span>
+
+<span class="nn">File /usr/share/miniconda/lib/python3.9/site-packages/astropy/units/core.py:674,</span> in <span class="ni">UnitBase._get_physical_type_id</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">    </span><span class="mi">667</span> <span class="sd">"""</span>
+<span class="g g-Whitespace">    </span><span class="mi">668</span><span class="sd"> Returns an identifier that uniquely identifies the physical</span>
+<span class="g g-Whitespace">    </span><span class="mi">669</span><span class="sd"> type of this unit.  It is comprised of the bases and powers of</span>
+<span class="g g-Whitespace">    </span><span class="mi">670</span><span class="sd"> this unit, without the scale.  Since it is hashable, it is</span>
+<span class="g g-Whitespace">    </span><span class="mi">671</span><span class="sd"> useful as a dictionary key.</span>
+<span class="g g-Whitespace">    </span><span class="mi">672</span><span class="sd"> """</span>
+<span class="g g-Whitespace">    </span><span class="mi">673</span> <span class="n">unit</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">decompose</span><span class="p">()</span>
+<span class="ne">--&gt; </span><span class="mi">674</span> <span class="n">r</span> <span class="o">=</span> <span class="nb">zip</span><span class="p">([</span><span class="n">x</span><span class="o">.</span><span class="n">name</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">unit</span><span class="o">.</span><span class="n">bases</span><span class="p">],</span> <span class="n">unit</span><span class="o">.</span><span class="n">powers</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">675</span> <span class="c1"># bases and powers are already sorted in a unique way</span>
+<span class="g g-Whitespace">    </span><span class="mi">676</span> <span class="c1"># r.sort()</span>
+<span class="g g-Whitespace">    </span><span class="mi">677</span> <span class="n">r</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">r</span><span class="p">)</span>
 
 <span class="ne">KeyboardInterrupt</span>: 
 </pre>
