@@ -824,7 +824,7 @@ derive a more accurate fit in the below poly-fit analysis.
            </div>
            <div class="cell_output docutils container">
             <script type="application/vnd.jupyter.widget-view+json">
-             {"version_major": 2, "version_minor": 0, "model_id": "c2e28f8e00424076916ab3fa664c23ad"}
+             {"version_major": 2, "version_minor": 0, "model_id": "7f7e1d702f7949a2849c6b29848af2a1"}
             </script>
             <img align=center height=auto width=50% src="../../jdaviz_placeholder_new.png">
             </img align=center height=auto width=50%>
@@ -889,7 +889,7 @@ in this dataset.  In this cube, data from slice ~1060 to ~1090 shows the extende
            </div>
            <div class="cell_output docutils container">
             <script type="application/vnd.jupyter.widget-view+json">
-             {"version_major": 2, "version_minor": 0, "model_id": "82567770de56440aa081b662f260caa4"}
+             {"version_major": 2, "version_minor": 0, "model_id": "f6e3229a63194a37b3c3ad9eaf8ea252"}
             </script>
             <img align=center height=auto width=50% src="../../jdaviz_placeholder_new.png">
             </img align=center height=auto width=50%>
@@ -1116,7 +1116,7 @@ WARNING:astropy:Model is linear in parameters; consider using linear fitting met
              <div class="highlight">
               <pre><span></span>Continuum subtracted cube saved. PSF continuum cube saved.
 Time count
---- 1.1111655235290527 seconds ---
+--- 1.1213696002960205 seconds ---
 </pre>
              </div>
             </div>
@@ -1153,6 +1153,104 @@ Time count
 
 <span class="nb">print</span><span class="p">(</span><span class="s1">'Time count'</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">"--- </span><span class="si">%s</span><span class="s2"> seconds ---"</span> <span class="o">%</span> <span class="p">(</span><span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span> <span class="o">-</span> <span class="n">start_time</span><span class="p">))</span>
+</pre>
+             </div>
+            </div>
+           </div>
+           <div class="cell_output docutils container">
+            <div class="output traceback highlight-ipythontb notranslate">
+             <div class="highlight">
+              <pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="nn">Input In [13],</span> in <span class="ni">&lt;cell line: 14&gt;</span><span class="nt">()</span>
+<span class="g g-Whitespace">     </span><span class="mi">16</span> <span class="n">flux1</span> <span class="o">=</span> <span class="n">Spectrum1D</span><span class="p">(</span><span class="n">flux</span> <span class="o">=</span> <span class="n">cube</span><span class="p">[:,</span><span class="n">j</span><span class="p">,</span><span class="n">i</span><span class="p">]</span><span class="o">*</span><span class="n">u</span><span class="o">.</span><span class="n">Unit</span><span class="p">(</span><span class="s1">'count'</span><span class="p">),</span> <span class="n">spectral_axis</span><span class="o">=</span><span class="n">wave</span><span class="o">*</span><span class="n">u</span><span class="o">.</span><span class="n">micron</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">17</span> <span class="n">m</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">Polynomial1D</span><span class="p">(</span><span class="n">degree</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="ne">---&gt; </span><span class="mi">18</span> <span class="n">fitted_model</span> <span class="o">=</span> <span class="n">fit_lines</span><span class="p">(</span><span class="n">flux1</span><span class="p">[</span><span class="n">continuummin</span><span class="p">:</span><span class="n">continuummax</span><span class="p">],</span> <span class="n">m</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">19</span> <span class="n">cont_fit</span> <span class="o">=</span> <span class="p">[</span><span class="n">fitted_model</span><span class="o">.</span><span class="n">c1</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">fitted_model</span><span class="o">.</span><span class="n">c0</span><span class="o">.</span><span class="n">value</span><span class="p">]</span>
+<span class="g g-Whitespace">     </span><span class="mi">20</span> <span class="n">continuum</span> <span class="o">=</span> <span class="n">fitted_model</span><span class="p">(</span><span class="n">flux1</span><span class="o">.</span><span class="n">spectral_axis</span><span class="p">)</span>
+
+<span class="nn">File /usr/share/miniconda/lib/python3.9/site-packages/specutils/fitting/fitmodels.py:346,</span> in <span class="ni">fit_lines</span><span class="nt">(spectrum, model, fitter, exclude_regions, weights, window, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">339</span> <span class="c1">#</span>
+<span class="g g-Whitespace">    </span><span class="mi">340</span> <span class="c1"># Check to see if the model has units. If it does not</span>
+<span class="g g-Whitespace">    </span><span class="mi">341</span> <span class="c1"># have units then we are going to ignore them.</span>
+<span class="g g-Whitespace">    </span><span class="mi">342</span> <span class="c1">#</span>
+<span class="g g-Whitespace">    </span><span class="mi">344</span> <span class="n">ignore_units</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">model_guess</span><span class="p">,</span> <span class="n">model_guess</span><span class="o">.</span><span class="n">param_names</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span><span class="o">.</span><span class="n">unit</span> <span class="ow">is</span> <span class="kc">None</span>
+<span class="ne">--&gt; </span><span class="mi">346</span> <span class="n">fit_model</span> <span class="o">=</span> <span class="n">_fit_lines</span><span class="p">(</span><span class="n">spectrum</span><span class="p">,</span> <span class="n">model_guess</span><span class="p">,</span> <span class="n">fitter</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">347</span>                        <span class="n">exclude_regions</span><span class="p">,</span> <span class="n">weights</span><span class="p">,</span> <span class="n">model_window</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">348</span>                        <span class="n">ignore_units</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">349</span> <span class="k">if</span> <span class="n">model_guess</span><span class="o">.</span><span class="n">name</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">350</span>     <span class="n">fit_model</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">model_guess</span><span class="o">.</span><span class="n">name</span>
+
+<span class="nn">File /usr/share/miniconda/lib/python3.9/site-packages/specutils/fitting/fitmodels.py:487,</span> in <span class="ni">_fit_lines</span><span class="nt">(spectrum, model, fitter, exclude_regions, weights, window, ignore_units, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">484</span>     <span class="k">if</span> <span class="n">weights</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">485</span>         <span class="n">weights</span> <span class="o">=</span> <span class="n">weights</span><span class="p">[</span><span class="n">nmask</span><span class="p">]</span>
+<span class="ne">--&gt; </span><span class="mi">487</span> <span class="n">fit_model</span> <span class="o">=</span> <span class="n">fitter</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">dispersion</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">488</span>                    <span class="n">flux</span><span class="p">,</span> <span class="n">weights</span><span class="o">=</span><span class="n">weights</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">490</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">model</span><span class="o">.</span><span class="n">_supports_unit_fitting</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">491</span>     <span class="n">fit_model</span> <span class="o">=</span> <span class="n">QuantityModel</span><span class="p">(</span><span class="n">fit_model</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">492</span>                               <span class="n">spectrum</span><span class="o">.</span><span class="n">spectral_axis</span><span class="o">.</span><span class="n">unit</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">493</span>                               <span class="n">spectrum</span><span class="o">.</span><span class="n">flux</span><span class="o">.</span><span class="n">unit</span><span class="p">)</span>
+
+<span class="nn">File /usr/share/miniconda/lib/python3.9/site-packages/astropy/modeling/fitting.py:248,</span> in <span class="ni">fitter_unit_support.&lt;locals&gt;.wrapper</span><span class="nt">(self, model, x, y, z, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">246</span> <span class="c1"># We run the fitting</span>
+<span class="g g-Whitespace">    </span><span class="mi">247</span> <span class="k">if</span> <span class="n">z</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">248</span>     <span class="n">model_new</span> <span class="o">=</span> <span class="n">func</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">xdata</span><span class="p">,</span> <span class="n">ydata</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">249</span> <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">250</span>     <span class="n">model_new</span> <span class="o">=</span> <span class="n">func</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">xdata</span><span class="p">,</span> <span class="n">ydata</span><span class="p">,</span> <span class="n">zdata</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+<span class="nn">File /usr/share/miniconda/lib/python3.9/site-packages/astropy/modeling/fitting.py:1159,</span> in <span class="ni">LevMarLSQFitter.__call__</span><span class="nt">(self, model, x, y, z, weights, maxiter, acc, epsilon, estimate_jacobian)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1157</span>     <span class="n">dfunc</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_wrap_deriv</span>
+<span class="g g-Whitespace">   </span><span class="mi">1158</span> <span class="n">init_values</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">_model_to_fit_params</span><span class="p">(</span><span class="n">model_copy</span><span class="p">)</span>
+<span class="ne">-&gt; </span><span class="mi">1159</span> <span class="n">fitparams</span><span class="p">,</span> <span class="n">cov_x</span><span class="p">,</span> <span class="n">dinfo</span><span class="p">,</span> <span class="n">mess</span><span class="p">,</span> <span class="n">ierr</span> <span class="o">=</span> <span class="n">optimize</span><span class="o">.</span><span class="n">leastsq</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1160</span>     <span class="bp">self</span><span class="o">.</span><span class="n">objective_function</span><span class="p">,</span> <span class="n">init_values</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="n">farg</span><span class="p">,</span> <span class="n">Dfun</span><span class="o">=</span><span class="n">dfunc</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1161</span>     <span class="n">col_deriv</span><span class="o">=</span><span class="n">model_copy</span><span class="o">.</span><span class="n">col_fit_deriv</span><span class="p">,</span> <span class="n">maxfev</span><span class="o">=</span><span class="n">maxiter</span><span class="p">,</span> <span class="n">epsfcn</span><span class="o">=</span><span class="n">epsilon</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1162</span>     <span class="n">xtol</span><span class="o">=</span><span class="n">acc</span><span class="p">,</span> <span class="n">full_output</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1163</span> <span class="n">_fitter_to_model_params</span><span class="p">(</span><span class="n">model_copy</span><span class="p">,</span> <span class="n">fitparams</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1164</span> <span class="bp">self</span><span class="o">.</span><span class="n">fit_info</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">dinfo</span><span class="p">)</span>
+
+<span class="nn">File /usr/share/miniconda/lib/python3.9/site-packages/scipy/optimize/_minpack_py.py:432,</span> in <span class="ni">leastsq</span><span class="nt">(func, x0, args, Dfun, full_output, col_deriv, ftol, xtol, gtol, maxfev, epsfcn, factor, diag)</span>
+<span class="g g-Whitespace">    </span><span class="mi">430</span>     <span class="k">if</span> <span class="n">maxfev</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">431</span>         <span class="n">maxfev</span> <span class="o">=</span> <span class="mi">100</span> <span class="o">*</span> <span class="p">(</span><span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">432</span>     <span class="n">retval</span> <span class="o">=</span> <span class="n">_minpack</span><span class="o">.</span><span class="n">_lmder</span><span class="p">(</span><span class="n">func</span><span class="p">,</span> <span class="n">Dfun</span><span class="p">,</span> <span class="n">x0</span><span class="p">,</span> <span class="n">args</span><span class="p">,</span> <span class="n">full_output</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">433</span>                              <span class="n">col_deriv</span><span class="p">,</span> <span class="n">ftol</span><span class="p">,</span> <span class="n">xtol</span><span class="p">,</span> <span class="n">gtol</span><span class="p">,</span> <span class="n">maxfev</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">434</span>                              <span class="n">factor</span><span class="p">,</span> <span class="n">diag</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">436</span> <span class="n">errors</span> <span class="o">=</span> <span class="p">{</span><span class="mi">0</span><span class="p">:</span> <span class="p">[</span><span class="s2">"Improper input parameters."</span><span class="p">,</span> <span class="ne">TypeError</span><span class="p">],</span>
+<span class="g g-Whitespace">    </span><span class="mi">437</span>           <span class="mi">1</span><span class="p">:</span> <span class="p">[</span><span class="s2">"Both actual and predicted relative reductions "</span>
+<span class="g g-Whitespace">    </span><span class="mi">438</span>               <span class="s2">"in the sum of squares</span><span class="se">\n</span><span class="s2">  are at most </span><span class="si">%f</span><span class="s2">"</span> <span class="o">%</span> <span class="n">ftol</span><span class="p">,</span> <span class="kc">None</span><span class="p">],</span>
+   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">457</span>               <span class="s2">"columns of</span><span class="se">\n</span><span class="s2">  the Jacobian to machine "</span>
+<span class="g g-Whitespace">    </span><span class="mi">458</span>               <span class="s2">"precision."</span> <span class="o">%</span> <span class="n">gtol</span><span class="p">,</span> <span class="ne">ValueError</span><span class="p">]}</span>
+<span class="g g-Whitespace">    </span><span class="mi">460</span> <span class="c1"># The FORTRAN return value (possible return values are &gt;= 0 and &lt;= 8)</span>
+
+<span class="nn">File /usr/share/miniconda/lib/python3.9/site-packages/astropy/modeling/fitting.py:1236,</span> in <span class="ni">LevMarLSQFitter._wrap_deriv</span><span class="nt">(params, model, weights, x, y, z)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1234</span> <span class="k">if</span> <span class="n">z</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1235</span>     <span class="k">try</span><span class="p">:</span>
+<span class="ne">-&gt; </span><span class="mi">1236</span>         <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">np</span><span class="o">.</span><span class="n">ravel</span><span class="p">(</span><span class="n">_</span><span class="p">)</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">weights</span><span class="p">)</span> <span class="o">*</span>
+<span class="g g-Whitespace">   </span><span class="mi">1237</span>                          <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">fit_deriv</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="o">*</span><span class="n">params</span><span class="p">))])</span>
+<span class="g g-Whitespace">   </span><span class="mi">1238</span>     <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1239</span>         <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">np</span><span class="o">.</span><span class="n">ravel</span><span class="p">(</span><span class="n">_</span><span class="p">)</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">weights</span><span class="p">)</span> <span class="o">*</span>
+<span class="g g-Whitespace">   </span><span class="mi">1240</span>                          <span class="n">np</span><span class="o">.</span><span class="n">moveaxis</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1241</span>                              <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">fit_deriv</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="o">*</span><span class="n">params</span><span class="p">)),</span>
+<span class="g g-Whitespace">   </span><span class="mi">1242</span>                              <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">)])</span><span class="o">.</span><span class="n">transpose</span><span class="p">()</span>
+
+<span class="nn">File /usr/share/miniconda/lib/python3.9/site-packages/astropy/modeling/fitting.py:1236,</span> in <span class="ni">&lt;listcomp&gt;</span><span class="nt">(.0)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1234</span> <span class="k">if</span> <span class="n">z</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1235</span>     <span class="k">try</span><span class="p">:</span>
+<span class="ne">-&gt; </span><span class="mi">1236</span>         <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">np</span><span class="o">.</span><span class="n">ravel</span><span class="p">(</span><span class="n">_</span><span class="p">)</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">weights</span><span class="p">)</span> <span class="o">*</span>
+<span class="g g-Whitespace">   </span><span class="mi">1237</span>                          <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">fit_deriv</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="o">*</span><span class="n">params</span><span class="p">))])</span>
+<span class="g g-Whitespace">   </span><span class="mi">1238</span>     <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1239</span>         <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">np</span><span class="o">.</span><span class="n">ravel</span><span class="p">(</span><span class="n">_</span><span class="p">)</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">weights</span><span class="p">)</span> <span class="o">*</span>
+<span class="g g-Whitespace">   </span><span class="mi">1240</span>                          <span class="n">np</span><span class="o">.</span><span class="n">moveaxis</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1241</span>                              <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">fit_deriv</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="o">*</span><span class="n">params</span><span class="p">)),</span>
+<span class="g g-Whitespace">   </span><span class="mi">1242</span>                              <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">)])</span><span class="o">.</span><span class="n">transpose</span><span class="p">()</span>
+
+<span class="nn">File &lt;__array_function__ internals&gt;:179,</span> in <span class="ni">ravel</span><span class="nt">(*args, **kwargs)</span>
+
+<span class="nn">File /usr/share/miniconda/lib/python3.9/site-packages/numpy/core/fromnumeric.py:1752,</span> in <span class="ni">_ravel_dispatcher</span><span class="nt">(a, order)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1751</span> <span class="k">def</span> <span class="nf">_ravel_dispatcher</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">order</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="ne">-&gt; </span><span class="mi">1752</span>     <span class="k">return</span> <span class="p">(</span><span class="n">a</span><span class="p">,)</span>
+
+<span class="ne">KeyboardInterrupt</span>: 
 </pre>
              </div>
             </div>
