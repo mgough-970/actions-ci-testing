@@ -38,7 +38,7 @@ jobs:
           pip install nbval
           pip install nbconvert
           export filename = ${{ matrix.notebooks }}
-          export path = ${{filename%/*}}/requirements.txt
+          export path = ${${{filename}}%/*}/requirements.txt
           pip install -r ${{path}}
       - name: Execute notebooks
         run: |
