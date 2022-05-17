@@ -38,5 +38,5 @@ jobs:
           pip install nbconvert
       - name: Execute notebooks
         run: |
-          jupyter nbconvert --template classic --to html --execute ${{ matrix.notebooks }}
+          jupyter nbconvert --template classic --to html --execute "${{ matrix.notebooks }}"
 
