@@ -1,7 +1,11 @@
 name: MatrixTest
 on: [push, pull_request]
+env:
+  ARCH_ON_CI: "normal"
+  IS_CRON: "true"
+
 jobs:
-  list-notebooks:
+  gather-notebooks:
     runs-on: ubuntu-latest
     outputs:
       matrix: ${{ steps.set-matrix.outputs.matrix }}
@@ -9,13 +13,13 @@ jobs:
       - uses: actions/checkout@v2
       - id: set-matrix
         run: echo "::set-output name=matrix::$(find notebooks -name "*.ipynb" | jq -cnR '[inputs | select(length>0)]')"
-  check:
-    needs: list-notebooks
+  nightly-notebook-execution:
+    needs: gather-notebooks
     runs-on: ubuntu-latest
     strategy:
         fail-fast: false
         matrix:
-            notebooks: ${{ fromJson(needs.list-notebooks.outputs.matrix) }}
+            notebooks: ${{ fromJson(needs.gather-notebooks.outputs.matrix) }}
     steps:
       - uses: actions/checkout@v2   
       #- run: | 
@@ -33,12 +37,14 @@ jobs:
       - name: Install dependencies
         run: |
           #conda env update --file CIenvironment.yml --name base
-          pip install -r CIenvironment.yml
+          pip install -r requirements.txt
           pip install pytest
           pip install nbval
           pip install nbconvert
-
       - name: Execute notebooks
         run: |
           jupyter nbconvert --template classic --to html --execute "${{ matrix.notebooks }}"
+      #- name: Validate notebooks 
+      #  run: |
+      #   pytest --nbval "${{ matrix.notebooks }}"
 
