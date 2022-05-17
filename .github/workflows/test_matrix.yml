@@ -38,8 +38,8 @@ jobs:
           pip install nbval
           pip install nbconvert
           export filename = ${{ matrix.notebooks }}
-          export path = ${filename%/*}/requirements.txt
-          pip install -r "$path"
+          export path = ${{filename%/*}}/requirements.txt
+          pip install -r ${{path}}
       - name: Execute notebooks
         run: |
           jupyter nbconvert --template classic --to html --execute "${{ matrix.notebooks }}"
