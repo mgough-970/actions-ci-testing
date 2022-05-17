@@ -37,6 +37,7 @@ jobs:
           pip install pytest
           pip install nbval
           pip install nbconvert
+          pip install -r "${${{ matrix.notebooks }}%/*}"requirements.txt
       - name: Execute notebooks
         run: |
           jupyter nbconvert --template classic --to html --execute "${{ matrix.notebooks }}"
