@@ -22,9 +22,6 @@ jobs:
             notebooks: ${{ fromJson(needs.gather-notebooks.outputs.matrix) }}
     steps:
       - uses: actions/checkout@v2   
-      #- run: | 
-      #      pip install -r ${${{ matrix.notebooks }}%/*}/requirements.txt
-      - uses: actions/checkout@v2
       - name: Set up Python 3.8.12
         uses: actions/setup-python@v2 ## needed for caching
         with:
@@ -36,8 +33,7 @@ jobs:
           echo $CONDA/bin >> $GITHUB_PATH
       - name: Install dependencies
         run: |
-          #conda env update --file CIenvironment.yml --name base
-          pip install -r requirements.txt
+          pip install -r $(dirname "${{ matrix.notebooks }}")/requirements.txt
           pip install pytest
           pip install nbval
           pip install nbconvert
@@ -57,9 +53,6 @@ jobs:
             notebooks: ${{ fromJson(needs.gather-notebooks.outputs.matrix) }}
     steps:
       - uses: actions/checkout@v2   
-      #- run: | 
-      #      pip install -r ${${{ matrix.notebooks }}%/*}/requirements.txt
-      - uses: actions/checkout@v2
       - name: Set up Python 3.8.12
         uses: actions/setup-python@v2 ## needed for caching
         with:
