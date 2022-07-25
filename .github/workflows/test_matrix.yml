@@ -9,9 +9,21 @@ jobs:
     outputs:
       matrix: ${{ steps.set-matrix.outputs.matrix }}
     steps:
-      - uses: actions/checkout@v2
-      - id: set-matrix
-        run: echo "::set-output name=matrix::$(find notebooks -name "*.ipynb" | jq -cnR '[inputs | select(length>0)]')"
+    - name: Gather changed notebooks
+    - uses: actions/checkout@v2, tj-actions/changed-files@v18.4
+      id: changed-files
+      #uses: tj-actions/changed-files@v18.4
+      with:
+        files: |
+          **/*.ipynb
+    - name: populate-matrix
+     # run: |
+     #  for file in ${{ steps.changed-files.outputs.all_changed_files }}; do
+     #     echo "$file was updated, validating notebook"
+     #     run: | 
+     #       pytest --nbval --timeout=7200 $file
+     #   done    
+      run: echo "::set-output name=matrix::$(${{ steps.changed-files.outputs.all_changed_files }}| jq -cnR '[inputs | select(length>0)]')"
         
   notebook-validation:
     needs: gather-notebooks
