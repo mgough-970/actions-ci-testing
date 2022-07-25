@@ -10,13 +10,14 @@ jobs:
       matrix: ${{ steps.set-matrix.outputs.matrix }}
     steps:
     - uses: actions/checkout@v2
-    - name: gather-changed
+    - name: changed-files
       uses: tj-actions/changed-files@v18.4
       with:
         files: |
           **/*.ipynb
     - name: set-matrix
-      run: echo "::set-output name=matrix::$(${{ steps.changed-files.outputs.all_changed_files }}| jq -cnR '[inputs | select(length>0)]')"
+      id: set-matrix
+      run: echo "::set-output name=matrix::$( ${{ steps.changed-files.outputs.all_changed_files }} | jq -cnR '[inputs | select(length>0)]')"
          
   notebook-validation:
     needs: gather-notebooks
