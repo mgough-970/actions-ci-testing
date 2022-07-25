@@ -52,7 +52,7 @@ from specutils import Spectrum1D
 from jdaviz.app import Application
 
 
-# In[2]:
+# In[ ]:
 
 
 
@@ -62,7 +62,7 @@ import matplotlib.pyplot as plt
 plt.rcParams.update({'figure.max_open_warning': 0})
 
 
-# In[3]:
+# In[ ]:
 
 
 
@@ -108,7 +108,7 @@ plt.show()
 # difficult.  As a result, it is more accurate to do a simple linear fit to the red side of the spectrum rather than
 # a more expanded spectral region that encompasses the emission..
 
-# In[4]:
+# In[ ]:
 
 
 
@@ -156,7 +156,7 @@ plt.show()
 #  regions and append them into a larger set of wave / flux arrays to 
 #  derive a more accurate fit in the below poly-fit analysis.
 
-# In[5]:
+# In[ ]:
 
 
 
@@ -165,7 +165,7 @@ app = Application(configuration='cubeviz')
 app
 
 
-# In[6]:
+# In[ ]:
 
 
 
@@ -184,7 +184,7 @@ app.load_data(fn)
 # display scaling.  Decreasing the maximum display value by 10x brings out the low level extended emission
 # in this dataset.  In this cube, data from slice ~1060 to ~1090 shows the extended [Fe II] emission.  
 
-# In[7]:
+# In[ ]:
 
 
 # show the 1-D spectrum by grabbing the cubeviz spectral viewer app within the notebook.
@@ -206,7 +206,7 @@ spectrum_viewer.show()
 # 
 # (If the notebook is being run non-interactively, this cell will automatically make a dataset that mimics the AGN specrum).
 
-# In[8]:
+# In[ ]:
 
 
 # Grab the layer spectrum that corresponds to the central AGN position as an array in the notebook, then plot it.
@@ -233,7 +233,7 @@ plt.show()
 # 
 # (If the notebook is being run non-interactively, automatically make two datasets that mimic the AGN outflow red/blueshifted spectra).
 
-# In[9]:
+# In[ ]:
 
 
 
@@ -266,7 +266,7 @@ plt.plot(wave[wavemin:wavemax], spec_feii_red.flux[wavemin:wavemax], color='r')
 plt.show()
 
 
-# In[10]:
+# In[ ]:
 
 
 
@@ -290,7 +290,7 @@ plt.plot(wave, continuum)
 plt.show()
 
 
-# In[11]:
+# In[ ]:
 
 
 # That looks pretty good.
@@ -333,7 +333,7 @@ plt.plot(wave, continuum)
 plt.show()
 
 
-# In[12]:
+# In[ ]:
 
 
 
@@ -369,7 +369,7 @@ print('Time count')
 print("--- %s seconds ---" % (time.time() - start_time))
 
 
-# In[13]:
+# In[ ]:
 
 
 
@@ -402,7 +402,7 @@ print('Time count')
 print("--- %s seconds ---" % (time.time() - start_time))
 
 
-# In[14]:
+# In[ ]:
 
 
 
@@ -421,7 +421,7 @@ plt.plot(wave[wavemin:wavemax], cont_sub_cube[wavemin:wavemax,30,30])
 plt.show()
 
 
-# In[15]:
+# In[ ]:
 
 
 
@@ -472,7 +472,7 @@ plt.show()
 central_flux_model_only = component1 + component2
 
 
-# In[16]:
+# In[ ]:
 
 
 
