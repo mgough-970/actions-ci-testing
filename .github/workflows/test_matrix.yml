@@ -17,7 +17,7 @@ jobs:
           **/*.ipynb
     - name: set-matrix
       id: set-matrix
-      run: echo "::set-output name=matrix::${{ steps.changed-files.outputs.all_changed_files }}
+      run: echo "::set-output name=matrix::${{ steps.changed-files.outputs.all_changed_files }}"
      # run: echo "::set-output name=matrix::$( ${{ steps.changed-files.outputs.all_changed_files }} | jq -cnR '[inputs | select(length>0)]')"
          
   notebook-validation:
