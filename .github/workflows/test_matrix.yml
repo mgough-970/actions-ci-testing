@@ -7,20 +7,22 @@ jobs:
   gather-notebooks:
     runs-on: ubuntu-latest
     outputs:
-      matrix: ${{ steps.get-changed-files.outputs.matrix }}
+      matrix: ${{ steps.set-matrix.outputs.matrix }}
       #matrix: ${{ steps.set-matrix.outputs.matrix }}
     steps:
     - uses: actions/checkout@v2
     - name: changed-files
       id: get-changed-files
-      uses: hellofresh/action-changed-files@v1
+      uses: jitterbit/get-changed-files@v1
       #uses: tj-actions/changed-files@v18.4
       with:
+        format: 'json'
         files: |
-          **/*.ipynb
-   # - name: set-matrix
-   #   id: set-matrix
-   #   run: echo "::set-output name=matrix::$( ${{ steps.get-changed-files.outputs.all_changed_files }} )"
+          **/*.ipynb   
+    - run: echo "::set-output name=matrix::$( ${{ steps.get-changed-files.outputs.all }} | jq -cnR '[inputs | select(length>0)]' )"
+    #- name: set-matrix
+    #  id: set-matrix
+    #  run: echo "::set-output name=matrix::$( ${{ steps.files.outputs.all }} )"
      # run: echo "::set-output name=matrix::$( ${{ steps.changed-files.outputs.all_changed_files }} | jq -cnR '[inputs | select(length>0)]')"
          
   notebook-validation:
