@@ -15,6 +15,7 @@ jobs:
       id: get-changed-files
       uses: tj-actions/changed-files@v18.4
       with:
+        separator: ","
         files: |
           **/*.ipynb
           
