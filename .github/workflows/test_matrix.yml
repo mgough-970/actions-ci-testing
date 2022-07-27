@@ -1,5 +1,21 @@
+## Workflow to run when there is a direct push to the main branch, or a PR is submitted.  
+## The workflow runs three workflows - Valdation, Execution, and HTML Deployment.
+## The jobs are dependent on the previous succeding - if valdiation fails, the rest will, if 
+## execution fails, html deployment will not run.
+## Each job runs on its own runner with an independent environment, with the exception of the 
+## HTML generation, which occurs on a single runner using the global environment.
+
 name: MatrixTest
-on: [push, pull_request]
+on: 
+  push:
+    branches:
+      - main
+    paths:
+      - 'notebooks/**.ipynb'
+      - '*.yml'
+  pull_request:
+    paths:
+      - 'notebooks/**.ipynb'
 env:
   ARCH_ON_CI: "normal"
 
@@ -7,10 +23,10 @@ jobs:
   gather-notebooks:
     runs-on: ubuntu-latest
     outputs:
-      #matrix: ${{ steps.get-changed-files.outputs.all_changed_files }}
       matrix: ${{ steps.set-matrix.outputs.matrix }}
     steps:
     - uses: actions/checkout@v2
+    ## routine to gather only the changed notebook files and supply them to the matrix
     - name: changed-files
       id: get-changed-files
       uses: tj-actions/changed-files@v18.4
@@ -18,17 +34,14 @@ jobs:
         separator: ","
         files: |
           **/*.ipynb
-          
+    ## convert the list of files to an array and push them into the matrix as a json object      
     - name: set-matrix
       id: set-matrix
       run: |
         IFS=',' read -r -a array <<< "${{steps.get-changed-files.outputs.all_changed_files}}"
         echo "{$array}"
         echo "::set-output name=matrix::$(jq --compact-output --null-input '$ARGS.positional' --args -- "${array[@]}")"
-        #echo "::set-output name=matrix::$( "echo "${array[@]}"" | jq -cnR '[inputs | select(length>0)]')"
-      #run: echo "::set-output name=matrix::$( ${{ steps.files.outputs.all }} )"
-      #run: echo "::set-output name=matrix::( "echo ${{ steps.changed-files.outputs.all_changed_files }}" | jq -cnR '[inputs | select(length>0)]')"
-         
+ 
   notebook-validation:
     needs: gather-notebooks
     runs-on: ubuntu-latest
@@ -49,7 +62,7 @@ jobs:
           echo $CONDA/bin >> $GITHUB_PATH
       - name: Install dependencies
         run: |
-          #conda env update --file CIenvironment.yml --name base
+          ## Install the local requirements file
           pip install -r $(dirname "${{ matrix.notebooks }}")/requirements.txt
           pip install pytest
           pip install nbval
@@ -78,6 +91,7 @@ jobs:
           echo $CONDA/bin >> $GITHUB_PATH
       - name: Install dependencies
         run: |
+          ## Install the local requirements file
           pip install -r $(dirname "${{ matrix.notebooks }}")/requirements.txt
           pip install pytest
           pip install nbval
@@ -108,13 +122,13 @@ jobs:
     - name: Install Python dependencies
       run: |
         sudo apt-get install python3-pip
+        ## Install the global requirements file - needed for jupyter-book
         pip install -r requirements.txt
-        #        pip install git+git://github.com/executablebookproject/cli.git
         pip install ghp-import
         pip install jupyter-book
         pip install myst-nb
         pip install nbval
-        ## test to bypass the jupyter-book lower version
+        ## work-around to bypass the jupyter-book lower version
         pip install jsonschema==4.6.0
         PATH="${PATH}:${HOME}/.local/bin"
     - name: Build book HTML 
