@@ -22,7 +22,7 @@ jobs:
     - name: set-matrix
       id: set-matrix
       #run: echo "::set-output name=matrix::$( ${{ steps.files.outputs.all }} )"
-      run: echo "::set-output name=matrix::[ ${{ steps.changed-files.outputs.all_changed_files }} ]"
+      run: echo "::set-output name=matrix::( echo ${{ steps.changed-files.outputs.all_changed_files }} | jq -R -s -c 'split("\n"[:1]')"
          
   notebook-validation:
     needs: gather-notebooks
