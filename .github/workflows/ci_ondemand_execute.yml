@@ -44,7 +44,7 @@ jobs:
           #conda env update --file CIenvironment.yml --name base
           pip install numpy
           pip install radvel
-          pip install -r requirements.txt
+          pip install -r $(dirname "${{ matrix.notebooks }}")/requirements.txt
           pip install pytest
           pip install nbval
           pip install nbconvert
