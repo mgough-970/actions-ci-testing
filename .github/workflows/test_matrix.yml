@@ -72,7 +72,7 @@ jobs:
          pytest --nbval "${{ matrix.notebooks }}"
          
   notebook-execution:
-    needs: [gather-notebooks, notebook-validation]
+    needs: gather-notebooks
     runs-on: ubuntu-latest
     strategy:
         fail-fast: false
@@ -101,7 +101,7 @@ jobs:
           jupyter nbconvert --template classic --to html --execute "${{ matrix.notebooks }}"
           
   deploy-book:
-    needs: notebook-execution
+    needs: [gather-notebooks, notebook-validation]
     runs-on: ubuntu-latest
     steps:
     - name: Free up disk space
