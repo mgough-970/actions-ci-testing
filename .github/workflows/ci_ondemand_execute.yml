@@ -18,6 +18,35 @@ jobs:
       - id: set-matrix
         run: echo "::set-output name=matrix::$(find notebooks -name "*.ipynb" | jq -cnR '[inputs | select(length>0)]')"
         
+  notebook-validation:
+    needs: gather-notebooks
+    runs-on: ubuntu-latest
+    strategy:
+        fail-fast: false
+        matrix:
+            notebooks: ${{ fromJson(needs.gather-notebooks.outputs.matrix) }}
+    steps:
+      - uses: actions/checkout@v2   
+      - name: Set up Python 3.8.12
+        uses: actions/setup-python@v2 ## needed for caching
+        with:
+          python-version: 3.8.12
+          cache: 'pip'
+      - name: Add conda to system path
+        run: |
+          # $CONDA is an environment variable pointing to the root of the miniconda directory
+          echo $CONDA/bin >> $GITHUB_PATH
+      - name: Install dependencies
+        run: |
+          ## Install the local requirements file
+          pip install -r $(dirname "${{ matrix.notebooks }}")/requirements.txt
+          pip install pytest
+          pip install nbval
+          pip install nbconvert
+      - name: Validate notebooks 
+        run: |
+         pytest --nbval "${{ matrix.notebooks }}"
+         
   notebook-execution:
     needs: gather-notebooks
     runs-on: ubuntu-latest
@@ -53,7 +82,7 @@ jobs:
           jupyter nbconvert --template classic --to html --execute "${{ matrix.notebooks }}"
           
   deploy-book:
-    needs: notebook-execution
+    needs: [notebook-execution, notebook-validation]
     runs-on: ubuntu-latest
     steps:
     - name: Free up disk space
