@@ -101,7 +101,7 @@ jobs:
           jupyter nbconvert --template classic --to html --execute "${{ matrix.notebooks }}"
           
   deploy-book:
-    needs: [gather-notebooks, notebook-validation]
+    needs: [notebook-execution, notebook-validation]
     runs-on: ubuntu-latest
     steps:
     - name: Free up disk space
