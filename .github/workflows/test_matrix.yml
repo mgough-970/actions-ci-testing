@@ -15,8 +15,6 @@ jobs:
       id: get-changed-files
       uses: trilom/file-changes-action@v1.0.0
       #uses: tj-actions/changed-files@v18.4
-      with:
-       githubToken: $ {{ secrets.GITHUB_TOKEN }}
     - name: Create list of modified files
       id: modified-files
       uses: lucaspinheirogit/list-from-string-array-action@v1.4.3
