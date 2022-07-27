@@ -7,19 +7,22 @@ jobs:
   gather-notebooks:
     runs-on: ubuntu-latest
     outputs:
-      matrix: ${{ steps.changed-files.outputs.matrix }}
+      matrix: ${{ steps.modified-files.outputs.matrix }}
       #matrix: ${{ steps.set-matrix.outputs.matrix }}
     steps:
     - uses: actions/checkout@v2
     - name: changed-files
       id: get-changed-files
-      uses: jitterbit/get-changed-files@v1
+      uses: trilom/file-changes-action@v1.0.0
       #uses: tj-actions/changed-files@v18.4
       with:
-        format: 'json'
-        files: |
-          **/*.ipynb   
-    - run: echo "::set-output name=matrix::$( ${{ steps.get-changed-files.outputs.all }} | jq -cnR '[inputs | select(length>0)]' )"
+       githubToken: $ {{ secrets.GITHUB_TOKEN }}
+    - name: Create list of modified files
+      id: modified-files
+      uses: lucaspinheirogit/list-from-string-array-action@v1.4.3
+      with:
+        stringArray: ${{ steps.modified-files.outputs.files_modified }}
+    #- run: echo "::set-output name=matrix::$( ${{ steps.get-changed-files.outputs.all }} | jq -cnR '[inputs | select(length>0)]' )"
     #- name: set-matrix
     #  id: set-matrix
     #  run: echo "::set-output name=matrix::$( ${{ steps.files.outputs.all }} )"
