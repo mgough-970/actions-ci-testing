@@ -149,6 +149,6 @@ File [0;32m/usr/share/miniconda/lib/python3.9/site-packages/stdatamodels/util.p
 [1;32m     65[0m new_dtype [38;5;241m=[39m []
 [1;32m     66[0m [38;5;28;01mfor[39;00m i [38;5;129;01min[39;00m [38;5;28mrange[39m([38;5;28mlen[39m(out_dtype[38;5;241m.[39mfields)):
 
-[0;31mValueError[0m: Column names don't match schema. Schema has {'flux_var_rnoise', 'bkgd_var_poisson', 'flux_error', 'sb_var_poisson', 'flux_var_poisson', 'sb_var_flat', 'bkgd_var_flat', 'bkgd_var_rnoise', 'flux_var_flat', 'sb_var_rnoise', 'bkgd_error'}. Data has {'error', 'berror'}
-ValueError: Column names don't match schema. Schema has {'flux_var_rnoise', 'bkgd_var_poisson', 'flux_error', 'sb_var_poisson', 'flux_var_poisson', 'sb_var_flat', 'bkgd_var_flat', 'bkgd_var_rnoise', 'flux_var_flat', 'sb_var_rnoise', 'bkgd_error'}. Data has {'error', 'berror'}
+[0;31mValueError[0m: Column names don't match schema. Schema has {'bkgd_error', 'bkgd_var_poisson', 'flux_error', 'bkgd_var_rnoise', 'sb_var_rnoise', 'bkgd_var_flat', 'flux_var_flat', 'sb_var_flat', 'flux_var_rnoise', 'sb_var_poisson', 'flux_var_poisson'}. Data has {'berror', 'error'}
+ValueError: Column names don't match schema. Schema has {'bkgd_error', 'bkgd_var_poisson', 'flux_error', 'bkgd_var_rnoise', 'sb_var_rnoise', 'bkgd_var_flat', 'flux_var_flat', 'sb_var_flat', 'flux_var_rnoise', 'sb_var_poisson', 'flux_var_poisson'}. Data has {'berror', 'error'}
 
