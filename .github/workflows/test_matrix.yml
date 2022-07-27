@@ -59,7 +59,7 @@ jobs:
          pytest --nbval "${{ matrix.notebooks }}"
          
   notebook-execution:
-    needs: notebook-validation
+    needs: [gather-notebooks, notebook-validation]
     runs-on: ubuntu-latest
     strategy:
         fail-fast: false
