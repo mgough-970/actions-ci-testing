@@ -7,8 +7,8 @@ jobs:
   gather-notebooks:
     runs-on: ubuntu-latest
     outputs:
-      #matrix: ${{ steps.changed-files.outputs.all_changed_files.matrix }}
-      matrix: ${{ steps.set-matrix.outputs.matrix }}
+      matrix: ${{ steps.get-changed-files.outputs.all_changed_files }}
+      #matrix: ${{ steps.set-matrix.outputs.matrix }}
     steps:
     - uses: actions/checkout@v2
     - name: changed-files
@@ -17,15 +17,7 @@ jobs:
       with:
         files: |
           **/*.ipynb
-    - name: Set matrix
-      id: set-matrix
-      run: |
-        for file in ${{ steps.get-changed-files.outputs.all_changed_files }}; do
-          echo "$file was updated, validating notebook"
-          run: | 
-            echo "::set-output name=matrix::$( $file | jq -cnR '[inputs | select(length>0)]' )"
-        done
-        
+          
     #- name: set-matrix
     #  id: set-matrix
     #  run: echo "::set-output name=matrix::$( ${{ steps.files.outputs.all }} )"
