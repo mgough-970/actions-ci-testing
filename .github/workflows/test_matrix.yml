@@ -19,7 +19,7 @@ jobs:
           **/*.ipynb
     - name: Set matrix
       id: set-matrix
-    - run: echo "::set-output name=matrix::$( ${{ steps.changed-files.outputs.all_changed_files }} | jq -cnR '[inputs | select(length>0)]' )"
+      run: echo "::set-output name=matrix::$( ${{ steps.changed-files.outputs.all_changed_files }} | jq -cnR '[inputs | select(length>0)]' )"
     #- name: set-matrix
     #  id: set-matrix
     #  run: echo "::set-output name=matrix::$( ${{ steps.files.outputs.all }} )"
