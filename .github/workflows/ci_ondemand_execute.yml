@@ -17,6 +17,7 @@ jobs:
       - uses: actions/checkout@v2
       - id: set-matrix
         run: echo "::set-output name=matrix::$(find notebooks -name "*.ipynb" | jq -cnR '[inputs | select(length>0)]')"
+        
   notebook-execution:
     needs: gather-notebooks
     runs-on: ubuntu-latest
@@ -51,7 +52,7 @@ jobs:
         run: |
           jupyter nbconvert --template classic --to html --execute "${{ matrix.notebooks }}"
           
-   deploy-book:
+  deploy-book:
     needs: notebook-execution
     runs-on: ubuntu-latest
     steps:
