@@ -34,7 +34,7 @@ jobs:
     strategy:
         fail-fast: false
         matrix:
-            notebooks: ${{ fromJson(needs.gather-notebooks.outputs.matrix) }}
+            notebooks: ${{ needs.gather-notebooks.outputs.matrix }}
     steps:
       - uses: actions/checkout@v2   
       - name: Set up Python 3.8.12
