@@ -7,7 +7,7 @@ jobs:
   gather-notebooks:
     runs-on: ubuntu-latest
     outputs:
-      matrix: ${{ steps.modified-files.outputs.matrix }}
+      matrix: ${{ steps.changed-files.outputs.all_changed_files.matrix }}
       #matrix: ${{ steps.set-matrix.outputs.matrix }}
     steps:
     - uses: actions/checkout@v2
@@ -17,11 +17,6 @@ jobs:
       with:
         files: |
           **/*.ipynb
-    - name: Create list of modified files
-      id: modified-files
-      uses: lucaspinheirogit/list-from-string-array-action@v1.4.3
-      with:
-        stringArray: ${{ steps.modified-files.outputs.files_modified }}
     #- run: echo "::set-output name=matrix::$( ${{ steps.get-changed-files.outputs.all }} | jq -cnR '[inputs | select(length>0)]' )"
     #- name: set-matrix
     #  id: set-matrix
