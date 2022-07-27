@@ -22,7 +22,8 @@ jobs:
     - name: set-matrix
       id: set-matrix
       run: |
-        IFS=',' read -r -a array <<< "${{steps.changed-files.outputs.all_changed_files}}"
+        #for file in ${{ steps.get-changed-files
+        IFS=',' read -r -a array <<< "${{steps.get-changed-files.outputs.all_changed_files}}"
         echo "{$array}"
       #run: echo "::set-output name=matrix::$( ${{ steps.files.outputs.all }} )"
       #run: echo "::set-output name=matrix::( "echo ${{ steps.changed-files.outputs.all_changed_files }}" | jq -cnR '[inputs | select(length>0)]')"
