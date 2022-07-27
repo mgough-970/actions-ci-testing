@@ -22,7 +22,7 @@ jobs:
     - name: set-matrix
       id: set-matrix
       #run: echo "::set-output name=matrix::$( ${{ steps.files.outputs.all }} )"
-      run: echo "::set-output name=matrix::( echo ${{ steps.changed-files.outputs.all_changed_files }} | jq -R -s -c 'split("\n"[:1]')"
+      run: echo "::set-output name=matrix::( "echo ${{ steps.changed-files.outputs.all_changed_files }}" | jq -cnR '[inputs | select(length>0)]')"
          
   notebook-validation:
     needs: gather-notebooks
@@ -30,7 +30,7 @@ jobs:
     strategy:
         fail-fast: false
         matrix:
-            notebooks: ${{ needs.gather-notebooks.outputs.matrix }}
+            notebooks: ${{ fromJson(needs.gather-notebooks.outputs.matrix) }}
     steps:
       - uses: actions/checkout@v2   
       - name: Set up Python 3.8.12
