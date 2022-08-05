@@ -1,3 +1,5 @@
-matplotlib==3.2.1
-astropy==4.0.1
-git+https://github.com/spacetelescope/jwst@0.16.1
+astropy==5.1
+gwcs==0.18.1
+jwst==1.4.6
+matplotlib==3.3.1
+numpy==1.23.1

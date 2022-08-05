@@ -1,7 +1,7 @@
-astropy
-lmfit
-dust-extinction
-jdaviz
-matplotlib
-dill
-multiprocess
+astropy==5.1
+dust_extinction==1.1
+lmfit==1.0.0
+matplotlib==3.3.1
+multiprocess==0.70.13
+numpy==1.23.1
+specutils==1.7.0
