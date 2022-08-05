@@ -5,7 +5,7 @@
   <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
   <meta content="Docutils 0.17.1: http://docutils.sourceforge.net/" name="generator"/>
   <title>
-   NIRCam PSF Photometry Notebook — STScI JDAT Notebooks
+   PSF Photometry — STScI JDAT Notebooks
   </title>
   <!-- Loaded before other Sphinx assets -->
   <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet"/>
@@ -72,8 +72,8 @@ const thebe_selector_output = ".output, .cell_output"
   </script>
   <link href="../../genindex.html" rel="index" title="Index"/>
   <link href="../../search.html" rel="search" title="Search"/>
-  <link href="../specviz_notebookGUI_interaction/specviz_notebook_gui_interaction_redshift.html" rel="next" title="Specviz notebook/GUI interaction on NIRISS WFSS 1D spectra"/>
-  <link href="../soss-transit-spectroscopy/HAT-P-1b-PART3-data-analysis.html" rel="prev" title="Analyzing the JWST Pipeline products of HAT-P-1b observations with NIRISS/SOSS"/>
+  <link href="../specviz_notebookGUI_interaction/specviz_notebook_gui_interaction_redshift.html" rel="next" title="Specviz Simple Demo"/>
+  <link href="../soss-transit-spectroscopy/HAT-P-1b-PART3-data-analysis.html" rel="prev" title="SOSS Transit Spectroscopy"/>
   <meta content="width=device-width, initial-scale=1" name="viewport"/>
   <meta content="None" name="docsearch:language"/>
   <!-- Google Analytics -->
@@ -139,40 +139,13 @@ const thebe_selector_output = ".output, .cell_output"
          </ul>
          <p aria-level="2" class="caption" role="heading">
           <span class="caption-text">
-           NIRISS WFSS Spectra
-          </span>
-         </p>
-         <ul class="nav bd-sidenav">
-          <li class="toctree-l1">
-           <a class="reference internal" href="../NIRISS_WFSS_postpipeline/00.%20Optimal%20extraction.html">
-            Part 0: Optimal Extraction of NIRISS WFSS Spectrum
-           </a>
-          </li>
-          <li class="toctree-l1">
-           <a class="reference internal" href="../NIRISS_WFSS_postpipeline/01.%20Combine%20and%20normalize%201D%20spectra.html">
-            Part 1: Combine One-Dimensional NIRISS WFSS Spectra
-           </a>
-          </li>
-          <li class="toctree-l1">
-           <a class="reference internal" href="../NIRISS_WFSS_postpipeline/02.%20Cross%20correlation%20template.html">
-            Part 2: Cross Correlation to Determine Redshift of NIRISS WFSS Spectra
-           </a>
-          </li>
-          <li class="toctree-l1">
-           <a class="reference internal" href="../NIRISS_WFSS_postpipeline/03.%20Spatially%20resolved%20emission%20line%20map.html">
-            Part 3: Spatially Resolved Emission Line Map of NIRISS WFSS Spectra
-           </a>
-          </li>
-         </ul>
-         <p aria-level="2" class="caption" role="heading">
-          <span class="caption-text">
            MOS Spectroscopy
           </span>
          </p>
          <ul class="nav bd-sidenav">
           <li class="toctree-l1">
            <a class="reference internal" href="../mos-spectroscopy/MOSspec_sv06_revised.html">
-            MOS Spectroscopy of Typical Extragalactic Field
+            MOS Spectroscopy of Extragalactic Field
            </a>
           </li>
          </ul>
@@ -196,7 +169,7 @@ const thebe_selector_output = ".output, .cell_output"
          <ul class="nav bd-sidenav">
           <li class="toctree-l1">
            <a class="reference internal" href="../IFU_cube_continuum_fit/NGC4151_FeII_ContinuumFit.html">
-            IFU    Data Modeling NGC 4151 Notebook #1 - Isolating Line Emission
+            IFU Cube Fitting
            </a>
           </li>
          </ul>
@@ -208,7 +181,7 @@ const thebe_selector_output = ".output, .cell_output"
          <ul class="nav bd-sidenav">
           <li class="toctree-l1">
            <a class="reference internal" href="../NIRCam_PSF-matched_photometry/NIRCam_PSF_matched_multiband_photometry.html">
-            NIRCam PSF-matched multiband photometry
+            Cross-Filter PSF Matching
            </a>
           </li>
          </ul>
@@ -220,7 +193,7 @@ const thebe_selector_output = ".output, .cell_output"
          <ul class="nav bd-sidenav">
           <li class="toctree-l1">
            <a class="reference internal" href="../MIRI_IFU_YSOs_in_the_LMC/isha_nayak_ysos_in_the_lmc.html">
-            JWST Data Analysis
+            IFU of YSOs in LMC
            </a>
           </li>
          </ul>
@@ -232,17 +205,17 @@ const thebe_selector_output = ".output, .cell_output"
          <ul class="nav bd-sidenav">
           <li class="toctree-l1">
            <a class="reference internal" href="../preimaging/preimaging_02_calwebb.html">
-            Excuting the JWST pipeline on the  JWST astrometric calibration field in the LMC (part 1)
+            NIRCam Preimaging: Pipeline Stages 1, 2
            </a>
           </li>
           <li class="toctree-l1">
            <a class="reference internal" href="../preimaging/preimaging_01_mirage.html">
-            NIRSpec Pre-Imaging with NIRCam
+            NIRCam Preimaging: MIRAGE Simulations
            </a>
           </li>
           <li class="toctree-l1">
            <a class="reference internal" href="../preimaging/preimaging_03_association.html">
-            Creating simulated images of the JWST astrometric calibration field in the LMC
+            NIRCam Preimaging: Pipeline Stage 3
            </a>
           </li>
          </ul>
@@ -253,30 +226,8 @@ const thebe_selector_output = ".output, .cell_output"
          </p>
          <ul class="nav bd-sidenav">
           <li class="toctree-l1">
-           <a class="reference internal" href="../optimal_extraction/Spectral%20Extraction-static.html">
-            NIRSpec MOS Optimal Spectral Extraction
-           </a>
-          </li>
-          <li class="toctree-l1">
-           <a class="reference internal" href="../optimal_extraction_dynamic/Spectral%20Extraction.html">
-            NIRSpec MOS Optimal Spectral Extraction
-           </a>
-          </li>
-          <li class="toctree-l1">
            <a class="reference internal" href="../ifu_optimal/ifu_optimal.html">
-            Baseline: NIRSpec IFU Optimal Point Source Extraction
-           </a>
-          </li>
-         </ul>
-         <p aria-level="2" class="caption" role="heading">
-          <span class="caption-text">
-           Background Estimation
-          </span>
-         </p>
-         <ul class="nav bd-sidenav">
-          <li class="toctree-l1">
-           <a class="reference internal" href="../background_estimation_imaging/Imaging%20Sky%20Background%20Estimation.html">
-            Imaging Sky Background Estimation
+            IFU Optimal Spectral Extraction
            </a>
           </li>
          </ul>
@@ -288,7 +239,7 @@ const thebe_selector_output = ".output, .cell_output"
          <ul class="nav bd-sidenav">
           <li class="toctree-l1">
            <a class="reference internal" href="../soss-transit-spectroscopy/HAT-P-1b-PART3-data-analysis.html">
-            Analyzing the JWST Pipeline products of HAT-P-1b observations with NIRISS/SOSS
+            SOSS Transit Spectroscopy
            </a>
           </li>
          </ul>
@@ -300,7 +251,7 @@ const thebe_selector_output = ".output, .cell_output"
          <ul class="current nav bd-sidenav">
           <li class="toctree-l1 current active">
            <a class="current reference internal" href="#">
-            NIRCam PSF Photometry Notebook
+            PSF Photometry
            </a>
           </li>
          </ul>
@@ -312,7 +263,7 @@ const thebe_selector_output = ".output, .cell_output"
          <ul class="nav bd-sidenav">
           <li class="toctree-l1">
            <a class="reference internal" href="../specviz_notebookGUI_interaction/specviz_notebook_gui_interaction_redshift.html">
-            Specviz notebook/GUI interaction on NIRISS WFSS 1D spectra
+            Specviz Simple Demo
            </a>
           </li>
          </ul>
@@ -324,7 +275,7 @@ const thebe_selector_output = ".output, .cell_output"
          <ul class="nav bd-sidenav">
           <li class="toctree-l1">
            <a class="reference internal" href="../asdf_example/asdf_example.html">
-            Examp 3       e   of Converting a FITS File to ASDF
+            ASDF Example
            </a>
           </li>
          </ul>
@@ -336,7 +287,7 @@ const thebe_selector_output = ".output, .cell_output"
          <ul class="nav bd-sidenav">
           <li class="toctree-l1">
            <a class="reference internal" href="../composite_model_fitting/specfit_demo_3.html">
-            Draft: Advanced Composite spectral model fitting
+            Composite Model Spectral Fitting
            </a>
           </li>
          </ul>
@@ -348,12 +299,12 @@ const thebe_selector_output = ".output, .cell_output"
          <ul class="nav bd-sidenav">
           <li class="toctree-l1">
            <a class="reference internal" href="../niriss_ami_binary/1_niriss_ami_binary.html">
-            NIRISS AMI simulation of binary point source AB Dor and calibrator HD37093
+            NIRISS AMI: MIRAGE Simulations
            </a>
           </li>
           <li class="toctree-l1">
            <a class="reference internal" href="../niriss_ami_binary/2_niriss_ami_binary.html">
-            NIRISS AMI calibration of binary point source AB Dor and calibrator HD37093
+            NIRISS AMI: Pipeline
            </a>
           </li>
          </ul>
@@ -365,7 +316,7 @@ const thebe_selector_output = ".output, .cell_output"
          <ul class="nav bd-sidenav">
           <li class="toctree-l1">
            <a class="reference internal" href="../aperture_photometry/NIRCam_Aperture_Photometry_Example.html">
-            Draft Aperture Photometry
+            Point Source Aperture Photometry
            </a>
           </li>
          </ul>
@@ -377,7 +328,7 @@ const thebe_selector_output = ".output, .cell_output"
          <ul class="nav bd-sidenav">
           <li class="toctree-l1">
            <a class="reference internal" href="../NIRSpec_MAST_Query/NIRSpec_MAST_Query.html">
-            MAST Query Tutorial for NIRSpec Users
+            MAST Query
            </a>
           </li>
          </ul>
@@ -389,7 +340,7 @@ const thebe_selector_output = ".output, .cell_output"
          <ul class="nav bd-sidenav">
           <li class="toctree-l1">
            <a class="reference internal" href="../MIRI_LRS_spectral_extraction/miri_lrs_spectral_extraction.html">
-            MIRI LRS Optimal  Spectral Extraction
+            LRS Optimal Spectral Extraction
            </a>
           </li>
          </ul>
@@ -401,19 +352,7 @@ const thebe_selector_output = ".output, .cell_output"
          <ul class="nav bd-sidenav">
           <li class="toctree-l1">
            <a class="reference internal" href="../transit_spectroscopy_notebook/Exoplanet_Transmission_Spectra_JWST.html">
-            Extracting an Exoplanet Transmission Spectrum from NIRSpec BOTS Time Series Observations
-           </a>
-          </li>
-         </ul>
-         <p aria-level="2" class="caption" role="heading">
-          <span class="caption-text">
-           NIRCam Photometry
-          </span>
-         </p>
-         <ul class="nav bd-sidenav">
-          <li class="toctree-l1">
-           <a class="reference internal" href="../NIRCam_photometry/NIRCam%20multiband%20photometry.html">
-            NIRCam Multiband Photometry
+            BOTS Time Series Observations
            </a>
           </li>
          </ul>
@@ -573,6 +512,11 @@ const thebe_selector_output = ".output, .cell_output"
           </a>
          </li>
          <li class="toc-h2 nav-item toc-entry">
+          <a class="reference internal nav-link" href="#data-download-functions">
+           Data Download Functions
+          </a>
+         </li>
+         <li class="toc-h2 nav-item toc-entry">
           <a class="reference internal nav-link" href="#import-functions">
            Import Functions
           </a>
@@ -642,6 +586,13 @@ const thebe_selector_output = ".output, .cell_output"
           <a class="reference internal nav-link" href="#display-the-psfs-grid">
            Display the PSFs grid
           </a>
+          <ul class="nav section-nav flex-column">
+           <li class="toc-h3 nav-item toc-entry">
+            <a class="reference internal nav-link" href="#developer-note-currently-display-psf-grid-has-a-bug-which-has-been-fixed-but-will-not-merged-into-the-latest-webbpsf-release-until-after-commissioning-we-have-turned-off-this-cell-for-the-time-being">
+             Developer Note: Currently, display_psf_grid has a bug which has been fixed, but will not merged into the latest WebbPSF release until after commissioning. We have turned off this cell for the time being.
+            </a>
+           </li>
+          </ul>
          </li>
          <li class="toc-h2 nav-item toc-entry">
           <a class="reference internal nav-link" href="#ii-create-the-psf-model-building-an-effective-psf-epsf">
@@ -827,7 +778,7 @@ const thebe_selector_output = ".output, .cell_output"
        <!-- Table of contents that is only displayed when printing the page -->
        <div class="onlyprint" id="jb-print-docs-body">
         <h1>
-         NIRCam PSF Photometry Notebook
+         PSF Photometry
         </h1>
         <!-- Table of contents -->
         <div id="print-main-content">
@@ -842,6 +793,11 @@ const thebe_selector_output = ".output, .cell_output"
             <li class="toc-h2 nav-item toc-entry">
              <a class="reference internal nav-link" href="#work-in-progress">
               Work in Progress:
+             </a>
+            </li>
+            <li class="toc-h2 nav-item toc-entry">
+             <a class="reference internal nav-link" href="#data-download-functions">
+              Data Download Functions
              </a>
             </li>
             <li class="toc-h2 nav-item toc-entry">
@@ -914,6 +870,13 @@ const thebe_selector_output = ".output, .cell_output"
              <a class="reference internal nav-link" href="#display-the-psfs-grid">
               Display the PSFs grid
              </a>
+             <ul class="nav section-nav flex-column">
+              <li class="toc-h3 nav-item toc-entry">
+               <a class="reference internal nav-link" href="#developer-note-currently-display-psf-grid-has-a-bug-which-has-been-fixed-but-will-not-merged-into-the-latest-webbpsf-release-until-after-commissioning-we-have-turned-off-this-cell-for-the-time-being">
+                Developer Note: Currently, display_psf_grid has a bug which has been fixed, but will not merged into the latest WebbPSF release until after commissioning. We have turned off this cell for the time being.
+               </a>
+              </li>
+             </ul>
             </li>
             <li class="toc-h2 nav-item toc-entry">
              <a class="reference internal nav-link" href="#ii-create-the-psf-model-building-an-effective-psf-epsf">
@@ -1097,18 +1060,23 @@ const thebe_selector_output = ".output, .cell_output"
        </div>
        <main id="main-content" role="main">
         <div>
-         <section class="tex2jax_ignore mathjax_ignore" id="nircam-psf-photometry-notebook">
+         <section class="tex2jax_ignore mathjax_ignore" id="psf-photometry">
           <h1>
-           NIRCam PSF Photometry Notebook
-           <a class="headerlink" href="#nircam-psf-photometry-notebook" title="Permalink to this headline">
+           PSF Photometry
+           <a class="headerlink" href="#psf-photometry" title="Permalink to this headline">
             #
            </a>
           </h1>
           <p>
            <strong>
-            Data
+            Use case:
            </strong>
-           : NIRCam simulated images obtained using
+           PSF photometry, creating a PSF, derive Color-Magnitude Diagram.
+           <br/>
+           <strong>
+            Data:
+           </strong>
+           NIRCam simulated images obtained using
            <a class="reference external" href="https://jwst-docs.stsci.edu/jwst-other-tools/mirage-data-simulator">
             MIRAGE
            </a>
@@ -1116,13 +1084,27 @@ const thebe_selector_output = ".output, .cell_output"
            <a class="reference external" href="https://jwst-pipeline.readthedocs.io/en/latest/">
             JWST pipeline
            </a>
-           of the Large Magellanic Cloud (LMC) Astrometric Calibration Field. Simulations is obtained using a 4-pt subpixel dither for three couples of wide filters: F070W, F115W, and F200W for the SW channel, and F277W, F356W, and F444W for the LW channel. We simulated only 1 NIRCam SW detector (i.e., “NRCB1”).
-          </p>
-          <p>
-           For this example, we use Level-2 images (.cal, calibrated but not rectified) for two SW filters (i.e., F115W and F200W) and derive the photometry in each one of them. The images for the other filters are also available and can be used to test the notebook and/or different filters combination.
-          </p>
-          <p>
-           The notebook is divided in two parts: in Part I we show how to create a PSF model and perform the PSF photometry, whereas in Part II, we show how to derive the final calibrated Color-Magnitude Diagram.
+           of the Large Magellanic Cloud (LMC) Astrometric Calibration Field. Simulations is obtained using a 4-pt subpixel dither for three couples of wide filters: F070W, F115W, and F200W for the SW channel, and F277W, F356W, and F444W for the LW channel. We simulated only 1 NIRCam SW detector (i.e., “NRCB1”). For this example, we use Level-2 images (.cal, calibrated but not rectified) for two SW filters (i.e., F115W and F200W) and derive the photometry in each one of them. The images for the other filters are also available and can be used to test the notebook and/or different filters combination.
+           <br/>
+           <strong>
+            Tools:
+           </strong>
+           photutils.
+           <br/>
+           <strong>
+            Cross-intrument:
+           </strong>
+           NIRSpec, NIRISS, MIRI.
+           <br/>
+           <strong>
+            Documentation:
+           </strong>
+           This notebook is part of a STScI’s larger
+           <a class="reference external" href="https://jwst-docs.stsci.edu/jwst-post-pipeline-data-analysis">
+            post-pipeline Data Analysis Tools Ecosystem
+           </a>
+           .
+           <br/>
           </p>
           <p>
            PSF Photometry can be obtained using:
@@ -1233,6 +1215,123 @@ const thebe_selector_output = ".output, .cell_output"
             for the configuration and download of the data files.
            </p>
           </section>
+          <section id="data-download-functions">
+           <h2>
+            Data Download Functions
+            <a class="headerlink" href="#data-download-functions" title="Permalink to this headline">
+             #
+            </a>
+           </h2>
+           <div class="cell docutils container">
+            <div class="cell_input docutils container">
+             <div class="highlight-ipython3 notranslate">
+              <div class="highlight">
+               <pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">tarfile</span>
+<span class="kn">import</span> <span class="nn">urllib.request</span>
+
+<span class="c1"># Set environmental variables</span>
+<span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">"WEBBPSF_PATH"</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"./webbpsf-data/webbpsf-data"</span>
+<span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">"PYSYN_CDBS"</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"./grp/redcat/trds/"</span>
+
+<span class="c1"># WEBBPSF Data</span>
+<span class="n">boxlink</span> <span class="o">=</span> <span class="s1">'https://stsci.box.com/shared/static/34o0keicz2iujyilg4uz617va46ks6u9.gz'</span>                                                           
+<span class="n">boxfile</span> <span class="o">=</span> <span class="s1">'./webbpsf-data/webbpsf-data-1.0.0.tar.gz'</span>
+<span class="n">synphot_url</span> <span class="o">=</span> <span class="s1">'http://ssb.stsci.edu/trds/tarfiles/synphot5.tar.gz'</span>
+<span class="n">synphot_file</span> <span class="o">=</span> <span class="s1">'./synphot5.tar.gz'</span>
+
+<span class="n">webbpsf_folder</span> <span class="o">=</span> <span class="s1">'./webbpsf-data'</span>
+<span class="n">synphot_folder</span> <span class="o">=</span> <span class="s1">'./grp'</span>
+
+<span class="c1"># Gather webbpsf files</span>
+<span class="n">psfExist</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">webbpsf_folder</span><span class="p">)</span>
+<span class="k">if</span> <span class="ow">not</span> <span class="n">psfExist</span><span class="p">:</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">webbpsf_folder</span><span class="p">)</span>
+    <span class="n">urllib</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">urlretrieve</span><span class="p">(</span><span class="n">boxlink</span><span class="p">,</span> <span class="n">boxfile</span><span class="p">)</span>
+    <span class="n">gzf</span> <span class="o">=</span> <span class="n">tarfile</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">boxfile</span><span class="p">)</span>
+    <span class="n">gzf</span><span class="o">.</span><span class="n">extractall</span><span class="p">(</span><span class="n">webbpsf_folder</span><span class="p">)</span>
+
+<span class="c1"># Gather synphot files</span>
+<span class="n">synExist</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">synphot_folder</span><span class="p">)</span>
+<span class="k">if</span> <span class="ow">not</span> <span class="n">synExist</span><span class="p">:</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">synphot_folder</span><span class="p">)</span>
+    <span class="n">urllib</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">urlretrieve</span><span class="p">(</span><span class="n">synphot_url</span><span class="p">,</span> <span class="n">synphot_file</span><span class="p">)</span>
+    <span class="n">gzf</span> <span class="o">=</span> <span class="n">tarfile</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">synphot_file</span><span class="p">)</span>
+    <span class="n">gzf</span><span class="o">.</span><span class="n">extractall</span><span class="p">(</span><span class="s1">'./'</span><span class="p">)</span>
+</pre>
+              </div>
+             </div>
+            </div>
+            <div class="cell_output docutils container">
+             <div class="output traceback highlight-ipythontb notranslate">
+              <div class="highlight">
+               <pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="nn">Input In [1],</span> in <span class="ni">&lt;cell line: 28&gt;</span><span class="nt">()</span>
+<span class="g g-Whitespace">     </span><span class="mi">28</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">synExist</span><span class="p">:</span>
+<span class="g g-Whitespace">     </span><span class="mi">29</span>     <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">synphot_folder</span><span class="p">)</span>
+<span class="ne">---&gt; </span><span class="mi">30</span>     <span class="n">urllib</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">urlretrieve</span><span class="p">(</span><span class="n">synphot_url</span><span class="p">,</span> <span class="n">synphot_file</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">31</span>     <span class="n">gzf</span> <span class="o">=</span> <span class="n">tarfile</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">synphot_file</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">32</span>     <span class="n">gzf</span><span class="o">.</span><span class="n">extractall</span><span class="p">(</span><span class="s1">'./'</span><span class="p">)</span>
+
+<span class="nn">File /usr/share/miniconda/lib/python3.9/urllib/request.py:268,</span> in <span class="ni">urlretrieve</span><span class="nt">(url, filename, reporthook, data)</span>
+<span class="g g-Whitespace">    </span><span class="mi">265</span>     <span class="n">reporthook</span><span class="p">(</span><span class="n">blocknum</span><span class="p">,</span> <span class="n">bs</span><span class="p">,</span> <span class="n">size</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">267</span> <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">268</span>     <span class="n">block</span> <span class="o">=</span> <span class="n">fp</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">bs</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">269</span>     <span class="k">if</span> <span class="ow">not</span> <span class="n">block</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">270</span>         <span class="k">break</span>
+
+<span class="nn">File /usr/share/miniconda/lib/python3.9/http/client.py:463,</span> in <span class="ni">HTTPResponse.read</span><span class="nt">(self, amt)</span>
+<span class="g g-Whitespace">    </span><span class="mi">460</span> <span class="k">if</span> <span class="n">amt</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">461</span>     <span class="c1"># Amount is given, implement using readinto</span>
+<span class="g g-Whitespace">    </span><span class="mi">462</span>     <span class="n">b</span> <span class="o">=</span> <span class="nb">bytearray</span><span class="p">(</span><span class="n">amt</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">463</span>     <span class="n">n</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">readinto</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">464</span>     <span class="k">return</span> <span class="nb">memoryview</span><span class="p">(</span><span class="n">b</span><span class="p">)[:</span><span class="n">n</span><span class="p">]</span><span class="o">.</span><span class="n">tobytes</span><span class="p">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">465</span> <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">466</span>     <span class="c1"># Amount is not given (unbounded read) so we must check self.length</span>
+<span class="g g-Whitespace">    </span><span class="mi">467</span>     <span class="c1"># and self.chunked</span>
+
+<span class="nn">File /usr/share/miniconda/lib/python3.9/http/client.py:507,</span> in <span class="ni">HTTPResponse.readinto</span><span class="nt">(self, b)</span>
+<span class="g g-Whitespace">    </span><span class="mi">502</span>         <span class="n">b</span> <span class="o">=</span> <span class="nb">memoryview</span><span class="p">(</span><span class="n">b</span><span class="p">)[</span><span class="mi">0</span><span class="p">:</span><span class="bp">self</span><span class="o">.</span><span class="n">length</span><span class="p">]</span>
+<span class="g g-Whitespace">    </span><span class="mi">504</span> <span class="c1"># we do not use _safe_read() here because this may be a .will_close</span>
+<span class="g g-Whitespace">    </span><span class="mi">505</span> <span class="c1"># connection, and the user is reading more bytes than will be provided</span>
+<span class="g g-Whitespace">    </span><span class="mi">506</span> <span class="c1"># (for example, reading in 1k chunks)</span>
+<span class="ne">--&gt; </span><span class="mi">507</span> <span class="n">n</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">fp</span><span class="o">.</span><span class="n">readinto</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">508</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">n</span> <span class="ow">and</span> <span class="n">b</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">509</span>     <span class="c1"># Ideally, we would raise IncompleteRead if the content-length</span>
+<span class="g g-Whitespace">    </span><span class="mi">510</span>     <span class="c1"># wasn't satisfied, but it might break compatibility.</span>
+<span class="g g-Whitespace">    </span><span class="mi">511</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_close_conn</span><span class="p">()</span>
+
+<span class="nn">File /usr/share/miniconda/lib/python3.9/socket.py:704,</span> in <span class="ni">SocketIO.readinto</span><span class="nt">(self, b)</span>
+<span class="g g-Whitespace">    </span><span class="mi">702</span> <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">703</span>     <span class="k">try</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">704</span>         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_sock</span><span class="o">.</span><span class="n">recv_into</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">705</span>     <span class="k">except</span> <span class="n">timeout</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">706</span>         <span class="bp">self</span><span class="o">.</span><span class="n">_timeout_occurred</span> <span class="o">=</span> <span class="kc">True</span>
+
+<span class="nn">File /usr/share/miniconda/lib/python3.9/ssl.py:1241,</span> in <span class="ni">SSLSocket.recv_into</span><span class="nt">(self, buffer, nbytes, flags)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1237</span>     <span class="k">if</span> <span class="n">flags</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1238</span>         <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1239</span>           <span class="s2">"non-zero flags not allowed in calls to recv_into() on </span><span class="si">%s</span><span class="s2">"</span> <span class="o">%</span>
+<span class="g g-Whitespace">   </span><span class="mi">1240</span>           <span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="p">)</span>
+<span class="ne">-&gt; </span><span class="mi">1241</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">nbytes</span><span class="p">,</span> <span class="n">buffer</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1242</span> <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1243</span>     <span class="k">return</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">recv_into</span><span class="p">(</span><span class="n">buffer</span><span class="p">,</span> <span class="n">nbytes</span><span class="p">,</span> <span class="n">flags</span><span class="p">)</span>
+
+<span class="nn">File /usr/share/miniconda/lib/python3.9/ssl.py:1099,</span> in <span class="ni">SSLSocket.read</span><span class="nt">(self, len, buffer)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1097</span> <span class="k">try</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1098</span>     <span class="k">if</span> <span class="n">buffer</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+<span class="ne">-&gt; </span><span class="mi">1099</span>         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_sslobj</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="nb">len</span><span class="p">,</span> <span class="n">buffer</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1100</span>     <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1101</span>         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_sslobj</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="nb">len</span><span class="p">)</span>
+
+<span class="ne">KeyboardInterrupt</span>: 
+</pre>
+              </div>
+             </div>
+            </div>
+           </div>
+          </section>
           <section id="import-functions">
            <h2>
             Import Functions
@@ -1285,19 +1384,6 @@ const thebe_selector_output = ".output, .cell_output"
 
 <span class="kn">import</span> <span class="nn">webbpsf</span>
 <span class="kn">from</span> <span class="nn">webbpsf.utils</span> <span class="kn">import</span> <span class="n">to_griddedpsfmodel</span>
-
-<span class="kn">import</span> <span class="nn">pysynphot</span>  <span class="c1"># PYSIN_CDBS must be defined in the user's environment (see note above)</span>
-</pre>
-              </div>
-             </div>
-            </div>
-            <div class="cell_output docutils container">
-             <div class="output stderr highlight-myst-ansi notranslate">
-              <div class="highlight">
-               <pre><span></span>/usr/share/miniconda/lib/python3.9/site-packages/pysynphot/locations.py:46: UserWarning: PYSYN_CDBS is undefined; functionality will be SEVERELY crippled.
-  warnings.warn("PYSYN_CDBS is undefined; functionality will be SEVERELY "
-/usr/share/miniconda/lib/python3.9/site-packages/pysynphot/locations.py:345: UserWarning: Extinction files not found in extinction
-  warnings.warn('Extinction files not found in %s' % (extdir, ))
 </pre>
               </div>
              </div>
@@ -1474,80 +1560,6 @@ const thebe_selector_output = ".output, .cell_output"
 <span class="nb">print</span><span class="p">(</span><span class="s2">"Available Detectors for LW channel:"</span><span class="p">,</span> <span class="n">detlist_long</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">"Available SW Filters:"</span><span class="p">,</span> <span class="n">filtlist_short</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">"Available LW Filters:"</span><span class="p">,</span> <span class="n">filtlist_long</span><span class="p">)</span>
-</pre>
-              </div>
-             </div>
-            </div>
-            <div class="cell_output docutils container">
-             <div class="output stream highlight-myst-ansi notranslate">
-              <div class="highlight">
-               <pre><span></span>Downloading images
-</pre>
-              </div>
-             </div>
-             <div class="output traceback highlight-ipythontb notranslate">
-              <div class="highlight">
-               <pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
-<span class="nn">Input In [3],</span> in <span class="ni">&lt;cell line: 16&gt;</span><span class="nt">()</span>
-<span class="g g-Whitespace">     </span><span class="mi">20</span> <span class="n">boxlink_images_lev2</span> <span class="o">=</span> <span class="s1">'https://data.science.stsci.edu/redirect/JWST/jwst-data_analysis_tools/stellar_photometry/images_level2.tar.gz'</span>
-<span class="g g-Whitespace">     </span><span class="mi">21</span> <span class="n">boxfile_images_lev2</span> <span class="o">=</span> <span class="s1">'./images_level2.tar.gz'</span>
-<span class="ne">---&gt; </span><span class="mi">22</span> <span class="n">urllib</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">urlretrieve</span><span class="p">(</span><span class="n">boxlink_images_lev2</span><span class="p">,</span> <span class="n">boxfile_images_lev2</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">24</span> <span class="n">tar</span> <span class="o">=</span> <span class="n">tarfile</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">boxfile_images_lev2</span><span class="p">,</span> <span class="s1">'r'</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">25</span> <span class="n">tar</span><span class="o">.</span><span class="n">extractall</span><span class="p">()</span>
-
-<span class="nn">File /usr/share/miniconda/lib/python3.9/urllib/request.py:268,</span> in <span class="ni">urlretrieve</span><span class="nt">(url, filename, reporthook, data)</span>
-<span class="g g-Whitespace">    </span><span class="mi">265</span>     <span class="n">reporthook</span><span class="p">(</span><span class="n">blocknum</span><span class="p">,</span> <span class="n">bs</span><span class="p">,</span> <span class="n">size</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">267</span> <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">268</span>     <span class="n">block</span> <span class="o">=</span> <span class="n">fp</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">bs</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">269</span>     <span class="k">if</span> <span class="ow">not</span> <span class="n">block</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">270</span>         <span class="k">break</span>
-
-<span class="nn">File /usr/share/miniconda/lib/python3.9/http/client.py:463,</span> in <span class="ni">HTTPResponse.read</span><span class="nt">(self, amt)</span>
-<span class="g g-Whitespace">    </span><span class="mi">460</span> <span class="k">if</span> <span class="n">amt</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">461</span>     <span class="c1"># Amount is given, implement using readinto</span>
-<span class="g g-Whitespace">    </span><span class="mi">462</span>     <span class="n">b</span> <span class="o">=</span> <span class="nb">bytearray</span><span class="p">(</span><span class="n">amt</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">463</span>     <span class="n">n</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">readinto</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">464</span>     <span class="k">return</span> <span class="nb">memoryview</span><span class="p">(</span><span class="n">b</span><span class="p">)[:</span><span class="n">n</span><span class="p">]</span><span class="o">.</span><span class="n">tobytes</span><span class="p">()</span>
-<span class="g g-Whitespace">    </span><span class="mi">465</span> <span class="k">else</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">466</span>     <span class="c1"># Amount is not given (unbounded read) so we must check self.length</span>
-<span class="g g-Whitespace">    </span><span class="mi">467</span>     <span class="c1"># and self.chunked</span>
-
-<span class="nn">File /usr/share/miniconda/lib/python3.9/http/client.py:507,</span> in <span class="ni">HTTPResponse.readinto</span><span class="nt">(self, b)</span>
-<span class="g g-Whitespace">    </span><span class="mi">502</span>         <span class="n">b</span> <span class="o">=</span> <span class="nb">memoryview</span><span class="p">(</span><span class="n">b</span><span class="p">)[</span><span class="mi">0</span><span class="p">:</span><span class="bp">self</span><span class="o">.</span><span class="n">length</span><span class="p">]</span>
-<span class="g g-Whitespace">    </span><span class="mi">504</span> <span class="c1"># we do not use _safe_read() here because this may be a .will_close</span>
-<span class="g g-Whitespace">    </span><span class="mi">505</span> <span class="c1"># connection, and the user is reading more bytes than will be provided</span>
-<span class="g g-Whitespace">    </span><span class="mi">506</span> <span class="c1"># (for example, reading in 1k chunks)</span>
-<span class="ne">--&gt; </span><span class="mi">507</span> <span class="n">n</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">fp</span><span class="o">.</span><span class="n">readinto</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">508</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">n</span> <span class="ow">and</span> <span class="n">b</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">509</span>     <span class="c1"># Ideally, we would raise IncompleteRead if the content-length</span>
-<span class="g g-Whitespace">    </span><span class="mi">510</span>     <span class="c1"># wasn't satisfied, but it might break compatibility.</span>
-<span class="g g-Whitespace">    </span><span class="mi">511</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_close_conn</span><span class="p">()</span>
-
-<span class="nn">File /usr/share/miniconda/lib/python3.9/socket.py:704,</span> in <span class="ni">SocketIO.readinto</span><span class="nt">(self, b)</span>
-<span class="g g-Whitespace">    </span><span class="mi">702</span> <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">703</span>     <span class="k">try</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">704</span>         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_sock</span><span class="o">.</span><span class="n">recv_into</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">705</span>     <span class="k">except</span> <span class="n">timeout</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">706</span>         <span class="bp">self</span><span class="o">.</span><span class="n">_timeout_occurred</span> <span class="o">=</span> <span class="kc">True</span>
-
-<span class="nn">File /usr/share/miniconda/lib/python3.9/ssl.py:1241,</span> in <span class="ni">SSLSocket.recv_into</span><span class="nt">(self, buffer, nbytes, flags)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1237</span>     <span class="k">if</span> <span class="n">flags</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1238</span>         <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
-<span class="g g-Whitespace">   </span><span class="mi">1239</span>           <span class="s2">"non-zero flags not allowed in calls to recv_into() on </span><span class="si">%s</span><span class="s2">"</span> <span class="o">%</span>
-<span class="g g-Whitespace">   </span><span class="mi">1240</span>           <span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="p">)</span>
-<span class="ne">-&gt; </span><span class="mi">1241</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">nbytes</span><span class="p">,</span> <span class="n">buffer</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1242</span> <span class="k">else</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1243</span>     <span class="k">return</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">recv_into</span><span class="p">(</span><span class="n">buffer</span><span class="p">,</span> <span class="n">nbytes</span><span class="p">,</span> <span class="n">flags</span><span class="p">)</span>
-
-<span class="nn">File /usr/share/miniconda/lib/python3.9/ssl.py:1099,</span> in <span class="ni">SSLSocket.read</span><span class="nt">(self, len, buffer)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1097</span> <span class="k">try</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1098</span>     <span class="k">if</span> <span class="n">buffer</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-<span class="ne">-&gt; </span><span class="mi">1099</span>         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_sslobj</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="nb">len</span><span class="p">,</span> <span class="n">buffer</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1100</span>     <span class="k">else</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1101</span>         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_sslobj</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="nb">len</span><span class="p">)</span>
-
-<span class="ne">KeyboardInterrupt</span>: 
 </pre>
               </div>
              </div>
@@ -1914,17 +1926,18 @@ const thebe_selector_output = ".output, .cell_output"
             </strong>
             ) the grid of PSFs and the difference from the mean
            </p>
-           <div class="cell docutils container">
-            <div class="cell_input docutils container">
-             <div class="highlight-ipython3 notranslate">
-              <div class="highlight">
-               <pre><span></span><span class="n">webbpsf</span><span class="o">.</span><span class="n">gridded_library</span><span class="o">.</span><span class="n">display_psf_grid</span><span class="p">(</span><span class="n">dict_psfs_webbpsf</span><span class="p">[</span><span class="n">dets_short</span><span class="p">[</span><span class="mi">0</span><span class="p">]][</span><span class="n">filts_short</span><span class="p">[</span><span class="mi">0</span><span class="p">]][</span><span class="s1">'psf model grid'</span><span class="p">],</span>
-                                         <span class="n">zoom_in</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">14</span><span class="p">,</span> <span class="mi">14</span><span class="p">))</span>
-</pre>
-              </div>
-             </div>
-            </div>
-           </div>
+           <section id="developer-note-currently-display-psf-grid-has-a-bug-which-has-been-fixed-but-will-not-merged-into-the-latest-webbpsf-release-until-after-commissioning-we-have-turned-off-this-cell-for-the-time-being">
+            <h3>
+             Developer Note: Currently, display_psf_grid has a bug which has been fixed, but will not merged into the latest WebbPSF release until after commissioning. We have turned off this cell for the time being.
+             <a class="headerlink" href="#developer-note-currently-display-psf-grid-has-a-bug-which-has-been-fixed-but-will-not-merged-into-the-latest-webbpsf-release-until-after-commissioning-we-have-turned-off-this-cell-for-the-time-being" title="Permalink to this headline">
+              #
+             </a>
+            </h3>
+            <p>
+             webbpsf.gridded_library.display_psf_grid(dict_psfs_webbpsf[dets_short[0]][filts_short[0]][‘psf model grid’],
+zoom_in=False, figsize=(14, 14))
+            </p>
+           </section>
           </section>
           <section id="ii-create-the-psf-model-building-an-effective-psf-epsf">
            <h2>
@@ -4277,7 +4290,7 @@ const thebe_selector_output = ".output, .cell_output"
             previous
            </p>
            <p class="prev-next-title">
-            Analyzing the JWST Pipeline products of HAT-P-1b observations with NIRISS/SOSS
+            SOSS Transit Spectroscopy
            </p>
           </div>
          </a>
@@ -4287,7 +4300,7 @@ const thebe_selector_output = ".output, .cell_output"
             next
            </p>
            <p class="prev-next-title">
-            Specviz notebook/GUI interaction on NIRISS WFSS 1D spectra
+            Specviz Simple Demo
            </p>
           </div>
           <i class="fas fa-angle-right">

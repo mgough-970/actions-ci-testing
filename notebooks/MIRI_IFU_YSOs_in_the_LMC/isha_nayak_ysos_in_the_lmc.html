@@ -5,7 +5,7 @@
   <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
   <meta content="Docutils 0.17.1: http://docutils.sourceforge.net/" name="generator"/>
   <title>
-   JWST Data Analysis — STScI JDAT Notebooks
+   IFU of YSOs in LMC — STScI JDAT Notebooks
   </title>
   <!-- Loaded before other Sphinx assets -->
   <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet"/>
@@ -67,8 +67,8 @@ const thebe_selector_output = ".output, .cell_output"
   </script>
   <link href="../../genindex.html" rel="index" title="Index"/>
   <link href="../../search.html" rel="search" title="Search"/>
-  <link href="../preimaging/preimaging_02_calwebb.html" rel="next" title="Excuting the JWST pipeline on the JWST astrometric calibration field in the LMC (part 1)"/>
-  <link href="../NIRCam_PSF-matched_photometry/NIRCam_PSF_matched_multiband_photometry.html" rel="prev" title="NIRCam PSF-matched multiband photometry"/>
+  <link href="../preimaging/preimaging_02_calwebb.html" rel="next" title="NIRCam Preimaging: Pipeline Stages 1, 2"/>
+  <link href="../NIRCam_PSF-matched_photometry/NIRCam_PSF_matched_multiband_photometry.html" rel="prev" title="Cross-Filter PSF Matching"/>
   <meta content="width=device-width, initial-scale=1" name="viewport"/>
   <meta content="None" name="docsearch:language"/>
   <!-- Google Analytics -->
@@ -134,40 +134,13 @@ const thebe_selector_output = ".output, .cell_output"
          </ul>
          <p aria-level="2" class="caption" role="heading">
           <span class="caption-text">
-           NIRISS WFSS Spectra
-          </span>
-         </p>
-         <ul class="nav bd-sidenav">
-          <li class="toctree-l1">
-           <a class="reference internal" href="../NIRISS_WFSS_postpipeline/00.%20Optimal%20extraction.html">
-            Part 0: Optimal Extraction of NIRISS WFSS Spectrum
-           </a>
-          </li>
-          <li class="toctree-l1">
-           <a class="reference internal" href="../NIRISS_WFSS_postpipeline/01.%20Combine%20and%20normalize%201D%20spectra.html">
-            Part 1: Combine One-Dimensional NIRISS WFSS Spectra
-           </a>
-          </li>
-          <li class="toctree-l1">
-           <a class="reference internal" href="../NIRISS_WFSS_postpipeline/02.%20Cross%20correlation%20template.html">
-            Part 2: Cross Correlation to Determine Redshift of NIRISS WFSS Spectra
-           </a>
-          </li>
-          <li class="toctree-l1">
-           <a class="reference internal" href="../NIRISS_WFSS_postpipeline/03.%20Spatially%20resolved%20emission%20line%20map.html">
-            Part 3: Spatially Resolved Emission Line Map of NIRISS WFSS Spectra
-           </a>
-          </li>
-         </ul>
-         <p aria-level="2" class="caption" role="heading">
-          <span class="caption-text">
            MOS Spectroscopy
           </span>
          </p>
          <ul class="nav bd-sidenav">
           <li class="toctree-l1">
            <a class="reference internal" href="../mos-spectroscopy/MOSspec_sv06_revised.html">
-            MOS Spectroscopy of Typical Extragalactic Field
+            MOS Spectroscopy of Extragalactic Field
            </a>
           </li>
          </ul>
@@ -191,7 +164,7 @@ const thebe_selector_output = ".output, .cell_output"
          <ul class="nav bd-sidenav">
           <li class="toctree-l1">
            <a class="reference internal" href="../IFU_cube_continuum_fit/NGC4151_FeII_ContinuumFit.html">
-            IFU    Data Modeling NGC 4151 Notebook #1 - Isolating Line Emission
+            IFU Cube Fitting
            </a>
           </li>
          </ul>
@@ -203,7 +176,7 @@ const thebe_selector_output = ".output, .cell_output"
          <ul class="nav bd-sidenav">
           <li class="toctree-l1">
            <a class="reference internal" href="../NIRCam_PSF-matched_photometry/NIRCam_PSF_matched_multiband_photometry.html">
-            NIRCam PSF-matched multiband photometry
+            Cross-Filter PSF Matching
            </a>
           </li>
          </ul>
@@ -215,7 +188,7 @@ const thebe_selector_output = ".output, .cell_output"
          <ul class="current nav bd-sidenav">
           <li class="toctree-l1 current active">
            <a class="current reference internal" href="#">
-            JWST Data Analysis
+            IFU of YSOs in LMC
            </a>
           </li>
          </ul>
@@ -227,17 +200,17 @@ const thebe_selector_output = ".output, .cell_output"
          <ul class="nav bd-sidenav">
           <li class="toctree-l1">
            <a class="reference internal" href="../preimaging/preimaging_02_calwebb.html">
-            Excuting the JWST pipeline on the  JWST astrometric calibration field in the LMC (part 1)
+            NIRCam Preimaging: Pipeline Stages 1, 2
            </a>
           </li>
           <li class="toctree-l1">
            <a class="reference internal" href="../preimaging/preimaging_01_mirage.html">
-            NIRSpec Pre-Imaging with NIRCam
+            NIRCam Preimaging: MIRAGE Simulations
            </a>
           </li>
           <li class="toctree-l1">
            <a class="reference internal" href="../preimaging/preimaging_03_association.html">
-            Creating simulated images of the JWST astrometric calibration field in the LMC
+            NIRCam Preimaging: Pipeline Stage 3
            </a>
           </li>
          </ul>
@@ -248,30 +221,8 @@ const thebe_selector_output = ".output, .cell_output"
          </p>
          <ul class="nav bd-sidenav">
           <li class="toctree-l1">
-           <a class="reference internal" href="../optimal_extraction/Spectral%20Extraction-static.html">
-            NIRSpec MOS Optimal Spectral Extraction
-           </a>
-          </li>
-          <li class="toctree-l1">
-           <a class="reference internal" href="../optimal_extraction_dynamic/Spectral%20Extraction.html">
-            NIRSpec MOS Optimal Spectral Extraction
-           </a>
-          </li>
-          <li class="toctree-l1">
            <a class="reference internal" href="../ifu_optimal/ifu_optimal.html">
-            Baseline: NIRSpec IFU Optimal Point Source Extraction
-           </a>
-          </li>
-         </ul>
-         <p aria-level="2" class="caption" role="heading">
-          <span class="caption-text">
-           Background Estimation
-          </span>
-         </p>
-         <ul class="nav bd-sidenav">
-          <li class="toctree-l1">
-           <a class="reference internal" href="../background_estimation_imaging/Imaging%20Sky%20Background%20Estimation.html">
-            Imaging Sky Background Estimation
+            IFU Optimal Spectral Extraction
            </a>
           </li>
          </ul>
@@ -283,7 +234,7 @@ const thebe_selector_output = ".output, .cell_output"
          <ul class="nav bd-sidenav">
           <li class="toctree-l1">
            <a class="reference internal" href="../soss-transit-spectroscopy/HAT-P-1b-PART3-data-analysis.html">
-            Analyzing the JWST Pipeline products of HAT-P-1b observations with NIRISS/SOSS
+            SOSS Transit Spectroscopy
            </a>
           </li>
          </ul>
@@ -295,7 +246,7 @@ const thebe_selector_output = ".output, .cell_output"
          <ul class="nav bd-sidenav">
           <li class="toctree-l1">
            <a class="reference internal" href="../psf_photometry/NIRCam_PSF_Photometry_Example.html">
-            NIRCam PSF Photometry Notebook
+            PSF Photometry
            </a>
           </li>
          </ul>
@@ -307,7 +258,7 @@ const thebe_selector_output = ".output, .cell_output"
          <ul class="nav bd-sidenav">
           <li class="toctree-l1">
            <a class="reference internal" href="../specviz_notebookGUI_interaction/specviz_notebook_gui_interaction_redshift.html">
-            Specviz notebook/GUI interaction on NIRISS WFSS 1D spectra
+            Specviz Simple Demo
            </a>
           </li>
          </ul>
@@ -319,7 +270,7 @@ const thebe_selector_output = ".output, .cell_output"
          <ul class="nav bd-sidenav">
           <li class="toctree-l1">
            <a class="reference internal" href="../asdf_example/asdf_example.html">
-            Examp 3       e   of Converting a FITS File to ASDF
+            ASDF Example
            </a>
           </li>
          </ul>
@@ -331,7 +282,7 @@ const thebe_selector_output = ".output, .cell_output"
          <ul class="nav bd-sidenav">
           <li class="toctree-l1">
            <a class="reference internal" href="../composite_model_fitting/specfit_demo_3.html">
-            Draft: Advanced Composite spectral model fitting
+            Composite Model Spectral Fitting
            </a>
           </li>
          </ul>
@@ -343,12 +294,12 @@ const thebe_selector_output = ".output, .cell_output"
          <ul class="nav bd-sidenav">
           <li class="toctree-l1">
            <a class="reference internal" href="../niriss_ami_binary/1_niriss_ami_binary.html">
-            NIRISS AMI simulation of binary point source AB Dor and calibrator HD37093
+            NIRISS AMI: MIRAGE Simulations
            </a>
           </li>
           <li class="toctree-l1">
            <a class="reference internal" href="../niriss_ami_binary/2_niriss_ami_binary.html">
-            NIRISS AMI calibration of binary point source AB Dor and calibrator HD37093
+            NIRISS AMI: Pipeline
            </a>
           </li>
          </ul>
@@ -360,7 +311,7 @@ const thebe_selector_output = ".output, .cell_output"
          <ul class="nav bd-sidenav">
           <li class="toctree-l1">
            <a class="reference internal" href="../aperture_photometry/NIRCam_Aperture_Photometry_Example.html">
-            Draft Aperture Photometry
+            Point Source Aperture Photometry
            </a>
           </li>
          </ul>
@@ -372,7 +323,7 @@ const thebe_selector_output = ".output, .cell_output"
          <ul class="nav bd-sidenav">
           <li class="toctree-l1">
            <a class="reference internal" href="../NIRSpec_MAST_Query/NIRSpec_MAST_Query.html">
-            MAST Query Tutorial for NIRSpec Users
+            MAST Query
            </a>
           </li>
          </ul>
@@ -384,7 +335,7 @@ const thebe_selector_output = ".output, .cell_output"
          <ul class="nav bd-sidenav">
           <li class="toctree-l1">
            <a class="reference internal" href="../MIRI_LRS_spectral_extraction/miri_lrs_spectral_extraction.html">
-            MIRI LRS Optimal  Spectral Extraction
+            LRS Optimal Spectral Extraction
            </a>
           </li>
          </ul>
@@ -396,19 +347,7 @@ const thebe_selector_output = ".output, .cell_output"
          <ul class="nav bd-sidenav">
           <li class="toctree-l1">
            <a class="reference internal" href="../transit_spectroscopy_notebook/Exoplanet_Transmission_Spectra_JWST.html">
-            Extracting an Exoplanet Transmission Spectrum from NIRSpec BOTS Time Series Observations
-           </a>
-          </li>
-         </ul>
-         <p aria-level="2" class="caption" role="heading">
-          <span class="caption-text">
-           NIRCam Photometry
-          </span>
-         </p>
-         <ul class="nav bd-sidenav">
-          <li class="toctree-l1">
-           <a class="reference internal" href="../NIRCam_photometry/NIRCam%20multiband%20photometry.html">
-            NIRCam Multiband Photometry
+            BOTS Time Series Observations
            </a>
           </li>
          </ul>
@@ -562,117 +501,112 @@ const thebe_selector_output = ".output, .cell_output"
        </div>
        <nav aria-label="Page" id="bd-toc-nav">
         <ul class="visible nav section-nav flex-column">
-         <li class="toc-h1 nav-item toc-entry">
-          <a class="reference internal nav-link" href="#">
-           JWST Data Analysis
+         <li class="toc-h2 nav-item toc-entry">
+          <a class="reference internal nav-link" href="#import-things-you-need">
+           Import things you need
           </a>
          </li>
-         <li class="toc-h1 nav-item toc-entry">
-          <a class="reference internal nav-link" href="#young-stellar-objects-in-the-large-magellanic-cloud">
-           Young    Stellar Objects in the Large Magellanic Cloud
+         <li class="toc-h2 nav-item toc-entry">
+          <a class="reference internal nav-link" href="#check-versions-of-imported-things">
+           Check versions of imported things
           </a>
-          <ul class="visible nav section-nav flex-column">
-           <li class="toc-h2 nav-item toc-entry">
-            <a class="reference internal nav-link" href="#import-things-you-need">
-             Import things you need
-            </a>
-           </li>
-           <li class="toc-h2 nav-item toc-entry">
-            <a class="reference internal nav-link" href="#check-versions-of-imported-things">
-             Check versions of imported things
-            </a>
-           </li>
-           <li class="toc-h2 nav-item toc-entry">
-            <a class="reference internal nav-link" href="#setup-output-directory-for-figures-and-spectra">
-             Setup output directory for figures and spectra
-            </a>
-           </li>
-           <li class="toc-h2 nav-item toc-entry">
-            <a class="reference internal nav-link" href="#set-plot-paramters">
-             Set plot paramters
-            </a>
-           </li>
-           <li class="toc-h2 nav-item toc-entry">
-            <a class="reference internal nav-link" href="#set-path-to-data">
-             Set path to data
-            </a>
-           </li>
-           <li class="toc-h2 nav-item toc-entry">
-            <a class="reference internal nav-link" href="#load-and-display-data-cube">
-             Load and display data cube
-            </a>
-           </li>
-           <li class="toc-h2 nav-item toc-entry">
-            <a class="reference internal nav-link" href="#trim-the-cube">
-             Trim the cube
-            </a>
-           </li>
-           <li class="toc-h2 nav-item toc-entry">
-            <a class="reference internal nav-link" href="#make-a-2d-image-from-the-3d-cube-either-with-average-median-or-sum">
-             Make a 2D image from the 3D cube either with average, median, or sum
-            </a>
-           </li>
-           <li class="toc-h2 nav-item toc-entry">
-            <a class="reference internal nav-link" href="#plot-the-image-to-do-a-visual-check">
-             Plot the image to do a visual check
-            </a>
-           </li>
-           <li class="toc-h2 nav-item toc-entry">
-            <a class="reference internal nav-link" href="#plot-the-summed-image-with-wcs-coordinates-and-save-the-figure">
-             Plot the summed image with WCS coordinates and save the figure
-            </a>
-           </li>
-           <li class="toc-h2 nav-item toc-entry">
-            <a class="reference internal nav-link" href="#identify-all-point-sources-using-photutils">
-             Identify all point sources using photutils
-            </a>
-           </li>
-           <li class="toc-h2 nav-item toc-entry">
-            <a class="reference internal nav-link" href="#get-a-list-of-all-point-sources">
-             Get a list of all point sources
-            </a>
-           </li>
-           <li class="toc-h2 nav-item toc-entry">
-            <a class="reference internal nav-link" href="#extract-and-plot-spectrum-of-all-sources">
-             Extract and plot spectrum of all sources
-            </a>
-           </li>
-           <li class="toc-h2 nav-item toc-entry">
-            <a class="reference internal nav-link" href="#make-a-table-for-the-extracted-sources">
-             Make a Table for the Extracted Sources
-            </a>
-           </li>
-           <li class="toc-h2 nav-item toc-entry">
-            <a class="reference internal nav-link" href="#use-spitzer-irs-yso-spectra-from-here-on-out-for-science-test-cases">
-             Use Spitzer IRS YSO Spectra from Here on Out For Science Test Cases
-            </a>
-           </li>
-           <li class="toc-h2 nav-item toc-entry">
-            <a class="reference internal nav-link" href="#fit-a-generic-continuum">
-             Fit a generic continuum
-            </a>
-           </li>
-           <li class="toc-h2 nav-item toc-entry">
-            <a class="reference internal nav-link" href="#look-for-emission-and-absorption-lines">
-             Look For Emission and Absorption Lines
-            </a>
-           </li>
-           <li class="toc-h2 nav-item toc-entry">
-            <a class="reference internal nav-link" href="#identify-emission-and-absorption-lines">
-             Identify emission and absorption lines
-            </a>
-           </li>
-           <li class="toc-h2 nav-item toc-entry">
-            <a class="reference internal nav-link" href="#classify-the-yso-according-to-what-lines-are-detected">
-             Classify the YSO according to what lines are detected
-            </a>
-           </li>
-           <li class="toc-h2 nav-item toc-entry">
-            <a class="reference internal nav-link" href="#plot-the-spectra-and-label-the-emission-and-absorption-features">
-             Plot the spectra and label the emission and absorption features
+         </li>
+         <li class="toc-h2 nav-item toc-entry">
+          <a class="reference internal nav-link" href="#setup-output-directory-for-figures-and-spectra">
+           Setup output directory for figures and spectra
+          </a>
+         </li>
+         <li class="toc-h2 nav-item toc-entry">
+          <a class="reference internal nav-link" href="#set-plot-paramters">
+           Set plot paramters
+          </a>
+         </li>
+         <li class="toc-h2 nav-item toc-entry">
+          <a class="reference internal nav-link" href="#set-path-to-data">
+           Set path to data
+          </a>
+          <ul class="nav section-nav flex-column">
+           <li class="toc-h3 nav-item toc-entry">
+            <a class="reference internal nav-link" href="#note-that-the-data-file-is-2-gb-so-download-will-take-a-while-depending-on-your-intenet-speed-you-can-also-download-directly-using-the-link-below">
+             Note that the data file is ~2 GB, so download will take a while depending on your intenet speed. You can also download directly using the link below.
             </a>
            </li>
           </ul>
+         </li>
+         <li class="toc-h2 nav-item toc-entry">
+          <a class="reference internal nav-link" href="#load-and-display-data-cube">
+           Load and display data cube
+          </a>
+         </li>
+         <li class="toc-h2 nav-item toc-entry">
+          <a class="reference internal nav-link" href="#trim-the-cube">
+           Trim the cube
+          </a>
+         </li>
+         <li class="toc-h2 nav-item toc-entry">
+          <a class="reference internal nav-link" href="#make-a-2d-image-from-the-3d-cube-either-with-average-median-or-sum">
+           Make a 2D image from the 3D cube either with average, median, or sum
+          </a>
+         </li>
+         <li class="toc-h2 nav-item toc-entry">
+          <a class="reference internal nav-link" href="#plot-the-image-to-do-a-visual-check">
+           Plot the image to do a visual check
+          </a>
+         </li>
+         <li class="toc-h2 nav-item toc-entry">
+          <a class="reference internal nav-link" href="#plot-the-summed-image-with-wcs-coordinates-and-save-the-figure">
+           Plot the summed image with WCS coordinates and save the figure
+          </a>
+         </li>
+         <li class="toc-h2 nav-item toc-entry">
+          <a class="reference internal nav-link" href="#identify-all-point-sources-using-photutils">
+           Identify all point sources using photutils
+          </a>
+         </li>
+         <li class="toc-h2 nav-item toc-entry">
+          <a class="reference internal nav-link" href="#get-a-list-of-all-point-sources">
+           Get a list of all point sources
+          </a>
+         </li>
+         <li class="toc-h2 nav-item toc-entry">
+          <a class="reference internal nav-link" href="#extract-and-plot-spectrum-of-all-sources">
+           Extract and plot spectrum of all sources
+          </a>
+         </li>
+         <li class="toc-h2 nav-item toc-entry">
+          <a class="reference internal nav-link" href="#make-a-table-for-the-extracted-sources">
+           Make a Table for the Extracted Sources
+          </a>
+         </li>
+         <li class="toc-h2 nav-item toc-entry">
+          <a class="reference internal nav-link" href="#use-spitzer-irs-yso-spectra-from-here-on-out-for-science-test-cases">
+           Use Spitzer IRS YSO Spectra from Here on Out For Science Test Cases
+          </a>
+         </li>
+         <li class="toc-h2 nav-item toc-entry">
+          <a class="reference internal nav-link" href="#fit-a-generic-continuum">
+           Fit a generic continuum
+          </a>
+         </li>
+         <li class="toc-h2 nav-item toc-entry">
+          <a class="reference internal nav-link" href="#look-for-emission-and-absorption-lines">
+           Look For Emission and Absorption Lines
+          </a>
+         </li>
+         <li class="toc-h2 nav-item toc-entry">
+          <a class="reference internal nav-link" href="#identify-emission-and-absorption-lines">
+           Identify emission and absorption lines
+          </a>
+         </li>
+         <li class="toc-h2 nav-item toc-entry">
+          <a class="reference internal nav-link" href="#classify-the-yso-according-to-what-lines-are-detected">
+           Classify the YSO according to what lines are detected
+          </a>
+         </li>
+         <li class="toc-h2 nav-item toc-entry">
+          <a class="reference internal nav-link" href="#plot-the-spectra-and-label-the-emission-and-absorption-features">
+           Plot the spectra and label the emission and absorption features
+          </a>
          </li>
         </ul>
        </nav>
@@ -683,7 +617,7 @@ const thebe_selector_output = ".output, .cell_output"
        <!-- Table of contents that is only displayed when printing the page -->
        <div class="onlyprint" id="jb-print-docs-body">
         <h1>
-         JWST Data Analysis
+         IFU of YSOs in LMC
         </h1>
         <!-- Table of contents -->
         <div id="print-main-content">
@@ -695,117 +629,112 @@ const thebe_selector_output = ".output, .cell_output"
           </div>
           <nav aria-label="Page">
            <ul class="visible nav section-nav flex-column">
-            <li class="toc-h1 nav-item toc-entry">
-             <a class="reference internal nav-link" href="#">
-              JWST Data Analysis
+            <li class="toc-h2 nav-item toc-entry">
+             <a class="reference internal nav-link" href="#import-things-you-need">
+              Import things you need
              </a>
             </li>
-            <li class="toc-h1 nav-item toc-entry">
-             <a class="reference internal nav-link" href="#young-stellar-objects-in-the-large-magellanic-cloud">
-              Young    Stellar Objects in the Large Magellanic Cloud
+            <li class="toc-h2 nav-item toc-entry">
+             <a class="reference internal nav-link" href="#check-versions-of-imported-things">
+              Check versions of imported things
              </a>
-             <ul class="visible nav section-nav flex-column">
-              <li class="toc-h2 nav-item toc-entry">
-               <a class="reference internal nav-link" href="#import-things-you-need">
-                Import things you need
-               </a>
-              </li>
-              <li class="toc-h2 nav-item toc-entry">
-               <a class="reference internal nav-link" href="#check-versions-of-imported-things">
-                Check versions of imported things
-               </a>
-              </li>
-              <li class="toc-h2 nav-item toc-entry">
-               <a class="reference internal nav-link" href="#setup-output-directory-for-figures-and-spectra">
-                Setup output directory for figures and spectra
-               </a>
-              </li>
-              <li class="toc-h2 nav-item toc-entry">
-               <a class="reference internal nav-link" href="#set-plot-paramters">
-                Set plot paramters
-               </a>
-              </li>
-              <li class="toc-h2 nav-item toc-entry">
-               <a class="reference internal nav-link" href="#set-path-to-data">
-                Set path to data
-               </a>
-              </li>
-              <li class="toc-h2 nav-item toc-entry">
-               <a class="reference internal nav-link" href="#load-and-display-data-cube">
-                Load and display data cube
-               </a>
-              </li>
-              <li class="toc-h2 nav-item toc-entry">
-               <a class="reference internal nav-link" href="#trim-the-cube">
-                Trim the cube
-               </a>
-              </li>
-              <li class="toc-h2 nav-item toc-entry">
-               <a class="reference internal nav-link" href="#make-a-2d-image-from-the-3d-cube-either-with-average-median-or-sum">
-                Make a 2D image from the 3D cube either with average, median, or sum
-               </a>
-              </li>
-              <li class="toc-h2 nav-item toc-entry">
-               <a class="reference internal nav-link" href="#plot-the-image-to-do-a-visual-check">
-                Plot the image to do a visual check
-               </a>
-              </li>
-              <li class="toc-h2 nav-item toc-entry">
-               <a class="reference internal nav-link" href="#plot-the-summed-image-with-wcs-coordinates-and-save-the-figure">
-                Plot the summed image with WCS coordinates and save the figure
-               </a>
-              </li>
-              <li class="toc-h2 nav-item toc-entry">
-               <a class="reference internal nav-link" href="#identify-all-point-sources-using-photutils">
-                Identify all point sources using photutils
-               </a>
-              </li>
-              <li class="toc-h2 nav-item toc-entry">
-               <a class="reference internal nav-link" href="#get-a-list-of-all-point-sources">
-                Get a list of all point sources
-               </a>
-              </li>
-              <li class="toc-h2 nav-item toc-entry">
-               <a class="reference internal nav-link" href="#extract-and-plot-spectrum-of-all-sources">
-                Extract and plot spectrum of all sources
-               </a>
-              </li>
-              <li class="toc-h2 nav-item toc-entry">
-               <a class="reference internal nav-link" href="#make-a-table-for-the-extracted-sources">
-                Make a Table for the Extracted Sources
-               </a>
-              </li>
-              <li class="toc-h2 nav-item toc-entry">
-               <a class="reference internal nav-link" href="#use-spitzer-irs-yso-spectra-from-here-on-out-for-science-test-cases">
-                Use Spitzer IRS YSO Spectra from Here on Out For Science Test Cases
-               </a>
-              </li>
-              <li class="toc-h2 nav-item toc-entry">
-               <a class="reference internal nav-link" href="#fit-a-generic-continuum">
-                Fit a generic continuum
-               </a>
-              </li>
-              <li class="toc-h2 nav-item toc-entry">
-               <a class="reference internal nav-link" href="#look-for-emission-and-absorption-lines">
-                Look For Emission and Absorption Lines
-               </a>
-              </li>
-              <li class="toc-h2 nav-item toc-entry">
-               <a class="reference internal nav-link" href="#identify-emission-and-absorption-lines">
-                Identify emission and absorption lines
-               </a>
-              </li>
-              <li class="toc-h2 nav-item toc-entry">
-               <a class="reference internal nav-link" href="#classify-the-yso-according-to-what-lines-are-detected">
-                Classify the YSO according to what lines are detected
-               </a>
-              </li>
-              <li class="toc-h2 nav-item toc-entry">
-               <a class="reference internal nav-link" href="#plot-the-spectra-and-label-the-emission-and-absorption-features">
-                Plot the spectra and label the emission and absorption features
+            </li>
+            <li class="toc-h2 nav-item toc-entry">
+             <a class="reference internal nav-link" href="#setup-output-directory-for-figures-and-spectra">
+              Setup output directory for figures and spectra
+             </a>
+            </li>
+            <li class="toc-h2 nav-item toc-entry">
+             <a class="reference internal nav-link" href="#set-plot-paramters">
+              Set plot paramters
+             </a>
+            </li>
+            <li class="toc-h2 nav-item toc-entry">
+             <a class="reference internal nav-link" href="#set-path-to-data">
+              Set path to data
+             </a>
+             <ul class="nav section-nav flex-column">
+              <li class="toc-h3 nav-item toc-entry">
+               <a class="reference internal nav-link" href="#note-that-the-data-file-is-2-gb-so-download-will-take-a-while-depending-on-your-intenet-speed-you-can-also-download-directly-using-the-link-below">
+                Note that the data file is ~2 GB, so download will take a while depending on your intenet speed. You can also download directly using the link below.
                </a>
               </li>
              </ul>
+            </li>
+            <li class="toc-h2 nav-item toc-entry">
+             <a class="reference internal nav-link" href="#load-and-display-data-cube">
+              Load and display data cube
+             </a>
+            </li>
+            <li class="toc-h2 nav-item toc-entry">
+             <a class="reference internal nav-link" href="#trim-the-cube">
+              Trim the cube
+             </a>
+            </li>
+            <li class="toc-h2 nav-item toc-entry">
+             <a class="reference internal nav-link" href="#make-a-2d-image-from-the-3d-cube-either-with-average-median-or-sum">
+              Make a 2D image from the 3D cube either with average, median, or sum
+             </a>
+            </li>
+            <li class="toc-h2 nav-item toc-entry">
+             <a class="reference internal nav-link" href="#plot-the-image-to-do-a-visual-check">
+              Plot the image to do a visual check
+             </a>
+            </li>
+            <li class="toc-h2 nav-item toc-entry">
+             <a class="reference internal nav-link" href="#plot-the-summed-image-with-wcs-coordinates-and-save-the-figure">
+              Plot the summed image with WCS coordinates and save the figure
+             </a>
+            </li>
+            <li class="toc-h2 nav-item toc-entry">
+             <a class="reference internal nav-link" href="#identify-all-point-sources-using-photutils">
+              Identify all point sources using photutils
+             </a>
+            </li>
+            <li class="toc-h2 nav-item toc-entry">
+             <a class="reference internal nav-link" href="#get-a-list-of-all-point-sources">
+              Get a list of all point sources
+             </a>
+            </li>
+            <li class="toc-h2 nav-item toc-entry">
+             <a class="reference internal nav-link" href="#extract-and-plot-spectrum-of-all-sources">
+              Extract and plot spectrum of all sources
+             </a>
+            </li>
+            <li class="toc-h2 nav-item toc-entry">
+             <a class="reference internal nav-link" href="#make-a-table-for-the-extracted-sources">
+              Make a Table for the Extracted Sources
+             </a>
+            </li>
+            <li class="toc-h2 nav-item toc-entry">
+             <a class="reference internal nav-link" href="#use-spitzer-irs-yso-spectra-from-here-on-out-for-science-test-cases">
+              Use Spitzer IRS YSO Spectra from Here on Out For Science Test Cases
+             </a>
+            </li>
+            <li class="toc-h2 nav-item toc-entry">
+             <a class="reference internal nav-link" href="#fit-a-generic-continuum">
+              Fit a generic continuum
+             </a>
+            </li>
+            <li class="toc-h2 nav-item toc-entry">
+             <a class="reference internal nav-link" href="#look-for-emission-and-absorption-lines">
+              Look For Emission and Absorption Lines
+             </a>
+            </li>
+            <li class="toc-h2 nav-item toc-entry">
+             <a class="reference internal nav-link" href="#identify-emission-and-absorption-lines">
+              Identify emission and absorption lines
+             </a>
+            </li>
+            <li class="toc-h2 nav-item toc-entry">
+             <a class="reference internal nav-link" href="#classify-the-yso-according-to-what-lines-are-detected">
+              Classify the YSO according to what lines are detected
+             </a>
+            </li>
+            <li class="toc-h2 nav-item toc-entry">
+             <a class="reference internal nav-link" href="#plot-the-spectra-and-label-the-emission-and-absorption-features">
+              Plot the spectra and label the emission and absorption features
+             </a>
             </li>
            </ul>
           </nav>
@@ -814,26 +743,57 @@ const thebe_selector_output = ".output, .cell_output"
        </div>
        <main id="main-content" role="main">
         <div>
-         <section class="tex2jax_ignore mathjax_ignore" id="jwst-data-analysis">
+         <section class="tex2jax_ignore mathjax_ignore" id="ifu-of-ysos-in-lmc">
           <h1>
-           JWST Data Analysis
-           <a class="headerlink" href="#jwst-data-analysis" title="Permalink to this headline">
-            #
-           </a>
-          </h1>
-         </section>
-         <section class="tex2jax_ignore mathjax_ignore" id="young-stellar-objects-in-the-large-magellanic-cloud">
-          <h1>
-           Young    Stellar Objects in the Large Magellanic Cloud
-           <a class="headerlink" href="#young-stellar-objects-in-the-large-magellanic-cloud" title="Permalink to this headline">
+           IFU of YSOs in LMC
+           <a class="headerlink" href="#ifu-of-ysos-in-lmc" title="Permalink to this headline">
             #
            </a>
           </h1>
           <p>
-           The LMC is the ideal site to studdy massive star formation because it is relatively close (d ~ 50 kpc) and has a face-on orientation so that we can resolve individual star formation sites and eliminate line of sight confusion. The Spitzer and Herschel surveys have identified thousands of YSOs in the LMC by using photometry that spans from 3 microns to 500 microns and are complete down to 8 solar mass YSOs.
+           <strong>
+            Use case:
+           </strong>
+           Automatically detect point sources and extract photometry in a 3D cube. Analyze spectral lines.
+           <br/>
+           <strong>
+            Data:
+           </strong>
+           ALMA 13CO data cubes.
+           <br/>
+           <strong>
+            Tools:
+           </strong>
+           specutils, photutils, astropy.
+           <br/>
+           <strong>
+            Cross-intrument:
+           </strong>
+           NIRSpec, MIRI.
+           <br/>
+           <strong>
+            Documentation:
+           </strong>
+           This notebook is part of a STScI’s larger
+           <a class="reference external" href="https://jwst-docs.stsci.edu/jwst-post-pipeline-data-analysis">
+            post-pipeline Data Analysis Tools Ecosystem
+           </a>
+           and can be
+           <a class="reference external" href="https://github.com/spacetelescope/dat_pyinthesky/tree/main/jdat_notebooks/MRS_Mstar_analysis">
+            downloaded
+           </a>
+           directly from the
+           <a class="reference external" href="https://github.com/spacetelescope/jdat_notebooks">
+            JDAT Notebook Github directory
+           </a>
+           .
+           <br/>
           </p>
           <p>
-           We know massive star formation occur in dense molecular gas. ALMA observations of 12CO and 13CO molecular gas show evidence that colliding filaments can be a mechanisms for gas densities to be as high as 10^6 cm^-3. Massive stars up go 50 solar masses have been observed in dense cores at the center of colliding CO gas filaments seen with ALMA.
+           The LMC is the ideal site to study massive star formation because it is relatively close (d ~ 50 kpc) and has a face-on orientation so that we can resolve individual star formation sites and eliminate line of sight confusion. The Spitzer and Herschel surveys have identified thousands of YSOs in the LMC by using photometry that spans from 3 microns to 500 microns and are complete down to 8 solar mass YSOs.
+          </p>
+          <p>
+           We know massive star formation occurs in dense molecular gas. ALMA observations of 12CO and 13CO molecular gas show evidence that colliding filaments can be a mechanisms for gas densities to be as high as 10^6 cm^-3. Massive stars up go 50 solar masses have been observed in dense cores at the center of colliding CO gas filaments seen with ALMA.
           </p>
           <p>
            The instruments on JWST will have angular resolutions 10 times better than Spitzer Space Telescope and sensitivities over a hundred times better than current instruments. Observations of YSOs with MIRI and NIRCam will be complete down to 1 solar mass YSOs, as oppose to 8 solar mass YSOs with Spitzer observations. The massive YSOs in the LMC are most likely a small cluster of YSOs, and with MRS we can get spectra of the individual object in the cluster. This will be a powerful tool in understanding star formation and cluster formation.
@@ -862,6 +822,8 @@ const thebe_selector_output = ".output, .cell_output"
 <span class="kn">from</span> <span class="nn">astropy.modeling</span> <span class="kn">import</span> <span class="n">models</span>
 <span class="kn">from</span> <span class="nn">astropy.table</span> <span class="kn">import</span> <span class="n">Table</span><span class="p">,</span> <span class="n">Column</span><span class="p">,</span> <span class="n">vstack</span>
 <span class="kn">from</span> <span class="nn">astropy.stats</span> <span class="kn">import</span> <span class="n">sigma_clipped_stats</span>
+<span class="kn">from</span> <span class="nn">astropy.utils.data</span> <span class="kn">import</span> <span class="n">download_file</span>
+<span class="kn">import</span> <span class="nn">urllib.request</span>
 
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -960,7 +922,7 @@ Matplotlib: 3.5.2
 Numpy: 1.23.1
 Pandas: 1.4.3
 Photutils: 1.5.0
-Scipy: 1.8.1
+Scipy: 1.9.0
 Specutils: 1.7.0
 SpectralCube: 0.6.0
 </pre>
@@ -1030,110 +992,52 @@ SpectralCube: 0.6.0
             </a>
            </h2>
            <p>
-            I am using ALMA 13CO from a known star formation region in the LMC host to nearly 150 massive YSOs.
+            Using ALMA 13CO from a known star formation region in the LMC host to nearly 150 massive YSOs.
            </p>
-           <p>
-            Note that the data file can be pulled from Box and installed locally in the user’s disk. This will save time when running the notebook multiple times.
-           </p>
-           <div class="cell docutils container">
-            <div class="cell_input docutils container">
-             <div class="highlight-ipython3 notranslate">
-              <div class="highlight">
-               <pre><span></span><span class="n">data_cube_file</span> <span class="o">=</span> <span class="s1">'https://data.science.stsci.edu/redirect/JWST/jwst-data_analysis_tools/MIRI_IFU_YSOs_in_the_LMC/LMC_13CO.fits'</span>
-<span class="c1"># data_cube_file = 'LMC_13CO.fits'</span>
+           <section id="note-that-the-data-file-is-2-gb-so-download-will-take-a-while-depending-on-your-intenet-speed-you-can-also-download-directly-using-the-link-below">
+            <h3>
+             Note that the data file is ~2 GB, so download will take a while depending on your intenet speed. You can also download directly using the link below.
+             <a class="headerlink" href="#note-that-the-data-file-is-2-gb-so-download-will-take-a-while-depending-on-your-intenet-speed-you-can-also-download-directly-using-the-link-below" title="Permalink to this headline">
+              #
+             </a>
+            </h3>
+            <div class="cell docutils container">
+             <div class="cell_input docutils container">
+              <div class="highlight-ipython3 notranslate">
+               <div class="highlight">
+                <pre><span></span><span class="n">data_file</span> <span class="o">=</span> <span class="s1">'./LMC_13CO.fits'</span>
+<span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="s2">"LMC_13CO.fits"</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"LMC_13CO.fits Already Exists"</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Downloading LMC_13CO.fits"</span><span class="p">)</span>
+    <span class="n">url</span> <span class="o">=</span> <span class="s1">'https://data.science.stsci.edu/redirect/JWST/jwst-data_analysis_tools/MIRI_IFU_YSOs_in_the_LMC/LMC_13CO.fits'</span>
+    <span class="n">urllib</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">urlretrieve</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="s1">'./LMC_13CO.fits'</span><span class="p">)</span>
 </pre>
+               </div>
               </div>
              </div>
-            </div>
-           </div>
-          </section>
-          <section id="load-and-display-data-cube">
-           <h2>
-            Load and display data cube
-            <a class="headerlink" href="#load-and-display-data-cube" title="Permalink to this headline">
-             #
-            </a>
-           </h2>
-           <div class="cell docutils container">
-            <div class="cell_input docutils container">
-             <div class="highlight-ipython3 notranslate">
-              <div class="highlight">
-               <pre><span></span><span class="n">cube</span> <span class="o">=</span> <span class="n">SpectralCube</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">data_cube_file</span><span class="p">,</span> <span class="n">hdu</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>  
-<span class="nb">print</span><span class="p">(</span><span class="n">cube</span><span class="p">)</span>
+             <div class="cell_output docutils container">
+              <div class="output stream highlight-myst-ansi notranslate">
+               <div class="highlight">
+                <pre><span></span>Downloading LMC_13CO.fits
 </pre>
+               </div>
               </div>
-             </div>
-            </div>
-            <div class="cell_output docutils container">
-             <div class="output traceback highlight-ipythontb notranslate">
-              <div class="highlight">
-               <pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+              <div class="output traceback highlight-ipythontb notranslate">
+               <div class="highlight">
+                <pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
-<span class="nn">Input In [7],</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">cube</span> <span class="o">=</span> <span class="n">SpectralCube</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">data_cube_file</span><span class="p">,</span> <span class="n">hdu</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>  
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="nb">print</span><span class="p">(</span><span class="n">cube</span><span class="p">)</span>
+<span class="nn">Input In [6],</span> in <span class="ni">&lt;cell line: 2&gt;</span><span class="nt">()</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="nb">print</span><span class="p">(</span><span class="s2">"Downloading LMC_13CO.fits"</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="n">url</span> <span class="o">=</span> <span class="s1">'https://data.science.stsci.edu/redirect/JWST/jwst-data_analysis_tools/MIRI_IFU_YSOs_in_the_LMC/LMC_13CO.fits'</span>
+<span class="ne">----&gt; </span><span class="mi">7</span> <span class="n">urllib</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">urlretrieve</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="s1">'./LMC_13CO.fits'</span><span class="p">)</span>
 
-<span class="nn">File /usr/share/miniconda/lib/python3.9/site-packages/spectral_cube/io/core.py:118,</span> in <span class="ni">SpectralCubeRead.__call__</span><span class="nt">(self, filename, *args, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">116</span> <span class="n">kwargs</span><span class="p">[</span><span class="s1">'target_cls'</span><span class="p">]</span> <span class="o">=</span> <span class="n">BaseSpectralCube</span>
-<span class="g g-Whitespace">    </span><span class="mi">117</span> <span class="k">try</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">118</span>     <span class="k">return</span> <span class="n">registry</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">BaseSpectralCube</span><span class="p">,</span> <span class="n">filename</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">119</span> <span class="k">except</span> <span class="ne">IsADirectoryError</span><span class="p">:</span>  <span class="c1"># See note above StringWrapper</span>
-<span class="g g-Whitespace">    </span><span class="mi">120</span>     <span class="k">return</span> <span class="n">registry</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">BaseSpectralCube</span><span class="p">,</span> <span class="n">StringWrapper</span><span class="p">(</span><span class="n">filename</span><span class="p">),</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-
-<span class="nn">File /usr/share/miniconda/lib/python3.9/site-packages/astropy/io/registry/compat.py:43,</span> in <span class="ni">_make_io_func.&lt;locals&gt;.wrapper</span><span class="nt">(registry, *args, **kwargs)</span>
-<span class="g g-Whitespace">     </span><span class="mi">41</span>     <span class="n">registry</span> <span class="o">=</span> <span class="n">default_registry</span>
-<span class="g g-Whitespace">     </span><span class="mi">42</span> <span class="c1"># get and call bound method from registry instance</span>
-<span class="ne">---&gt; </span><span class="mi">43</span> <span class="k">return</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">registry</span><span class="p">,</span> <span class="n">method_name</span><span class="p">)(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-
-<span class="nn">File /usr/share/miniconda/lib/python3.9/site-packages/astropy/io/registry/core.py:197,</span> in <span class="ni">UnifiedInputRegistry.read</span><span class="nt">(self, cls, format, cache, *args, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">195</span> <span class="k">try</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">196</span>     <span class="n">ctx</span> <span class="o">=</span> <span class="n">get_readable_fileobj</span><span class="p">(</span><span class="n">args</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">'binary'</span><span class="p">,</span> <span class="n">cache</span><span class="o">=</span><span class="n">cache</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">197</span>     <span class="n">fileobj</span> <span class="o">=</span> <span class="n">ctx</span><span class="o">.</span><span class="fm">__enter__</span><span class="p">()</span>
-<span class="g g-Whitespace">    </span><span class="mi">198</span> <span class="k">except</span> <span class="ne">OSError</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">199</span>     <span class="k">raise</span>
-
-<span class="nn">File /usr/share/miniconda/lib/python3.9/contextlib.py:119,</span> in <span class="ni">_GeneratorContextManager.__enter__</span><span class="nt">(self)</span>
-<span class="g g-Whitespace">    </span><span class="mi">117</span> <span class="k">del</span> <span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">kwds</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">func</span>
-<span class="g g-Whitespace">    </span><span class="mi">118</span> <span class="k">try</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">119</span>     <span class="k">return</span> <span class="nb">next</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">gen</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">120</span> <span class="k">except</span> <span class="ne">StopIteration</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">121</span>     <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="s2">"generator didn't yield"</span><span class="p">)</span> <span class="kn">from</span> <span class="bp">None</span>
-
-<span class="nn">File /usr/share/miniconda/lib/python3.9/site-packages/astropy/utils/data.py:267,</span> in <span class="ni">get_readable_fileobj</span><span class="nt">(name_or_obj, encoding, cache, show_progress, remote_timeout, sources, http_headers)</span>
-<span class="g g-Whitespace">    </span><span class="mi">265</span> <span class="n">is_url</span> <span class="o">=</span> <span class="n">_is_url</span><span class="p">(</span><span class="n">name_or_obj</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">266</span> <span class="k">if</span> <span class="n">is_url</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">267</span>     <span class="n">name_or_obj</span> <span class="o">=</span> <span class="n">download_file</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">268</span>         <span class="n">name_or_obj</span><span class="p">,</span> <span class="n">cache</span><span class="o">=</span><span class="n">cache</span><span class="p">,</span> <span class="n">show_progress</span><span class="o">=</span><span class="n">show_progress</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">269</span>         <span class="n">timeout</span><span class="o">=</span><span class="n">remote_timeout</span><span class="p">,</span> <span class="n">sources</span><span class="o">=</span><span class="n">sources</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">270</span>         <span class="n">http_headers</span><span class="o">=</span><span class="n">http_headers</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">271</span> <span class="n">fileobj</span> <span class="o">=</span> <span class="n">io</span><span class="o">.</span><span class="n">FileIO</span><span class="p">(</span><span class="n">name_or_obj</span><span class="p">,</span> <span class="s1">'r'</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">272</span> <span class="k">if</span> <span class="n">is_url</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">cache</span><span class="p">:</span>
-
-<span class="nn">File /usr/share/miniconda/lib/python3.9/site-packages/astropy/utils/data.py:1363,</span> in <span class="ni">download_file</span><span class="nt">(remote_url, cache, show_progress, timeout, sources, pkgname, http_headers, ssl_context, allow_insecure)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1361</span> <span class="k">for</span> <span class="n">source_url</span> <span class="ow">in</span> <span class="n">sources</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1362</span>     <span class="k">try</span><span class="p">:</span>
-<span class="ne">-&gt; </span><span class="mi">1363</span>         <span class="n">f_name</span> <span class="o">=</span> <span class="n">_download_file_from_source</span><span class="p">(</span>
-<span class="g g-Whitespace">   </span><span class="mi">1364</span>                 <span class="n">source_url</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1365</span>                 <span class="n">timeout</span><span class="o">=</span><span class="n">timeout</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1366</span>                 <span class="n">show_progress</span><span class="o">=</span><span class="n">show_progress</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1367</span>                 <span class="n">cache</span><span class="o">=</span><span class="n">cache</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1368</span>                 <span class="n">remote_url</span><span class="o">=</span><span class="n">remote_url</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1369</span>                 <span class="n">pkgname</span><span class="o">=</span><span class="n">pkgname</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1370</span>                 <span class="n">http_headers</span><span class="o">=</span><span class="n">http_headers</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1371</span>                 <span class="n">ssl_context</span><span class="o">=</span><span class="n">ssl_context</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1372</span>                 <span class="n">allow_insecure</span><span class="o">=</span><span class="n">allow_insecure</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1373</span>         <span class="c1"># Success!</span>
-<span class="g g-Whitespace">   </span><span class="mi">1374</span>         <span class="k">break</span>
-
-<span class="nn">File /usr/share/miniconda/lib/python3.9/site-packages/astropy/utils/data.py:1201,</span> in <span class="ni">_download_file_from_source</span><span class="nt">(source_url, show_progress, timeout, remote_url, cache, pkgname, http_headers, ftp_tls, ssl_context, allow_insecure)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1199</span> <span class="n">bytes_read</span> <span class="o">+=</span> <span class="nb">len</span><span class="p">(</span><span class="n">block</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1200</span> <span class="n">p</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">bytes_read</span><span class="p">)</span>
-<span class="ne">-&gt; </span><span class="mi">1201</span> <span class="n">block</span> <span class="o">=</span> <span class="n">remote</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">conf</span><span class="o">.</span><span class="n">download_block_size</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1202</span> <span class="k">if</span> <span class="n">size</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">bytes_read</span> <span class="o">&gt;</span> <span class="n">size</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1203</span>     <span class="k">raise</span> <span class="n">urllib</span><span class="o">.</span><span class="n">error</span><span class="o">.</span><span class="n">URLError</span><span class="p">(</span>
-<span class="g g-Whitespace">   </span><span class="mi">1204</span>         <span class="sa">f</span><span class="s2">"File was supposed to be </span><span class="si">{</span><span class="n">size</span><span class="si">}</span><span class="s2"> bytes but "</span>
-<span class="g g-Whitespace">   </span><span class="mi">1205</span>         <span class="sa">f</span><span class="s2">"server provides more, at least </span><span class="si">{</span><span class="n">bytes_read</span><span class="si">}</span><span class="s2"> "</span>
-<span class="g g-Whitespace">   </span><span class="mi">1206</span>         <span class="sa">f</span><span class="s2">"bytes. Download failed."</span><span class="p">)</span>
+<span class="nn">File /usr/share/miniconda/lib/python3.9/urllib/request.py:268,</span> in <span class="ni">urlretrieve</span><span class="nt">(url, filename, reporthook, data)</span>
+<span class="g g-Whitespace">    </span><span class="mi">265</span>     <span class="n">reporthook</span><span class="p">(</span><span class="n">blocknum</span><span class="p">,</span> <span class="n">bs</span><span class="p">,</span> <span class="n">size</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">267</span> <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">268</span>     <span class="n">block</span> <span class="o">=</span> <span class="n">fp</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">bs</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">269</span>     <span class="k">if</span> <span class="ow">not</span> <span class="n">block</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">270</span>         <span class="k">break</span>
 
 <span class="nn">File /usr/share/miniconda/lib/python3.9/http/client.py:463,</span> in <span class="ni">HTTPResponse.read</span><span class="nt">(self, amt)</span>
 <span class="g g-Whitespace">    </span><span class="mi">460</span> <span class="k">if</span> <span class="n">amt</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
@@ -1181,6 +1085,26 @@ SpectralCube: 0.6.0
 
 <span class="ne">KeyboardInterrupt</span>: 
 </pre>
+               </div>
+              </div>
+             </div>
+            </div>
+           </section>
+          </section>
+          <section id="load-and-display-data-cube">
+           <h2>
+            Load and display data cube
+            <a class="headerlink" href="#load-and-display-data-cube" title="Permalink to this headline">
+             #
+            </a>
+           </h2>
+           <div class="cell docutils container">
+            <div class="cell_input docutils container">
+             <div class="highlight-ipython3 notranslate">
+              <div class="highlight">
+               <pre><span></span><span class="n">cube</span> <span class="o">=</span> <span class="n">SpectralCube</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">data_file</span><span class="p">,</span> <span class="n">hdu</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>  
+<span class="nb">print</span><span class="p">(</span><span class="n">cube</span><span class="p">)</span>
+</pre>
               </div>
              </div>
             </div>
@@ -1199,12 +1123,13 @@ SpectralCube: 0.6.0
            <p>
             If you want to trim the cube to a certain spectral range then do the following:
            </p>
-           <p>
-            subcube = cube.spectral_slab(240 * (u.m/u.s), 265 * (u.m/u.s))
-           </p>
-           <p>
-            cube=subcube
-           </p>
+           <div class="highlight-default notranslate">
+            <div class="highlight">
+             <pre><span></span><span class="n">subcube</span> <span class="o">=</span> <span class="n">cube</span><span class="o">.</span><span class="n">spectral_slab</span><span class="p">(</span><span class="mi">240</span> <span class="o">*</span> <span class="p">(</span><span class="n">u</span><span class="o">.</span><span class="n">m</span><span class="o">/</span><span class="n">u</span><span class="o">.</span><span class="n">s</span><span class="p">),</span> <span class="mi">265</span> <span class="o">*</span> <span class="p">(</span><span class="n">u</span><span class="o">.</span><span class="n">m</span><span class="o">/</span><span class="n">u</span><span class="o">.</span><span class="n">s</span><span class="p">))</span>
+<span class="n">cube</span> <span class="o">=</span> <span class="n">subcube</span>
+</pre>
+            </div>
+           </div>
            <div class="cell docutils container">
             <div class="cell_input docutils container">
              <div class="highlight-ipython3 notranslate">
@@ -1228,7 +1153,10 @@ SpectralCube: 0.6.0
             This is to look for point sources. After you locate point sources, you will be applying aperture photometry to extract the spectrum.
            </p>
            <p>
-            The code can take awhile since it is a big data cube.
+            <strong>
+             The code can take awhile
+            </strong>
+            since it is a big data cube.
            </p>
            <div class="cell docutils container">
             <div class="cell_input docutils container">
@@ -1323,11 +1251,19 @@ SpectralCube: 0.6.0
             </a>
            </h2>
            <p>
-            Note that usually it is 3
-            <em>
-             std to find sources above noise level, but there are 247 point sources when I do that. So I made it 6
-            </em>
-            std to look at 4 point sources and make sure this step works.
+            Note that usually it is
+            <code class="docutils literal notranslate">
+             <span class="pre">
+              3*std
+             </span>
+            </code>
+            to find sources above noise level, but there are 247 point sources when I do that. So I made it
+            <code class="docutils literal notranslate">
+             <span class="pre">
+              6*std
+             </span>
+            </code>
+            to look at 4 point sources and make sure this step works.
            </p>
            <div class="cell docutils container">
             <div class="cell_input docutils container">
@@ -1350,7 +1286,9 @@ SpectralCube: 0.6.0
             </a>
            </h2>
            <p>
-            This step can take while to run
+            <strong>
+             This step can take while to run.
+            </strong>
            </p>
            <p>
             Do a visual check to see if all point sources have been identified, although the end result should be that this is not necessary. Also as a science user, I would like the algorithm to tell me what is and isn’t a point source mathematically. There should be some criteria that differences point and extended sources that the user shouldn’t have to visually check. Of the four sources, two are noise spectra because it detected noise spikes on the border of the ALMA cube which is a common thing with ALMA data cubes.
@@ -1641,7 +1579,13 @@ SpectralCube: 0.6.0
             Common YSO lines include PAH emission lines, ice absorption lines, and silicate absorption lines.
            </p>
            <p>
-            It would be better to have a SNR threshold instead of a flux threshold for the find_lines_derivative function.
+            It would be better to have a SNR threshold instead of a flux threshold for the
+            <code class="docutils literal notranslate">
+             <span class="pre">
+              find_lines_derivative()
+             </span>
+            </code>
+            function.
            </p>
            <p>
             The user has to remove the comment depending on which YSO they are checking: YSO1, YSO2, or YSO3. If it was a SNR threshold instead, then it can be a bit more automated.
@@ -1663,8 +1607,8 @@ SpectralCube: 0.6.0
         <span class="nb">print</span><span class="p">(</span><span class="s2">"Number of emission lines found:"</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">emissionlines_1</span><span class="p">))</span>
         <span class="nb">print</span><span class="p">(</span><span class="s2">"Number of absorption lines found:"</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">abslines_1</span><span class="p">))</span>
     <span class="k">else</span><span class="p">:</span>
-        <span class="n">emissionlines_1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-        <span class="n">abslines_1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="n">emissionlines_1</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">abslines_1</span> <span class="o">=</span> <span class="p">[]</span>
         <span class="nb">print</span><span class="p">(</span><span class="s2">"No emission lines found!"</span><span class="p">)</span> 
 
     <span class="n">lines</span> <span class="o">=</span> <span class="n">find_lines_derivative</span><span class="p">(</span><span class="n">spec_contsub_2</span><span class="p">,</span> <span class="n">flux_threshold</span><span class="o">=</span><span class="mf">0.020</span><span class="p">)</span>  <span class="c1"># YSO 1</span>
@@ -1676,8 +1620,8 @@ SpectralCube: 0.6.0
         <span class="nb">print</span><span class="p">(</span><span class="s2">"Number of emission lines found:"</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">emissionlines_2</span><span class="p">))</span>
         <span class="nb">print</span><span class="p">(</span><span class="s2">"Number of absorption lines found:"</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">abslines_2</span><span class="p">))</span>
     <span class="k">else</span><span class="p">:</span>
-        <span class="n">emissionlines_2</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-        <span class="n">abslines_2</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="n">emissionlines_2</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">abslines_2</span> <span class="o">=</span> <span class="p">[]</span>
         <span class="nb">print</span><span class="p">(</span><span class="s2">"No emission lines found!"</span><span class="p">)</span> 
 </pre>
               </div>
@@ -1690,7 +1634,7 @@ SpectralCube: 0.6.0
               <div class="highlight">
                <pre><span></span><span class="c1"># Extract emission lines greater than 13 microns</span>
 
-<span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">emissionlines_1</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="mi">1</span> <span class="ow">and</span> <span class="n">emissionlines_1</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+<span class="k">if</span> <span class="n">emissionlines_1</span><span class="p">:</span>
     <span class="n">emissionlines_1</span><span class="p">[</span><span class="s1">'gauss_line_center'</span><span class="p">]</span> <span class="o">=</span> <span class="mf">0.</span> <span class="o">*</span> <span class="n">u</span><span class="o">.</span><span class="n">micron</span>
     <span class="n">emissionlines_1</span><span class="p">[</span><span class="s1">'gauss_line_amp'</span><span class="p">]</span> <span class="o">=</span> <span class="mf">0.</span> <span class="o">*</span> <span class="n">u</span><span class="o">.</span><span class="n">jansky</span>
     <span class="n">emissionlines_1</span><span class="p">[</span><span class="s1">'gauss_line_stddev'</span><span class="p">]</span> <span class="o">=</span> <span class="mf">0.</span> <span class="o">*</span> <span class="n">u</span><span class="o">.</span><span class="n">micron</span>
@@ -1718,7 +1662,7 @@ SpectralCube: 0.6.0
 
 <span class="c1"># Extract emission lines less than 13 microns</span>
 
-<span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">emissionlines_2</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="mi">1</span> <span class="ow">and</span> <span class="n">emissionlines_2</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+<span class="k">if</span> <span class="n">emissionlines_2</span><span class="p">:</span>
     <span class="n">emissionlines_2</span><span class="p">[</span><span class="s1">'gauss_line_center'</span><span class="p">]</span> <span class="o">=</span> <span class="mf">0.</span> <span class="o">*</span> <span class="n">u</span><span class="o">.</span><span class="n">micron</span>
     <span class="n">emissionlines_2</span><span class="p">[</span><span class="s1">'gauss_line_amp'</span><span class="p">]</span> <span class="o">=</span> <span class="mf">0.</span> <span class="o">*</span> <span class="n">u</span><span class="o">.</span><span class="n">jansky</span>
     <span class="n">emissionlines_2</span><span class="p">[</span><span class="s1">'gauss_line_stddev'</span><span class="p">]</span> <span class="o">=</span> <span class="mf">0.</span> <span class="o">*</span> <span class="n">u</span><span class="o">.</span><span class="n">micron</span>
@@ -1755,7 +1699,7 @@ SpectralCube: 0.6.0
               <div class="highlight">
                <pre><span></span><span class="c1"># Extract absorption lines greater than 13 microns</span>
 
-<span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">abslines_1</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="mi">1</span> <span class="ow">and</span> <span class="n">abslines_1</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+<span class="k">if</span> <span class="n">abslines_1</span><span class="p">:</span>
     <span class="n">abslines_1</span><span class="p">[</span><span class="s1">'gauss_line_center'</span><span class="p">]</span> <span class="o">=</span> <span class="mf">0.</span> <span class="o">*</span> <span class="n">u</span><span class="o">.</span><span class="n">micron</span>
     <span class="n">abslines_1</span><span class="p">[</span><span class="s1">'gauss_line_amp'</span><span class="p">]</span> <span class="o">=</span> <span class="mf">0.</span> <span class="o">*</span> <span class="n">u</span><span class="o">.</span><span class="n">jansky</span>
     <span class="n">abslines_1</span><span class="p">[</span><span class="s1">'gauss_line_stddev'</span><span class="p">]</span> <span class="o">=</span> <span class="mf">0.</span> <span class="o">*</span> <span class="n">u</span><span class="o">.</span><span class="n">micron</span>
@@ -1784,7 +1728,7 @@ SpectralCube: 0.6.0
 
 <span class="c1"># Extract absorption lines less than 13 microns</span>
 
-<span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">abslines_2</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="mi">1</span> <span class="ow">and</span> <span class="n">abslines_2</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+<span class="k">if</span> <span class="n">abslines_2</span><span class="p">:</span>
     <span class="n">abslines_2</span><span class="p">[</span><span class="s1">'gauss_line_center'</span><span class="p">]</span> <span class="o">=</span> <span class="mf">0.</span> <span class="o">*</span> <span class="n">u</span><span class="o">.</span><span class="n">micron</span>
     <span class="n">abslines_2</span><span class="p">[</span><span class="s1">'gauss_line_amp'</span><span class="p">]</span> <span class="o">=</span> <span class="mf">0.</span> <span class="o">*</span> <span class="n">u</span><span class="o">.</span><span class="n">jansky</span>
     <span class="n">abslines_2</span><span class="p">[</span><span class="s1">'gauss_line_stddev'</span><span class="p">]</span> <span class="o">=</span> <span class="mf">0.</span> <span class="o">*</span> <span class="n">u</span><span class="o">.</span><span class="n">micron</span>
@@ -1847,7 +1791,7 @@ SpectralCube: 0.6.0
 <span class="n">pah_emission</span> <span class="o">=</span> <span class="p">[</span><span class="mf">6.2</span><span class="p">,</span> <span class="mf">7.7</span><span class="p">,</span> <span class="mf">8.6</span><span class="p">,</span> <span class="mf">11.3</span><span class="p">,</span> <span class="mf">12.0</span><span class="p">,</span> <span class="mf">12.7</span><span class="p">,</span> <span class="mf">14.2</span><span class="p">,</span> <span class="mf">16.2</span><span class="p">]</span> <span class="o">*</span> <span class="n">u</span><span class="o">.</span><span class="n">micron</span>  <span class="c1"># list or known YSO pah emission lines</span>
 <span class="n">len_pah_list</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">pah_emission</span><span class="p">)</span>
 
-<span class="n">pah_emission_detected</span> <span class="o">=</span> <span class="p">[]</span>  <span class="c1"># empty array to store detected lines</span>
+<span class="n">pah_emission_detected</span> <span class="o">=</span> <span class="p">[]</span>  <span class="c1"># empty list to store detected lines</span>
 <span class="n">line_cnr_list_1</span> <span class="o">=</span> <span class="n">emissionlines_1</span><span class="p">[</span><span class="s2">"line_center"</span><span class="p">]</span>  <span class="c1"># list of emission lines extracted from first spectrum</span>
 <span class="n">len_line_list</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">line_cnr_list_1</span><span class="p">)</span>
 <span class="n">line_cnr_list_2</span> <span class="o">=</span> <span class="n">emissionlines_2</span><span class="p">[</span><span class="s2">"line_center"</span><span class="p">]</span>  <span class="c1"># list of emission lines extracted from second spectrum</span>
@@ -1857,30 +1801,28 @@ SpectralCube: 0.6.0
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">len_pah_list</span><span class="p">):</span>
     <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">len_line_list</span><span class="p">):</span>
         <span class="k">if</span> <span class="n">line_cnr_list_1</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">value</span> <span class="o">-</span> <span class="mf">0.15</span> <span class="o">&lt;</span> <span class="n">pah_emission</span><span class="o">.</span><span class="n">value</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">line_cnr_list_1</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">value</span> <span class="o">+</span> <span class="mf">0.15</span><span class="p">:</span>
-            <span class="n">count_pah1</span> <span class="o">=</span> <span class="n">count_pah1</span> <span class="o">+</span> <span class="mi">1</span>
+            <span class="n">count_pah1</span> <span class="o">+=</span> <span class="mi">1</span>
 <span class="n">count_pah2</span> <span class="o">=</span> <span class="mi">0</span>  <span class="c1"># counting how many pah emission lines exist in second spectrum</span>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">len_pah_list</span><span class="p">):</span>
     <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">len_line_list2</span><span class="p">):</span>
         <span class="k">if</span> <span class="n">line_cnr_list_2</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">value</span> <span class="o">-</span> <span class="mf">0.15</span> <span class="o">&lt;</span> <span class="n">pah_emission</span><span class="o">.</span><span class="n">value</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">line_cnr_list_2</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">value</span> <span class="o">+</span> <span class="mf">0.15</span><span class="p">:</span>
-            <span class="n">count_pah2</span> <span class="o">=</span> <span class="n">count_pah2</span><span class="o">+</span><span class="mi">1</span>
+            <span class="n">count_pah2</span> <span class="o">+=</span> <span class="mi">1</span>
 
-<span class="n">pah_emission_detected</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.0</span><span class="p">]</span> <span class="o">*</span> <span class="p">(</span><span class="n">count_pah1</span> <span class="o">+</span> <span class="n">count_pah2</span><span class="p">)</span>  <span class="c1"># empty array to store detected lines</span>
+<span class="n">pah_emission_detected</span> <span class="o">=</span> <span class="p">[]</span>  <span class="c1"># empty list to store detected lines</span>
 <span class="n">count_pah</span> <span class="o">=</span> <span class="mi">0</span>  <span class="c1"># restart count</span>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">len_pah_list</span><span class="p">):</span>
     <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">len_line_list</span><span class="p">):</span>
         <span class="k">if</span> <span class="n">line_cnr_list_1</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">value</span> <span class="o">-</span> <span class="mf">0.15</span> <span class="o">&lt;</span> <span class="n">pah_emission</span><span class="o">.</span><span class="n">value</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">line_cnr_list_1</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">value</span> <span class="o">+</span> <span class="mf">0.15</span><span class="p">:</span>
-            <span class="n">pah_emission_detected</span><span class="p">[</span><span class="n">count_pah</span><span class="p">]</span> <span class="o">=</span> <span class="n">line_cnr_list_1</span><span class="p">[</span><span class="n">j</span><span class="p">]</span>
-            <span class="n">count_pah</span> <span class="o">=</span> <span class="n">count_pah</span> <span class="o">+</span> <span class="mi">1_1</span>
+            <span class="n">pah_emission_detected</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">line_cnr_list_1</span><span class="p">[</span><span class="n">j</span><span class="p">])</span>
+            <span class="n">count_pah</span> <span class="o">+=</span> <span class="mi">1</span>
     <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">len_line_list2</span><span class="p">):</span>
         <span class="k">if</span> <span class="n">line_cnr_list_2</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">value</span> <span class="o">-</span> <span class="mf">0.15</span> <span class="o">&lt;</span> <span class="n">pah_emission</span><span class="o">.</span><span class="n">value</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">line_cnr_list_2</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">value</span> <span class="o">+</span> <span class="mf">0.15</span><span class="p">:</span>
-            <span class="n">pah_emission_detected</span><span class="p">[</span><span class="n">count_pah</span><span class="p">]</span> <span class="o">=</span> <span class="n">line_cnr_list_2</span><span class="p">[</span><span class="n">j</span><span class="p">]</span>
-            <span class="n">count_pah</span> <span class="o">=</span> <span class="n">count_pah</span> <span class="o">+</span> <span class="mi">1</span>
+            <span class="n">pah_emission_detected</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">line_cnr_list_2</span><span class="p">[</span><span class="n">j</span><span class="p">])</span>
+            <span class="n">count_pah</span> <span class="o">+=</span> <span class="mi">1</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="n">count_pah</span><span class="p">,</span> <span class="s2">"pah emission lines detected in spectrum"</span><span class="p">)</span>
-<span class="k">if</span> <span class="n">count_pah</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-    <span class="n">pah_emission_detected</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.0</span><span class="p">]</span> <span class="o">*</span> <span class="n">u</span><span class="o">.</span><span class="n">micron</span>
-    
-<span class="nb">print</span><span class="p">(</span><span class="n">pah_emission_detected</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">count_pah</span><span class="si">}</span><span class="s2"> PAH emission lines detected in spectrum"</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">count_pah</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">pah_emission_detected</span><span class="p">)</span>
 </pre>
               </div>
              </div>
@@ -1905,39 +1847,28 @@ SpectralCube: 0.6.0
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">len_sil_list</span><span class="p">):</span>
     <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">len_line_list</span><span class="p">):</span>
         <span class="k">if</span> <span class="n">line_cnr_list_1</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">value</span> <span class="o">-</span> <span class="mf">0.3</span> <span class="o">&lt;</span> <span class="n">sil_absorption</span><span class="o">.</span><span class="n">value</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">line_cnr_list_1</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">value</span> <span class="o">+</span> <span class="mf">0.3</span><span class="p">:</span>  <span class="c1"># absorption features are wider than emission features therefore +/-0.2</span>
-            <span class="n">count_sil1</span> <span class="o">=</span> <span class="n">count_sil1</span> <span class="o">+</span> <span class="mi">1</span>
+            <span class="n">count_sil1</span> <span class="o">+=</span> <span class="mi">1</span>
 <span class="n">count_sil2</span> <span class="o">=</span> <span class="mi">0</span>  <span class="c1"># counting how many silicate absorption lines exist in second spectrum</span>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">len_sil_list</span><span class="p">):</span>
     <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">len_line_list2</span><span class="p">):</span>
         <span class="k">if</span> <span class="n">line_cnr_list_2</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">value</span> <span class="o">-</span> <span class="mf">0.3</span> <span class="o">&lt;</span> <span class="n">sil_absorption</span><span class="o">.</span><span class="n">value</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">line_cnr_list_2</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">value</span> <span class="o">+</span> <span class="mf">0.3</span><span class="p">:</span>  <span class="c1"># absorption features are wider than emission features therefore +/-0.2</span>
-            <span class="n">count_sil2</span> <span class="o">=</span> <span class="n">count_sil2</span> <span class="o">+</span> <span class="mi">1</span>
+            <span class="n">count_sil2</span> <span class="o">+=</span> <span class="mi">1</span>
             
-<span class="n">sil_absorption_detected</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.0</span><span class="p">]</span> <span class="o">*</span> <span class="p">(</span><span class="n">count_sil1</span> <span class="o">+</span> <span class="n">count_sil2</span><span class="p">)</span>  <span class="c1"># empty array to store detected lines</span>
+<span class="n">sil_absorption_detected</span> <span class="o">=</span> <span class="p">[]</span>  <span class="c1"># empty array to store detected lines</span>
 <span class="n">count_sil</span> <span class="o">=</span> <span class="mi">0</span>  <span class="c1"># restart count</span>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">len_sil_list</span><span class="p">):</span>
     <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">len_line_list</span><span class="p">):</span>
         <span class="k">if</span> <span class="n">line_cnr_list_1</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">value</span> <span class="o">-</span> <span class="mf">0.3</span> <span class="o">&lt;</span> <span class="n">sil_absorption</span><span class="o">.</span><span class="n">value</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">line_cnr_list_1</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">value</span> <span class="o">+</span> <span class="mf">0.3</span><span class="p">:</span>
-            <span class="n">sil_absorption_detected</span><span class="p">[</span><span class="n">count_sil</span><span class="p">]</span> <span class="o">=</span> <span class="n">sil_absorption</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
-            <span class="n">count_sil</span> <span class="o">=</span> <span class="n">count_sil</span> <span class="o">+</span> <span class="mi">1</span>
+            <span class="n">sil_absorption_detected</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">sil_absorption</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+            <span class="n">count_sil</span> <span class="o">+=</span> <span class="mi">1</span>
     <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">len_line_list2</span><span class="p">):</span>
         <span class="k">if</span> <span class="n">line_cnr_list_2</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">value</span> <span class="o">-</span> <span class="mf">0.3</span> <span class="o">&lt;</span> <span class="n">sil_absorption</span><span class="o">.</span><span class="n">value</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">line_cnr_list_2</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">value</span> <span class="o">+</span> <span class="mf">0.3</span><span class="p">:</span>
-            <span class="n">sil_absorption_detected</span><span class="p">[</span><span class="n">count_sil</span><span class="p">]</span> <span class="o">=</span> <span class="n">sil_absorption</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
-            <span class="n">count_sil</span> <span class="o">=</span> <span class="n">count_sil</span> <span class="o">+</span> <span class="mi">1</span>
-        
-<span class="k">if</span> <span class="n">count_sil</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-    <span class="n">sil_absorption_detected</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.0</span><span class="p">]</span> <span class="o">*</span> <span class="n">u</span><span class="o">.</span><span class="n">micron</span>
-          
-<span class="c1"># Remove multiple detection of same line</span>
-<span class="n">test_list</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.0</span><span class="p">]</span> <span class="o">*</span> <span class="n">count_sil</span>
-
-<span class="k">if</span> <span class="n">count_sil</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">count_sil</span><span class="p">):</span>
-        <span class="n">test_list</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">sil_absorption_detected</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">value</span>
-    <span class="n">drop_dups_sil</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">test_list</span><span class="p">)</span><span class="o">.</span><span class="n">drop_duplicates</span><span class="p">()</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
-    <span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">drop_dups_sil</span><span class="p">),</span> <span class="s2">"silicate absorption lines detected in spectrum"</span><span class="p">)</span>
-<span class="k">else</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">"0 silicate absorption lines detected in spectrum"</span><span class="p">)</span>
-    <span class="n">drop_dups_sil</span> <span class="o">=</span> <span class="p">[]</span>
+            <span class="n">sil_absorption_detected</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">sil_absorption</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+            <span class="n">count_sil</span> <span class="o">+=</span> <span class="mi">1</span>
+            
+<span class="c1"># Remove multiple detections of same line</span>
+<span class="n">drop_dups_sil</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">sil_absorption_detected</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">drop_dups_sil</span><span class="p">)</span><span class="si">}</span><span class="s2"> silicate absorption lines detected in spectrum"</span><span class="p">)</span>
 </pre>
               </div>
              </div>
@@ -1962,39 +1893,28 @@ SpectralCube: 0.6.0
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">len_ice_list</span><span class="p">):</span>
     <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">len_line_list</span><span class="p">):</span>
         <span class="k">if</span> <span class="n">line_cnr_list_1</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">value</span> <span class="o">-</span> <span class="mf">0.2</span> <span class="o">&lt;</span> <span class="n">ice_absorption</span><span class="o">.</span><span class="n">value</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">line_cnr_list_1</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">value</span> <span class="o">+</span> <span class="mf">0.2</span><span class="p">:</span>   
-            <span class="n">count_ice1</span> <span class="o">=</span> <span class="n">count_ice1</span> <span class="o">+</span> <span class="mi">1</span>
+            <span class="n">count_ice1</span> <span class="o">+=</span> <span class="mi">1</span>
 <span class="n">count_ice2</span> <span class="o">=</span> <span class="mi">0</span>  <span class="c1"># counting how many ice absorption lines exist in second spectrum</span>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">len_ice_list</span><span class="p">):</span>
     <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">len_line_list2</span><span class="p">):</span>
         <span class="k">if</span> <span class="n">line_cnr_list_2</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">value</span> <span class="o">-</span> <span class="mf">0.2</span> <span class="o">&lt;</span> <span class="n">ice_absorption</span><span class="o">.</span><span class="n">value</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">line_cnr_list_2</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">value</span> <span class="o">+</span> <span class="mf">0.2</span><span class="p">:</span> 
-            <span class="n">count_ice2</span> <span class="o">=</span> <span class="n">count_ice2</span> <span class="o">+</span> <span class="mi">1</span>
+            <span class="n">count_ice2</span> <span class="o">+=</span> <span class="mi">1</span>
             
-<span class="n">ice_absorption_detected</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.0</span><span class="p">]</span> <span class="o">*</span> <span class="p">(</span><span class="n">count_ice1</span> <span class="o">+</span> <span class="n">count_ice2</span><span class="p">)</span>  <span class="c1"># empty array to store detected lines</span>
+<span class="n">ice_absorption_detected</span> <span class="o">=</span> <span class="p">[]</span>  <span class="c1"># empty array to store detected lines</span>
 <span class="n">count_ice</span> <span class="o">=</span> <span class="mi">0</span>  <span class="c1"># restart count</span>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">len_ice_list</span><span class="p">):</span>
     <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">len_line_list</span><span class="p">):</span>
         <span class="k">if</span> <span class="n">line_cnr_list_1</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">value</span> <span class="o">-</span> <span class="mf">0.2</span> <span class="o">&lt;</span> <span class="n">ice_absorption</span><span class="o">.</span><span class="n">value</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">line_cnr_list_1</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">value</span> <span class="o">+</span> <span class="mf">0.2</span><span class="p">:</span>
-            <span class="n">ice_absorption_detected</span><span class="p">[</span><span class="n">count_ice</span><span class="p">]</span> <span class="o">=</span> <span class="n">ice_absorption</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
-            <span class="n">count_ice</span> <span class="o">=</span> <span class="n">count_ice</span> <span class="o">+</span> <span class="mi">1</span>
+            <span class="n">ice_absorption_detected</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">ice_absorption</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+            <span class="n">count_ice</span> <span class="o">+=</span> <span class="mi">1</span>
     <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">len_line_list2</span><span class="p">):</span>
         <span class="k">if</span> <span class="n">line_cnr_list_2</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">value</span> <span class="o">-</span> <span class="mf">0.2</span> <span class="o">&lt;</span> <span class="n">ice_absorption</span><span class="o">.</span><span class="n">value</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">line_cnr_list_2</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">value</span> <span class="o">+</span> <span class="mf">0.2</span><span class="p">:</span>
-            <span class="n">ice_absorption_detected</span><span class="p">[</span><span class="n">count_ice</span><span class="p">]</span> <span class="o">=</span> <span class="n">ice_absorption</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
-            <span class="n">count_ice</span> <span class="o">=</span> <span class="n">count_ice</span> <span class="o">+</span> <span class="mi">1</span>
-
-<span class="k">if</span> <span class="n">count_ice</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-    <span class="n">ice_absorption_detected</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.0</span><span class="p">]</span> <span class="o">*</span> <span class="n">u</span><span class="o">.</span><span class="n">micron</span>
-          
-<span class="c1"># Remove multiple detection of same line</span>
-<span class="n">test_list</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.0</span><span class="p">]</span> <span class="o">*</span> <span class="n">count_ice</span>
-
-<span class="k">if</span> <span class="n">count_ice</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">count_ice</span><span class="p">):</span>
-        <span class="n">test_list</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">ice_absorption_detected</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
-    <span class="n">drop_dups_ice</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">test_list</span><span class="p">)</span><span class="o">.</span><span class="n">drop_duplicates</span><span class="p">()</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
-    <span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">drop_dups_ice</span><span class="p">),</span> <span class="s2">"ice absorption lines detected in spectrum"</span><span class="p">)</span>
-<span class="k">else</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">"0 ice absorption lines detected in spectrum"</span><span class="p">)</span>
-    <span class="n">drop_dups_ice</span> <span class="o">=</span> <span class="p">[]</span>
+            <span class="n">ice_absorption_detected</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">ice_absorption</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+            <span class="n">count_ice</span> <span class="o">+=</span> <span class="mi">1</span>
+             
+<span class="c1"># Remove multiple detections of same line</span>
+<span class="n">drop_dups_ice</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">ice_absorption_detected</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">drop_dups_ice</span><span class="p">)</span><span class="si">}</span><span class="s2"> ice absorption lines detected in spectrum"</span><span class="p">)</span>
 </pre>
               </div>
              </div>
@@ -2016,38 +1936,31 @@ SpectralCube: 0.6.0
              <div class="highlight-ipython3 notranslate">
               <div class="highlight">
                <pre><span></span><span class="c1"># If no PAH, silicate, and ice lines found then print this is not a YSO</span>
-<span class="k">if</span> <span class="n">pah_emission_detected</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">value</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">sil_absorption_detected</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">value</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">ice_absorption_detected</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">value</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+<span class="k">if</span> <span class="ow">not</span> <span class="n">pah_emission_detected</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">sil_absorption_detected</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">ice_absorption_detected</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">"This is not a YSO."</span><span class="p">)</span>
-
-<span class="c1"># Else find out if YSO 1 (youngest, most embedded YSO with CO2 absorption feature at 15.2 microns)</span>
-<span class="k">if</span> <span class="n">pah_emission_detected</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">value</span> <span class="o">!=</span> <span class="mi">0</span> <span class="ow">or</span> <span class="n">sil_absorption_detected</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">value</span> <span class="o">!=</span> <span class="mi">0</span> <span class="ow">or</span> <span class="n">ice_absorption_detected</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">value</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
-    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">drop_dups_ice</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
-        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">drop_dups_sil</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-            <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">count_ice</span><span class="p">):</span>
-                <span class="k">if</span> <span class="n">ice_absorption_detected</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">value</span> <span class="o">&lt;</span> <span class="mf">15.4</span> <span class="ow">and</span> <span class="n">ice_absorption_detected</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">value</span> <span class="o">&gt;</span> <span class="mf">15.0</span><span class="p">:</span>
+    
+<span class="k">else</span><span class="p">:</span>
+    <span class="c1"># Else find out if YSO 1 (youngest, most embedded YSO with CO2 absorption feature at 15.2 microns)</span>
+    <span class="k">if</span> <span class="n">drop_dups_ice</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">drop_dups_sil</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">count_ice</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">ice_absorption_detected</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">value</span> <span class="o">&lt;</span> <span class="mf">15.4</span> <span class="ow">and</span> <span class="n">ice_absorption_detected</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">value</span> <span class="o">&gt;</span> <span class="mf">15.0</span><span class="p">:</span>
                     <span class="nb">print</span><span class="p">(</span><span class="s2">"This is a Class 1 YSO."</span><span class="p">)</span>
-                        
-<span class="c1"># Else find out if YSO 2 (more evolved YSO with other ice absoprtion and silicate absorption features)</span>
-    <span class="k">if</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">drop_dups_sil</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">):</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">"This is a Class 2 YSO."</span><span class="p">)</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">drop_dups_ice</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
-            <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">count_ice</span><span class="p">):</span>
-                <span class="k">if</span> <span class="n">ice_absorption_detected</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">value</span> <span class="o">&lt;</span> <span class="mf">4.87</span> <span class="ow">and</span> <span class="n">ice_absorption_detected</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">value</span> <span class="o">&gt;</span> <span class="mf">4.47</span><span class="p">:</span>
-                    <span class="nb">print</span><span class="p">(</span><span class="s2">"This is a Class 2 YSO."</span><span class="p">)</span>
-                <span class="k">if</span> <span class="n">ice_absorption_detected</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">value</span> <span class="o">&lt;</span> <span class="mf">5.8</span> <span class="ow">and</span> <span class="n">ice_absorption_detected</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">value</span> <span class="o">&gt;</span> <span class="mf">6.2</span><span class="p">:</span>
-                    <span class="nb">print</span><span class="p">(</span><span class="s2">"This is a Class 2 YSO."</span><span class="p">)</span>
-                <span class="k">if</span> <span class="n">ice_absorption_detected</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">value</span> <span class="o">&lt;</span> <span class="mf">6.69</span> <span class="ow">and</span> <span class="n">ice_absorption_detected</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">value</span> <span class="o">&gt;</span> <span class="mf">7.09</span><span class="p">:</span>
-                    <span class="nb">print</span><span class="p">(</span><span class="s2">"This is a Class 2 YSO."</span><span class="p">)</span>
-                <span class="k">if</span> <span class="n">ice_absorption_detected</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">value</span> <span class="o">&lt;</span> <span class="mf">7.5</span> <span class="ow">and</span> <span class="n">ice_absorption_detected</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">value</span> <span class="o">&gt;</span> <span class="mf">7.7</span><span class="p">:</span>
-                    <span class="nb">print</span><span class="p">(</span><span class="s2">"This is a Class 2 YSO."</span><span class="p">)</span>
                     
-<span class="c1"># Else if PAH emission features then YSO 3</span>
-    <span class="k">if</span> <span class="p">(</span><span class="n">count_pah</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">drop_dups_ice</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">):</span>
+    <span class="c1"># Else find out if YSO 2 (more evolved YSO with other ice absoprtion and silicate absorption features)</span>
+    <span class="k">if</span> <span class="n">drop_dups_sil</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"This is a Class 2 YSO."</span><span class="p">)</span>  
+    <span class="k">elif</span> <span class="n">count_pah</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">drop_dups_ice</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">count_ice</span><span class="p">):</span>
+            <span class="k">if</span> <span class="p">((</span><span class="n">ice_absorption_detected</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">value</span> <span class="o">&lt;</span> <span class="mf">4.87</span> <span class="ow">and</span> <span class="n">ice_absorption_detected</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">value</span> <span class="o">&gt;</span> <span class="mf">4.47</span><span class="p">)</span>
+                <span class="ow">or</span> <span class="p">(</span><span class="n">ice_absorption_detected</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">value</span> <span class="o">&lt;</span> <span class="mf">5.8</span> <span class="ow">and</span> <span class="n">ice_absorption_detected</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">value</span> <span class="o">&gt;</span> <span class="mf">6.2</span><span class="p">)</span>
+                <span class="ow">or</span> <span class="p">(</span><span class="n">ice_absorption_detected</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">value</span> <span class="o">&lt;</span> <span class="mf">6.69</span> <span class="ow">and</span> <span class="n">ice_absorption_detected</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">value</span> <span class="o">&gt;</span> <span class="mf">7.09</span><span class="p">)</span>
+                <span class="ow">or</span> <span class="p">(</span><span class="n">ice_absorption_detected</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">value</span> <span class="o">&lt;</span> <span class="mf">7.5</span> <span class="ow">and</span> <span class="n">ice_absorption_detected</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">value</span> <span class="o">&gt;</span> <span class="mf">7.7</span><span class="p">)):</span>
+                <span class="nb">print</span><span class="p">(</span><span class="s2">"This is a Class 2 YSO."</span><span class="p">)</span>
+                
+    <span class="c1"># Else if PAH emission features then YSO 3</span>
+    <span class="k">if</span> <span class="p">((</span><span class="n">count_pah</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">drop_dups_ice</span><span class="p">)</span>
+        <span class="ow">or</span> <span class="p">(</span><span class="n">count_pah</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">drop_dups_sil</span><span class="p">)):</span>
         <span class="nb">print</span><span class="p">(</span><span class="s2">"This is a Class 3 YSO."</span><span class="p">)</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="k">if</span> <span class="p">(</span><span class="n">count_pah</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">drop_dups_sil</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">):</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s2">"This is a Class 3 YSO."</span><span class="p">)</span>
 </pre>
               </div>
              </div>
@@ -2073,30 +1986,25 @@ SpectralCube: 0.6.0
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">"Flux ({:latex})"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">spec</span><span class="o">.</span><span class="n">flux</span><span class="o">.</span><span class="n">unit</span><span class="p">))</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">'r'</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">'-'</span><span class="p">)</span>
 
-<span class="n">max_emission</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">spec_contsub_2</span><span class="o">.</span><span class="n">flux</span><span class="o">.</span><span class="n">value</span><span class="p">)</span>
+<span class="n">max_emission_plot_y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">spec_contsub_2</span><span class="o">.</span><span class="n">flux</span><span class="o">.</span><span class="n">value</span><span class="p">)</span> <span class="o">*</span> <span class="mi">4</span>
 
 <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">pah_emission_detected</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">pah_emission_detected</span><span class="p">)):</span>
-        <span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="n">pah_emission_detected</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">pah_emission_detected</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">value</span><span class="p">]</span>
-        <span class="n">y</span> <span class="o">=</span> <span class="p">[</span><span class="n">max_emission</span> <span class="o">*</span> <span class="mi">3</span><span class="p">,</span> <span class="n">max_emission</span> <span class="o">*</span> <span class="mi">4</span><span class="p">]</span>
-        <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="s1">'r'</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="s1">'r'</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">'PAH emission'</span><span class="p">)</span>    
-
-<span class="nb">print</span><span class="p">(</span><span class="n">pah_emission_detected</span><span class="p">)</span>
+    <span class="n">pah_vals</span> <span class="o">=</span> <span class="p">[</span><span class="n">v</span><span class="o">.</span><span class="n">value</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">pah_emission_detected</span><span class="p">]</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">vlines</span><span class="p">(</span><span class="n">pah_vals</span><span class="p">,</span> <span class="o">-</span><span class="n">max_emission_plot_y</span><span class="p">,</span> <span class="n">max_emission_plot_y</span><span class="p">,</span>
+               <span class="n">color</span><span class="o">=</span><span class="s1">'r'</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s1">'--'</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">'PAH emission'</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"PAH emission lines detected: "</span><span class="p">,</span> <span class="n">pah_emission_detected</span><span class="p">)</span>
 
 <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">sil_absorption_detected</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">sil_absorption_detected</span><span class="p">)):</span>
-        <span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="n">sil_absorption_detected</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">sil_absorption_detected</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">value</span><span class="p">]</span>
-        <span class="n">y</span> <span class="o">=</span> <span class="p">[</span><span class="n">max_emission</span> <span class="o">*</span> <span class="mi">3</span><span class="p">,</span> <span class="n">max_emission</span> <span class="o">*</span> <span class="mi">4</span><span class="p">]</span>
-        <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="s1">'blue'</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="s1">'blue'</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">'silicate absorption'</span><span class="p">)</span>
+    <span class="n">sil_vals</span> <span class="o">=</span> <span class="p">[</span><span class="n">v</span><span class="o">.</span><span class="n">value</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">sil_absorption_detected</span><span class="p">]</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">vlines</span><span class="p">(</span><span class="n">sil_vals</span><span class="p">,</span> <span class="o">-</span><span class="n">max_emission_plot_y</span><span class="p">,</span> <span class="n">max_emission_plot_y</span><span class="p">,</span>
+               <span class="n">color</span><span class="o">=</span><span class="s1">'b'</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s1">'--'</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">'silicate absorption'</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"silicate absorption lines detected: "</span><span class="p">,</span> <span class="n">sil_absorption_detected</span><span class="p">)</span>
     
 <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">ice_absorption_detected</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">ice_absorption_detected</span><span class="p">)):</span>
-        <span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="n">ice_absorption_detected</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">ice_absorption_detected</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">value</span><span class="p">]</span>
-        <span class="n">y</span> <span class="o">=</span> <span class="p">[</span><span class="n">max_emission</span> <span class="o">*</span> <span class="mi">3</span><span class="p">,</span> <span class="n">max_emission</span> <span class="o">*</span> <span class="mi">4</span><span class="p">]</span>
-        <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="s1">'g'</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="s1">'g'</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">'ice absorption'</span><span class="p">)</span>
+    <span class="n">ice_vals</span> <span class="o">=</span> <span class="p">[</span><span class="n">v</span><span class="o">.</span><span class="n">value</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">ice_absorption_detected</span><span class="p">]</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">vlines</span><span class="p">(</span><span class="n">ice_vals</span><span class="p">,</span> <span class="o">-</span><span class="n">max_emission_plot_y</span><span class="p">,</span> <span class="n">max_emission_plot_y</span><span class="p">,</span>
+               <span class="n">color</span><span class="o">=</span><span class="s1">'g'</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s1">'--'</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">'ice absorption'</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"ice absorption lines detected: "</span><span class="p">,</span> <span class="n">ice_absorption_detected</span><span class="p">)</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">35</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">frameon</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="s1">'medium'</span><span class="p">)</span>
@@ -2144,7 +2052,7 @@ SpectralCube: 0.6.0
             previous
            </p>
            <p class="prev-next-title">
-            NIRCam PSF-matched multiband photometry
+            Cross-Filter PSF Matching
            </p>
           </div>
          </a>
@@ -2154,7 +2062,7 @@ SpectralCube: 0.6.0
             next
            </p>
            <p class="prev-next-title">
-            Excuting the JWST pipeline on the  JWST astrometric calibration field in the LMC (part 1)
+            NIRCam Preimaging: Pipeline Stages 1, 2
            </p>
           </div>
           <i class="fas fa-angle-right">

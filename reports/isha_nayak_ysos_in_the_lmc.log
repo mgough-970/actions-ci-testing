@@ -32,7 +32,12 @@ nbclient.exceptions.CellTimeoutError: A cell timed out while it was being execut
 The message was: Cell execution timed out.
 Here is a preview of the cell contents:
 -------------------
-cube = SpectralCube.read(data_cube_file, hdu=1)  
-print(cube)
+data_file = './LMC_13CO.fits'
+if os.path.exists("LMC_13CO.fits"):
+    print("LMC_13CO.fits Already Exists")
+else:
+    print("Downloading LMC_13CO.fits")
+    url = 'https://data.science.stsci.edu/redirect/JWST/jwst-data_analysis_tools/MIRI_IFU_YSOs_in_the_LMC/LMC_13CO.fits'
+    urllib.request.urlretrieve(url, './LMC_13CO.fits')
 -------------------
 

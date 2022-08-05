@@ -5,7 +5,7 @@
   <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
   <meta content="Docutils 0.17.1: http://docutils.sourceforge.net/" name="generator"/>
   <title>
-   Draft: Advanced Composite spectral model fitting — STScI JDAT Notebooks
+   Composite Model Spectral Fitting — STScI JDAT Notebooks
   </title>
   <!-- Loaded before other Sphinx assets -->
   <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet"/>
@@ -72,8 +72,8 @@ const thebe_selector_output = ".output, .cell_output"
   </script>
   <link href="../../genindex.html" rel="index" title="Index"/>
   <link href="../../search.html" rel="search" title="Search"/>
-  <link href="../niriss_ami_binary/1_niriss_ami_binary.html" rel="next" title="NIRISS AMI simulation of binary point source AB Dor and calibrator HD37093"/>
-  <link href="../asdf_example/asdf_example.html" rel="prev" title="Examp 3 e of Converting a FITS File to ASDF"/>
+  <link href="../niriss_ami_binary/1_niriss_ami_binary.html" rel="next" title="NIRISS AMI: MIRAGE Simulations"/>
+  <link href="../asdf_example/asdf_example.html" rel="prev" title="ASDF Example"/>
   <meta content="width=device-width, initial-scale=1" name="viewport"/>
   <meta content="None" name="docsearch:language"/>
   <!-- Google Analytics -->
@@ -139,40 +139,13 @@ const thebe_selector_output = ".output, .cell_output"
          </ul>
          <p aria-level="2" class="caption" role="heading">
           <span class="caption-text">
-           NIRISS WFSS Spectra
-          </span>
-         </p>
-         <ul class="nav bd-sidenav">
-          <li class="toctree-l1">
-           <a class="reference internal" href="../NIRISS_WFSS_postpipeline/00.%20Optimal%20extraction.html">
-            Part 0: Optimal Extraction of NIRISS WFSS Spectrum
-           </a>
-          </li>
-          <li class="toctree-l1">
-           <a class="reference internal" href="../NIRISS_WFSS_postpipeline/01.%20Combine%20and%20normalize%201D%20spectra.html">
-            Part 1: Combine One-Dimensional NIRISS WFSS Spectra
-           </a>
-          </li>
-          <li class="toctree-l1">
-           <a class="reference internal" href="../NIRISS_WFSS_postpipeline/02.%20Cross%20correlation%20template.html">
-            Part 2: Cross Correlation to Determine Redshift of NIRISS WFSS Spectra
-           </a>
-          </li>
-          <li class="toctree-l1">
-           <a class="reference internal" href="../NIRISS_WFSS_postpipeline/03.%20Spatially%20resolved%20emission%20line%20map.html">
-            Part 3: Spatially Resolved Emission Line Map of NIRISS WFSS Spectra
-           </a>
-          </li>
-         </ul>
-         <p aria-level="2" class="caption" role="heading">
-          <span class="caption-text">
            MOS Spectroscopy
           </span>
          </p>
          <ul class="nav bd-sidenav">
           <li class="toctree-l1">
            <a class="reference internal" href="../mos-spectroscopy/MOSspec_sv06_revised.html">
-            MOS Spectroscopy of Typical Extragalactic Field
+            MOS Spectroscopy of Extragalactic Field
            </a>
           </li>
          </ul>
@@ -196,7 +169,7 @@ const thebe_selector_output = ".output, .cell_output"
          <ul class="nav bd-sidenav">
           <li class="toctree-l1">
            <a class="reference internal" href="../IFU_cube_continuum_fit/NGC4151_FeII_ContinuumFit.html">
-            IFU    Data Modeling NGC 4151 Notebook #1 - Isolating Line Emission
+            IFU Cube Fitting
            </a>
           </li>
          </ul>
@@ -208,7 +181,7 @@ const thebe_selector_output = ".output, .cell_output"
          <ul class="nav bd-sidenav">
           <li class="toctree-l1">
            <a class="reference internal" href="../NIRCam_PSF-matched_photometry/NIRCam_PSF_matched_multiband_photometry.html">
-            NIRCam PSF-matched multiband photometry
+            Cross-Filter PSF Matching
            </a>
           </li>
          </ul>
@@ -220,7 +193,7 @@ const thebe_selector_output = ".output, .cell_output"
          <ul class="nav bd-sidenav">
           <li class="toctree-l1">
            <a class="reference internal" href="../MIRI_IFU_YSOs_in_the_LMC/isha_nayak_ysos_in_the_lmc.html">
-            JWST Data Analysis
+            IFU of YSOs in LMC
            </a>
           </li>
          </ul>
@@ -232,17 +205,17 @@ const thebe_selector_output = ".output, .cell_output"
          <ul class="nav bd-sidenav">
           <li class="toctree-l1">
            <a class="reference internal" href="../preimaging/preimaging_02_calwebb.html">
-            Excuting the JWST pipeline on the  JWST astrometric calibration field in the LMC (part 1)
+            NIRCam Preimaging: Pipeline Stages 1, 2
            </a>
           </li>
           <li class="toctree-l1">
            <a class="reference internal" href="../preimaging/preimaging_01_mirage.html">
-            NIRSpec Pre-Imaging with NIRCam
+            NIRCam Preimaging: MIRAGE Simulations
            </a>
           </li>
           <li class="toctree-l1">
            <a class="reference internal" href="../preimaging/preimaging_03_association.html">
-            Creating simulated images of the JWST astrometric calibration field in the LMC
+            NIRCam Preimaging: Pipeline Stage 3
            </a>
           </li>
          </ul>
@@ -253,30 +226,8 @@ const thebe_selector_output = ".output, .cell_output"
          </p>
          <ul class="nav bd-sidenav">
           <li class="toctree-l1">
-           <a class="reference internal" href="../optimal_extraction/Spectral%20Extraction-static.html">
-            NIRSpec MOS Optimal Spectral Extraction
-           </a>
-          </li>
-          <li class="toctree-l1">
-           <a class="reference internal" href="../optimal_extraction_dynamic/Spectral%20Extraction.html">
-            NIRSpec MOS Optimal Spectral Extraction
-           </a>
-          </li>
-          <li class="toctree-l1">
            <a class="reference internal" href="../ifu_optimal/ifu_optimal.html">
-            Baseline: NIRSpec IFU Optimal Point Source Extraction
-           </a>
-          </li>
-         </ul>
-         <p aria-level="2" class="caption" role="heading">
-          <span class="caption-text">
-           Background Estimation
-          </span>
-         </p>
-         <ul class="nav bd-sidenav">
-          <li class="toctree-l1">
-           <a class="reference internal" href="../background_estimation_imaging/Imaging%20Sky%20Background%20Estimation.html">
-            Imaging Sky Background Estimation
+            IFU Optimal Spectral Extraction
            </a>
           </li>
          </ul>
@@ -288,7 +239,7 @@ const thebe_selector_output = ".output, .cell_output"
          <ul class="nav bd-sidenav">
           <li class="toctree-l1">
            <a class="reference internal" href="../soss-transit-spectroscopy/HAT-P-1b-PART3-data-analysis.html">
-            Analyzing the JWST Pipeline products of HAT-P-1b observations with NIRISS/SOSS
+            SOSS Transit Spectroscopy
            </a>
           </li>
          </ul>
@@ -300,7 +251,7 @@ const thebe_selector_output = ".output, .cell_output"
          <ul class="nav bd-sidenav">
           <li class="toctree-l1">
            <a class="reference internal" href="../psf_photometry/NIRCam_PSF_Photometry_Example.html">
-            NIRCam PSF Photometry Notebook
+            PSF Photometry
            </a>
           </li>
          </ul>
@@ -312,7 +263,7 @@ const thebe_selector_output = ".output, .cell_output"
          <ul class="nav bd-sidenav">
           <li class="toctree-l1">
            <a class="reference internal" href="../specviz_notebookGUI_interaction/specviz_notebook_gui_interaction_redshift.html">
-            Specviz notebook/GUI interaction on NIRISS WFSS 1D spectra
+            Specviz Simple Demo
            </a>
           </li>
          </ul>
@@ -324,7 +275,7 @@ const thebe_selector_output = ".output, .cell_output"
          <ul class="nav bd-sidenav">
           <li class="toctree-l1">
            <a class="reference internal" href="../asdf_example/asdf_example.html">
-            Examp 3       e   of Converting a FITS File to ASDF
+            ASDF Example
            </a>
           </li>
          </ul>
@@ -336,7 +287,7 @@ const thebe_selector_output = ".output, .cell_output"
          <ul class="current nav bd-sidenav">
           <li class="toctree-l1 current active">
            <a class="current reference internal" href="#">
-            Draft: Advanced Composite spectral model fitting
+            Composite Model Spectral Fitting
            </a>
           </li>
          </ul>
@@ -348,12 +299,12 @@ const thebe_selector_output = ".output, .cell_output"
          <ul class="nav bd-sidenav">
           <li class="toctree-l1">
            <a class="reference internal" href="../niriss_ami_binary/1_niriss_ami_binary.html">
-            NIRISS AMI simulation of binary point source AB Dor and calibrator HD37093
+            NIRISS AMI: MIRAGE Simulations
            </a>
           </li>
           <li class="toctree-l1">
            <a class="reference internal" href="../niriss_ami_binary/2_niriss_ami_binary.html">
-            NIRISS AMI calibration of binary point source AB Dor and calibrator HD37093
+            NIRISS AMI: Pipeline
            </a>
           </li>
          </ul>
@@ -365,7 +316,7 @@ const thebe_selector_output = ".output, .cell_output"
          <ul class="nav bd-sidenav">
           <li class="toctree-l1">
            <a class="reference internal" href="../aperture_photometry/NIRCam_Aperture_Photometry_Example.html">
-            Draft Aperture Photometry
+            Point Source Aperture Photometry
            </a>
           </li>
          </ul>
@@ -377,7 +328,7 @@ const thebe_selector_output = ".output, .cell_output"
          <ul class="nav bd-sidenav">
           <li class="toctree-l1">
            <a class="reference internal" href="../NIRSpec_MAST_Query/NIRSpec_MAST_Query.html">
-            MAST Query Tutorial for NIRSpec Users
+            MAST Query
            </a>
           </li>
          </ul>
@@ -389,7 +340,7 @@ const thebe_selector_output = ".output, .cell_output"
          <ul class="nav bd-sidenav">
           <li class="toctree-l1">
            <a class="reference internal" href="../MIRI_LRS_spectral_extraction/miri_lrs_spectral_extraction.html">
-            MIRI LRS Optimal  Spectral Extraction
+            LRS Optimal Spectral Extraction
            </a>
           </li>
          </ul>
@@ -401,19 +352,7 @@ const thebe_selector_output = ".output, .cell_output"
          <ul class="nav bd-sidenav">
           <li class="toctree-l1">
            <a class="reference internal" href="../transit_spectroscopy_notebook/Exoplanet_Transmission_Spectra_JWST.html">
-            Extracting an Exoplanet Transmission Spectrum from NIRSpec BOTS Time Series Observations
-           </a>
-          </li>
-         </ul>
-         <p aria-level="2" class="caption" role="heading">
-          <span class="caption-text">
-           NIRCam Photometry
-          </span>
-         </p>
-         <ul class="nav bd-sidenav">
-          <li class="toctree-l1">
-           <a class="reference internal" href="../NIRCam_photometry/NIRCam%20multiband%20photometry.html">
-            NIRCam Multiband Photometry
+            BOTS Time Series Observations
            </a>
           </li>
          </ul>
@@ -569,7 +508,7 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="visible nav section-nav flex-column">
          <li class="toc-h1 nav-item toc-entry">
           <a class="reference internal nav-link" href="#">
-           Draft: Advanced Composite spectral model fitting
+           Composite Model Spectral Fitting
           </a>
           <ul class="visible nav section-nav flex-column">
            <li class="toc-h2 nav-item toc-entry">
@@ -733,7 +672,7 @@ const thebe_selector_output = ".output, .cell_output"
        <!-- Table of contents that is only displayed when printing the page -->
        <div class="onlyprint" id="jb-print-docs-body">
         <h1>
-         Draft: Advanced Composite spectral model fitting
+         Composite Model Spectral Fitting
         </h1>
         <!-- Table of contents -->
         <div id="print-main-content">
@@ -747,7 +686,7 @@ const thebe_selector_output = ".output, .cell_output"
            <ul class="visible nav section-nav flex-column">
             <li class="toc-h1 nav-item toc-entry">
              <a class="reference internal nav-link" href="#">
-              Draft: Advanced Composite spectral model fitting
+              Composite Model Spectral Fitting
              </a>
              <ul class="visible nav section-nav flex-column">
               <li class="toc-h2 nav-item toc-entry">
@@ -909,10 +848,10 @@ const thebe_selector_output = ".output, .cell_output"
        </div>
        <main id="main-content" role="main">
         <div>
-         <section class="tex2jax_ignore mathjax_ignore" id="draft-advanced-composite-spectral-model-fitting">
+         <section class="tex2jax_ignore mathjax_ignore" id="composite-model-spectral-fitting">
           <h1>
-           Draft: Advanced Composite spectral model fitting
-           <a class="headerlink" href="#draft-advanced-composite-spectral-model-fitting" title="Permalink to this headline">
+           Composite Model Spectral Fitting
+           <a class="headerlink" href="#composite-model-spectral-fitting" title="Permalink to this headline">
             #
            </a>
           </h1>
@@ -1190,87 +1129,85 @@ const thebe_selector_output = ".output, .cell_output"
               </div>
              </div>
              <div class="cell_output docutils container">
-              <div class="output traceback highlight-ipythontb notranslate">
-               <div class="highlight">
-                <pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">FileNotFoundError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
-<span class="nn">Input In [5],</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">data</span> <span class="o">=</span> <span class="n">QTable</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">datafile</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="s1">'ascii.ecsv'</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">data</span><span class="p">[:</span><span class="mi">3</span><span class="p">]</span>
-
-<span class="nn">File /usr/share/miniconda/lib/python3.9/site-packages/astropy/table/connect.py:62,</span> in <span class="ni">TableRead.__call__</span><span class="nt">(self, *args, **kwargs)</span>
-<span class="g g-Whitespace">     </span><span class="mi">59</span> <span class="n">units</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s1">'units'</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">60</span> <span class="n">descriptions</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s1">'descriptions'</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
-<span class="ne">---&gt; </span><span class="mi">62</span> <span class="n">out</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">registry</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">64</span> <span class="c1"># For some readers (e.g., ascii.ecsv), the returned `out` class is not</span>
-<span class="g g-Whitespace">     </span><span class="mi">65</span> <span class="c1"># guaranteed to be the same as the desired output `cls`.  If so,</span>
-<span class="g g-Whitespace">     </span><span class="mi">66</span> <span class="c1"># try coercing to desired class without copying (io.registry.read</span>
-<span class="g g-Whitespace">     </span><span class="mi">67</span> <span class="c1"># would normally do a copy).  The normal case here is swapping</span>
-<span class="g g-Whitespace">     </span><span class="mi">68</span> <span class="c1"># Table &lt;=&gt; QTable.</span>
-<span class="g g-Whitespace">     </span><span class="mi">69</span> <span class="k">if</span> <span class="bp">cls</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">out</span><span class="o">.</span><span class="vm">__class__</span><span class="p">:</span>
-
-<span class="nn">File /usr/share/miniconda/lib/python3.9/site-packages/astropy/io/registry/core.py:212,</span> in <span class="ni">UnifiedInputRegistry.read</span><span class="nt">(self, cls, format, cache, *args, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">208</span>     <span class="nb">format</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_valid_format</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">209</span>         <span class="s1">'read'</span><span class="p">,</span> <span class="bp">cls</span><span class="p">,</span> <span class="n">path</span><span class="p">,</span> <span class="n">fileobj</span><span class="p">,</span> <span class="n">args</span><span class="p">,</span> <span class="n">kwargs</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">211</span> <span class="n">reader</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_reader</span><span class="p">(</span><span class="nb">format</span><span class="p">,</span> <span class="bp">cls</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">212</span> <span class="n">data</span> <span class="o">=</span> <span class="n">reader</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">214</span> <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="bp">cls</span><span class="p">):</span>
-<span class="g g-Whitespace">    </span><span class="mi">215</span>     <span class="c1"># User has read with a subclass where only the parent class is</span>
-<span class="g g-Whitespace">    </span><span class="mi">216</span>     <span class="c1"># registered.  This returns the parent class, so try coercing</span>
-<span class="g g-Whitespace">    </span><span class="mi">217</span>     <span class="c1"># to desired subclass.</span>
-<span class="g g-Whitespace">    </span><span class="mi">218</span>     <span class="k">try</span><span class="p">:</span>
-
-<span class="nn">File /usr/share/miniconda/lib/python3.9/site-packages/astropy/io/ascii/connect.py:18,</span> in <span class="ni">io_read</span><span class="nt">(format, filename, **kwargs)</span>
-<span class="g g-Whitespace">     </span><span class="mi">16</span>     <span class="nb">format</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s1">'^ascii\.'</span><span class="p">,</span> <span class="s1">''</span><span class="p">,</span> <span class="nb">format</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">17</span>     <span class="n">kwargs</span><span class="p">[</span><span class="s1">'format'</span><span class="p">]</span> <span class="o">=</span> <span class="nb">format</span>
-<span class="ne">---&gt; </span><span class="mi">18</span> <span class="k">return</span> <span class="n">read</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-
-<span class="nn">File /usr/share/miniconda/lib/python3.9/site-packages/astropy/io/ascii/ui.py:396,</span> in <span class="ni">read</span><span class="nt">(table, guess, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">394</span>     <span class="k">else</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">395</span>         <span class="n">reader</span> <span class="o">=</span> <span class="n">get_reader</span><span class="p">(</span><span class="o">**</span><span class="n">new_kwargs</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">396</span>         <span class="n">dat</span> <span class="o">=</span> <span class="n">reader</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">table</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">397</span>         <span class="n">_read_trace</span><span class="o">.</span><span class="n">append</span><span class="p">({</span><span class="s1">'kwargs'</span><span class="p">:</span> <span class="n">copy</span><span class="o">.</span><span class="n">deepcopy</span><span class="p">(</span><span class="n">new_kwargs</span><span class="p">),</span>
-<span class="g g-Whitespace">    </span><span class="mi">398</span>                             <span class="s1">'Reader'</span><span class="p">:</span> <span class="n">reader</span><span class="o">.</span><span class="vm">__class__</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">399</span>                             <span class="s1">'status'</span><span class="p">:</span> <span class="s1">'Success with specified Reader class '</span>
-<span class="g g-Whitespace">    </span><span class="mi">400</span>                                       <span class="s1">'(no guessing)'</span><span class="p">})</span>
-<span class="g g-Whitespace">    </span><span class="mi">402</span> <span class="c1"># Static analysis (pyright) indicates `dat` might be left undefined, so just</span>
-<span class="g g-Whitespace">    </span><span class="mi">403</span> <span class="c1"># to be sure define it at the beginning and check here.</span>
-
-<span class="nn">File /usr/share/miniconda/lib/python3.9/site-packages/astropy/io/ascii/core.py:1356,</span> in <span class="ni">BaseReader.read</span><span class="nt">(self, table)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1353</span>     <span class="n">newline</span> <span class="o">=</span> <span class="kc">None</span>
-<span class="g g-Whitespace">   </span><span class="mi">1355</span> <span class="c1"># Get a list of the lines (rows) in the table</span>
-<span class="ne">-&gt; </span><span class="mi">1356</span> <span class="bp">self</span><span class="o">.</span><span class="n">lines</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">inputter</span><span class="o">.</span><span class="n">get_lines</span><span class="p">(</span><span class="n">table</span><span class="p">,</span> <span class="n">newline</span><span class="o">=</span><span class="n">newline</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1358</span> <span class="c1"># Set self.data.data_lines to a slice of lines contain the data rows</span>
-<span class="g g-Whitespace">   </span><span class="mi">1359</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">get_data_lines</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">lines</span><span class="p">)</span>
-
-<span class="nn">File /usr/share/miniconda/lib/python3.9/site-packages/astropy/io/ascii/core.py:330,</span> in <span class="ni">BaseInputter.get_lines</span><span class="nt">(self, table, newline)</span>
-<span class="g g-Whitespace">    </span><span class="mi">327</span> <span class="k">try</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">328</span>     <span class="k">if</span> <span class="p">(</span><span class="nb">hasattr</span><span class="p">(</span><span class="n">table</span><span class="p">,</span> <span class="s1">'read'</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">329</span>             <span class="ow">or</span> <span class="p">(</span><span class="s1">'</span><span class="se">\n</span><span class="s1">'</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">table</span> <span class="o">+</span> <span class="s1">''</span> <span class="ow">and</span> <span class="s1">'</span><span class="se">\r</span><span class="s1">'</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">table</span> <span class="o">+</span> <span class="s1">''</span><span class="p">)):</span>
-<span class="ne">--&gt; </span><span class="mi">330</span>         <span class="k">with</span> <span class="n">get_readable_fileobj</span><span class="p">(</span><span class="n">table</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">331</span>                                   <span class="n">encoding</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">encoding</span><span class="p">)</span> <span class="k">as</span> <span class="n">fileobj</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">332</span>             <span class="n">table</span> <span class="o">=</span> <span class="n">fileobj</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
-<span class="g g-Whitespace">    </span><span class="mi">333</span>     <span class="k">if</span> <span class="n">newline</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-
-<span class="nn">File /usr/share/miniconda/lib/python3.9/contextlib.py:119,</span> in <span class="ni">_GeneratorContextManager.__enter__</span><span class="nt">(self)</span>
-<span class="g g-Whitespace">    </span><span class="mi">117</span> <span class="k">del</span> <span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">kwds</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">func</span>
-<span class="g g-Whitespace">    </span><span class="mi">118</span> <span class="k">try</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">119</span>     <span class="k">return</span> <span class="nb">next</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">gen</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">120</span> <span class="k">except</span> <span class="ne">StopIteration</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">121</span>     <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="s2">"generator didn't yield"</span><span class="p">)</span> <span class="kn">from</span> <span class="bp">None</span>
-
-<span class="nn">File /usr/share/miniconda/lib/python3.9/site-packages/astropy/utils/data.py:271,</span> in <span class="ni">get_readable_fileobj</span><span class="nt">(name_or_obj, encoding, cache, show_progress, remote_timeout, sources, http_headers)</span>
-<span class="g g-Whitespace">    </span><span class="mi">266</span> <span class="k">if</span> <span class="n">is_url</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">267</span>     <span class="n">name_or_obj</span> <span class="o">=</span> <span class="n">download_file</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">268</span>         <span class="n">name_or_obj</span><span class="p">,</span> <span class="n">cache</span><span class="o">=</span><span class="n">cache</span><span class="p">,</span> <span class="n">show_progress</span><span class="o">=</span><span class="n">show_progress</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">269</span>         <span class="n">timeout</span><span class="o">=</span><span class="n">remote_timeout</span><span class="p">,</span> <span class="n">sources</span><span class="o">=</span><span class="n">sources</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">270</span>         <span class="n">http_headers</span><span class="o">=</span><span class="n">http_headers</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">271</span> <span class="n">fileobj</span> <span class="o">=</span> <span class="n">io</span><span class="o">.</span><span class="n">FileIO</span><span class="p">(</span><span class="n">name_or_obj</span><span class="p">,</span> <span class="s1">'r'</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">272</span> <span class="k">if</span> <span class="n">is_url</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">cache</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">273</span>     <span class="n">delete_fds</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">fileobj</span><span class="p">)</span>
-
-<span class="ne">FileNotFoundError</span>: [Errno 2] No such file or directory: './n5548_mean_g130mb4.ecsv'
-</pre>
+              <div class="output text_html">
+               <div>
+                <i>
+                 QTable length=3
+                </i>
+                <table class="table-striped table-bordered table-condensed" id="table139656101076128">
+                 <thead>
+                  <tr>
+                   <th>
+                    wavelength
+                   </th>
+                   <th>
+                    flux
+                   </th>
+                   <th>
+                    uncertainty
+                   </th>
+                  </tr>
+                 </thead>
+                 <thead>
+                  <tr>
+                   <th>
+                    Angstrom
+                   </th>
+                   <th>
+                    erg / (Angstrom cm2 s)
+                   </th>
+                   <th>
+                    erg / (Angstrom cm2 s)
+                   </th>
+                  </tr>
+                 </thead>
+                 <thead>
+                  <tr>
+                   <th>
+                    float64
+                   </th>
+                   <th>
+                    float64
+                   </th>
+                   <th>
+                    float64
+                   </th>
+                  </tr>
+                 </thead>
+                 <tr>
+                  <td>
+                   1139.99559
+                  </td>
+                  <td>
+                   4.39553486807e-14
+                  </td>
+                  <td>
+                   1.12651909249e-15
+                  </td>
+                 </tr>
+                 <tr>
+                  <td>
+                   1140.03439
+                  </td>
+                  <td>
+                   4.15510398254e-14
+                  </td>
+                  <td>
+                   1.09891679648e-15
+                  </td>
+                 </tr>
+                 <tr>
+                  <td>
+                   1140.07320
+                  </td>
+                  <td>
+                   4.31114724961e-14
+                  </td>
+                  <td>
+                   1.12382203631e-15
+                  </td>
+                 </tr>
+                </table>
                </div>
               </div>
              </div>
@@ -1329,6 +1266,17 @@ const thebe_selector_output = ".output, .cell_output"
                </div>
               </div>
              </div>
+             <div class="cell_output docutils container">
+              <div class="output stream highlight-myst-ansi notranslate">
+               <div class="highlight">
+                <pre><span></span>Spectrum1D (length=6058)
+flux:             [ 4.3955e-14 erg / (Angstrom cm2 s), ..., 4.2905e-14 erg / (Angstrom cm2 s) ],  mean=6.9511e-14 erg / (Angstrom cm2 s)
+spectral axis:    [ 1140.0 Angstrom, ..., 1375.0 Angstrom ],  mean=1257.5 Angstrom
+uncertainty:      [ StdDevUncertainty(1.12651909e-15), ..., StdDevUncertainty(6.8110986e-16) ]
+</pre>
+               </div>
+              </div>
+             </div>
             </div>
            </section>
           </section>
@@ -1352,6 +1300,38 @@ const thebe_selector_output = ".output, .cell_output"
     <span class="n">subregions</span> <span class="o">+=</span> <span class="p">[(</span><span class="n">x0</span><span class="o">*</span><span class="n">u</span><span class="o">.</span><span class="n">AA</span><span class="p">,</span> <span class="n">x1</span><span class="o">*</span><span class="n">u</span><span class="o">.</span><span class="n">AA</span><span class="p">)]</span>
 <span class="n">regions</span><span class="o">=</span><span class="n">specutils</span><span class="o">.</span><span class="n">SpectralRegion</span><span class="p">(</span><span class="n">subregions</span><span class="p">)</span>
 <span class="n">regions</span>
+</pre>
+              </div>
+             </div>
+            </div>
+            <div class="cell_output docutils container">
+             <div class="output text_plain highlight-myst-ansi notranslate">
+              <div class="highlight">
+               <pre><span></span>Spectral Region, 24 sub-regions:
+  (1145.83 Angstrom, 1151.33 Angstrom) 
+  (1152.88 Angstrom, 1187.88 Angstrom) 
+  (1193.68 Angstrom, 1197.7 Angstrom)  
+  (1197.3 Angstrom, 1198.53 Angstrom)  
+  (1201.38 Angstrom, 1205.38 Angstrom) 
+  (1207.08 Angstrom, 1208.36 Angstrom) 
+  (1210.58 Angstrom, 1213.58 Angstrom) 
+  (1217.38 Angstrom, 1218.75 Angstrom) 
+  (1220.3 Angstrom, 1221.7 Angstrom)   
+  (1223.02 Angstrom, 1224.08 Angstrom) 
+  (1225.74 Angstrom, 1227.2 Angstrom)  
+  (1227.86 Angstrom, 1228.35 Angstrom) 
+  (1229.08 Angstrom, 1230.38 Angstrom) 
+  (1236.68 Angstrom, 1238.0 Angstrom)  
+  (1238.95 Angstrom, 1239.53 Angstrom) 
+  (1240.42 Angstrom, 1242.24 Angstrom) 
+  (1242.93 Angstrom, 1249.88 Angstrom) 
+  (1250.68 Angstrom, 1253.17 Angstrom) 
+  (1254.04 Angstrom, 1254.32 Angstrom) 
+  (1256.36 Angstrom, 1256.47 Angstrom) 
+  (1263.37 Angstrom, 1263.64 Angstrom) 
+  (1264.28 Angstrom, 1270.0 Angstrom)  
+  (1362.51 Angstrom, 1369.56 Angstrom) 
+  (1370.15 Angstrom, 1372.76 Angstrom) 
 </pre>
               </div>
              </div>
@@ -1396,6 +1376,22 @@ const thebe_selector_output = ".output, .cell_output"
                <div class="highlight">
                 <pre><span></span><span class="n">mask_from_regions</span><span class="p">(</span><span class="n">spectrum</span><span class="p">,</span><span class="n">regions</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">spectrum</span><span class="o">.</span><span class="n">mask</span><span class="o">.</span><span class="n">min</span><span class="p">(),</span> <span class="n">spectrum</span><span class="o">.</span><span class="n">mask</span><span class="o">.</span><span class="n">max</span><span class="p">())</span>
+</pre>
+               </div>
+              </div>
+             </div>
+             <div class="cell_output docutils container">
+              <div class="output stream highlight-myst-ansi notranslate">
+               <div class="highlight">
+                <pre><span></span>False True
+</pre>
+               </div>
+              </div>
+              <div class="output stderr highlight-myst-ansi notranslate">
+               <div class="highlight">
+                <pre><span></span>/tmp/ipykernel_3071/3955972367.py:2: DeprecationWarning: `np.bool` is a deprecated alias for the builtin `bool`. To silence this warning, use `bool` by itself. Doing this will not modify any behavior and is safe. If you specifically wanted the numpy scalar type, use `np.bool_` here.
+Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+  mask = np.zeros(spectrum.spectral_axis.shape,dtype=np.bool)
 </pre>
                </div>
               </div>
@@ -1497,6 +1493,9 @@ const thebe_selector_output = ".output, .cell_output"
 </pre>
                </div>
               </div>
+             </div>
+             <div class="cell_output docutils container">
+              <img alt="../../_images/specfit_demo_3_19_0.png" src="../../_images/specfit_demo_3_19_0.png"/>
              </div>
             </div>
             <h1>
@@ -1636,6 +1635,66 @@ const thebe_selector_output = ".output, .cell_output"
                </div>
               </div>
              </div>
+             <div class="cell_output docutils container">
+              <div class="output stream highlight-myst-ansi notranslate">
+               <div class="highlight">
+                <pre><span></span>Model: CompoundModel
+Inputs: ('x',)
+Outputs: ('y',)
+Model set size: 1
+Expression: [0] * [1] + [2] + [3] + [4] + [5] + [6] + [7] + [8] + [9] + [10] + [11] + [12] + [13] + [14] + [15] + [16] + [17] + [18] + [19] + [20] + [21]
+Components: 
+    [0]: &lt;powerlaw(amplitude=0., x_0=1000., alpha=0.4819233, name='powerlaw1')&gt;
+
+    [1]: &lt;ccmext(ebmv=0.01713, rv=3.1, name='extinction')&gt;
+
+    [2]: &lt;gaussian(norm=0., mean=1195.006, fwhm=861.4926, skew=1., name='C III 1176')&gt;
+
+    [3]: &lt;gaussian(norm=0., mean=1226.392, fwhm=861.4926, skew=1., name='Si III 1206')&gt;
+
+    [4]: &lt;gaussian(norm=0., mean=1236.729, fwhm=255.4998, skew=1., name='Ly alpha - NLR, ILR,  medium,  very broad')&gt;
+
+    [5]: &lt;gaussian(norm=0., mean=1235.996, fwhm=861.4926, skew=1., name='gaussian5')&gt;
+
+    [6]: &lt;gaussian(norm=0., mean=1235.138, fwhm=3040.59, skew=1., name='gaussian6')&gt;
+
+    [7]: &lt;gaussian(norm=0., mean=1231.589, fwhm=8133.099, skew=1., name='gaussian7')&gt;
+
+    [8]: &lt;gaussian(norm=0., mean=1237.643, fwhm=18183.71, skew=1., name='gaussian8')&gt;
+
+    [9]: &lt;gaussian(norm=0., mean=1259.753, fwhm=255.4998, skew=1., name='N V - 2 NLR, 2 ILR, 2 medium, 1 very broad')&gt;
+
+    [10]: &lt;gaussian(norm=0., mean=1263.803, fwhm=255.4998, skew=1., name='gaussian10')&gt;
+
+    [11]: &lt;gaussian(norm=0., mean=1259.533, fwhm=861.4926, skew=1., name='gaussian11')&gt;
+
+    [12]: &lt;gaussian(norm=0., mean=1263.582, fwhm=861.4926, skew=1., name='gaussian12')&gt;
+
+    [13]: &lt;gaussian(norm=0., mean=1258.659, fwhm=3040.59, skew=1., name='gaussian13')&gt;
+
+    [14]: &lt;gaussian(norm=0., mean=1262.705, fwhm=3040.59, skew=1., name='gaussian14')&gt;
+
+    [15]: &lt;gaussian(norm=0., mean=1255.042, fwhm=8133.099, skew=1., name='gaussian15')&gt;
+
+    [16]: &lt;gaussian(norm=0., mean=1259.077, fwhm=8133.099, skew=1., name='gaussian16')&gt;
+
+    [17]: &lt;gaussian(norm=0., mean=1263.24, fwhm=18183.71, skew=1., name='gaussian17')&gt;
+
+    [18]: &lt;gaussian(norm=-0., mean=1194., fwhm=3683.102, skew=0.1849483, name='C III broad absorption')&gt;
+
+    [19]: &lt;gaussian(norm=-0., mean=1235., fwhm=3683.102, skew=0.1849483, name='Ly alpha broad absorption')&gt;
+
+    [20]: &lt;gaussian(norm=-0., mean=1258., fwhm=3683.102, skew=0.1849483, name='N V broad absorption')&gt;
+
+    [21]: &lt;gaussian(norm=-0., mean=1262.044, fwhm=3683.102, skew=0.1849483, name='N V broad absorption - 2')&gt;
+Parameters:
+    amplitude_0 x_0_0   alpha_0   ebmv_1 ... mean_21  fwhm_21   skew_21 
+    ----------- ------ --------- ------- ... -------- -------- ---------
+     6.5862e-14 1000.0 0.4819233 0.01713 ... 1262.044 3683.102 0.1849483
+</pre>
+               </div>
+              </div>
+             </div>
             </div>
             <div class="cell docutils container">
              <div class="cell_input docutils container">
@@ -1648,6 +1707,9 @@ const thebe_selector_output = ".output, .cell_output"
 </pre>
                </div>
               </div>
+             </div>
+             <div class="cell_output docutils container">
+              <img alt="../../_images/specfit_demo_3_28_0.png" src="../../_images/specfit_demo_3_28_0.png"/>
              </div>
             </div>
            </section>
@@ -1783,6 +1845,14 @@ const thebe_selector_output = ".output, .cell_output"
               </div>
              </div>
             </div>
+            <div class="cell_output docutils container">
+             <div class="output stream highlight-myst-ansi notranslate">
+              <div class="highlight">
+               <pre><span></span>Elapsed time:  7.188991069793701
+</pre>
+              </div>
+             </div>
+            </div>
            </div>
           </section>
           <section id="id8">
@@ -1814,6 +1884,15 @@ const thebe_selector_output = ".output, .cell_output"
               </div>
              </div>
             </div>
+            <div class="cell_output docutils container">
+             <div class="output stream highlight-myst-ansi notranslate">
+              <div class="highlight">
+               <pre><span></span>Both actual and predicted relative reductions in the sum of squares
+  are at most 0.000000
+</pre>
+              </div>
+             </div>
+            </div>
            </div>
            <p>
             The result is another instance of a compound model, with the fitted values set into the  parameter values:
@@ -1823,6 +1902,66 @@ const thebe_selector_output = ".output, .cell_output"
              <div class="highlight-ipython3 notranslate">
               <div class="highlight">
                <pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">fit_result</span><span class="p">)</span>
+</pre>
+              </div>
+             </div>
+            </div>
+            <div class="cell_output docutils container">
+             <div class="output stream highlight-myst-ansi notranslate">
+              <div class="highlight">
+               <pre><span></span>Model: CompoundModel
+Inputs: ('x',)
+Outputs: ('y',)
+Model set size: 1
+Expression: [0] * [1] + [2] + [3] + [4] + [5] + [6] + [7] + [8] + [9] + [10] + [11] + [12] + [13] + [14] + [15] + [16] + [17] + [18] + [19] + [20] + [21]
+Components: 
+    [0]: &lt;powerlaw(amplitude=0., x_0=1000., alpha=1.54475949, name='powerlaw1')&gt;
+
+    [1]: &lt;ccmext(ebmv=0.07956856, rv=3.1, name='extinction')&gt;
+
+    [2]: &lt;gaussian(norm=0., mean=1195.006, fwhm=861.4926, skew=1., name='C III 1176')&gt;
+
+    [3]: &lt;gaussian(norm=0., mean=1226.392, fwhm=861.4926, skew=1., name='Si III 1206')&gt;
+
+    [4]: &lt;gaussian(norm=0., mean=1236.729, fwhm=255.4998, skew=1., name='Ly alpha - NLR, ILR,  medium,  very broad')&gt;
+
+    [5]: &lt;gaussian(norm=0., mean=1235.996, fwhm=861.4926, skew=1., name='gaussian5')&gt;
+
+    [6]: &lt;gaussian(norm=0., mean=1235.138, fwhm=3040.59, skew=1., name='gaussian6')&gt;
+
+    [7]: &lt;gaussian(norm=0., mean=1231.589, fwhm=8133.099, skew=1., name='gaussian7')&gt;
+
+    [8]: &lt;gaussian(norm=0., mean=1237.643, fwhm=18183.71, skew=1., name='gaussian8')&gt;
+
+    [9]: &lt;gaussian(norm=0., mean=1259.753, fwhm=255.4998, skew=1., name='N V - 2 NLR, 2 ILR, 2 medium, 1 very broad')&gt;
+
+    [10]: &lt;gaussian(norm=0., mean=1263.80310589, fwhm=255.4998, skew=1., name='gaussian10')&gt;
+
+    [11]: &lt;gaussian(norm=0., mean=1259.53307183, fwhm=861.4926, skew=1., name='gaussian11')&gt;
+
+    [12]: &lt;gaussian(norm=0., mean=1263.58247065, fwhm=861.4926, skew=1., name='gaussian12')&gt;
+
+    [13]: &lt;gaussian(norm=0., mean=1258.65873293, fwhm=3040.59, skew=1., name='gaussian13')&gt;
+
+    [14]: &lt;gaussian(norm=0., mean=1262.70532076, fwhm=3040.59, skew=1., name='gaussian14')&gt;
+
+    [15]: &lt;gaussian(norm=0., mean=1255.04214933, fwhm=8133.099, skew=1., name='gaussian15')&gt;
+
+    [16]: &lt;gaussian(norm=0., mean=1259.07710984, fwhm=8133.099, skew=1., name='gaussian16')&gt;
+
+    [17]: &lt;gaussian(norm=0., mean=1280.99893106, fwhm=8133.099, skew=1., name='gaussian17')&gt;
+
+    [18]: &lt;gaussian(norm=-0., mean=1194., fwhm=3683.102, skew=0.1849483, name='C III broad absorption')&gt;
+
+    [19]: &lt;gaussian(norm=0., mean=1235., fwhm=3683.102, skew=0.1849483, name='Ly alpha broad absorption')&gt;
+
+    [20]: &lt;gaussian(norm=0., mean=1258., fwhm=3683.102, skew=0.1849483, name='N V broad absorption')&gt;
+
+    [21]: &lt;gaussian(norm=0., mean=1262.04447, fwhm=3683.102, skew=0.1849483, name='N V broad absorption - 2')&gt;
+Parameters:
+         amplitude_0       x_0_0       alpha_0      ... fwhm_21   skew_21 
+    ---------------------- ------ ----------------- ... -------- ---------
+    1.3444820100815545e-13 1000.0 1.544759487888068 ... 3683.102 0.1849483
 </pre>
               </div>
              </div>
@@ -1941,6 +2080,20 @@ const thebe_selector_output = ".output, .cell_output"
               </div>
              </div>
             </div>
+            <div class="cell_output docutils container">
+             <div class="output stream highlight-myst-ansi notranslate">
+              <div class="highlight">
+               <pre><span></span>chisq from input model:  19.531387
+chisq from output model: 10.393390
+Total data points: 6058
+Data points in wavelength ranges: 2318
+Number of free parameters: 83
+Number of iterations: 596
+Fit engine took 7 elapsed seconds.
+</pre>
+              </div>
+             </div>
+            </div>
            </div>
            <p>
             Errors associated with each free parameter from the covariance matrix.
@@ -1990,6 +2143,14 @@ const thebe_selector_output = ".output, .cell_output"
         <span class="n">param_errors</span><span class="p">[(</span><span class="n">component_name</span><span class="p">,</span> <span class="n">target_param_name</span><span class="p">)]</span> <span class="o">=</span> <span class="n">fit_errors</span><span class="p">[</span><span class="n">param_name</span><span class="p">]</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">param_errors</span><span class="p">)</span>
+</pre>
+              </div>
+             </div>
+            </div>
+            <div class="cell_output docutils container">
+             <div class="output stream highlight-myst-ansi notranslate">
+              <div class="highlight">
+               <pre><span></span>{}
 </pre>
               </div>
              </div>
@@ -2078,6 +2239,9 @@ const thebe_selector_output = ".output, .cell_output"
                </div>
               </div>
              </div>
+             <div class="cell_output docutils container">
+              <img alt="../../_images/specfit_demo_3_50_0.png" src="../../_images/specfit_demo_3_50_0.png"/>
+             </div>
             </div>
            </section>
           </section>
@@ -2110,6 +2274,9 @@ const thebe_selector_output = ".output, .cell_output"
 </pre>
               </div>
              </div>
+            </div>
+            <div class="cell_output docutils container">
+             <img alt="../../_images/specfit_demo_3_52_0.png" src="../../_images/specfit_demo_3_52_0.png"/>
             </div>
            </div>
           </section>
@@ -2162,6 +2329,9 @@ const thebe_selector_output = ".output, .cell_output"
                </div>
               </div>
              </div>
+             <div class="cell_output docutils container">
+              <img alt="../../_images/specfit_demo_3_54_0.png" src="../../_images/specfit_demo_3_54_0.png"/>
+             </div>
             </div>
            </section>
           </section>
@@ -2200,7 +2370,7 @@ const thebe_selector_output = ".output, .cell_output"
             previous
            </p>
            <p class="prev-next-title">
-            Examp 3       e   of Converting a FITS File to ASDF
+            ASDF Example
            </p>
           </div>
          </a>
@@ -2210,7 +2380,7 @@ const thebe_selector_output = ".output, .cell_output"
             next
            </p>
            <p class="prev-next-title">
-            NIRISS AMI simulation of binary point source AB Dor and calibrator HD37093
+            NIRISS AMI: MIRAGE Simulations
            </p>
           </div>
           <i class="fas fa-angle-right">

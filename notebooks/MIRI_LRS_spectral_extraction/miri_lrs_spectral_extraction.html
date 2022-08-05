@@ -5,7 +5,7 @@
   <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
   <meta content="Docutils 0.17.1: http://docutils.sourceforge.net/" name="generator"/>
   <title>
-   MIRI LRS Optimal Spectral Extraction — STScI JDAT Notebooks
+   LRS Optimal Spectral Extraction — STScI JDAT Notebooks
   </title>
   <!-- Loaded before other Sphinx assets -->
   <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet"/>
@@ -67,8 +67,8 @@ const thebe_selector_output = ".output, .cell_output"
   </script>
   <link href="../../genindex.html" rel="index" title="Index"/>
   <link href="../../search.html" rel="search" title="Search"/>
-  <link href="../transit_spectroscopy_notebook/Exoplanet_Transmission_Spectra_JWST.html" rel="next" title="Extracting an Exoplanet Transmission Spectrum from NIRSpec BOTS Time Series Observations"/>
-  <link href="../NIRSpec_MAST_Query/NIRSpec_MAST_Query.html" rel="prev" title="MAST Query Tutorial for NIRSpec Users"/>
+  <link href="../transit_spectroscopy_notebook/Exoplanet_Transmission_Spectra_JWST.html" rel="next" title="BOTS Time Series Observations"/>
+  <link href="../NIRSpec_MAST_Query/NIRSpec_MAST_Query.html" rel="prev" title="MAST Query"/>
   <meta content="width=device-width, initial-scale=1" name="viewport"/>
   <meta content="None" name="docsearch:language"/>
   <!-- Google Analytics -->
@@ -134,40 +134,13 @@ const thebe_selector_output = ".output, .cell_output"
          </ul>
          <p aria-level="2" class="caption" role="heading">
           <span class="caption-text">
-           NIRISS WFSS Spectra
-          </span>
-         </p>
-         <ul class="nav bd-sidenav">
-          <li class="toctree-l1">
-           <a class="reference internal" href="../NIRISS_WFSS_postpipeline/00.%20Optimal%20extraction.html">
-            Part 0: Optimal Extraction of NIRISS WFSS Spectrum
-           </a>
-          </li>
-          <li class="toctree-l1">
-           <a class="reference internal" href="../NIRISS_WFSS_postpipeline/01.%20Combine%20and%20normalize%201D%20spectra.html">
-            Part 1: Combine One-Dimensional NIRISS WFSS Spectra
-           </a>
-          </li>
-          <li class="toctree-l1">
-           <a class="reference internal" href="../NIRISS_WFSS_postpipeline/02.%20Cross%20correlation%20template.html">
-            Part 2: Cross Correlation to Determine Redshift of NIRISS WFSS Spectra
-           </a>
-          </li>
-          <li class="toctree-l1">
-           <a class="reference internal" href="../NIRISS_WFSS_postpipeline/03.%20Spatially%20resolved%20emission%20line%20map.html">
-            Part 3: Spatially Resolved Emission Line Map of NIRISS WFSS Spectra
-           </a>
-          </li>
-         </ul>
-         <p aria-level="2" class="caption" role="heading">
-          <span class="caption-text">
            MOS Spectroscopy
           </span>
          </p>
          <ul class="nav bd-sidenav">
           <li class="toctree-l1">
            <a class="reference internal" href="../mos-spectroscopy/MOSspec_sv06_revised.html">
-            MOS Spectroscopy of Typical Extragalactic Field
+            MOS Spectroscopy of Extragalactic Field
            </a>
           </li>
          </ul>
@@ -191,7 +164,7 @@ const thebe_selector_output = ".output, .cell_output"
          <ul class="nav bd-sidenav">
           <li class="toctree-l1">
            <a class="reference internal" href="../IFU_cube_continuum_fit/NGC4151_FeII_ContinuumFit.html">
-            IFU    Data Modeling NGC 4151 Notebook #1 - Isolating Line Emission
+            IFU Cube Fitting
            </a>
           </li>
          </ul>
@@ -203,7 +176,7 @@ const thebe_selector_output = ".output, .cell_output"
          <ul class="nav bd-sidenav">
           <li class="toctree-l1">
            <a class="reference internal" href="../NIRCam_PSF-matched_photometry/NIRCam_PSF_matched_multiband_photometry.html">
-            NIRCam PSF-matched multiband photometry
+            Cross-Filter PSF Matching
            </a>
           </li>
          </ul>
@@ -215,7 +188,7 @@ const thebe_selector_output = ".output, .cell_output"
          <ul class="nav bd-sidenav">
           <li class="toctree-l1">
            <a class="reference internal" href="../MIRI_IFU_YSOs_in_the_LMC/isha_nayak_ysos_in_the_lmc.html">
-            JWST Data Analysis
+            IFU of YSOs in LMC
            </a>
           </li>
          </ul>
@@ -227,17 +200,17 @@ const thebe_selector_output = ".output, .cell_output"
          <ul class="nav bd-sidenav">
           <li class="toctree-l1">
            <a class="reference internal" href="../preimaging/preimaging_02_calwebb.html">
-            Excuting the JWST pipeline on the  JWST astrometric calibration field in the LMC (part 1)
+            NIRCam Preimaging: Pipeline Stages 1, 2
            </a>
           </li>
           <li class="toctree-l1">
            <a class="reference internal" href="../preimaging/preimaging_01_mirage.html">
-            NIRSpec Pre-Imaging with NIRCam
+            NIRCam Preimaging: MIRAGE Simulations
            </a>
           </li>
           <li class="toctree-l1">
            <a class="reference internal" href="../preimaging/preimaging_03_association.html">
-            Creating simulated images of the JWST astrometric calibration field in the LMC
+            NIRCam Preimaging: Pipeline Stage 3
            </a>
           </li>
          </ul>
@@ -248,30 +221,8 @@ const thebe_selector_output = ".output, .cell_output"
          </p>
          <ul class="nav bd-sidenav">
           <li class="toctree-l1">
-           <a class="reference internal" href="../optimal_extraction/Spectral%20Extraction-static.html">
-            NIRSpec MOS Optimal Spectral Extraction
-           </a>
-          </li>
-          <li class="toctree-l1">
-           <a class="reference internal" href="../optimal_extraction_dynamic/Spectral%20Extraction.html">
-            NIRSpec MOS Optimal Spectral Extraction
-           </a>
-          </li>
-          <li class="toctree-l1">
            <a class="reference internal" href="../ifu_optimal/ifu_optimal.html">
-            Baseline: NIRSpec IFU Optimal Point Source Extraction
-           </a>
-          </li>
-         </ul>
-         <p aria-level="2" class="caption" role="heading">
-          <span class="caption-text">
-           Background Estimation
-          </span>
-         </p>
-         <ul class="nav bd-sidenav">
-          <li class="toctree-l1">
-           <a class="reference internal" href="../background_estimation_imaging/Imaging%20Sky%20Background%20Estimation.html">
-            Imaging Sky Background Estimation
+            IFU Optimal Spectral Extraction
            </a>
           </li>
          </ul>
@@ -283,7 +234,7 @@ const thebe_selector_output = ".output, .cell_output"
          <ul class="nav bd-sidenav">
           <li class="toctree-l1">
            <a class="reference internal" href="../soss-transit-spectroscopy/HAT-P-1b-PART3-data-analysis.html">
-            Analyzing the JWST Pipeline products of HAT-P-1b observations with NIRISS/SOSS
+            SOSS Transit Spectroscopy
            </a>
           </li>
          </ul>
@@ -295,7 +246,7 @@ const thebe_selector_output = ".output, .cell_output"
          <ul class="nav bd-sidenav">
           <li class="toctree-l1">
            <a class="reference internal" href="../psf_photometry/NIRCam_PSF_Photometry_Example.html">
-            NIRCam PSF Photometry Notebook
+            PSF Photometry
            </a>
           </li>
          </ul>
@@ -307,7 +258,7 @@ const thebe_selector_output = ".output, .cell_output"
          <ul class="nav bd-sidenav">
           <li class="toctree-l1">
            <a class="reference internal" href="../specviz_notebookGUI_interaction/specviz_notebook_gui_interaction_redshift.html">
-            Specviz notebook/GUI interaction on NIRISS WFSS 1D spectra
+            Specviz Simple Demo
            </a>
           </li>
          </ul>
@@ -319,7 +270,7 @@ const thebe_selector_output = ".output, .cell_output"
          <ul class="nav bd-sidenav">
           <li class="toctree-l1">
            <a class="reference internal" href="../asdf_example/asdf_example.html">
-            Examp 3       e   of Converting a FITS File to ASDF
+            ASDF Example
            </a>
           </li>
          </ul>
@@ -331,7 +282,7 @@ const thebe_selector_output = ".output, .cell_output"
          <ul class="nav bd-sidenav">
           <li class="toctree-l1">
            <a class="reference internal" href="../composite_model_fitting/specfit_demo_3.html">
-            Draft: Advanced Composite spectral model fitting
+            Composite Model Spectral Fitting
            </a>
           </li>
          </ul>
@@ -343,12 +294,12 @@ const thebe_selector_output = ".output, .cell_output"
          <ul class="nav bd-sidenav">
           <li class="toctree-l1">
            <a class="reference internal" href="../niriss_ami_binary/1_niriss_ami_binary.html">
-            NIRISS AMI simulation of binary point source AB Dor and calibrator HD37093
+            NIRISS AMI: MIRAGE Simulations
            </a>
           </li>
           <li class="toctree-l1">
            <a class="reference internal" href="../niriss_ami_binary/2_niriss_ami_binary.html">
-            NIRISS AMI calibration of binary point source AB Dor and calibrator HD37093
+            NIRISS AMI: Pipeline
            </a>
           </li>
          </ul>
@@ -360,7 +311,7 @@ const thebe_selector_output = ".output, .cell_output"
          <ul class="nav bd-sidenav">
           <li class="toctree-l1">
            <a class="reference internal" href="../aperture_photometry/NIRCam_Aperture_Photometry_Example.html">
-            Draft Aperture Photometry
+            Point Source Aperture Photometry
            </a>
           </li>
          </ul>
@@ -372,7 +323,7 @@ const thebe_selector_output = ".output, .cell_output"
          <ul class="nav bd-sidenav">
           <li class="toctree-l1">
            <a class="reference internal" href="../NIRSpec_MAST_Query/NIRSpec_MAST_Query.html">
-            MAST Query Tutorial for NIRSpec Users
+            MAST Query
            </a>
           </li>
          </ul>
@@ -384,7 +335,7 @@ const thebe_selector_output = ".output, .cell_output"
          <ul class="current nav bd-sidenav">
           <li class="toctree-l1 current active">
            <a class="current reference internal" href="#">
-            MIRI LRS Optimal  Spectral Extraction
+            LRS Optimal Spectral Extraction
            </a>
           </li>
          </ul>
@@ -396,19 +347,7 @@ const thebe_selector_output = ".output, .cell_output"
          <ul class="nav bd-sidenav">
           <li class="toctree-l1">
            <a class="reference internal" href="../transit_spectroscopy_notebook/Exoplanet_Transmission_Spectra_JWST.html">
-            Extracting an Exoplanet Transmission Spectrum from NIRSpec BOTS Time Series Observations
-           </a>
-          </li>
-         </ul>
-         <p aria-level="2" class="caption" role="heading">
-          <span class="caption-text">
-           NIRCam Photometry
-          </span>
-         </p>
-         <ul class="nav bd-sidenav">
-          <li class="toctree-l1">
-           <a class="reference internal" href="../NIRCam_photometry/NIRCam%20multiband%20photometry.html">
-            NIRCam Multiband Photometry
+            BOTS Time Series Observations
            </a>
           </li>
          </ul>
@@ -659,7 +598,7 @@ const thebe_selector_output = ".output, .cell_output"
        <!-- Table of contents that is only displayed when printing the page -->
        <div class="onlyprint" id="jb-print-docs-body">
         <h1>
-         MIRI LRS Optimal  Spectral Extraction
+         LRS Optimal Spectral Extraction
         </h1>
         <!-- Table of contents -->
         <div id="print-main-content">
@@ -766,10 +705,10 @@ const thebe_selector_output = ".output, .cell_output"
        </div>
        <main id="main-content" role="main">
         <div>
-         <section class="tex2jax_ignore mathjax_ignore" id="miri-lrs-optimal-spectral-extraction">
+         <section class="tex2jax_ignore mathjax_ignore" id="lrs-optimal-spectral-extraction">
           <h1>
-           MIRI LRS Optimal  Spectral Extraction
-           <a class="headerlink" href="#miri-lrs-optimal-spectral-extraction" title="Permalink to this headline">
+           LRS Optimal Spectral Extraction
+           <a class="headerlink" href="#lrs-optimal-spectral-extraction" title="Permalink to this headline">
             #
            </a>
           </h1>
@@ -777,7 +716,7 @@ const thebe_selector_output = ".output, .cell_output"
            <strong>
             Use case:
            </strong>
-           Extract  spectra with different locations, extraction apertures, and techniques.
+           Extract spectra with different locations, extraction apertures, and techniques.
            <br/>
            <strong>
             Data:
@@ -1492,7 +1431,7 @@ s2d image
              <div class="cell_output docutils container">
               <div class="output text_plain highlight-myst-ansi notranslate">
                <div class="highlight">
-                <pre><span></span>&lt;matplotlib.legend.Legend at 0x7f93e5e08160&gt;
+                <pre><span></span>&lt;matplotlib.legend.Legend at 0x7fafa2135940&gt;
 </pre>
                </div>
               </div>
@@ -1572,7 +1511,7 @@ s2d image
              <div class="cell_output docutils container">
               <div class="output text_plain highlight-myst-ansi notranslate">
                <div class="highlight">
-                <pre><span></span>&lt;matplotlib.legend.Legend at 0x7f93e5c13c40&gt;
+                <pre><span></span>&lt;matplotlib.legend.Legend at 0x7fafa1f5dbb0&gt;
 </pre>
                </div>
               </div>
@@ -1729,7 +1668,7 @@ s2d image
               <div class="cell_output docutils container">
                <div class="output text_plain highlight-myst-ansi notranslate">
                 <div class="highlight">
-                 <pre><span></span>&lt;matplotlib.legend.Legend at 0x7f93e83ee3a0&gt;
+                 <pre><span></span>&lt;matplotlib.legend.Legend at 0x7fafa471d730&gt;
 </pre>
                 </div>
                </div>
@@ -1775,7 +1714,7 @@ s2d image
               <div class="cell_output docutils container">
                <div class="output text_plain highlight-myst-ansi notranslate">
                 <div class="highlight">
-                 <pre><span></span>&lt;matplotlib.legend.Legend at 0x7f93e8465ee0&gt;
+                 <pre><span></span>&lt;matplotlib.legend.Legend at 0x7fafa48cf0d0&gt;
 </pre>
                 </div>
                </div>
@@ -1824,7 +1763,7 @@ s2d image
               <div class="cell_output docutils container">
                <div class="output text_plain highlight-myst-ansi notranslate">
                 <div class="highlight">
-                 <pre><span></span>&lt;matplotlib.legend.Legend at 0x7f93e83cca60&gt;
+                 <pre><span></span>&lt;matplotlib.legend.Legend at 0x7fafa462dbb0&gt;
 </pre>
                 </div>
                </div>
@@ -1934,7 +1873,7 @@ s2d image
             previous
            </p>
            <p class="prev-next-title">
-            MAST Query Tutorial for NIRSpec Users
+            MAST Query
            </p>
           </div>
          </a>
@@ -1944,7 +1883,7 @@ s2d image
             next
            </p>
            <p class="prev-next-title">
-            Extracting an Exoplanet Transmission Spectrum from NIRSpec BOTS Time Series Observations
+            BOTS Time Series Observations
            </p>
           </div>
           <i class="fas fa-angle-right">
