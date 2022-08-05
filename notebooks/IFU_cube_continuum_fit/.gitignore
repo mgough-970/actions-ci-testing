@@ -1,3 +1,4 @@
-JADES_detections_segm.fits
-JADESphotometry.ecsv
-JADESphotometry.cat
+NGC4151_Hband_ContinuumPSF.fits
+NGC4151_Hband_ContinuumSubtract.fits
+NGC4151_Hband_ContinuumandBrackettModel.fits
+NGC4151_Hband_FinalSubtract.fits

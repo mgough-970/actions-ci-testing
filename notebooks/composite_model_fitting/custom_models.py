@@ -6,7 +6,7 @@ from astropy.modeling import Fittable1DModel, Parameter
 
 
 def ccm(wav, ebmv=1, rv=3.5):
-    '''computes reddening correction  according to the Cardelli, Clayton and Mathis 
+    '''computes reddening correction according to the Cardelli, Clayton and Mathis 
     model (ApJ 1989 v345, p245)
     
     wav: wavelengths in microns (expect a numpy array of wavelengths

@@ -1,5 +1,7 @@
-astropy==5.0.4
-jdaviz==2.4.0
-matplotlib==3.5.1
-numpy==1.22.3
-specutils==1.7.0
+astropy>=4.3.1
+specutils>=1.4.0
+matplotlib>=3.4.3
+Bottleneck>=1.3.2
+ipyvue>=1.5.0
+ipyvuetify>=1.8.1
+git+https://github.com/spacetelescope/jdaviz.git@main

@@ -1,6 +1,8 @@
-astropy==5.0.4
-jwst==1.4.6
-matplotlib==3.5.1
-numpy==1.22.3
-PyYAML==6.0
-Shapely==1.8.1.post1
+jdaviz >= 2.6.1
+astropy >= 5.1
+matplotlib >= 3.5.2
+pyyaml>=5.3.1
+healpy>=1.12.5
+shapely>=1.7.0
+mirage==2.2.1
+jwst==1.5.4
