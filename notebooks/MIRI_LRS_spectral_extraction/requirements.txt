@@ -1,5 +1,8 @@
 astropy
 gwcs
+jdaviz
 jwst
 matplotlib
 numpy
+specreduce
+specutils

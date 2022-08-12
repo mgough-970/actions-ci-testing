@@ -1,6 +1,0 @@
-astropy
-matplotlib
-scipy
-photutils
-scikit-image
-git+https://github.com/spacetelescope/jdaviz.git@main
