@@ -31,8 +31,7 @@
 # 
 # 
 
-# In[1]:
-
+# In[ ]:
 
 
 # load important packages
@@ -55,7 +54,6 @@ from jdaviz.app import Application
 # In[ ]:
 
 
-
 # load and configure matplotlib
 get_ipython().run_line_magic('matplotlib', 'inline')
 import matplotlib.pyplot as plt
@@ -63,7 +61,6 @@ plt.rcParams.update({'figure.max_open_warning': 0})
 
 
 # In[ ]:
-
 
 
 #This cell access the datacube file, defines the wavelength grid from header information and then plots a simple
@@ -109,7 +106,6 @@ plt.show()
 # a more expanded spectral region that encompasses the emission..
 
 # In[ ]:
-
 
 
 #This cell defines the wavelength regions of interest: around the emission line, and the location
@@ -159,14 +155,12 @@ plt.show()
 # In[ ]:
 
 
-
 # Use cubeviz to look at the data in the cube.  Here, we configure and bring up the app.
 app = Application(configuration='cubeviz')
 app
 
 
 # In[ ]:
-
 
 
 # Here, we load the data into the cubeviz app.
@@ -236,7 +230,6 @@ plt.show()
 # In[ ]:
 
 
-
 #grab the redshifted and blueshifted outflow spectra from the spectral viewer window.
 
 spec_feii_red = app.get_data_from_viewer('spectrum-viewer', 'Subset 2')
@@ -267,7 +260,6 @@ plt.show()
 
 
 # In[ ]:
-
 
 
 #demonstration of a linear fit to the continuum flux level
@@ -336,7 +328,6 @@ plt.show()
 # In[ ]:
 
 
-
 # This cell makes a data sub-cube around the emission feature that has the continuum flux 
 # level subtracted off. then make another datacube that is only the continuum flux, to serve
 # as a PSF model to correct out the bright, central HI features.
@@ -372,7 +363,6 @@ print("--- %s seconds ---" % (time.time() - start_time))
 # In[ ]:
 
 
-
 # This cell does the same thing as the prior cell, but uses specutils models polyfit instead of numpy 
 # to do the continuum fitting.  This uses the poly fit options instead of line fitting so that you can 
 # change the polynomial order for the continuum fitting, if necessary.
@@ -405,7 +395,6 @@ print("--- %s seconds ---" % (time.time() - start_time))
 # In[ ]:
 
 
-
 # Now, let's take a look at the emission line in the continuum by plotting some of the results
 # of the subtracted cube.
 flux1=np.sum(cont_sub_cube, axis=(1,2))
@@ -422,7 +411,6 @@ plt.show()
 
 
 # In[ ]:
-
 
 
 # This cell builds the spectrum at the central location into the format
@@ -473,7 +461,6 @@ central_flux_model_only = component1 + component2
 
 
 # In[ ]:
-
 
 
 # Wow, that multi-component fit looks great.  Good deal.
