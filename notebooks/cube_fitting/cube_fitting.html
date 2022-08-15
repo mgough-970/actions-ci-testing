@@ -968,22 +968,6 @@ attributes. Here, we demonstrate 1-D spectral modeling applied to an individual 
               </div>
              </div>
             </div>
-            <div class="cell_output docutils container">
-             <div class="output traceback highlight-ipythontb notranslate">
-              <div class="highlight">
-               <pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="nn">Input In [1],</span> in <span class="ni">&lt;cell line: 2&gt;</span><span class="nt">()</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">time</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="kn">import</span> <span class="nn">multiprocess</span> <span class="k">as</span> <span class="nn">mp</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="kn">from</span> <span class="nn">multiprocess</span> <span class="kn">import</span> <span class="n">Pool</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="kn">import</span> <span class="nn">pickle</span>
-
-<span class="ne">ModuleNotFoundError</span>: No module named 'multiprocess'
-</pre>
-              </div>
-             </div>
-            </div>
            </div>
           </section>
           <section id="definitions-of-functions">
@@ -1012,6 +996,11 @@ attributes. Here, we demonstrate 1-D spectral modeling applied to an individual 
 </pre>
                </div>
               </div>
+             </div>
+             <div class="cell_output docutils container">
+              <script type="application/javascript">
+               IPython.OutputArea.auto_scroll_threshold=70;
+              </script>
              </div>
             </div>
            </section>
@@ -1145,6 +1134,9 @@ attributes. Here, we demonstrate 1-D spectral modeling applied to an individual 
 </pre>
                </div>
               </div>
+             </div>
+             <div class="cell_output docutils container">
+              <img alt="../../_images/cube_fitting_9_0.png" src="../../_images/cube_fitting_9_0.png"/>
              </div>
             </div>
            </section>
@@ -1474,6 +1466,33 @@ features.
               </div>
              </div>
             </div>
+            <div class="cell_output docutils container">
+             <div class="output stream highlight-myst-ansi notranslate">
+              <div class="highlight">
+               <pre><span></span>Filename: /home/runner/.astropy/cache/download/url/06853bf85036af1a6d55c1fb3a08260f/contents
+No.    Name      Ver    Type      Cards   Dimensions   Format
+  0  PRIMARY       1 PrimaryHDU     286   (35, 30, 117)   float32   
+  1  WCS-TAB       1 BinTableHDU     13   1R x 1C   [117E]   
+</pre>
+              </div>
+             </div>
+             <div class="output stream highlight-myst-ansi notranslate">
+              <div class="highlight">
+               <pre><span></span>Filename: /home/runner/.astropy/cache/download/url/bec801dcb9ee22f478e4a56b91820bd4/contents
+No.    Name      Ver    Type      Cards   Dimensions   Format
+  0  PRIMARY       1 PrimaryHDU     286   (35, 30, 77)   float32   
+  1  WCS-TAB       1 BinTableHDU     13   1R x 1C   [77E]   
+</pre>
+              </div>
+             </div>
+             <div class="output stream highlight-myst-ansi notranslate">
+              <div class="highlight">
+               <pre><span></span>Trimmed cube dimensions: 194 30 32
+</pre>
+              </div>
+             </div>
+             <img alt="../../_images/cube_fitting_17_3.png" src="../../_images/cube_fitting_17_3.png"/>
+            </div>
            </div>
           </section>
           <section id="model-parameter-starting-values">
@@ -1583,6 +1602,16 @@ features.
               </div>
              </div>
             </div>
+            <div class="cell_output docutils container">
+             <div class="output stream highlight-myst-ansi notranslate">
+              <div class="highlight">
+               <pre><span></span>['pwl_c1', 'pwl_c2', 'sidust1_T', 'sidust1_amplitude', 'pahdust1_OnePlusZ', 'pahdust1_amplitude_76', 'pahdust1_amplitude_113', 'h55_amplitude', 'h55_xcen', 'h55_std', 'h61_amplitude', 'h61_xcen', 'h61_std', 'h69_amplitude', 'h69_xcen', 'h69_std', 'h80_amplitude', 'h80_xcen', 'h80_std', 'h96_amplitude', 'h96_xcen', 'h96_std', 'h122_amplitude', 'h122_xcen', 'h122_std', 'ArII_amplitude', 'ArII_xcen', 'ArII_std', 'SIV_amplitude', 'SIV_xcen', 'SIV_std', 'NeII_amplitude', 'NeII_xcen', 'NeII_std']
+</pre>
+              </div>
+             </div>
+             <img alt="../../_images/cube_fitting_21_1.png" src="../../_images/cube_fitting_21_1.png"/>
+             <img alt="../../_images/cube_fitting_21_2.png" src="../../_images/cube_fitting_21_2.png"/>
+            </div>
            </div>
            <p>
             Plot of observed flux density (black), model fit (red), and residuals (bottom panel).  This spaxel has strong H2 emission at 9.6 microns and 8 micron PAH and [Ne II] 12.8 micron emission from star-forming regions.
@@ -1662,6 +1691,60 @@ features.
 <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">restore_cube</span><span class="p">:</span>
     <span class="n">pos</span><span class="o">=</span><span class="n">line</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
     <span class="n">cube_res</span><span class="p">[</span><span class="n">pos</span><span class="p">]</span> <span class="o">=</span> <span class="n">line</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+</pre>
+              </div>
+             </div>
+            </div>
+            <div class="cell_output docutils container">
+             <div class="output stderr highlight-myst-ansi notranslate">
+              <div class="highlight">
+               <pre><span></span>Process ForkPoolWorker-2:
+</pre>
+              </div>
+             </div>
+             <div class="output traceback highlight-ipythontb notranslate">
+              <div class="highlight">
+               <pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="nn">Input In [10],</span> in <span class="ni">&lt;cell line: 43&gt;</span><span class="nt">()</span>
+<span class="g g-Whitespace">     </span><span class="mi">43</span> <span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">'__main__'</span><span class="p">:</span>
+<span class="g g-Whitespace">     </span><span class="mi">44</span>     <span class="k">with</span> <span class="n">Pool</span><span class="p">(</span><span class="n">mp</span><span class="o">.</span><span class="n">cpu_count</span><span class="p">()</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="k">as</span> <span class="n">pool</span><span class="p">:</span>
+<span class="ne">---&gt; </span><span class="mi">45</span>         <span class="n">pool</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">fit_point</span><span class="p">,</span><span class="n">pooldata</span><span class="p">)</span>    
+<span class="g g-Whitespace">     </span><span class="mi">47</span> <span class="nb">print</span><span class="p">(</span><span class="s1">'Time count'</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">48</span> <span class="nb">print</span><span class="p">(</span><span class="s2">"--- </span><span class="si">%s</span><span class="s2"> seconds ---"</span> <span class="o">%</span> <span class="p">(</span><span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span> <span class="o">-</span> <span class="n">start_time</span><span class="p">))</span>
+
+<span class="nn">File /usr/share/miniconda/lib/python3.9/site-packages/multiprocess/pool.py:364,</span> in <span class="ni">Pool.map</span><span class="nt">(self, func, iterable, chunksize)</span>
+<span class="g g-Whitespace">    </span><span class="mi">359</span> <span class="k">def</span> <span class="nf">map</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">func</span><span class="p">,</span> <span class="n">iterable</span><span class="p">,</span> <span class="n">chunksize</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">360</span>     <span class="sd">'''</span>
+<span class="g g-Whitespace">    </span><span class="mi">361</span><span class="sd">     Apply `func` to each element in `iterable`, collecting the results</span>
+<span class="g g-Whitespace">    </span><span class="mi">362</span><span class="sd">     in a list that is returned.</span>
+<span class="g g-Whitespace">    </span><span class="mi">363</span><span class="sd">     '''</span>
+<span class="ne">--&gt; </span><span class="mi">364</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_map_async</span><span class="p">(</span><span class="n">func</span><span class="p">,</span> <span class="n">iterable</span><span class="p">,</span> <span class="n">mapstar</span><span class="p">,</span> <span class="n">chunksize</span><span class="p">)</span><span class="o">.</span><span class="n">get</span><span class="p">()</span>
+
+<span class="nn">File /usr/share/miniconda/lib/python3.9/site-packages/multiprocess/pool.py:765,</span> in <span class="ni">ApplyResult.get</span><span class="nt">(self, timeout)</span>
+<span class="g g-Whitespace">    </span><span class="mi">764</span> <span class="k">def</span> <span class="nf">get</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="ne">--&gt; </span><span class="mi">765</span>     <span class="bp">self</span><span class="o">.</span><span class="n">wait</span><span class="p">(</span><span class="n">timeout</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">766</span>     <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">ready</span><span class="p">():</span>
+<span class="g g-Whitespace">    </span><span class="mi">767</span>         <span class="k">raise</span> <span class="ne">TimeoutError</span>
+
+<span class="nn">File /usr/share/miniconda/lib/python3.9/site-packages/multiprocess/pool.py:762,</span> in <span class="ni">ApplyResult.wait</span><span class="nt">(self, timeout)</span>
+<span class="g g-Whitespace">    </span><span class="mi">761</span> <span class="k">def</span> <span class="nf">wait</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="ne">--&gt; </span><span class="mi">762</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_event</span><span class="o">.</span><span class="n">wait</span><span class="p">(</span><span class="n">timeout</span><span class="p">)</span>
+
+<span class="nn">File /usr/share/miniconda/lib/python3.9/threading.py:574,</span> in <span class="ni">Event.wait</span><span class="nt">(self, timeout)</span>
+<span class="g g-Whitespace">    </span><span class="mi">572</span> <span class="n">signaled</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_flag</span>
+<span class="g g-Whitespace">    </span><span class="mi">573</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">signaled</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">574</span>     <span class="n">signaled</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_cond</span><span class="o">.</span><span class="n">wait</span><span class="p">(</span><span class="n">timeout</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">575</span> <span class="k">return</span> <span class="n">signaled</span>
+
+<span class="nn">File /usr/share/miniconda/lib/python3.9/threading.py:312,</span> in <span class="ni">Condition.wait</span><span class="nt">(self, timeout)</span>
+<span class="g g-Whitespace">    </span><span class="mi">310</span> <span class="k">try</span><span class="p">:</span>    <span class="c1"># restore state no matter what (e.g., KeyboardInterrupt)</span>
+<span class="g g-Whitespace">    </span><span class="mi">311</span>     <span class="k">if</span> <span class="n">timeout</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">312</span>         <span class="n">waiter</span><span class="o">.</span><span class="n">acquire</span><span class="p">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">313</span>         <span class="n">gotit</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="g g-Whitespace">    </span><span class="mi">314</span>     <span class="k">else</span><span class="p">:</span>
+
+<span class="ne">KeyboardInterrupt</span>: 
 </pre>
               </div>
              </div>

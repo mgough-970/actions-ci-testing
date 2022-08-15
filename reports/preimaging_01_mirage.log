@@ -1,15 +1,4 @@
 Traceback (most recent call last):
-  File "/usr/share/miniconda/lib/python3.9/site-packages/nbclient/client.py", line 730, in _async_poll_for_reply
-    msg = await ensure_async(self.kc.shell_channel.get_msg(timeout=new_timeout))
-  File "/usr/share/miniconda/lib/python3.9/site-packages/nbclient/util.py", line 96, in ensure_async
-    result = await obj
-  File "/usr/share/miniconda/lib/python3.9/site-packages/jupyter_client/channels.py", line 230, in get_msg
-    raise Empty
-_queue.Empty
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
   File "/usr/share/miniconda/lib/python3.9/site-packages/jupyter_cache/executors/utils.py", line 51, in single_nb_execution
     executenb(
   File "/usr/share/miniconda/lib/python3.9/site-packages/nbclient/client.py", line 1204, in execute
@@ -22,16 +11,48 @@ Traceback (most recent call last):
     return future.result()
   File "/usr/share/miniconda/lib/python3.9/site-packages/nbclient/client.py", line 663, in async_execute
     await self.async_execute_cell(
-  File "/usr/share/miniconda/lib/python3.9/site-packages/nbclient/client.py", line 949, in async_execute_cell
-    exec_reply = await self.task_poll_for_reply
-  File "/usr/share/miniconda/lib/python3.9/site-packages/nbclient/client.py", line 754, in _async_poll_for_reply
-    await self._async_handle_timeout(timeout, cell)
-  File "/usr/share/miniconda/lib/python3.9/site-packages/nbclient/client.py", line 801, in _async_handle_timeout
-    raise CellTimeoutError.error_from_timeout_and_cell(
-nbclient.exceptions.CellTimeoutError: A cell timed out while it was being executed, after 30 seconds.
-The message was: Cell execution timed out.
-Here is a preview of the cell contents:
--------------------
-downloader.download_reffiles(download_path, instrument='FGS', dark_type='linearized', skip_darks=False, single_dark=True, skip_cosmic_rays=False, skip_psfs=False)
--------------------
+  File "/usr/share/miniconda/lib/python3.9/site-packages/nbclient/client.py", line 965, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "/usr/share/miniconda/lib/python3.9/site-packages/nbclient/client.py", line 862, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+import os
+from glob import glob
+import shutil
+import yaml
+import zipfile
+import urllib.request
+
+os.environ["PYSYN_CDBS"] = "./grp/redcat/trds/"
+synphot_folder = './grp'
+
+synExist = os.path.exists(synphot_folder)
+if not synExist:
+    os.makedirs(synphot_folder)
+    
+# mirage imports
+from mirage.imaging_simulator import ImgSim
+from mirage.seed_image import catalog_seed_image
+from mirage.dark import dark_prep
+from mirage.ramp_generator import obs_generator
+from mirage.yaml import yaml_generator
+from mirage.reference_files import downloader
+
+from astropy.table import Table
+from astropy.io import fits
+
+------------------
+
+[0;31m---------------------------------------------------------------------------[0m
+[0;31mModuleNotFoundError[0m                       Traceback (most recent call last)
+Input [0;32mIn [1][0m, in [0;36m<cell line: 16>[0;34m()[0m
+[1;32m     13[0m     os[38;5;241m.[39mmakedirs(synphot_folder)
+[1;32m     15[0m [38;5;66;03m# mirage imports[39;00m
+[0;32m---> 16[0m [38;5;28;01mfrom[39;00m [38;5;21;01mmirage[39;00m[38;5;21;01m.[39;00m[38;5;21;01mimaging_simulator[39;00m [38;5;28;01mimport[39;00m ImgSim
+[1;32m     17[0m [38;5;28;01mfrom[39;00m [38;5;21;01mmirage[39;00m[38;5;21;01m.[39;00m[38;5;21;01mseed_image[39;00m [38;5;28;01mimport[39;00m catalog_seed_image
+[1;32m     18[0m [38;5;28;01mfrom[39;00m [38;5;21;01mmirage[39;00m[38;5;21;01m.[39;00m[38;5;21;01mdark[39;00m [38;5;28;01mimport[39;00m dark_prep
+
+[0;31mModuleNotFoundError[0m: No module named 'mirage'
+ModuleNotFoundError: No module named 'mirage'
 

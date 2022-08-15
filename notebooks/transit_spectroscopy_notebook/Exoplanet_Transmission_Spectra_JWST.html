@@ -923,23 +923,6 @@ const thebe_selector_output = ".output, .cell_output"
               </div>
              </div>
             </div>
-            <div class="cell_output docutils container">
-             <div class="output traceback highlight-ipythontb notranslate">
-              <div class="highlight">
-               <pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="nn">Input In [1],</span> in <span class="ni">&lt;cell line: 19&gt;</span><span class="nt">()</span>
-<span class="g g-Whitespace">     </span><span class="mi">17</span> <span class="kn">import</span> <span class="nn">pickle</span>
-<span class="g g-Whitespace">     </span><span class="mi">18</span> <span class="kn">from</span> <span class="nn">os</span> <span class="kn">import</span> <span class="n">path</span><span class="p">,</span><span class="n">mkdir</span>
-<span class="ne">---&gt; </span><span class="mi">19</span> <span class="kn">from</span> <span class="nn">sklearn.linear_model</span> <span class="kn">import</span> <span class="n">LinearRegression</span>
-<span class="g g-Whitespace">     </span><span class="mi">20</span> <span class="kn">import</span> <span class="nn">warnings</span>
-<span class="g g-Whitespace">     </span><span class="mi">21</span> <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-
-<span class="ne">ModuleNotFoundError</span>: No module named 'sklearn'
-</pre>
-              </div>
-             </div>
-            </div>
            </div>
           </section>
           <section id="setup-parameters">
@@ -1052,6 +1035,93 @@ const thebe_selector_output = ".output, .cell_output"
 
 <span class="n">fn_ld</span>  <span class="o">=</span> <span class="n">download_file</span><span class="p">(</span><span class="s1">'https://data.science.stsci.edu/redirect/JWST/jwst-data_analysis_tools/transit_spectroscopy_notebook/3DGrid/mmu_t45g45m00v05.flx'</span><span class="p">)</span>
 <span class="n">destld</span> <span class="o">=</span> <span class="n">shutil</span><span class="o">.</span><span class="n">move</span><span class="p">(</span><span class="n">fn_ld</span><span class="p">,</span><span class="n">save_directory</span><span class="o">+</span><span class="s1">'3DGrid/mmu_t45g45m00v05.flx'</span><span class="p">)</span>        
+</pre>
+             </div>
+            </div>
+           </div>
+           <div class="cell_output docutils container">
+            <div class="output traceback highlight-ipythontb notranslate">
+             <div class="highlight">
+              <pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="nn">Input In [4],</span> in <span class="ni">&lt;cell line: 3&gt;</span><span class="nt">()</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">fn_jw</span><span class="o">=</span><span class="n">save_directory</span><span class="o">+</span><span class="s1">'jwst_data.pickle'</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="k">if</span> <span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">fn_jw</span><span class="p">)</span> <span class="o">==</span> <span class="kc">False</span><span class="p">:</span>
+<span class="ne">----&gt; </span><span class="mi">4</span>     <span class="n">fn</span>   <span class="o">=</span> <span class="n">download_file</span><span class="p">(</span><span class="s1">'https://data.science.stsci.edu/redirect/JWST/jwst-data_analysis_tools/transit_spectroscopy_notebook/jwst_data.pickle'</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span>     <span class="n">dest</span> <span class="o">=</span> <span class="n">shutil</span><span class="o">.</span><span class="n">move</span><span class="p">(</span><span class="n">fn</span><span class="p">,</span><span class="n">save_directory</span><span class="o">+</span><span class="s1">'jwst_data.pickle'</span><span class="p">)</span>  
+<span class="g g-Whitespace">      </span><span class="mi">6</span>     <span class="nb">print</span><span class="p">(</span><span class="s1">'JWST Data Download Complete'</span><span class="p">)</span>
+
+<span class="nn">File /usr/share/miniconda/lib/python3.9/site-packages/astropy/utils/data.py:1363,</span> in <span class="ni">download_file</span><span class="nt">(remote_url, cache, show_progress, timeout, sources, pkgname, http_headers, ssl_context, allow_insecure)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1361</span> <span class="k">for</span> <span class="n">source_url</span> <span class="ow">in</span> <span class="n">sources</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1362</span>     <span class="k">try</span><span class="p">:</span>
+<span class="ne">-&gt; </span><span class="mi">1363</span>         <span class="n">f_name</span> <span class="o">=</span> <span class="n">_download_file_from_source</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1364</span>                 <span class="n">source_url</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1365</span>                 <span class="n">timeout</span><span class="o">=</span><span class="n">timeout</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1366</span>                 <span class="n">show_progress</span><span class="o">=</span><span class="n">show_progress</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1367</span>                 <span class="n">cache</span><span class="o">=</span><span class="n">cache</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1368</span>                 <span class="n">remote_url</span><span class="o">=</span><span class="n">remote_url</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1369</span>                 <span class="n">pkgname</span><span class="o">=</span><span class="n">pkgname</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1370</span>                 <span class="n">http_headers</span><span class="o">=</span><span class="n">http_headers</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1371</span>                 <span class="n">ssl_context</span><span class="o">=</span><span class="n">ssl_context</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1372</span>                 <span class="n">allow_insecure</span><span class="o">=</span><span class="n">allow_insecure</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1373</span>         <span class="c1"># Success!</span>
+<span class="g g-Whitespace">   </span><span class="mi">1374</span>         <span class="k">break</span>
+
+<span class="nn">File /usr/share/miniconda/lib/python3.9/site-packages/astropy/utils/data.py:1201,</span> in <span class="ni">_download_file_from_source</span><span class="nt">(source_url, show_progress, timeout, remote_url, cache, pkgname, http_headers, ftp_tls, ssl_context, allow_insecure)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1199</span> <span class="n">bytes_read</span> <span class="o">+=</span> <span class="nb">len</span><span class="p">(</span><span class="n">block</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1200</span> <span class="n">p</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">bytes_read</span><span class="p">)</span>
+<span class="ne">-&gt; </span><span class="mi">1201</span> <span class="n">block</span> <span class="o">=</span> <span class="n">remote</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">conf</span><span class="o">.</span><span class="n">download_block_size</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1202</span> <span class="k">if</span> <span class="n">size</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">bytes_read</span> <span class="o">&gt;</span> <span class="n">size</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1203</span>     <span class="k">raise</span> <span class="n">urllib</span><span class="o">.</span><span class="n">error</span><span class="o">.</span><span class="n">URLError</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1204</span>         <span class="sa">f</span><span class="s2">"File was supposed to be </span><span class="si">{</span><span class="n">size</span><span class="si">}</span><span class="s2"> bytes but "</span>
+<span class="g g-Whitespace">   </span><span class="mi">1205</span>         <span class="sa">f</span><span class="s2">"server provides more, at least </span><span class="si">{</span><span class="n">bytes_read</span><span class="si">}</span><span class="s2"> "</span>
+<span class="g g-Whitespace">   </span><span class="mi">1206</span>         <span class="sa">f</span><span class="s2">"bytes. Download failed."</span><span class="p">)</span>
+
+<span class="nn">File /usr/share/miniconda/lib/python3.9/http/client.py:463,</span> in <span class="ni">HTTPResponse.read</span><span class="nt">(self, amt)</span>
+<span class="g g-Whitespace">    </span><span class="mi">460</span> <span class="k">if</span> <span class="n">amt</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">461</span>     <span class="c1"># Amount is given, implement using readinto</span>
+<span class="g g-Whitespace">    </span><span class="mi">462</span>     <span class="n">b</span> <span class="o">=</span> <span class="nb">bytearray</span><span class="p">(</span><span class="n">amt</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">463</span>     <span class="n">n</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">readinto</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">464</span>     <span class="k">return</span> <span class="nb">memoryview</span><span class="p">(</span><span class="n">b</span><span class="p">)[:</span><span class="n">n</span><span class="p">]</span><span class="o">.</span><span class="n">tobytes</span><span class="p">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">465</span> <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">466</span>     <span class="c1"># Amount is not given (unbounded read) so we must check self.length</span>
+<span class="g g-Whitespace">    </span><span class="mi">467</span>     <span class="c1"># and self.chunked</span>
+
+<span class="nn">File /usr/share/miniconda/lib/python3.9/http/client.py:507,</span> in <span class="ni">HTTPResponse.readinto</span><span class="nt">(self, b)</span>
+<span class="g g-Whitespace">    </span><span class="mi">502</span>         <span class="n">b</span> <span class="o">=</span> <span class="nb">memoryview</span><span class="p">(</span><span class="n">b</span><span class="p">)[</span><span class="mi">0</span><span class="p">:</span><span class="bp">self</span><span class="o">.</span><span class="n">length</span><span class="p">]</span>
+<span class="g g-Whitespace">    </span><span class="mi">504</span> <span class="c1"># we do not use _safe_read() here because this may be a .will_close</span>
+<span class="g g-Whitespace">    </span><span class="mi">505</span> <span class="c1"># connection, and the user is reading more bytes than will be provided</span>
+<span class="g g-Whitespace">    </span><span class="mi">506</span> <span class="c1"># (for example, reading in 1k chunks)</span>
+<span class="ne">--&gt; </span><span class="mi">507</span> <span class="n">n</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">fp</span><span class="o">.</span><span class="n">readinto</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">508</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">n</span> <span class="ow">and</span> <span class="n">b</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">509</span>     <span class="c1"># Ideally, we would raise IncompleteRead if the content-length</span>
+<span class="g g-Whitespace">    </span><span class="mi">510</span>     <span class="c1"># wasn't satisfied, but it might break compatibility.</span>
+<span class="g g-Whitespace">    </span><span class="mi">511</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_close_conn</span><span class="p">()</span>
+
+<span class="nn">File /usr/share/miniconda/lib/python3.9/socket.py:704,</span> in <span class="ni">SocketIO.readinto</span><span class="nt">(self, b)</span>
+<span class="g g-Whitespace">    </span><span class="mi">702</span> <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">703</span>     <span class="k">try</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">704</span>         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_sock</span><span class="o">.</span><span class="n">recv_into</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">705</span>     <span class="k">except</span> <span class="n">timeout</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">706</span>         <span class="bp">self</span><span class="o">.</span><span class="n">_timeout_occurred</span> <span class="o">=</span> <span class="kc">True</span>
+
+<span class="nn">File /usr/share/miniconda/lib/python3.9/ssl.py:1241,</span> in <span class="ni">SSLSocket.recv_into</span><span class="nt">(self, buffer, nbytes, flags)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1237</span>     <span class="k">if</span> <span class="n">flags</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1238</span>         <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1239</span>           <span class="s2">"non-zero flags not allowed in calls to recv_into() on </span><span class="si">%s</span><span class="s2">"</span> <span class="o">%</span>
+<span class="g g-Whitespace">   </span><span class="mi">1240</span>           <span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="p">)</span>
+<span class="ne">-&gt; </span><span class="mi">1241</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">nbytes</span><span class="p">,</span> <span class="n">buffer</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1242</span> <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1243</span>     <span class="k">return</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">recv_into</span><span class="p">(</span><span class="n">buffer</span><span class="p">,</span> <span class="n">nbytes</span><span class="p">,</span> <span class="n">flags</span><span class="p">)</span>
+
+<span class="nn">File /usr/share/miniconda/lib/python3.9/ssl.py:1099,</span> in <span class="ni">SSLSocket.read</span><span class="nt">(self, len, buffer)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1097</span> <span class="k">try</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1098</span>     <span class="k">if</span> <span class="n">buffer</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+<span class="ne">-&gt; </span><span class="mi">1099</span>         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_sslobj</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="nb">len</span><span class="p">,</span> <span class="n">buffer</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1100</span>     <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1101</span>         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_sslobj</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="nb">len</span><span class="p">)</span>
+
+<span class="ne">KeyboardInterrupt</span>: 
 </pre>
              </div>
             </div>

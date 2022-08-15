@@ -808,6 +808,23 @@ const thebe_selector_output = ".output, .cell_output"
                </div>
               </div>
              </div>
+             <div class="cell_output docutils container">
+              <div class="output traceback highlight-ipythontb notranslate">
+               <div class="highlight">
+                <pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="nn">Input In [1],</span> in <span class="ni">&lt;cell line: 16&gt;</span><span class="nt">()</span>
+<span class="g g-Whitespace">     </span><span class="mi">13</span>     <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">synphot_folder</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">15</span> <span class="c1"># mirage imports</span>
+<span class="ne">---&gt; </span><span class="mi">16</span> <span class="kn">from</span> <span class="nn">mirage.imaging_simulator</span> <span class="kn">import</span> <span class="n">ImgSim</span>
+<span class="g g-Whitespace">     </span><span class="mi">17</span> <span class="kn">from</span> <span class="nn">mirage.seed_image</span> <span class="kn">import</span> <span class="n">catalog_seed_image</span>
+<span class="g g-Whitespace">     </span><span class="mi">18</span> <span class="kn">from</span> <span class="nn">mirage.dark</span> <span class="kn">import</span> <span class="n">dark_prep</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named 'mirage'
+</pre>
+               </div>
+              </div>
+             </div>
             </div>
             <div class="cell docutils container">
              <div class="cell_input docutils container">
@@ -849,14 +866,6 @@ const thebe_selector_output = ".output, .cell_output"
              <div class="highlight-ipython3 notranslate">
               <div class="highlight">
                <pre><span></span><span class="n">pwd</span>
-</pre>
-              </div>
-             </div>
-            </div>
-            <div class="cell_output docutils container">
-             <div class="output text_plain highlight-myst-ansi notranslate">
-              <div class="highlight">
-               <pre><span></span>'/home/runner/work/actions-ci-testing/actions-ci-testing/notebooks/preimaging'
 </pre>
               </div>
              </div>
@@ -911,129 +920,6 @@ For users at STScI, this is the location of MIRAGE data:
               <div class="highlight-ipython3 notranslate">
                <div class="highlight">
                 <pre><span></span><span class="n">downloader</span><span class="o">.</span><span class="n">download_reffiles</span><span class="p">(</span><span class="n">download_path</span><span class="p">,</span> <span class="n">instrument</span><span class="o">=</span><span class="s1">'FGS'</span><span class="p">,</span> <span class="n">dark_type</span><span class="o">=</span><span class="s1">'linearized'</span><span class="p">,</span> <span class="n">skip_darks</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">single_dark</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">skip_cosmic_rays</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">skip_psfs</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-</pre>
-               </div>
-              </div>
-             </div>
-             <div class="cell_output docutils container">
-              <div class="output stream highlight-myst-ansi notranslate">
-               <div class="highlight">
-                <pre><span></span>Size of FGS cosmic ray library file: 0.31 Gb
-Size of FGS PSF library file: 0.04 Gb
-Size of FGS linearized dark file: 4.875 Gb
-Total size of files to be downloaded: 5.225 Gb
-Downloading: mirage_fgs_cr_library.tar.gz
-</pre>
-               </div>
-              </div>
-              <div class="output stream highlight-myst-ansi notranslate">
-               <div class="highlight">
-                <pre><span></span>Download of mirage_fgs_cr_library.tar.gz complete.
-Downloading: fgs_gridded_psf_library.tar.gz
-</pre>
-               </div>
-              </div>
-              <div class="output stream highlight-myst-ansi notranslate">
-               <div class="highlight">
-                <pre><span></span>Download of fgs_gridded_psf_library.tar.gz complete.
-Downloading: 29722_1x88_FGSF03512-D-NR-G2-5339214947_1_498_SE_2015-12-05T22h27m19_dms_uncal_linearized.fits.gz
-</pre>
-               </div>
-              </div>
-              <div class="output traceback highlight-ipythontb notranslate">
-               <div class="highlight">
-                <pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
-<span class="nn">Input In [7],</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">downloader</span><span class="o">.</span><span class="n">download_reffiles</span><span class="p">(</span><span class="n">download_path</span><span class="p">,</span> <span class="n">instrument</span><span class="o">=</span><span class="s1">'FGS'</span><span class="p">,</span> <span class="n">dark_type</span><span class="o">=</span><span class="s1">'linearized'</span><span class="p">,</span> <span class="n">skip_darks</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">single_dark</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">skip_cosmic_rays</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">skip_psfs</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-
-<span class="nn">File /usr/share/miniconda/lib/python3.9/site-packages/mirage/reference_files/downloader.py:311,</span> in <span class="ni">download_reffiles</span><span class="nt">(directory, instrument, dark_type, skip_darks, single_dark, skip_cosmic_rays, skip_psfs, skip_soss)</span>
-<span class="g g-Whitespace">    </span><span class="mi">309</span>     <span class="n">filename</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="n">file_url</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
-<span class="g g-Whitespace">    </span><span class="mi">310</span>     <span class="n">local_file</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">directory</span><span class="p">,</span> <span class="n">filename</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">311</span>     <span class="n">download_file</span><span class="p">(</span><span class="n">file_url</span><span class="p">,</span> <span class="n">filename</span><span class="p">,</span> <span class="n">directory</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">313</span> <span class="c1"># Now untar/organize. This way if the download is interrupted, it can</span>
-<span class="g g-Whitespace">    </span><span class="mi">314</span> <span class="c1"># pick up where it left off, since no downloaded files will have been</span>
-<span class="g g-Whitespace">    </span><span class="mi">315</span> <span class="c1"># moved yet.</span>
-<span class="g g-Whitespace">    </span><span class="mi">316</span> <span class="k">for</span> <span class="n">file_url</span> <span class="ow">in</span> <span class="n">file_list</span><span class="p">:</span>
-
-<span class="nn">File /usr/share/miniconda/lib/python3.9/site-packages/mirage/reference_files/downloader.py:233,</span> in <span class="ni">download_file</span><span class="nt">(url, file_name, output_directory, force)</span>
-<span class="g g-Whitespace">    </span><span class="mi">231</span>     <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="s2">"Wrong URL - </span><span class="si">{}</span><span class="s2">"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">url</span><span class="p">))</span>
-<span class="g g-Whitespace">    </span><span class="mi">232</span> <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">download_filename</span><span class="p">,</span> <span class="s1">'wb'</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">233</span>     <span class="k">for</span> <span class="n">chunk</span> <span class="ow">in</span> <span class="n">response</span><span class="o">.</span><span class="n">iter_content</span><span class="p">(</span><span class="n">chunk_size</span><span class="o">=</span><span class="mi">2048</span><span class="p">):</span>
-<span class="g g-Whitespace">    </span><span class="mi">234</span>         <span class="k">if</span> <span class="n">chunk</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">235</span>             <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">chunk</span><span class="p">)</span>
-
-<span class="nn">File /usr/share/miniconda/lib/python3.9/site-packages/requests/models.py:760,</span> in <span class="ni">Response.iter_content.&lt;locals&gt;.generate</span><span class="nt">()</span>
-<span class="g g-Whitespace">    </span><span class="mi">758</span> <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">raw</span><span class="p">,</span> <span class="s1">'stream'</span><span class="p">):</span>
-<span class="g g-Whitespace">    </span><span class="mi">759</span>     <span class="k">try</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">760</span>         <span class="k">for</span> <span class="n">chunk</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">raw</span><span class="o">.</span><span class="n">stream</span><span class="p">(</span><span class="n">chunk_size</span><span class="p">,</span> <span class="n">decode_content</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
-<span class="g g-Whitespace">    </span><span class="mi">761</span>             <span class="k">yield</span> <span class="n">chunk</span>
-<span class="g g-Whitespace">    </span><span class="mi">762</span>     <span class="k">except</span> <span class="n">ProtocolError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-
-<span class="nn">File /usr/share/miniconda/lib/python3.9/site-packages/urllib3/response.py:576,</span> in <span class="ni">HTTPResponse.stream</span><span class="nt">(self, amt, decode_content)</span>
-<span class="g g-Whitespace">    </span><span class="mi">574</span> <span class="k">else</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">575</span>     <span class="k">while</span> <span class="ow">not</span> <span class="n">is_fp_closed</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_fp</span><span class="p">):</span>
-<span class="ne">--&gt; </span><span class="mi">576</span>         <span class="n">data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">amt</span><span class="o">=</span><span class="n">amt</span><span class="p">,</span> <span class="n">decode_content</span><span class="o">=</span><span class="n">decode_content</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">578</span>         <span class="k">if</span> <span class="n">data</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">579</span>             <span class="k">yield</span> <span class="n">data</span>
-
-<span class="nn">File /usr/share/miniconda/lib/python3.9/site-packages/urllib3/response.py:519,</span> in <span class="ni">HTTPResponse.read</span><span class="nt">(self, amt, decode_content, cache_content)</span>
-<span class="g g-Whitespace">    </span><span class="mi">517</span> <span class="k">else</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">518</span>     <span class="n">cache_content</span> <span class="o">=</span> <span class="kc">False</span>
-<span class="ne">--&gt; </span><span class="mi">519</span>     <span class="n">data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_fp</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">amt</span><span class="p">)</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">fp_closed</span> <span class="k">else</span> <span class="sa">b</span><span class="s2">""</span>
-<span class="g g-Whitespace">    </span><span class="mi">520</span>     <span class="k">if</span> <span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">521</span>         <span class="n">amt</span> <span class="o">!=</span> <span class="mi">0</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">data</span>
-<span class="g g-Whitespace">    </span><span class="mi">522</span>     <span class="p">):</span>  <span class="c1"># Platform-specific: Buggy versions of Python.</span>
-   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">528</span>         <span class="c1"># not properly close the connection in all cases. There is</span>
-<span class="g g-Whitespace">    </span><span class="mi">529</span>         <span class="c1"># no harm in redundantly calling close.</span>
-<span class="g g-Whitespace">    </span><span class="mi">530</span>         <span class="bp">self</span><span class="o">.</span><span class="n">_fp</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
-
-<span class="nn">File /usr/share/miniconda/lib/python3.9/http/client.py:463,</span> in <span class="ni">HTTPResponse.read</span><span class="nt">(self, amt)</span>
-<span class="g g-Whitespace">    </span><span class="mi">460</span> <span class="k">if</span> <span class="n">amt</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">461</span>     <span class="c1"># Amount is given, implement using readinto</span>
-<span class="g g-Whitespace">    </span><span class="mi">462</span>     <span class="n">b</span> <span class="o">=</span> <span class="nb">bytearray</span><span class="p">(</span><span class="n">amt</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">463</span>     <span class="n">n</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">readinto</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">464</span>     <span class="k">return</span> <span class="nb">memoryview</span><span class="p">(</span><span class="n">b</span><span class="p">)[:</span><span class="n">n</span><span class="p">]</span><span class="o">.</span><span class="n">tobytes</span><span class="p">()</span>
-<span class="g g-Whitespace">    </span><span class="mi">465</span> <span class="k">else</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">466</span>     <span class="c1"># Amount is not given (unbounded read) so we must check self.length</span>
-<span class="g g-Whitespace">    </span><span class="mi">467</span>     <span class="c1"># and self.chunked</span>
-
-<span class="nn">File /usr/share/miniconda/lib/python3.9/http/client.py:507,</span> in <span class="ni">HTTPResponse.readinto</span><span class="nt">(self, b)</span>
-<span class="g g-Whitespace">    </span><span class="mi">502</span>         <span class="n">b</span> <span class="o">=</span> <span class="nb">memoryview</span><span class="p">(</span><span class="n">b</span><span class="p">)[</span><span class="mi">0</span><span class="p">:</span><span class="bp">self</span><span class="o">.</span><span class="n">length</span><span class="p">]</span>
-<span class="g g-Whitespace">    </span><span class="mi">504</span> <span class="c1"># we do not use _safe_read() here because this may be a .will_close</span>
-<span class="g g-Whitespace">    </span><span class="mi">505</span> <span class="c1"># connection, and the user is reading more bytes than will be provided</span>
-<span class="g g-Whitespace">    </span><span class="mi">506</span> <span class="c1"># (for example, reading in 1k chunks)</span>
-<span class="ne">--&gt; </span><span class="mi">507</span> <span class="n">n</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">fp</span><span class="o">.</span><span class="n">readinto</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">508</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">n</span> <span class="ow">and</span> <span class="n">b</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">509</span>     <span class="c1"># Ideally, we would raise IncompleteRead if the content-length</span>
-<span class="g g-Whitespace">    </span><span class="mi">510</span>     <span class="c1"># wasn't satisfied, but it might break compatibility.</span>
-<span class="g g-Whitespace">    </span><span class="mi">511</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_close_conn</span><span class="p">()</span>
-
-<span class="nn">File /usr/share/miniconda/lib/python3.9/socket.py:704,</span> in <span class="ni">SocketIO.readinto</span><span class="nt">(self, b)</span>
-<span class="g g-Whitespace">    </span><span class="mi">702</span> <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">703</span>     <span class="k">try</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">704</span>         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_sock</span><span class="o">.</span><span class="n">recv_into</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">705</span>     <span class="k">except</span> <span class="n">timeout</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">706</span>         <span class="bp">self</span><span class="o">.</span><span class="n">_timeout_occurred</span> <span class="o">=</span> <span class="kc">True</span>
-
-<span class="nn">File /usr/share/miniconda/lib/python3.9/ssl.py:1241,</span> in <span class="ni">SSLSocket.recv_into</span><span class="nt">(self, buffer, nbytes, flags)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1237</span>     <span class="k">if</span> <span class="n">flags</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1238</span>         <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
-<span class="g g-Whitespace">   </span><span class="mi">1239</span>           <span class="s2">"non-zero flags not allowed in calls to recv_into() on </span><span class="si">%s</span><span class="s2">"</span> <span class="o">%</span>
-<span class="g g-Whitespace">   </span><span class="mi">1240</span>           <span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="p">)</span>
-<span class="ne">-&gt; </span><span class="mi">1241</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">nbytes</span><span class="p">,</span> <span class="n">buffer</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1242</span> <span class="k">else</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1243</span>     <span class="k">return</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">recv_into</span><span class="p">(</span><span class="n">buffer</span><span class="p">,</span> <span class="n">nbytes</span><span class="p">,</span> <span class="n">flags</span><span class="p">)</span>
-
-<span class="nn">File /usr/share/miniconda/lib/python3.9/ssl.py:1099,</span> in <span class="ni">SSLSocket.read</span><span class="nt">(self, len, buffer)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1097</span> <span class="k">try</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1098</span>     <span class="k">if</span> <span class="n">buffer</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-<span class="ne">-&gt; </span><span class="mi">1099</span>         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_sslobj</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="nb">len</span><span class="p">,</span> <span class="n">buffer</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1100</span>     <span class="k">else</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1101</span>         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_sslobj</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="nb">len</span><span class="p">)</span>
-
-<span class="ne">KeyboardInterrupt</span>: 
 </pre>
                </div>
               </div>
