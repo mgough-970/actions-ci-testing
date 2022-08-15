@@ -3,4 +3,5 @@ matplotlib
 mplcursors
 numpy
 photutils
+scipy
 watermark
