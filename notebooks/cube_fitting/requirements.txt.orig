@@ -1,7 +1,7 @@
 astropy
+dust_extinction
 lmfit
-dust-extinction
-jdaviz
 matplotlib
-dill
 multiprocess
+numpy
+specutils
