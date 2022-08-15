@@ -32,8 +32,6 @@ nbclient.exceptions.CellTimeoutError: A cell timed out while it was being execut
 The message was: Cell execution timed out.
 Here is a preview of the cell contents:
 -------------------
-["filters = 'F090W F115W F150W F200W F277W F335M F356W F410M F444W'.split()", 'for filt in filters:', '    infile = imagefiles[filt]', '    print(filt)', '    print(infile)']
-...
-['', '    mag, magerr = fluxes2mags(flux, fluxerr)', '    #mag = mag * u.ABmag  # incompatible with file writing', "    tbl[filt+'_mag']    = mag.value", "    tbl[filt+'_magerr'] = magerr.value"]
+cutout_file = fits_cut(input_files, center_coord, cutout_size, single_outfile=True)
 -------------------
 
