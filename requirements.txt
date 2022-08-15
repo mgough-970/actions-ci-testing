@@ -10,7 +10,6 @@ astroquery
 corner
 crds
 dust_extinction
-git+https://github.com/spacetelescope/jdaviz.git@main
 gwcs
 h5py
 ipython
