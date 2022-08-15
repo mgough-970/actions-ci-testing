@@ -35,4 +35,5 @@ seaborn
 specreduce
 spectral_cube
 specutils
+watermark
 webbpsf
