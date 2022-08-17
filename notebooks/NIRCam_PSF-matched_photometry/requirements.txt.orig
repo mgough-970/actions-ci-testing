@@ -1,6 +1,7 @@
-astropy==5.1
-matplotlib==3.5.3
-mplcursors==0.5.1
-numpy==1.23.1
-photutils==1.5.0
-watermark==2.3.1
+astropy
+matplotlib
+mplcursors
+numpy
+photutils
+scipy
+watermark
