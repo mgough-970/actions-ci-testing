@@ -1,6 +1,6 @@
+jdaviz
 astropy
 matplotlib
-mplcursors
-numpy
 photutils
-watermark
+mplcursors
+

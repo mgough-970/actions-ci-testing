@@ -1,7 +1,7 @@
 #!/bin/bash
 
 echo Parsing requirements from ./notebooks
-find notebooks/ -name "requirements.txt" -exec sh -c 'x="{}"; mv "$x" "${x}.orig"; git add "${x}.orig"' \;
+#find notebooks/ -name "requirements.txt" -exec sh -c 'x="{}"; mv "$x" "${x}.orig"; git add "${x}.orig"' \;
 find ./notebooks -name "*.ipynb" | xargs -I {} pipreqsnb {}
 find ./notebooks -name 'requirements.txt' -exec sed -i '' 's/==.*//' {} \;
 find ./notebooks -name 'requirements.txt' -exec sed -i '' 's/ .*//' {} \;
