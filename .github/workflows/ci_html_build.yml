@@ -9,7 +9,7 @@ on:
  
 jobs:
   deploy-book:
-    if: (!(github.event.action == 'closed' && github.event.pull_rquest.merged != true ))
+    if: (!(github.event.action == 'closed' && github.event.pull_request.merged != true ))
     runs-on: ubuntu-latest
     steps:  
     - name: Free up disk space
