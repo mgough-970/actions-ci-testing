@@ -61,9 +61,13 @@ const thebe_selector_output = ".output, .cell_output"
   </script>
   <script async="async" src="../../_static/sphinx-thebe.js">
   </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js">
+  </script>
+  <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js">
+  </script>
   <link href="../../genindex.html" rel="index" title="Index"/>
   <link href="../../search.html" rel="search" title="Search"/>
-  <link href="../../intro.html" rel="prev" title="James Webb Space Telescope Data Analysis Tool Notebooks"/>
+  <link href="../IFU_cube_continuum_fit/NGC4151_FeII_ContinuumFit.html" rel="prev" title="IFU Cube Fitting"/>
   <meta content="width=device-width, initial-scale=1" name="viewport"/>
   <meta content="None" name="docsearch:language"/>
   <!-- Google Analytics -->
@@ -124,6 +128,18 @@ const thebe_selector_output = ".output, .cell_output"
           <li class="toctree-l1">
            <a class="reference internal" href="../../intro.html">
             James Webb Space Telescope Data Analysis Tool Notebooks
+           </a>
+          </li>
+         </ul>
+         <p aria-level="2" class="caption" role="heading">
+          <span class="caption-text">
+           IFU Continuum Fit
+          </span>
+         </p>
+         <ul class="nav bd-sidenav">
+          <li class="toctree-l1">
+           <a class="reference internal" href="../IFU_cube_continuum_fit/NGC4151_FeII_ContinuumFit.html">
+            IFU Cube Fitting
            </a>
           </li>
          </ul>
@@ -725,7 +741,7 @@ No.    Name      Ver    Type      Cards   Dimensions   Format
             <div class="cell_output docutils container">
              <div class="output text_plain highlight-myst-ansi notranslate">
               <div class="highlight">
-               <pre><span></span>&lt;matplotlib.image.AxesImage at 0x7fb69c3ef820&gt;
+               <pre><span></span>&lt;matplotlib.image.AxesImage at 0x7fe2c2a781f0&gt;
 </pre>
               </div>
              </div>
@@ -3511,8 +3527,8 @@ O_EXT_NM=  / Original extension name.
 EXTNAME = 'CUTOUT  '                                                            
 ORIG_FLE= 'hlsp_candels_hst_hst_candels-v1.0_acs_f606w_drz.fits' / Original imag
 ORIG_EXT=                    0 / Extension in original file.                    
-CHECKSUM= 'NTIdPRFZNRFbNRFZ'   / HDU checksum updated 2022-08-19T15:54:52       
-DATASUM = '3549639627'         / data unit checksum updated 2022-08-19T15:54:52 
+CHECKSUM= 'OQJaQPGXOPGaOPGW'   / HDU checksum updated 2022-08-19T18:52:38       
+DATASUM = '3549639627'         / data unit checksum updated 2022-08-19T18:52:38 
 </pre>
               </div>
              </div>
@@ -6018,7 +6034,7 @@ DATASUM = '3549639627'         / data unit checksum updated 2022-08-19T15:54:52
               <i>
                Table length=2673
               </i>
-              <table class="table-striped table-bordered table-condensed" id="table140423029060704-318028">
+              <table class="table-striped table-bordered table-condensed" id="table140611772998416-503556">
                <thead>
                 <tr>
                  <th>
@@ -43308,14 +43324,14 @@ require.config({paths: {
     datatables: 'https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min'
 }});
 require(["datatables"], function(){
-    console.log("$('#table140423029060704-318028').dataTable()");
+    console.log("$('#table140611772998416-503556').dataTable()");
 
 jQuery.extend( jQuery.fn.dataTableExt.oSort, {
     "optionalnum-asc": astropy_sort_num,
     "optionalnum-desc": function (a,b) { return -astropy_sort_num(a, b); }
 });
 
-    $('#table140423029060704-318028').dataTable({
+    $('#table140611772998416-503556').dataTable({
         order: [],
         pageLength: 50,
         lengthMenu: [[10, 25, 50, 100, 500, 1000, -1], [10, 25, 50, 100, 500, 1000, 'All']],
@@ -43455,9 +43471,9 @@ jQuery.extend( jQuery.fn.dataTableExt.oSort, {
                <pre><span></span>{'asdf_library': {'author': 'The ASDF Developers',
   'homepage': 'http://github.com/asdf-format/asdf',
   'name': 'asdf',
-  'version': '2.12.1'},
+  'version': '2.13.0'},
  'history': {'extensions': [{'extension_class': 'asdf.extension.BuiltinExtension',
-    'software': {'name': 'asdf', 'version': '2.12.1'}}]},
+    'software': {'name': 'asdf', 'version': '2.13.0'}}]},
  '': ['', ''],
  'APERTURE': ['WFC', 'aperture name'],
  'ASN_ID': ['JBOA28010', 'unique identifier assigned to association'],
@@ -44738,7 +44754,7 @@ jQuery.extend( jQuery.fn.dataTableExt.oSort, {
             <div class="cell_output docutils container">
              <div class="output text_plain highlight-myst-ansi notranslate">
               <div class="highlight">
-               <pre><span></span>&lt;matplotlib.image.AxesImage at 0x7fb6c9581b50&gt;
+               <pre><span></span>&lt;matplotlib.image.AxesImage at 0x7fe2c0418310&gt;
 </pre>
               </div>
              </div>
@@ -44820,8 +44836,8 @@ DATE    = '2022-08-19'         / file creation date
 PROCVER = '0.9     '           / software version                               
 RA_OBJ  =             150.0946 / [deg] right ascension                          
 DEC_OBJ =              2.38681 / [deg] declination                              
-CHECKSUM= 'Zl4Gai1EVi1EZi1E'   / HDU checksum updated 2022-08-19T15:54:52       
-DATASUM = '0       '           / data unit checksum updated 2022-08-19T15:54:52 
+CHECKSUM= 'Ui5Dag2CXg2Cag2C'   / HDU checksum updated 2022-08-19T18:52:38       
+DATASUM = '0       '           / data unit checksum updated 2022-08-19T18:52:38 
 </pre>
               </div>
              </div>
@@ -44851,9 +44867,9 @@ DATASUM = '0       '           / data unit checksum updated 2022-08-19T15:54:52
                <pre><span></span>{'asdf_library': {'author': 'The ASDF Developers',
   'homepage': 'http://github.com/asdf-format/asdf',
   'name': 'asdf',
-  'version': '2.12.1'},
+  'version': '2.13.0'},
  'history': {'extensions': [{'extension_class': 'asdf.extension.BuiltinExtension',
-    'software': {'name': 'asdf', 'version': '2.12.1'}}]},
+    'software': {'name': 'asdf', 'version': '2.13.0'}}]},
  '': ['', ''],
  'APERTURE': ['WFC', 'aperture name'],
  'ASN_ID': ['JBOA28010', 'unique identifier assigned to association'],
@@ -46198,7 +46214,7 @@ DATASUM = '0       '           / data unit checksum updated 2022-08-19T15:54:52
             <div class="cell_output docutils container">
              <div class="output stderr highlight-myst-ansi notranslate">
               <div class="highlight">
-               <pre><span></span>2022-08-19 15:54:56,491 - stpipe - INFO - 
+               <pre><span></span>2022-08-19 18:52:41,601 - stpipe - INFO - 
                 Inconsistent SIP distortion information is present in the FITS header and the WCS object:
                 SIP coefficients were detected, but CTYPE is missing a "-SIP" suffix.
                 astropy.wcs is using the SIP distortion coefficients,
@@ -46219,7 +46235,7 @@ DATASUM = '0       '           / data unit checksum updated 2022-08-19T15:54:52
              </div>
              <div class="output stderr highlight-myst-ansi notranslate">
               <div class="highlight">
-               <pre><span></span>2022-08-19 15:54:56,558 - stpipe - WARNING - /usr/share/miniconda/lib/python3.9/site-packages/astropy/wcs/wcs.py:2891: RuntimeWarning: cdelt will be ignored since cd is present
+               <pre><span></span>2022-08-19 18:52:41,652 - stpipe - WARNING - /usr/share/miniconda/lib/python3.9/site-packages/astropy/wcs/wcs.py:2891: RuntimeWarning: cdelt will be ignored since cd is present
   description.append(s.format(*self.wcs.cdelt))
 </pre>
               </div>
@@ -46406,7 +46422,7 @@ Parameters:
               <i>
                Table length=2658
               </i>
-              <table class="table-striped table-bordered table-condensed" id="table140423026392224-327373">
+              <table class="table-striped table-bordered table-condensed" id="table140611769416912-688764">
                <thead>
                 <tr>
                  <th>
@@ -46434,7 +46450,7 @@ Parameters:
                  None
                 </td>
                 <td>
-                 {'author': 'The ASDF Developers', 'homepage': 'http://github.com/asdf-format/asdf', 'name': 'asdf', 'version': '2.12.1'}
+                 {'author': 'The ASDF Developers', 'homepage': 'http://github.com/asdf-format/asdf', 'name': 'asdf', 'version': '2.13.0'}
                 </td>
                </tr>
                <tr>
@@ -46448,7 +46464,7 @@ Parameters:
                  None
                 </td>
                 <td>
-                 {'extensions': [{'extension_class': 'asdf.extension.BuiltinExtension', 'software': {'name': 'asdf', 'version': '2.12.1'}}]}
+                 {'extensions': [{'extension_class': 'asdf.extension.BuiltinExtension', 'software': {'name': 'asdf', 'version': '2.13.0'}}]}
                 </td>
                </tr>
                <tr>
@@ -83490,14 +83506,14 @@ require.config({paths: {
     datatables: 'https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min'
 }});
 require(["datatables"], function(){
-    console.log("$('#table140423026392224-327373').dataTable()");
+    console.log("$('#table140611769416912-688764').dataTable()");
 
 jQuery.extend( jQuery.fn.dataTableExt.oSort, {
     "optionalnum-asc": astropy_sort_num,
     "optionalnum-desc": function (a,b) { return -astropy_sort_num(a, b); }
 });
 
-    $('#table140423026392224-327373').dataTable({
+    $('#table140611769416912-688764').dataTable({
         order: [],
         pageLength: 50,
         lengthMenu: [[10, 25, 50, 100, 500, 1000, -1], [10, 25, 50, 100, 500, 1000, 'All']],
@@ -83537,7 +83553,7 @@ jQuery.extend( jQuery.fn.dataTableExt.oSort, {
        <footer class="footer-article noprint">
         <!-- Previous / next buttons -->
         <div class="prev-next-area">
-         <a class="left-prev" href="../../intro.html" id="prev-link" title="previous page">
+         <a class="left-prev" href="../IFU_cube_continuum_fit/NGC4151_FeII_ContinuumFit.html" id="prev-link" title="previous page">
           <i class="fas fa-angle-left">
           </i>
           <div class="prev-next-info">
@@ -83545,7 +83561,7 @@ jQuery.extend( jQuery.fn.dataTableExt.oSort, {
             previous
            </p>
            <p class="prev-next-title">
-            James Webb Space Telescope Data Analysis Tool Notebooks
+            IFU Cube Fitting
            </p>
           </div>
          </a>
