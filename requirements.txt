@@ -22,7 +22,6 @@ lmfit
 matplotlib
 mplcursors
 multiprocess
-nrm_analysis
 numpy
 pandas
 photutils
