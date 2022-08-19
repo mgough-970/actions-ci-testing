@@ -1,6 +1,0 @@
-jdaviz
-astropy
-matplotlib
-photutils
-mplcursors
-

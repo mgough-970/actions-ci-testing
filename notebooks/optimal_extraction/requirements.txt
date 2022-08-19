@@ -1,7 +1,0 @@
-astropy
-jwst
-matplotlib
-numpy
-scipy
-specutils
-webbpsf

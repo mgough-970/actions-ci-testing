@@ -1,7 +1,0 @@
-astropy
-jdaviz
-jwst
-matplotlib
-numpy
-PyYAML
-Shapely

@@ -1,7 +1,0 @@
-astropy
-dust_extinction
-lmfit
-matplotlib
-multiprocess
-numpy
-specutils
