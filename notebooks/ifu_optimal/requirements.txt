@@ -1,8 +1,0 @@
-astropy
-jdaviz
-matplotlib
-numpy
-photutils
-regions
-scipy
-specutils

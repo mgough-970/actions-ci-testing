@@ -1,6 +1,0 @@
-astropy
-ipython
-jdaviz
-matplotlib
-numpy
-specutils

@@ -1,6 +1,0 @@
-astropy
-jwst
-matplotlib
-numpy
-pandas
-photutils
